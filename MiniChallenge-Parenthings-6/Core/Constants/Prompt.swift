@@ -54,5 +54,17 @@ extension Prompt {
         static let trending = "Trending"
         static let latestArticles = "Latest Article"
         static let suggestedForYou  = "Suggested For You"
+        
+        private init() {}
+    }
+}
+
+extension Prompt {
+    struct searchBar {
+        static let consultationMainPage = "Search Expert Name"
+        static let consultationHistoryPage = "Search Expert or Transaction"
+        static let articlesPage = "Search Article Name"
+        
+        private init() {}
     }
 }

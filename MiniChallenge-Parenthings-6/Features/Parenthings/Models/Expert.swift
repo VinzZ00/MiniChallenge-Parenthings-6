@@ -18,4 +18,5 @@ struct Expert : Identifiable, Hashable {
     var Price : Double;
     var StarCount : Double;
     var imageBase64 : encodedBase64;
+    var isAvailable : Bool;
 }

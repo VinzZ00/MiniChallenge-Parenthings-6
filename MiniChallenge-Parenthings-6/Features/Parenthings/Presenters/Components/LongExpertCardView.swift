@@ -5,6 +5,8 @@
 //  Created by Elvin Sestomi on 21/04/23.
 //
 
+// Ini height nya gaa bisa sama persis kek di sketch, jdi height nya inherrit aja. ~ Elvin
+
 import SwiftUI
 
 struct LongExpertCard : View {
@@ -16,7 +18,6 @@ struct LongExpertCard : View {
     
     // Card Component
     var buttonText : String;
-    var isAvailable : Bool;
     
     
     
@@ -27,11 +28,12 @@ struct LongExpertCard : View {
                 if let decodedimage = ExpertData.imageBase64
                     .toUIImage() {
                     Image(uiImage : decodedimage)
-                        .scaledToFit()
+                        .frame(width: 67, height: 84)
                         .mask(
                             RoundedRectangle(cornerRadius: 15)
-                                .frame(width: 67, height: 84)
+                              
                         )
+                        .scaledToFit()
                         .padding(.trailing, 24)
                     
                 }
@@ -39,7 +41,7 @@ struct LongExpertCard : View {
                     HStack {
                         Circle()
                             .frame(width: 12, height: 12)
-                            .foregroundColor((isAvailable) ? .green : .red)
+                            .foregroundColor((ExpertData.isAvailable) ? .green : .red)
                             .padding(.trailing, 4)
                             .padding(.bottom, 1)
                         Text("\(ExpertData.name)")
@@ -106,9 +108,9 @@ struct LongCardView_Previews: PreviewProvider {
             if let base64StringImage = UIImage(systemName: "person.fill")?.toBase64()
             {
 
-                LongExpertCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan", longExp: 5, Price: 20000, StarCount: 4.5, imageBase64: base64StringImage), buttonText: "Click", isAvailable: false)
+                LongExpertCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan", longExp: 5, Price: 20000, StarCount: 4.5, imageBase64: base64StringImage, isAvailable: true), buttonText: "Click")
 
-                LongExpertCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan", longExp: 5, Price: 20000, StarCount: 4.5, imageBase64: base64StringImage), buttonText: "Click", isAvailable: false)
+                LongExpertCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan", longExp: 5, Price: 20000, StarCount: 4.5, imageBase64: base64StringImage, isAvailable: false), buttonText: "Click")
             }
             Spacer();
         }.background(.white)

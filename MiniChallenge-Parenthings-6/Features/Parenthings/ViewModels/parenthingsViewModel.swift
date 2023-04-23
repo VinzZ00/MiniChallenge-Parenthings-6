@@ -10,12 +10,28 @@ import SwiftUI
 
 class parenthingsViewModel : ObservableObject {
     
+    @Published var experts : ExpertRepository = ExpertRepository();
+    
+    
+//    var name : String = ""
+//    var role : String = ""
+//    var longExp : Int = 0
+//    var Price : Double = 0.00
+//    var StarCount : Double = 0.00
+//    var imageBase64 : encodedBase64 = ""
     
     
     // Field apa aja??
     
-    var expertImage : Image?;
-    var encodedImage : encodedBase64?
+//    var expertImage : Image? {
+//        let uiImage = imageBase64.toUIImage()
+//
+//        if let image = uiImage {
+//            return Image(uiImage: image)
+//        } else {
+//            return nil
+//        }
+//    }
 }
 
 

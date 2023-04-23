@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		AC5F370E29F50E4800372208 /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F370D29F50E4800372208 /* Prompt.swift */; };
+		AC5F371029F56BD300372208 /* ConsultationPagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F370F29F56BD300372208 /* ConsultationPagePicker.swift */; };
+		AC5F371229F59B4D00372208 /* HomeRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F371129F59B4D00372208 /* HomeRootView.swift */; };
+		AC5F371429F59C9C00372208 /* ConsultationMainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F371329F59C9C00372208 /* ConsultationMainPageView.swift */; };
+		AC5F371629F5A43300372208 /* ExpertRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F371529F5A43300372208 /* ExpertRepository.swift */; };
 		ACC826CB29F42281004423C8 /* parenthingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC826CA29F42281004423C8 /* parenthingsViewModel.swift */; };
-		ACC826CD29F42529004423C8 /* base64toUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC826CC29F42529004423C8 /* base64toUIImage.swift */; };
+		ACC826CD29F42529004423C8 /* EncodedBase64Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC826CC29F42529004423C8 /* EncodedBase64Extension.swift */; };
 		ACC826CF29F455EC004423C8 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC826CE29F455EC004423C8 /* ImageExtension.swift */; };
 		ACFB982529F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFB982429F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift */; };
 		ACFB982729F187A20046BA06 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFB982629F187A20046BA06 /* ContentView.swift */; };
@@ -29,8 +33,12 @@
 
 /* Begin PBXFileReference section */
 		AC5F370D29F50E4800372208 /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
+		AC5F370F29F56BD300372208 /* ConsultationPagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationPagePicker.swift; sourceTree = "<group>"; };
+		AC5F371129F59B4D00372208 /* HomeRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRootView.swift; sourceTree = "<group>"; };
+		AC5F371329F59C9C00372208 /* ConsultationMainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationMainPageView.swift; sourceTree = "<group>"; };
+		AC5F371529F5A43300372208 /* ExpertRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertRepository.swift; sourceTree = "<group>"; };
 		ACC826CA29F42281004423C8 /* parenthingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parenthingsViewModel.swift; sourceTree = "<group>"; };
-		ACC826CC29F42529004423C8 /* base64toUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = base64toUIImage.swift; sourceTree = "<group>"; };
+		ACC826CC29F42529004423C8 /* EncodedBase64Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodedBase64Extension.swift; sourceTree = "<group>"; };
 		ACC826CE29F455EC004423C8 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		ACFB982129F187A20046BA06 /* MiniChallenge-Parenthings-6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MiniChallenge-Parenthings-6.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACFB982429F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniChallenge_Parenthings_6App.swift; sourceTree = "<group>"; };
@@ -63,7 +71,7 @@
 		ACC826C929F41D88004423C8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				ACC826CC29F42529004423C8 /* base64toUIImage.swift */,
+				ACC826CC29F42529004423C8 /* EncodedBase64Extension.swift */,
 				ACC826CE29F455EC004423C8 /* ImageExtension.swift */,
 			);
 			path = Extensions;
@@ -223,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				ACFB985129F2D9100046BA06 /* Expert.swift */,
+				AC5F371529F5A43300372208 /* ExpertRepository.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -248,6 +257,8 @@
 		ACFB985329F2DAC80046BA06 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AC5F371129F59B4D00372208 /* HomeRootView.swift */,
+				AC5F371329F59C9C00372208 /* ConsultationMainPageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -258,6 +269,7 @@
 				ACFB985829F2E7730046BA06 /* countStartToView.swift */,
 				ACFB984A29F2D6E20046BA06 /* LongExpertCardView.swift */,
 				ACFB985629F2DAF80046BA06 /* ShortExpertCardView.swift */,
+				AC5F370F29F56BD300372208 /* ConsultationPagePicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -348,11 +360,15 @@
 				ACFB984929F272BB0046BA06 /* BlurBackground.swift in Sources */,
 				ACFB985229F2D9100046BA06 /* Expert.swift in Sources */,
 				ACFB984B29F2D6E20046BA06 /* LongExpertCardView.swift in Sources */,
+				AC5F371429F59C9C00372208 /* ConsultationMainPageView.swift in Sources */,
 				AC5F370E29F50E4800372208 /* Prompt.swift in Sources */,
-				ACC826CD29F42529004423C8 /* base64toUIImage.swift in Sources */,
+				ACC826CD29F42529004423C8 /* EncodedBase64Extension.swift in Sources */,
+				AC5F371229F59B4D00372208 /* HomeRootView.swift in Sources */,
 				ACFB984429F1BDF00046BA06 /* SearchBarComponent.swift in Sources */,
 				ACFB982529F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift in Sources */,
 				ACFB985729F2DAF80046BA06 /* ShortExpertCardView.swift in Sources */,
+				AC5F371029F56BD300372208 /* ConsultationPagePicker.swift in Sources */,
+				AC5F371629F5A43300372208 /* ExpertRepository.swift in Sources */,
 				ACC826CF29F455EC004423C8 /* ImageExtension.swift in Sources */,
 				ACFB984229F18A9B0046BA06 /* TestGround.swift in Sources */,
 			);

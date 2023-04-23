@@ -13,11 +13,12 @@ struct CustomNavigationBar : View {
     let enableBackButton : Bool;
     let defaultTextSearchBar : String;
     @Binding var searchText : String;
-    
+    let enableSearchBar : Bool;
     
     
     var body: some View {
         VStack{
+            Spacer();
             HStack () {
                 if enableBackButton {
                     Button(action: {
@@ -36,25 +37,28 @@ struct CustomNavigationBar : View {
                 
                 Spacer()
             }
-            .padding(.top, 76)
+            .padding(.top, 60)
             .padding(.leading, 18)
             
-            SearchBar(defaultText: defaultTextSearchBar, text: $searchText)
-                .padding(.top,20)
             
-            
-            
-            
+            if (enableSearchBar) {
+                SearchBar(defaultText: defaultTextSearchBar, text: $searchText)
+                    .padding(.top,25)
+            }
         }
         .ignoresSafeArea()
+        .frame(height: 135)
+        
     }
 }
 
 struct Previews_customNavbar_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            CustomNavigationBar(title: "Consultation Detail", enableBackButton: true, defaultTextSearchBar: "Testing default Text", searchText: .constant("Testing"))
-            
+            CustomNavigationBar(title: "Consultation Detail", enableBackButton: true, defaultTextSearchBar: "Testing default Text", searchText: .constant("Testing"), enableSearchBar: true)
+                .border(.white)
+//            Text("Testing")
+//                .foregroundColor(.white)
             
             Spacer();
         }

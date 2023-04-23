@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+
+struct ExpertRepository {
+    var savedExpert : [Expert] = []
+    
+    
+    mutating func add(expert: Expert) {
+        savedExpert.insert(expert, at: 0)
+    }
+}

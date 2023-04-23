@@ -29,7 +29,7 @@ struct Background_Previews: PreviewProvider {
     
     static var previews: some View {
         VStack{
-            CustomNavigationBar(title: "testing Background", enableBackButton: true, defaultTextSearchBar: "Find Something", searchText: .constant(""))
+            CustomNavigationBar(title: "testing Background", enableBackButton: true, defaultTextSearchBar: "Find Something", searchText: .constant(""), enableSearchBar: true)
             Spacer();
         }
         .ignoresSafeArea()

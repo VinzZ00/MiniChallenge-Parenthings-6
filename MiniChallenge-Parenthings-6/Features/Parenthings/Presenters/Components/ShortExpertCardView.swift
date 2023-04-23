@@ -14,7 +14,6 @@ struct ShortExpertCard: View {
     
     // Card Component
     var buttonText : String;
-    var isAvailable : Bool;
     
     var body: some View {
         
@@ -34,7 +33,7 @@ struct ShortExpertCard: View {
                     HStack(alignment: .top){
                         Circle()
                             .frame(width: 12, height: 12)
-                            .foregroundColor((isAvailable) ? .green : .red)
+                            .foregroundColor((ExpertData.isAvailable) ? .green : .red)
                             .padding(.trailing, 4)
                             .padding(.bottom, 1)
                         
@@ -94,9 +93,9 @@ struct LongExpertCard_Previews: PreviewProvider {
             if let base64StringImage = UIImage(systemName: "person.fill")?.toBase64()
             {
 
-                ShortExpertCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan", longExp: 5, Price: 20000, StarCount: 4.5, imageBase64: base64StringImage), buttonText: "Click", isAvailable: false)
+                ShortExpertCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan", longExp: 5, Price: 20000, StarCount: 4.5, imageBase64: base64StringImage, isAvailable: false), buttonText: "Click")
 
-                ShortExpertCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan", longExp: 5, Price: 20000, StarCount: 4.5, imageBase64: base64StringImage), buttonText: "Click", isAvailable: false)
+                ShortExpertCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan", longExp: 5, Price: 20000, StarCount: 4.5, imageBase64: base64StringImage, isAvailable: false), buttonText: "Click")
             }
             Spacer();
         }.background(.white)

@@ -7,14 +7,24 @@
 
 import SwiftUI
 
-struct ConsultationPagePicker: View {
+struct ConsultationListFilter: View {
+    
+    @Binding var selectedValue : String;
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Picker("listFilter", selection: $selectedValue) {
+                ForEach( Prompt.Picker.pickerList, id : \.self) {item in
+                    Text(item).tag(item)
+                }
+            }.pickerStyle(.segmented)
+            
+        }.padding()
     }
 }
 
 struct ConsultationPagePicker_Previews: PreviewProvider {
     static var previews: some View {
-        ConsultationPagePicker()
+            ConsultationListFilter(selectedValue:  .constant("Ongoing"))
     }
 }
