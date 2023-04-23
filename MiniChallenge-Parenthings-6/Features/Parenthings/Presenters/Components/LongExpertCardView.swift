@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct LongCardView: View {
+struct LongExpertCard : View {
     
     
     //  Expert Data
-    var ExpertData : ExpertViewModel;
+    var ExpertData : Expert;
     
     
     // Card Component
@@ -24,17 +24,16 @@ struct LongCardView: View {
     var body: some View {
         VStack{
             HStack{
-                if let data = Data(base64Encoded: ExpertData.imageBase64, options: .ignoreUnknownCharacters) {
-                    if let image = UIImage(data: data) {
-                        Image(uiImage: image)
-//                        Image("UniversalPlaceHolder")
-                            .mask(
-                                RoundedRectangle(cornerRadius: 15)
-                                    .frame(width: 67, height: 84)
-                            )
-                            .padding(.trailing, 24)
-                            
-                    }
+                if let decodedimage = ExpertData.imageBase64
+                    .toUIImage() {
+                    Image(uiImage : decodedimage)
+                        .scaledToFit()
+                        .mask(
+                            RoundedRectangle(cornerRadius: 15)
+                                .frame(width: 67, height: 84)
+                        )
+                        .padding(.trailing, 24)
+                    
                 }
                 VStack(alignment: .leading) {
                     HStack {
@@ -92,24 +91,26 @@ struct LongCardView: View {
         }
         .background(.white)
         .cornerRadius(15)
-        .border(AppColor.systemGray)
         .frame(width: 357)
+        .overlay(
+            RoundedRectangle(cornerRadius: 15)
+                .stroke(AppColor.systemGray, lineWidth: 2)
+        )
     }
 }
 
 struct LongCardView_Previews: PreviewProvider {
     static var previews: some View {
-            VStack{
-                Spacer();
-                if let image = UIImage(systemName: "person.fill") {
-                    if let imageData = image.jpegData(compressionQuality: 1.0) {
-                        let base64StringImage = imageData.base64EncodedString()
-                        
-                        LongCardView(ExpertData: ExpertViewModel(name: "Peter Parker", role: "Dokter Kandungan", longExp: 5, Price: 20000, StarCount: 4.5, imageBase64: base64StringImage), buttonText: "Click", isAvailable: false)
-                    }
-                }
-                Spacer();
-            }.background(.white)
-        
+        VStack{
+            Spacer();
+            if let base64StringImage = UIImage(systemName: "person.fill")?.toBase64()
+            {
+
+                LongExpertCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan", longExp: 5, Price: 20000, StarCount: 4.5, imageBase64: base64StringImage), buttonText: "Click", isAvailable: false)
+
+                LongExpertCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan", longExp: 5, Price: 20000, StarCount: 4.5, imageBase64: base64StringImage), buttonText: "Click", isAvailable: false)
+            }
+            Spacer();
+        }.background(.white)
     }
 }

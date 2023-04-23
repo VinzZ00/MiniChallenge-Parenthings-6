@@ -8,12 +8,14 @@
 import Foundation
 import SwiftUI
 
-struct ExpertViewModel : Identifiable, Hashable {
+typealias encodedBase64 = String;
+
+struct Expert : Identifiable, Hashable {
     let id = UUID();
     var name : String;
     var role : String;
     var longExp : Int;
     var Price : Double;
     var StarCount : Double;
-    var imageBase64 : String
+    var imageBase64 : encodedBase64;
 }

@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+
+
 struct StarRatingView: View {
     var rating: Double
     let maxRating = 5
@@ -17,8 +19,10 @@ struct StarRatingView: View {
                         .frame(width: 12, height: 12)
                         .foregroundColor(.yellow)
                 }
-                Spacer()
             }.padding(.leading, 4)
+            .padding(.trailing, 4)
+            .padding(.top, 4)
+            .padding(.bottom, 4)
     }
     
     private func getStarName(for index: Int) -> String {
