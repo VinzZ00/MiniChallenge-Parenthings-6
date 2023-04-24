@@ -26,26 +26,30 @@ struct ConsultationMainPageView: View {
                     }
                 }.pickerStyle(.segmented)
                     .padding(EdgeInsets(top: 2, leading: 18, bottom: 18, trailing: 18))
-                HStack(){
-                    Text("\(Prompt.subTitle.recomendedExpert)")
-                        .font(.system(size: 22, weight: .bold))
-                        .padding(.leading, 18)
+                VStack {
+                    HStack(){
+                        Text("\(Prompt.subTitle.recomendedExpert)")
+                            .font(.system(size: 22, weight: .bold))
+                            .padding(.leading, 18)
+                        Spacer()
+                    }.padding(.bottom, 6)
                     Spacer()
-                }.padding(.bottom, 6)
-                
-                if viewModel.experts.savedExpert.isEmpty {
-                    Text("No Expert available")
-                        .padding()
-                    
-                } else {
-                    ForEach(
-                        // x  //Kalo mau test n mattin if
-                        viewModel.experts.savedExpert
-                        , id: \.self) { exp in
-                            LongExpertCard(ExpertData: exp, buttonText: Prompt.Button.chat)
-                            .padding(.bottom, 6)
+                    if viewModel.experts.savedExpert.isEmpty {
+                        Text("No Expert available")
+                            .padding()
+                        
+                    } else {
+                        ForEach(
+                            // x  //Kalo mau test n mattin if
+                            viewModel.experts.savedExpert
+                            , id: \.self) { exp in
+                                LongExpertCard(ExpertData: exp, buttonText: Prompt.Button.chat)
+                                .padding(.bottom, 6)
+                        }
                     }
-                }
+                    Spacer()
+                }.frame(
+                    height: (viewModel.top3Experts.isEmpty) ? 108 : 370)
                 
                 
                 HStack(){
@@ -71,6 +75,27 @@ struct ConsultationMainPageView: View {
                     }
                 }.padding(.bottom, 6)
                     .padding(.top, 19)
+                
+                if (viewModel.experts.savedExpert.isEmpty) {
+                        Text("No Expert available")
+                        .padding(.vertical, 20)
+                    
+                } else {
+                    ScrollView(.horizontal) {
+                        
+                        HStack {
+                            ForEach(
+                                viewModel.experts.savedExpert.prefix(3)
+    //                            x // Use this for testing
+                                , id: \.self) { expert in
+                                ShortExpertCard(ExpertData: expert, buttonText: Prompt.Button.chat)
+                                        .padding()
+                            }
+                        }
+                    }.frame(height: 170)
+                }
+                    
+                
                 
                 Spacer()
             }.navigationBarHidden(true)

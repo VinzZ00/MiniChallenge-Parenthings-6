@@ -11,7 +11,7 @@ import SwiftUI
 class parenthingsViewModel : ObservableObject {
     
     @Published var experts : ExpertRepository = ExpertRepository();
-    
+    @Published var top3Experts : [Expert] = Array()
     
 //    var name : String = ""
 //    var role : String = ""

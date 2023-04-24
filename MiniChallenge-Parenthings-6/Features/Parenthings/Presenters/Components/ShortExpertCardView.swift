@@ -22,10 +22,12 @@ struct ShortExpertCard: View {
             HStack{
                 if let expImage = ExpertData.imageBase64.toUIImage() {
                     Image(uiImage: expImage)
+                        .resizable()
                         .scaledToFit()
+                        .frame(width: 62, height: 100)
                         .mask {
                             RoundedRectangle(cornerRadius: 15)
-                                .frame(width: 62, height: 78)
+                        
                         }
                 }
                 
@@ -38,7 +40,10 @@ struct ShortExpertCard: View {
                             .padding(.bottom, 1)
                         
                         Text("\(ExpertData.name)")
-                            .font(.system(size: 13, weight: .semibold))
+                            .font(.system(size: 16, weight: .semibold))
+                            .lineLimit(2)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .minimumScaleFactor(0.75)
                     }
                     
                     HStack {

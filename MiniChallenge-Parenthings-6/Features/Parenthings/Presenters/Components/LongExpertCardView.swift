@@ -28,12 +28,13 @@ struct LongExpertCard : View {
                 if let decodedimage = ExpertData.imageBase64
                     .toUIImage() {
                     Image(uiImage : decodedimage)
+                        .resizable()
+                        .scaledToFit()
                         .frame(width: 67, height: 84)
                         .mask(
                             RoundedRectangle(cornerRadius: 15)
                               
                         )
-                        .scaledToFit()
                         .padding(.trailing, 24)
                     
                 }
@@ -45,6 +46,10 @@ struct LongExpertCard : View {
                             .padding(.trailing, 4)
                             .padding(.bottom, 1)
                         Text("\(ExpertData.name)")
+                            .font(.system(size: 16, weight: .semibold))
+                            .lineLimit(2)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .minimumScaleFactor(0.75)
                     }
                     
                     Text("\(ExpertData.role)")
