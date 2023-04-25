@@ -71,12 +71,12 @@ struct LongExpertCard : View {
                         .cornerRadius(5)
                         
                         Spacer()
-                        Text("Rp. \(String(format :  "%.2f", ExpertData.Price))")
+                        Text("Rp. \(String(format :  "%.2f", ExpertData.price))")
                             .font(.system(size: 13, weight: .semibold))
                     }
                     
                     HStack {
-                        StarRatingView(rating: ExpertData.StarCount)
+                        StarRatingView(rating: ExpertData.starCount)
                         Spacer()
                         Button {
                             
@@ -113,9 +113,9 @@ struct LongCardView_Previews: PreviewProvider {
             if let base64StringImage = UIImage(systemName: "person.fill")?.toBase64()
             {
 
-                LongExpertCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan", longExp: 5, Price: 20000, StarCount: 4.5, imageBase64: base64StringImage, isAvailable: true), buttonText: "Click")
+                LongExpertCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), buttonText: "Click")
 
-                LongExpertCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan", longExp: 5, Price: 20000, StarCount: 4.5, imageBase64: base64StringImage, isAvailable: false), buttonText: "Click")
+                LongExpertCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), buttonText: "Click")
             }
             Spacer();
         }.background(.white)

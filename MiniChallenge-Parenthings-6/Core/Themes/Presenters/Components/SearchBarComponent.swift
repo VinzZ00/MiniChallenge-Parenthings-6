@@ -18,6 +18,7 @@ struct SearchBar: View {
                 .padding(.leading, 10)
             
             TextField(defaultText, text: $text)
+                .foregroundColor(.black)
         }
         .frame(width: 357, height: 49)
         .background(Color(UIColor(red:0.949, green:0.949, blue:0.969, alpha:1.00)))

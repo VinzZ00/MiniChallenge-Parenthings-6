@@ -13,6 +13,9 @@
 		AC5F371429F59C9C00372208 /* ConsultationMainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F371329F59C9C00372208 /* ConsultationMainPageView.swift */; };
 		AC5F371629F5A43300372208 /* ExpertRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F371529F5A43300372208 /* ExpertRepository.swift */; };
 		AC5F371829F6F04900372208 /* Top3Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F371729F6F04900372208 /* Top3Array.swift */; };
+		AC5F371A29F822D400372208 /* ExpertDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F371929F822D300372208 /* ExpertDetail.swift */; };
+		AC5F371C29F84A3D00372208 /* ExpertDetailImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F371B29F84A3D00372208 /* ExpertDetailImage.swift */; };
+		AC5F371E29F8573000372208 /* ExpertDetailVerticalTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F371D29F8573000372208 /* ExpertDetailVerticalTrait.swift */; };
 		ACC826CB29F42281004423C8 /* parenthingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC826CA29F42281004423C8 /* parenthingsViewModel.swift */; };
 		ACC826CD29F42529004423C8 /* EncodedBase64Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC826CC29F42529004423C8 /* EncodedBase64Extension.swift */; };
 		ACC826CF29F455EC004423C8 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC826CE29F455EC004423C8 /* ImageExtension.swift */; };
@@ -39,6 +42,9 @@
 		AC5F371329F59C9C00372208 /* ConsultationMainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationMainPageView.swift; sourceTree = "<group>"; };
 		AC5F371529F5A43300372208 /* ExpertRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertRepository.swift; sourceTree = "<group>"; };
 		AC5F371729F6F04900372208 /* Top3Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top3Array.swift; sourceTree = SOURCE_ROOT; };
+		AC5F371929F822D300372208 /* ExpertDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertDetail.swift; sourceTree = "<group>"; };
+		AC5F371B29F84A3D00372208 /* ExpertDetailImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertDetailImage.swift; sourceTree = "<group>"; };
+		AC5F371D29F8573000372208 /* ExpertDetailVerticalTrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertDetailVerticalTrait.swift; sourceTree = "<group>"; };
 		ACC826CA29F42281004423C8 /* parenthingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parenthingsViewModel.swift; sourceTree = "<group>"; };
 		ACC826CC29F42529004423C8 /* EncodedBase64Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodedBase64Extension.swift; sourceTree = "<group>"; };
 		ACC826CE29F455EC004423C8 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
@@ -261,6 +267,7 @@
 			children = (
 				AC5F371129F59B4D00372208 /* HomeRootView.swift */,
 				AC5F371329F59C9C00372208 /* ConsultationMainPageView.swift */,
+				AC5F371929F822D300372208 /* ExpertDetail.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -272,6 +279,8 @@
 				ACFB984A29F2D6E20046BA06 /* LongExpertCardView.swift */,
 				ACFB985629F2DAF80046BA06 /* ShortExpertCardView.swift */,
 				AC5F370F29F56BD300372208 /* ConsultationPagePicker.swift */,
+				AC5F371B29F84A3D00372208 /* ExpertDetailImage.swift */,
+				AC5F371D29F8573000372208 /* ExpertDetailVerticalTrait.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -357,15 +366,18 @@
 				ACFB982729F187A20046BA06 /* ContentView.swift in Sources */,
 				ACFB984729F270250046BA06 /* AppBackground.swift in Sources */,
 				ACFB985929F2E7730046BA06 /* countStartToView.swift in Sources */,
+				AC5F371E29F8573000372208 /* ExpertDetailVerticalTrait.swift in Sources */,
 				ACFB983D29F1888D0046BA06 /* ColorPallete.swift in Sources */,
 				ACC826CB29F42281004423C8 /* parenthingsViewModel.swift in Sources */,
 				ACFB984029F188CC0046BA06 /* CustomNavigationBar.swift in Sources */,
+				AC5F371A29F822D400372208 /* ExpertDetail.swift in Sources */,
 				ACFB984929F272BB0046BA06 /* BlurBackground.swift in Sources */,
 				ACFB985229F2D9100046BA06 /* Expert.swift in Sources */,
 				ACFB984B29F2D6E20046BA06 /* LongExpertCardView.swift in Sources */,
 				AC5F371429F59C9C00372208 /* ConsultationMainPageView.swift in Sources */,
 				AC5F370E29F50E4800372208 /* Prompt.swift in Sources */,
 				ACC826CD29F42529004423C8 /* EncodedBase64Extension.swift in Sources */,
+				AC5F371C29F84A3D00372208 /* ExpertDetailImage.swift in Sources */,
 				AC5F371229F59B4D00372208 /* HomeRootView.swift in Sources */,
 				ACFB984429F1BDF00046BA06 /* SearchBarComponent.swift in Sources */,
 				ACFB982529F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift in Sources */,

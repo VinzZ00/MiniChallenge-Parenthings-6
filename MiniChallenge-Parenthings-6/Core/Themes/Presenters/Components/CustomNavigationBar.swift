@@ -11,15 +11,15 @@ import SwiftUI
 struct CustomNavigationBar : View {
     let title: String
     let enableBackButton : Bool;
-    let defaultTextSearchBar : String;
-    @Binding var searchText : String;
-    let enableSearchBar : Bool;
+    var defaultTextSearchBar : String? = ""
+    var searchText : Binding<String>?
+    var enableSearchBar : Bool = false;
     
     
     var body: some View {
         VStack{
             Spacer();
-            HStack () {
+            HStack (alignment: .top) {
                 if enableBackButton {
                     Button(action: {
                         
@@ -37,14 +37,17 @@ struct CustomNavigationBar : View {
                 
                 Spacer()
             }
-            .padding(.top, 60)
+            .padding(.top, (enableSearchBar) ? 76 : 0)
             .padding(.leading, 18)
             
             
+            
             if (enableSearchBar) {
-                SearchBar(defaultText: defaultTextSearchBar, text: $searchText)
+                SearchBar(defaultText: defaultTextSearchBar ?? "", text: searchText ?? .constant(""))
                     .padding(.top,25)
             }
+            
+            Spacer();
         }
         .ignoresSafeArea()
         .frame(height: 135)
@@ -55,10 +58,14 @@ struct CustomNavigationBar : View {
 struct Previews_customNavbar_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            CustomNavigationBar(title: "Consultation Detail", enableBackButton: true, defaultTextSearchBar: "Testing default Text", searchText: .constant("Testing"), enableSearchBar: true)
-                .border(.white)
+//            CustomNavigationBar(title: "Consultation Detail", enableBackButton: true, defaultTextSearchBar: "Testing default Text", searchText: .constant("Testing"), enableSearchBar: true)
+//                .border(.white)
 //            Text("Testing")
 //                .foregroundColor(.white)
+            
+            CustomNavigationBar(title: "Testing", enableBackButton: true,
+                                defaultTextSearchBar: "", searchText: .constant(""),
+                                enableSearchBar: false)
             
             Spacer();
         }

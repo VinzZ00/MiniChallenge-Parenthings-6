@@ -58,12 +58,12 @@ struct ShortExpertCard: View {
                     .background(AppColor.systemGray)
                     .cornerRadius(5)
                     
-                    StarRatingView(rating: ExpertData.StarCount)
+                    StarRatingView(rating: ExpertData.starCount)
                     
                 }
             }
             HStack{
-                Text("Rp. \(String(format :  "%.2f", ExpertData.Price))")
+                Text("Rp. \(String(format :  "%.2f", ExpertData.price))")
                     .font(.system(size: 13, weight: .semibold))
                 Spacer()
                 Button {
@@ -98,9 +98,9 @@ struct LongExpertCard_Previews: PreviewProvider {
             if let base64StringImage = UIImage(systemName: "person.fill")?.toBase64()
             {
 
-                ShortExpertCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan", longExp: 5, Price: 20000, StarCount: 4.5, imageBase64: base64StringImage, isAvailable: false), buttonText: "Click")
+                ShortExpertCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), buttonText: "Click")
 
-                ShortExpertCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan", longExp: 5, Price: 20000, StarCount: 4.5, imageBase64: base64StringImage, isAvailable: false), buttonText: "Click")
+                ShortExpertCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), buttonText: "Click")
             }
             Spacer();
         }.background(.white)

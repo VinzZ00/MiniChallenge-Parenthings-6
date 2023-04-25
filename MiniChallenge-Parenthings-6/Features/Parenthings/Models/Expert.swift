@@ -14,9 +14,12 @@ struct Expert : Identifiable, Hashable {
     let id = UUID();
     var name : String;
     var role : String;
+    var education : String
+    var educationDesc : String
     var longExp : Int;
-    var Price : Double;
-    var StarCount : Double;
+    var expDesc : String;
+    var price : Double;
+    var starCount : Double;
     var imageBase64 : encodedBase64;
     var isAvailable : Bool;
 }
