@@ -44,7 +44,7 @@ struct CustomNavigationBar : View {
             
             if (enableSearchBar) {
                 SearchBar(defaultText: defaultTextSearchBar ?? "", text: searchText ?? .constant(""))
-                    .padding(.top,25)
+                    .padding(.top,10)
             }
             
             Spacer();
@@ -65,11 +65,11 @@ struct Previews_customNavbar_Previews: PreviewProvider {
             
             CustomNavigationBar(title: "Testing", enableBackButton: true,
                                 defaultTextSearchBar: "", searchText: .constant(""),
-                                enableSearchBar: false)
+                                enableSearchBar: true)
             
             Spacer();
         }
-        .background(.black)
+        .background(AppBackground())
         
         
         ////        NavigationView{

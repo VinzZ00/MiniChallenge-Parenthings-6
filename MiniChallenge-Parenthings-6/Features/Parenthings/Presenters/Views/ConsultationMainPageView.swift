@@ -24,7 +24,7 @@ struct ConsultationMainPageView: View {
                     VStack {
                         if (!searchBarValue.isEmpty) {
                             VStack {
-                                Text("Testing")
+                                
                             }
                         }
                     }

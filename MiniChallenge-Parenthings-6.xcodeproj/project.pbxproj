@@ -16,6 +16,10 @@
 		AC5F371A29F822D400372208 /* ExpertDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F371929F822D300372208 /* ExpertDetail.swift */; };
 		AC5F371C29F84A3D00372208 /* ExpertDetailImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F371B29F84A3D00372208 /* ExpertDetailImage.swift */; };
 		AC5F371E29F8573000372208 /* ExpertDetailVerticalTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F371D29F8573000372208 /* ExpertDetailVerticalTrait.swift */; };
+		AC5F372029F912C200372208 /* TestingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F371F29F912C200372208 /* TestingScrollView.swift */; };
+		AC5F372329F9212B00372208 /* TestingOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F372229F9212B00372208 /* TestingOnboarding.swift */; };
+		AC5F372529F95FA400372208 /* ExpertGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F372429F95FA400372208 /* ExpertGridView.swift */; };
+		AC5F372729F966AD00372208 /* SearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F372629F966AD00372208 /* SearchPage.swift */; };
 		ACC826CB29F42281004423C8 /* parenthingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC826CA29F42281004423C8 /* parenthingsViewModel.swift */; };
 		ACC826CD29F42529004423C8 /* EncodedBase64Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC826CC29F42529004423C8 /* EncodedBase64Extension.swift */; };
 		ACC826CF29F455EC004423C8 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC826CE29F455EC004423C8 /* ImageExtension.swift */; };
@@ -45,6 +49,11 @@
 		AC5F371929F822D300372208 /* ExpertDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertDetail.swift; sourceTree = "<group>"; };
 		AC5F371B29F84A3D00372208 /* ExpertDetailImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertDetailImage.swift; sourceTree = "<group>"; };
 		AC5F371D29F8573000372208 /* ExpertDetailVerticalTrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertDetailVerticalTrait.swift; sourceTree = "<group>"; };
+		AC5F371F29F912C200372208 /* TestingScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingScrollView.swift; sourceTree = "<group>"; };
+		AC5F372129F9161B00372208 /* TestingSwift.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestingSwift.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		AC5F372229F9212B00372208 /* TestingOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingOnboarding.swift; sourceTree = "<group>"; };
+		AC5F372429F95FA400372208 /* ExpertGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertGridView.swift; sourceTree = "<group>"; };
+		AC5F372629F966AD00372208 /* SearchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPage.swift; sourceTree = "<group>"; };
 		ACC826CA29F42281004423C8 /* parenthingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parenthingsViewModel.swift; sourceTree = "<group>"; };
 		ACC826CC29F42529004423C8 /* EncodedBase64Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodedBase64Extension.swift; sourceTree = "<group>"; };
 		ACC826CE29F455EC004423C8 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
@@ -117,7 +126,10 @@
 			isa = PBXGroup;
 			children = (
 				ACFB984129F18A9B0046BA06 /* TestGround.swift */,
+				AC5F371F29F912C200372208 /* TestingScrollView.swift */,
+				AC5F372129F9161B00372208 /* TestingSwift.playground */,
 				ACFB982B29F187A30046BA06 /* Preview Assets.xcassets */,
+				AC5F372229F9212B00372208 /* TestingOnboarding.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -268,6 +280,7 @@
 				AC5F371129F59B4D00372208 /* HomeRootView.swift */,
 				AC5F371329F59C9C00372208 /* ConsultationMainPageView.swift */,
 				AC5F371929F822D300372208 /* ExpertDetail.swift */,
+				AC5F372629F966AD00372208 /* SearchPage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -281,6 +294,7 @@
 				AC5F370F29F56BD300372208 /* ConsultationPagePicker.swift */,
 				AC5F371B29F84A3D00372208 /* ExpertDetailImage.swift */,
 				AC5F371D29F8573000372208 /* ExpertDetailVerticalTrait.swift */,
+				AC5F372429F95FA400372208 /* ExpertGridView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -374,18 +388,22 @@
 				ACFB984929F272BB0046BA06 /* BlurBackground.swift in Sources */,
 				ACFB985229F2D9100046BA06 /* Expert.swift in Sources */,
 				ACFB984B29F2D6E20046BA06 /* LongExpertCardView.swift in Sources */,
+				AC5F372529F95FA400372208 /* ExpertGridView.swift in Sources */,
 				AC5F371429F59C9C00372208 /* ConsultationMainPageView.swift in Sources */,
 				AC5F370E29F50E4800372208 /* Prompt.swift in Sources */,
 				ACC826CD29F42529004423C8 /* EncodedBase64Extension.swift in Sources */,
 				AC5F371C29F84A3D00372208 /* ExpertDetailImage.swift in Sources */,
 				AC5F371229F59B4D00372208 /* HomeRootView.swift in Sources */,
 				ACFB984429F1BDF00046BA06 /* SearchBarComponent.swift in Sources */,
+				AC5F372729F966AD00372208 /* SearchPage.swift in Sources */,
 				ACFB982529F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift in Sources */,
 				ACFB985729F2DAF80046BA06 /* ShortExpertCardView.swift in Sources */,
 				AC5F371029F56BD300372208 /* ConsultationPagePicker.swift in Sources */,
 				AC5F371629F5A43300372208 /* ExpertRepository.swift in Sources */,
+				AC5F372329F9212B00372208 /* TestingOnboarding.swift in Sources */,
 				ACC826CF29F455EC004423C8 /* ImageExtension.swift in Sources */,
 				AC5F371829F6F04900372208 /* Top3Array.swift in Sources */,
+				AC5F372029F912C200372208 /* TestingScrollView.swift in Sources */,
 				ACFB984229F18A9B0046BA06 /* TestGround.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
