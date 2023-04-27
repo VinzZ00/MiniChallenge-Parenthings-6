@@ -22,39 +22,42 @@ struct ExpertGridView: View {
     ]
     
     var body: some View {
-        LazyVGrid(columns: columns) {
-            
-            ForEach(experts, id : \.self) { expert in
-                if let exp = expert {
-                    ShortExpertCard(ExpertData: exp, buttonText: Prompt.Button.chat)
-                        .clipShape(RoundedRectangle(cornerRadius: 15));
+        
+        VStack(alignment: .center) {
+            LazyVGrid(columns: columns) {
+                
+                ForEach(experts, id : \.self) { expert in
+                    if let exp = expert {
+                        ShortExpertCard(ExpertData: exp, buttonText: Prompt.Button.chat)
+                            .clipShape(RoundedRectangle(cornerRadius: 15));
+                    }
                 }
+                
+    //            if let exp1 = experts[0] {
+    //                ShortExpertCard(ExpertData: exp1, buttonText: Prompt.Button.chat)
+    //                    .clipShape(RoundedRectangle(cornerRadius: 15));
+    //            }
+    //
+    //            if let exp2 = experts[1]{
+    //                ShortExpertCard(ExpertData: exp2, buttonText: Prompt.Button.chat)
+    //                    .clipShape(RoundedRectangle(cornerRadius: 15))
+    //            }
+    //
+    //            if let exp3 = experts[2] {
+    //                ShortExpertCard(ExpertData: exp3, buttonText: Prompt.Button.chat)
+    //                    .clipShape(RoundedRectangle(cornerRadius: 15))
+    //            }
+    //
+    //
+    //            if let exp4 = experts[3] {
+    //                ShortExpertCard(ExpertData: exp4, buttonText: Prompt.Button.chat)
+    //                    .clipShape(RoundedRectangle(cornerRadius: 15))
+    //            }
+                
             }
-            
-//            if let exp1 = experts[0] {
-//                ShortExpertCard(ExpertData: exp1, buttonText: Prompt.Button.chat)
-//                    .clipShape(RoundedRectangle(cornerRadius: 15));
-//            }
-//            
-//            if let exp2 = experts[1]{
-//                ShortExpertCard(ExpertData: exp2, buttonText: Prompt.Button.chat)
-//                    .clipShape(RoundedRectangle(cornerRadius: 15))
-//            }
-//            
-//            if let exp3 = experts[2] {
-//                ShortExpertCard(ExpertData: exp3, buttonText: Prompt.Button.chat)
-//                    .clipShape(RoundedRectangle(cornerRadius: 15))
-//            }
-//            
-//            
-//            if let exp4 = experts[3] {
-//                ShortExpertCard(ExpertData: exp4, buttonText: Prompt.Button.chat)
-//                    .clipShape(RoundedRectangle(cornerRadius: 15))
-//            }
-            
+            .padding()
+            .frame(height: 300);
         }
-        .padding()
-        .frame(height: 300);
         
     }
 }

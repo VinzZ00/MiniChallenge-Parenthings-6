@@ -20,6 +20,8 @@
 		AC5F372329F9212B00372208 /* TestingOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F372229F9212B00372208 /* TestingOnboarding.swift */; };
 		AC5F372529F95FA400372208 /* ExpertGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F372429F95FA400372208 /* ExpertGridView.swift */; };
 		AC5F372729F966AD00372208 /* SearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F372629F966AD00372208 /* SearchPage.swift */; };
+		AC5F372B29FA858000372208 /* LoadingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F372A29FA858000372208 /* LoadingPage.swift */; };
+		AC5F372D29FA861900372208 /* HexToColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F372C29FA861900372208 /* HexToColor.swift */; };
 		ACC826CB29F42281004423C8 /* parenthingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC826CA29F42281004423C8 /* parenthingsViewModel.swift */; };
 		ACC826CD29F42529004423C8 /* EncodedBase64Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC826CC29F42529004423C8 /* EncodedBase64Extension.swift */; };
 		ACC826CF29F455EC004423C8 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC826CE29F455EC004423C8 /* ImageExtension.swift */; };
@@ -54,6 +56,8 @@
 		AC5F372229F9212B00372208 /* TestingOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingOnboarding.swift; sourceTree = "<group>"; };
 		AC5F372429F95FA400372208 /* ExpertGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertGridView.swift; sourceTree = "<group>"; };
 		AC5F372629F966AD00372208 /* SearchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPage.swift; sourceTree = "<group>"; };
+		AC5F372A29FA858000372208 /* LoadingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingPage.swift; sourceTree = "<group>"; };
+		AC5F372C29FA861900372208 /* HexToColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexToColor.swift; sourceTree = "<group>"; };
 		ACC826CA29F42281004423C8 /* parenthingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parenthingsViewModel.swift; sourceTree = "<group>"; };
 		ACC826CC29F42529004423C8 /* EncodedBase64Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodedBase64Extension.swift; sourceTree = "<group>"; };
 		ACC826CE29F455EC004423C8 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 			children = (
 				ACC826CC29F42529004423C8 /* EncodedBase64Extension.swift */,
 				ACC826CE29F455EC004423C8 /* ImageExtension.swift */,
+				AC5F372C29FA861900372208 /* HexToColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 				AC5F371329F59C9C00372208 /* ConsultationMainPageView.swift */,
 				AC5F371929F822D300372208 /* ExpertDetail.swift */,
 				AC5F372629F966AD00372208 /* SearchPage.swift */,
+				AC5F372A29FA858000372208 /* LoadingPage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -386,6 +392,7 @@
 				ACFB984029F188CC0046BA06 /* CustomNavigationBar.swift in Sources */,
 				AC5F371A29F822D400372208 /* ExpertDetail.swift in Sources */,
 				ACFB984929F272BB0046BA06 /* BlurBackground.swift in Sources */,
+				AC5F372D29FA861900372208 /* HexToColor.swift in Sources */,
 				ACFB985229F2D9100046BA06 /* Expert.swift in Sources */,
 				ACFB984B29F2D6E20046BA06 /* LongExpertCardView.swift in Sources */,
 				AC5F372529F95FA400372208 /* ExpertGridView.swift in Sources */,
@@ -405,6 +412,7 @@
 				AC5F371829F6F04900372208 /* Top3Array.swift in Sources */,
 				AC5F372029F912C200372208 /* TestingScrollView.swift in Sources */,
 				ACFB984229F18A9B0046BA06 /* TestGround.swift in Sources */,
+				AC5F372B29FA858000372208 /* LoadingPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
