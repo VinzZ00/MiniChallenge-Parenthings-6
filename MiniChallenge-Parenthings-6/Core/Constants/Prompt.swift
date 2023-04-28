@@ -104,6 +104,8 @@ extension Prompt {
 
 extension Prompt {
     struct Info {
+        static let phoneNum = "Phone number"
+        static let enterOTP = "Enter OTP"
         static let balance = "Balance: "
         static let amountPaid = "AMOUNT PAID"
     }
