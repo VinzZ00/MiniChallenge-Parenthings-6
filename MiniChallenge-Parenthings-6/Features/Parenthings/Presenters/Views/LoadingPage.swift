@@ -8,25 +8,33 @@
 import SwiftUI
 
 struct LoadingPage: View {
+    @State var isAnimated : Bool = false;
     var body: some View {
-        
-        ZStack{
-            VStack{
-                HStack{
-                    Spacer()
-                }
+        VStack{
+            HStack{
+                Spacer()
+                VStack(spacing: 0){
+                    Image("LogoParenthing")
+                    Text("Parenting Wisdom In Your Fingertips")
+                        .font(.system(size: 18, weight: .bold
+                                     ))
+                }.padding(.top, 126)
+                Spacer()
             }
-            
-            
-            
-            VStack{
-                
-            }
+            Spacer();
+            Image("LaunchScreen")
         }
+        .opacity(isAnimated ? 1 : 0)
+        .animation(.spring(response: 1, dampingFraction: 2, blendDuration: 0), value: isAnimated)
         .background(
             AppColor.gradientLandingPage
         )
-     
+        .ignoresSafeArea()
+        .onAppear {
+            self.isAnimated = true
+        }
+        
+        
     }
 }
 
