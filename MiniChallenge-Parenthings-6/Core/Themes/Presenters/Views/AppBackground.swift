@@ -18,7 +18,11 @@ struct AppBackground: View {
                     .cornerRadius(10)
             }.ignoresSafeArea()
         }.background(
-            LinearGradient(colors: [AppColor.gradientColorTopLeft, AppColor.gradientColorBottomRight], startPoint: .topLeading, endPoint: .bottomTrailing)
+            VStack{
+                LinearGradient(colors: [AppColor.gradientColorTopLeft, AppColor.gradientColorBottomRight], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    .frame(height: 191)
+                Spacer()
+            }.ignoresSafeArea()
         )
     }
 }
@@ -32,7 +36,6 @@ struct Background_Previews: PreviewProvider {
             CustomNavigationBar(title: "testing Background", enableBackButton: true, defaultTextSearchBar: "Find Something", searchText: .constant(""), enableSearchBar: true)
             Spacer();
         }
-        .ignoresSafeArea()
         .background(AppBackground())
             
     }
