@@ -22,6 +22,24 @@ extension Prompt {
 }
 
 extension Prompt {
+    struct paymentContent {
+        static let expertFee = "Expert Fee"
+        static let adminFee = "Admin Fee"
+        static let totalPayment = "Total Payment"
+        static let defaultDuration = "30 Minutes"
+        
+        static let electronicMoney = "Electronic Money"
+        static let CC_DC = "Credit/Debit Card"
+        
+        static let yourPayment  = "Your Payment"
+        
+        static let choosePayment = "Choose your payment method"
+        
+        private init() {}
+    }
+}
+
+extension Prompt {
     struct Button {
         static let chat = "Chat"
         static let viewDetail = "View Detail"
@@ -42,6 +60,7 @@ extension Prompt {
         static let articles = "Articles"
         static let profiles = "Profiles"
         static let consultationDetail = "Consultation Detail"
+        static let payment  = "Payment"
         
         private init() {}
     }

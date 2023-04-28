@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AC34EDB429FBA063002AED7C /* Consultation_ExpertPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC34EDB329FBA063002AED7C /* Consultation_ExpertPaymentView.swift */; };
+		AC34EDB629FBCFD5002AED7C /* ConsultationTransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC34EDB529FBCFD5002AED7C /* ConsultationTransactionModel.swift */; };
+		AC5AEB3929FC0CE800BF64F9 /* CustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AEB3829FC0CE800BF64F9 /* CustomPicker.swift */; };
 		AC5F370E29F50E4800372208 /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F370D29F50E4800372208 /* Prompt.swift */; };
 		AC5F371029F56BD300372208 /* ConsultationPagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F370F29F56BD300372208 /* ConsultationPagePicker.swift */; };
 		AC5F371229F59B4D00372208 /* HomeRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F371129F59B4D00372208 /* HomeRootView.swift */; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		AC34EDB329FBA063002AED7C /* Consultation_ExpertPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consultation_ExpertPaymentView.swift; sourceTree = "<group>"; };
+		AC34EDB529FBCFD5002AED7C /* ConsultationTransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationTransactionModel.swift; sourceTree = "<group>"; };
+		AC5AEB3829FC0CE800BF64F9 /* CustomPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPicker.swift; sourceTree = "<group>"; };
 		AC5F370D29F50E4800372208 /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
 		AC5F370F29F56BD300372208 /* ConsultationPagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationPagePicker.swift; sourceTree = "<group>"; };
 		AC5F371129F59B4D00372208 /* HomeRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRootView.swift; sourceTree = "<group>"; };
@@ -259,6 +263,7 @@
 			children = (
 				ACFB985129F2D9100046BA06 /* Expert.swift */,
 				AC5F371529F5A43300372208 /* ExpertRepository.swift */,
+				AC34EDB529FBCFD5002AED7C /* ConsultationTransactionModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 				AC5F371B29F84A3D00372208 /* ExpertDetailImage.swift */,
 				AC5F371D29F8573000372208 /* ExpertDetailVerticalTrait.swift */,
 				AC5F372429F95FA400372208 /* ExpertGridView.swift */,
+				AC5AEB3829FC0CE800BF64F9 /* CustomPicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -394,6 +400,7 @@
 				ACC826CB29F42281004423C8 /* parenthingsViewModel.swift in Sources */,
 				ACFB984029F188CC0046BA06 /* CustomNavigationBar.swift in Sources */,
 				AC34EDB429FBA063002AED7C /* Consultation_ExpertPaymentView.swift in Sources */,
+				AC5AEB3929FC0CE800BF64F9 /* CustomPicker.swift in Sources */,
 				AC5F371A29F822D400372208 /* Consultation_ExpertDetail.swift in Sources */,
 				ACFB984929F272BB0046BA06 /* BlurBackground.swift in Sources */,
 				AC5F372D29FA861900372208 /* HexToColor.swift in Sources */,
@@ -405,6 +412,7 @@
 				ACC826CD29F42529004423C8 /* EncodedBase64Extension.swift in Sources */,
 				AC5F371C29F84A3D00372208 /* ExpertDetailImage.swift in Sources */,
 				AC5F371229F59B4D00372208 /* HomeRootView.swift in Sources */,
+				AC34EDB629FBCFD5002AED7C /* ConsultationTransactionModel.swift in Sources */,
 				ACFB984429F1BDF00046BA06 /* SearchBarComponent.swift in Sources */,
 				AC5F372729F966AD00372208 /* Consultation_SearchPage.swift in Sources */,
 				ACFB982529F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift in Sources */,
