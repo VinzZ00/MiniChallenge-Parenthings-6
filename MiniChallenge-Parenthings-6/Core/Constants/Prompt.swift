@@ -39,10 +39,14 @@ extension Prompt {
 extension Prompt {
     struct Title {
         static let consultation = "Consultation"
+        static let consultationDetail = "Consultation Detail"
         static let articles = "Articles"
         static let profiles = "Profiles"
-        static let consultationDetail = "Consultation Detail"
-        
+        static let signIn = "Sign In"
+        static let signUp = "Sign Up"
+        static let payment = "Payment"
+        static let topUp = "Top Up"
+        static let topUpConfirmation = "Top Up Confirmation"
         private init() {}
     }
 }
