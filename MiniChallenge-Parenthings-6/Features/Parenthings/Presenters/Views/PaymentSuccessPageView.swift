@@ -1,5 +1,5 @@
 //
-//  PaymentSuccessPage.swift
+//  PaymentSuccessPageView.swift
 //  MiniChallenge-Parenthings-6
 //
 //  Created by Celine Margaretha on 28/04/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PaymentSuccessPage: View {
+struct PaymentSuccessPageView: View {
     var body: some View {
         ZStack() {
             Image("BackgroundPaymentSuccess")
@@ -42,9 +42,9 @@ struct PaymentSuccessPage: View {
     }
 }
 
-struct PaymentSuccessPage_Previews: PreviewProvider {
+struct PaymentSuccessPageView_Previews: PreviewProvider {
     static var previews: some View {
-        PaymentSuccessPage()
+        PaymentSuccessPageView()
     }
 }
 
