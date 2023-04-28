@@ -12,8 +12,6 @@ struct Prompt{
     private init() {}
 }
 
-
-
 extension Prompt {
     struct Picker {
         static let pickerList : [String] = ["Ongoing", "History"]
@@ -25,12 +23,24 @@ extension Prompt {
     struct Button {
         static let chat = "Chat"
         static let viewDetail = "View Detail"
-        static let logOut = "Log Out"
-        static let reChatExpert = "Rechat Expert"
-        static let consultNow = "Consult Now"
         static let seeAll = "See All"
-        static let topUp = "Top Up"
+        static let continueProcess = "Continue"
+        
+        static let consultNow = "Consult Now"
         static let startConsulting = "Start Consulting"
+        static let reChatExpert = "Rechat Expert"
+
+        static let logIn = "Log In"
+        static let logOut = "Log Out"
+        static let signMeUp = "I'm New, Sign Me Up"
+        
+        static let paymentMethod = "Payment Method"
+        static let help = "Help"
+        static let redeemCoupon = "Redeem Coupon"
+        
+        static let topUp = "Top Up"
+        static let typeTheAmount = "type the amount"
+        static let confirmAndTopUp = "Confirm & Top Up"
         
         private init() {}
     }
@@ -42,11 +52,14 @@ extension Prompt {
         static let consultationDetail = "Consultation Detail"
         static let articles = "Articles"
         static let profiles = "Profiles"
-        static let signIn = "Sign In"
+        
+        static let logIn = "Log In"
         static let signUp = "Sign Up"
+        
         static let payment = "Payment"
         static let topUp = "Top Up"
         static let topUpConfirmation = "Top Up Confirmation"
+        
         private init() {}
     }
 }
@@ -55,11 +68,34 @@ extension Prompt {
     struct subTitle {
         static let recomendedExpert = "Recomended Expert"
         static let discoverOther = "Discover Other"
+        
         static let trending = "Trending"
         static let latestArticles = "Latest Article"
         static let suggestedForYou  = "Suggested For You"
         
+        static let enterPhoneNum = "Enter your phone number"
+        static let otpSentToSms = "OTP sent securely to SMS"
+        
+        static let welcomeToApp = "Welcome to Parenthings"
+        static let thanksForUsing = "Thanks for using Parenthings"
+        
+        static let selectPaymentMethod = "Select a payment method"
+        static let paymentSuccess = "PaymentSuccessful"
+        
         private init() {}
+    }
+}
+extension Prompt {
+    struct caption {
+        static let appTagline = "Parenting Wisdom in Your Fingertips"
+        
+        static let welcomeToAppGreetings = "Lorem ipsum dolor sit amet, this is welcomeToAppGreetings variable, go to caption to change text"
+        static let thanksForUsingGratitude = "Hope you've solved the problem, See you next time!"
+        
+        static let enterPhoneNumGuide = "You can log in or make an account if you're new to Parenthings"
+        static let otpSentToSmsGuide = "Enter the OTP we've just sent to"
+
+        static let paymentSuccessCelebration = "Hooray! You have completed your payment"
     }
 }
 
