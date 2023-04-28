@@ -82,7 +82,7 @@ extension Prompt {
         static let chooseAnAmount = "Choose an amount"
         static let topUpAmount = "Top up amount"
         static let selectPaymentMethod = "Select a payment method"
-        static let paymentSuccess = "PaymentSuccessful"
+        static let paymentSuccess = "Payment Successful"
         
         private init() {}
     }

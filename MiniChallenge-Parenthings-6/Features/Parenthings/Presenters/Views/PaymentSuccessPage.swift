@@ -15,10 +15,26 @@ struct PaymentSuccessPage: View {
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
             
-            VStack(alignment: .leading) {
+            VStack(alignment: .center) {
                 Image(systemName: "checkmark.seal.fill")
                     .resizable()
                     .scaledToFit()
+                    .padding(50)
+                
+                VStack(alignment: .center) {
+                    Text(Prompt.subTitle.paymentSuccess)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                    
+                    Text(Prompt.Caption.paymentSuccessCelebration)
+                    
+                    Text(Prompt.Info.amountPaid)
+                        .padding(.top)
+                    Text("Rp 00.000")
+                        .font(.title)
+                        .fontWeight(.bold)
+                }
+               
                     
             }
             .foregroundColor(.white)
