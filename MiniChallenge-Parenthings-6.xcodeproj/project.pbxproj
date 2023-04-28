@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F3CF27D29FC2F86006E03AC /* PaymentSuccessPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3CF27C29FC2F86006E03AC /* PaymentSuccessPage.swift */; };
 		AC5F370E29F50E4800372208 /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F370D29F50E4800372208 /* Prompt.swift */; };
 		AC5F371029F56BD300372208 /* ConsultationPagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F370F29F56BD300372208 /* ConsultationPagePicker.swift */; };
 		AC5F371229F59B4D00372208 /* HomeRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F371129F59B4D00372208 /* HomeRootView.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F3CF27C29FC2F86006E03AC /* PaymentSuccessPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSuccessPage.swift; sourceTree = "<group>"; };
 		AC5F370D29F50E4800372208 /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
 		AC5F370F29F56BD300372208 /* ConsultationPagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationPagePicker.swift; sourceTree = "<group>"; };
 		AC5F371129F59B4D00372208 /* HomeRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRootView.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				AC5F371929F822D300372208 /* ExpertDetail.swift */,
 				AC5F372629F966AD00372208 /* SearchPage.swift */,
 				AC5F372A29FA858000372208 /* LoadingPage.swift */,
+				8F3CF27C29FC2F86006E03AC /* PaymentSuccessPage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				AC5F371A29F822D400372208 /* ExpertDetail.swift in Sources */,
 				ACFB984929F272BB0046BA06 /* BlurBackground.swift in Sources */,
 				AC5F372D29FA861900372208 /* HexToColor.swift in Sources */,
+				8F3CF27D29FC2F86006E03AC /* PaymentSuccessPage.swift in Sources */,
 				ACFB985229F2D9100046BA06 /* Expert.swift in Sources */,
 				ACFB984B29F2D6E20046BA06 /* LongExpertCardView.swift in Sources */,
 				AC5F372529F95FA400372208 /* ExpertGridView.swift in Sources */,

@@ -79,14 +79,17 @@ extension Prompt {
         static let welcomeToApp = "Welcome to Parenthings"
         static let thanksForUsing = "Thanks for using Parenthings"
         
+        static let chooseAnAmount = "Choose an amount"
+        static let topUpAmount = "Top up amount"
         static let selectPaymentMethod = "Select a payment method"
         static let paymentSuccess = "PaymentSuccessful"
         
         private init() {}
     }
 }
+
 extension Prompt {
-    struct caption {
+    struct Caption {
         static let appTagline = "Parenting Wisdom in Your Fingertips"
         
         static let welcomeToAppGreetings = "Lorem ipsum dolor sit amet, this is welcomeToAppGreetings variable, go to caption to change text"
@@ -97,6 +100,14 @@ extension Prompt {
 
         static let paymentSuccessCelebration = "Hooray! You have completed your payment"
     }
+}
+
+extension Prompt {
+    struct Info {
+        static let balance = "Balance: "
+        static let amountPaid = "AMOUNT PAID"
+    }
+    
 }
 
 extension Prompt {
