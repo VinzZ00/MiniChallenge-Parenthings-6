@@ -26,6 +26,9 @@
 		AC5F372729F966AD00372208 /* Consultation_SearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F372629F966AD00372208 /* Consultation_SearchPage.swift */; };
 		AC5F372B29FA858000372208 /* LoadingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F372A29FA858000372208 /* LoadingPage.swift */; };
 		AC5F372D29FA861900372208 /* HexToColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F372C29FA861900372208 /* HexToColor.swift */; };
+		AC9FF96129FD9007008766E8 /* OnGoingMainConsultationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FF96029FD9007008766E8 /* OnGoingMainConsultationPage.swift */; };
+		AC9FF96329FD9156008766E8 /* TransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FF96229FD9156008766E8 /* TransactionRepository.swift */; };
+		AC9FF96529FD9FB7008766E8 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FF96429FD9FB7008766E8 /* DateFormatter.swift */; };
 		ACC826CB29F42281004423C8 /* parenthingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC826CA29F42281004423C8 /* parenthingsViewModel.swift */; };
 		ACC826CD29F42529004423C8 /* EncodedBase64Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC826CC29F42529004423C8 /* EncodedBase64Extension.swift */; };
 		ACC826CF29F455EC004423C8 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC826CE29F455EC004423C8 /* ImageExtension.swift */; };
@@ -69,6 +72,9 @@
 		AC5F372629F966AD00372208 /* Consultation_SearchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consultation_SearchPage.swift; sourceTree = "<group>"; };
 		AC5F372A29FA858000372208 /* LoadingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingPage.swift; sourceTree = "<group>"; };
 		AC5F372C29FA861900372208 /* HexToColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexToColor.swift; sourceTree = "<group>"; };
+		AC9FF96029FD9007008766E8 /* OnGoingMainConsultationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnGoingMainConsultationPage.swift; sourceTree = "<group>"; };
+		AC9FF96229FD9156008766E8 /* TransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepository.swift; sourceTree = "<group>"; };
+		AC9FF96429FD9FB7008766E8 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		ACC826CA29F42281004423C8 /* parenthingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parenthingsViewModel.swift; sourceTree = "<group>"; };
 		ACC826CC29F42529004423C8 /* EncodedBase64Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodedBase64Extension.swift; sourceTree = "<group>"; };
 		ACC826CE29F455EC004423C8 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
@@ -109,6 +115,7 @@
 				ACC826CC29F42529004423C8 /* EncodedBase64Extension.swift */,
 				ACC826CE29F455EC004423C8 /* ImageExtension.swift */,
 				AC5F372C29FA861900372208 /* HexToColor.swift */,
+				AC9FF96429FD9FB7008766E8 /* DateFormatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -274,6 +281,7 @@
 				AC5F371529F5A43300372208 /* ExpertRepository.swift */,
 				AC34EDB529FBCFD5002AED7C /* ConsultationTransactionModel.swift */,
 				ACF7F5DE29FC449C0059F323 /* UserModel.swift */,
+				AC9FF96229FD9156008766E8 /* TransactionRepository.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -306,6 +314,7 @@
 				AC5F372A29FA858000372208 /* LoadingPage.swift */,
 				AC34EDB329FBA063002AED7C /* Consultation_ExpertPaymentView.swift */,
 				ACDE995D29FD51B200E32E5A /* SignInPopUP.swift */,
+				AC9FF96029FD9007008766E8 /* OnGoingMainConsultationPage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -418,14 +427,17 @@
 				AC5F371A29F822D400372208 /* Consultation_ExpertDetail.swift in Sources */,
 				ACFB984929F272BB0046BA06 /* BlurBackground.swift in Sources */,
 				AC5F372D29FA861900372208 /* HexToColor.swift in Sources */,
+				AC9FF96329FD9156008766E8 /* TransactionRepository.swift in Sources */,
 				ACFB985229F2D9100046BA06 /* Expert.swift in Sources */,
 				ACFB984B29F2D6E20046BA06 /* LongExpertCardView.swift in Sources */,
 				AC5F372529F95FA400372208 /* ExpertGridView.swift in Sources */,
 				AC5F371429F59C9C00372208 /* ConsultationMainPageView.swift in Sources */,
 				AC5F370E29F50E4800372208 /* Prompt.swift in Sources */,
 				ACC826CD29F42529004423C8 /* EncodedBase64Extension.swift in Sources */,
+				AC9FF96129FD9007008766E8 /* OnGoingMainConsultationPage.swift in Sources */,
 				ACDE995E29FD51B200E32E5A /* SignInPopUP.swift in Sources */,
 				AC5F371C29F84A3D00372208 /* ExpertDetailImage.swift in Sources */,
+				AC9FF96529FD9FB7008766E8 /* DateFormatter.swift in Sources */,
 				AC5F371229F59B4D00372208 /* HomeRootView.swift in Sources */,
 				AC34EDB629FBCFD5002AED7C /* ConsultationTransactionModel.swift in Sources */,
 				ACFB984429F1BDF00046BA06 /* SearchBarComponent.swift in Sources */,

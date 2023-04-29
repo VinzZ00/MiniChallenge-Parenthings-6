@@ -21,7 +21,7 @@ struct ExpertPaymentView: View {
     
     init(expert : Expert, _ user : User, vm : parenthingsViewModel) {
         self.expert = expert
-        self.transactionDetail = ConsultationTransaction(expert: expert)
+        self.transactionDetail = ConsultationTransaction(expert: expert, TransactionDate: Date())
         self.currentUser = user;
         self.vm = vm;
     }

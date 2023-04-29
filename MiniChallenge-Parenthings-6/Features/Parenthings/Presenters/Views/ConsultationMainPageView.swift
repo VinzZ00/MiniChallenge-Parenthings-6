@@ -43,74 +43,25 @@ struct ConsultationMainPageView: View {
                             .padding(EdgeInsets(top: 2, leading: 18, bottom: 18, trailing: 18))
                         
                         if (SegmentedPickerValue == "Ongoing"){
-                            VStack {
-                                HStack(){
-                                    Text("\(Prompt.subTitle.recomendedExpert)")
+                            OnGoingMainConsultationPage(viewModel: self.viewModel)
+                        } else {
+                            
+//                            ForEach(Array(viewModel.getUniqueTransactionDate()), id : \.self ) { date in
+                            VStack{
+                                HStack{
+                                    Text(Date().dateFormatWithSuffix())
                                         .font(.system(size: 22, weight: .bold))
-                                        .padding(.leading, 18)
-                                    Spacer()
-                                }.padding(.bottom, 6)
-                                Spacer()
-                                if viewModel.experts.savedExpert.isEmpty {
-                                    Text("No Expert available")
-                                        .padding()
-                                    
-                                } else {
-                                    ForEach(
-                                        // x  //Kalo mau test n mattin if
-                                        viewModel.experts.savedExpert
-                                        , id: \.self) { exp in
-                                            LongExpertCard(ExpertData: exp, buttonText: Prompt.Button.chat)
-                                                .padding(.bottom, 6)
-                                        }
+                                    Spacer();
                                 }
-                                Spacer()
-                            }.frame(
-                                height: (viewModel.top3Experts.isEmpty) ? 108 : 370)
-                            
-                            
-                            HStack(){
-                                Text("\(Prompt.subTitle.discoverOther)")
-                                    .font(.system(size: 22, weight: .bold))
-                                    .padding(.leading, 18)
-                                Spacer()
-                                Button {
-                                    
-                                } label: {
-                                    VStack {
-                                        Text(Prompt.Button.seeAll)
-                                            .font(.system(size: 12, weight: .medium))
-                                            .foregroundColor(AppColor.red)
-                                            .padding(EdgeInsets(top: 3, leading: 14, bottom: 3, trailing: 14))
-                                    }
-                                    .cornerRadius(5)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 5)
-                                            .stroke(AppColor.red, lineWidth: 1)
-                                    )
-                                    .padding(.trailing, 18)
-                                }
-                            }.padding(.bottom, 6)
-                                .padding(.top, 19)
-                            
-                            if (viewModel.experts.savedExpert.isEmpty) {
-                                Text("No Expert available")
-                                    .padding(.vertical, 20)
                                 
-                            } else {
-                                ScrollView(.horizontal) {
-                                    
-                                    HStack {
-                                        ForEach(
-                                            viewModel.experts.savedExpert.prefix(3)
-                                            //                            x // Use this for testing
-                                            , id: \.self) { expert in
-                                                ShortExpertCard(ExpertData: expert, buttonText: Prompt.Button.chat)
-                                                    .padding()
-                                            }
-                                    }
-                                }.frame(height: 170)
-                            }
+                                ForEach(Array(viewModel.transactions.savedTransaction.filter{
+                                    $0.TransactionDate == Date()
+                                }), id : \.self) {
+                                    trx in
+                                    LongExpertCard(ExpertData: trx.expert, buttonText: Prompt.Button.viewDetail)
+                                }
+                            }.padding(.leading, 16)
+//                            }
                         }
                         
                         
