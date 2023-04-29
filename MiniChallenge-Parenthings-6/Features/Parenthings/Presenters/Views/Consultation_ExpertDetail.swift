@@ -99,12 +99,15 @@ struct ExpertDetail: View {
                         
                     })
                     Spacer()
-                    NavigationLink("", destination: ExpertPaymentView(expert: self.selectedExpert, loggedUser, vm: self.vm).navigationBarHidden(true), isActive: $consultNow)
+                  
                 }
                 
                 
                 
             }
+            .navigationDestination(isPresented: $consultNow, destination: {
+                ExpertPaymentView(expert: self.selectedExpert, loggedUser, vm: self.vm).navigationBarHidden(true)
+            })
             .background(
                 AppBackground()
             )

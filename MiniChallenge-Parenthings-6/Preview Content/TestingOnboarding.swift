@@ -12,7 +12,7 @@ struct OnboardingPage: View {
     var body: some View {
         VStack {
             TabView(selection: $currentPage) {
-                ForEach(0..<onboardingData.count) { index in
+                ForEach(0..<onboardingData.count, id : \.self) { index in
                     let item = onboardingData[index]
                     OnboardingCardView(imageName: item.imageName, title: item.title, description: item.description)
                         .tag(index)

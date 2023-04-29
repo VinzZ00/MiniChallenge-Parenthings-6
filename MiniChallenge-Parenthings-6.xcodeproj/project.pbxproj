@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85F8D81629FD86B80012A6D1 /* AESHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F8D81529FD86B80012A6D1 /* AESHelper.swift */; };
 		AC34EDB429FBA063002AED7C /* Consultation_ExpertPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC34EDB329FBA063002AED7C /* Consultation_ExpertPaymentView.swift */; };
 		AC34EDB629FBCFD5002AED7C /* ConsultationTransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC34EDB529FBCFD5002AED7C /* ConsultationTransactionModel.swift */; };
 		AC5AEB3929FC0CE800BF64F9 /* CustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AEB3829FC0CE800BF64F9 /* CustomPicker.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		85F8D81529FD86B80012A6D1 /* AESHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AESHelper.swift; sourceTree = "<group>"; };
 		AC34EDB329FBA063002AED7C /* Consultation_ExpertPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consultation_ExpertPaymentView.swift; sourceTree = "<group>"; };
 		AC34EDB529FBCFD5002AED7C /* ConsultationTransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationTransactionModel.swift; sourceTree = "<group>"; };
 		AC5AEB3829FC0CE800BF64F9 /* CustomPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPicker.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 		ACFB983829F187F00046BA06 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				85F8D81529FD86B80012A6D1 /* AESHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				AC5F372729F966AD00372208 /* Consultation_SearchPage.swift in Sources */,
 				ACFB982529F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift in Sources */,
 				ACFB985729F2DAF80046BA06 /* ShortExpertCardView.swift in Sources */,
+				85F8D81629FD86B80012A6D1 /* AESHelper.swift in Sources */,
 				AC5F371029F56BD300372208 /* ConsultationPagePicker.swift in Sources */,
 				AC5F371629F5A43300372208 /* ExpertRepository.swift in Sources */,
 				AC5F372329F9212B00372208 /* TestingOnboarding.swift in Sources */,

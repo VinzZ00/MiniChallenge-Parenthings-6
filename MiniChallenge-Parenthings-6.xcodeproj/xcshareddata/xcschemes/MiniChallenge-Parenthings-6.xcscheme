@@ -50,6 +50,18 @@
             ReferencedContainer = "container:MiniChallenge-Parenthings-6.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "AES_NONCE"
+            value = "fv1nixTVoYpSvpdA"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "AES_KEY"
+            value = "Zr4u7x!A%D*G-JaNdRgUkXp2s5v8y/B? "
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
