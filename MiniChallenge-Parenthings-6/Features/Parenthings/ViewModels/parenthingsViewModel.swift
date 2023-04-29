@@ -13,6 +13,12 @@ class parenthingsViewModel : ObservableObject {
     @Published var experts : ExpertRepository = ExpertRepository();
     @Published var top3Experts : [Expert] = Array()
     
+    @Published var parentingSelected : Bool = true;
+    @Published var goPaySelected : Bool = false;
+    @Published var ovoSelected : Bool = false;
+    @Published var danaSelected : Bool = false;
+    
+    
 //    var name : String = ""
 //    var role : String = ""
 //    var longExp : Int = 0

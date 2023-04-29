@@ -7,11 +7,10 @@
 
 import SwiftUI
 
-struct CustomPicker: View {
+struct CustomPicker : View {
     
     var CustomPickerList : [String];
     @Binding var selectedValue : Int;
-    
     
     var body: some View {
         
@@ -34,7 +33,6 @@ struct CustomPicker: View {
                     }
                     .animation(.easeInOut(duration: 0.3), value: selectedValue)
                 }
-                Spacer();
             }
             
             VStack {
@@ -57,12 +55,10 @@ struct CustomPicker: View {
                 }
             }
         }
-        .frame(width: .infinity/2, height: 100)
         .background(.white)
         .clipShape(
             TopRoundedRectangle(cornerRadius: 20)
         )
-        .shadow(color: .black.opacity(0.50), radius: 2, y: 2).blur(radius: 0.29)
         
         
         
@@ -109,28 +105,6 @@ struct TopTrailingRoundedRectangle: Shape {
         return path
     }
 }
-
-
-
-//struct TopTrailingRoundedRectangle: Shape {
-//    let cornerRadius: CGFloat
-//
-//    func path(in rect: CGRect) -> Path {
-//        var path = Path()
-//        path.move(to: CGPoint(x: rect.minX, y: rect.minY))
-//        path.addLine(to: CGPoint(x: rect.maxX-cornerRadius, y: rect.minY))
-//        path.addArc(center: CGPoint(x: rect.maxX - cornerRadius, y: rect.minY + cornerRadius),
-//                    radius: cornerRadius,
-//                    startAngle: Angle(degrees: ),
-//                    endAngle: Angle(degrees: ),
-//                    clockwise: true)
-//        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY-cornerRadius))
-//        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
-//        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
-//        path.closeSubpath()
-//        return path
-//    }
-//}
 
 
 struct TopLeadingRoundedRectangle: Shape {

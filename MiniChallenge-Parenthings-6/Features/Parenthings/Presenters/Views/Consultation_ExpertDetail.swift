@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ExpertDetail: View {
     
+    @ObservedObject var vm : parenthingsViewModel;
     var selectedExpert : Expert;
+    var loggedUser : User;
     @State var consultNow : Bool = false;
     
     var body: some View {
@@ -97,7 +99,7 @@ struct ExpertDetail: View {
                         
                     })
                     Spacer()
-                    NavigationLink("", destination: ExpertPaymentView(expert: self.selectedExpert), isActive: $consultNow)
+                    NavigationLink("", destination: ExpertPaymentView(expert: self.selectedExpert, loggedUser, vm: self.vm).navigationBarHidden(true), isActive: $consultNow)
                 }
                 
                 
@@ -114,6 +116,6 @@ struct ExpertDetail: View {
 
 struct ExpertDetail_Previews: PreviewProvider {
     static var previews: some View {
-            ExpertDetail(selectedExpert: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false))
+        ExpertDetail(vm : parenthingsViewModel(), selectedExpert: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), loggedUser: User(name: "Elvin", balanceParenting: 2000))
     }
 }

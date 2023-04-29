@@ -14,7 +14,7 @@ struct ExpertGridView: View {
 //    var c1r2 : Expert?
 //    var c2r2 : Expert?
     
-    var experts : [Expert?]
+    var experts : [Expert]
     
     var columns = [
         GridItem(.flexible()),

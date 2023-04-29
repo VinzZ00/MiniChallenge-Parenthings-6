@@ -28,6 +28,9 @@
 		ACC826CB29F42281004423C8 /* parenthingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC826CA29F42281004423C8 /* parenthingsViewModel.swift */; };
 		ACC826CD29F42529004423C8 /* EncodedBase64Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC826CC29F42529004423C8 /* EncodedBase64Extension.swift */; };
 		ACC826CF29F455EC004423C8 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC826CE29F455EC004423C8 /* ImageExtension.swift */; };
+		ACDE995E29FD51B200E32E5A /* SignInPopUP.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDE995D29FD51B200E32E5A /* SignInPopUP.swift */; };
+		ACF7F5DF29FC449C0059F323 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7F5DE29FC449C0059F323 /* UserModel.swift */; };
+		ACF7F5E129FC4BCD0059F323 /* LazyVGridPaymentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7F5E029FC4BCD0059F323 /* LazyVGridPaymentType.swift */; };
 		ACFB982529F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFB982429F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift */; };
 		ACFB982729F187A20046BA06 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFB982629F187A20046BA06 /* ContentView.swift */; };
 		ACFB982929F187A30046BA06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACFB982829F187A30046BA06 /* Assets.xcassets */; };
@@ -67,6 +70,9 @@
 		ACC826CA29F42281004423C8 /* parenthingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parenthingsViewModel.swift; sourceTree = "<group>"; };
 		ACC826CC29F42529004423C8 /* EncodedBase64Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodedBase64Extension.swift; sourceTree = "<group>"; };
 		ACC826CE29F455EC004423C8 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
+		ACDE995D29FD51B200E32E5A /* SignInPopUP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPopUP.swift; sourceTree = "<group>"; };
+		ACF7F5DE29FC449C0059F323 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		ACF7F5E029FC4BCD0059F323 /* LazyVGridPaymentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyVGridPaymentType.swift; sourceTree = "<group>"; };
 		ACFB982129F187A20046BA06 /* MiniChallenge-Parenthings-6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MiniChallenge-Parenthings-6.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACFB982429F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniChallenge_Parenthings_6App.swift; sourceTree = "<group>"; };
 		ACFB982629F187A20046BA06 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -264,6 +270,7 @@
 				ACFB985129F2D9100046BA06 /* Expert.swift */,
 				AC5F371529F5A43300372208 /* ExpertRepository.swift */,
 				AC34EDB529FBCFD5002AED7C /* ConsultationTransactionModel.swift */,
+				ACF7F5DE29FC449C0059F323 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -295,6 +302,7 @@
 				AC5F372629F966AD00372208 /* Consultation_SearchPage.swift */,
 				AC5F372A29FA858000372208 /* LoadingPage.swift */,
 				AC34EDB329FBA063002AED7C /* Consultation_ExpertPaymentView.swift */,
+				ACDE995D29FD51B200E32E5A /* SignInPopUP.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -310,6 +318,7 @@
 				AC5F371D29F8573000372208 /* ExpertDetailVerticalTrait.swift */,
 				AC5F372429F95FA400372208 /* ExpertGridView.swift */,
 				AC5AEB3829FC0CE800BF64F9 /* CustomPicker.swift */,
+				ACF7F5E029FC4BCD0059F323 /* LazyVGridPaymentType.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -392,6 +401,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACF7F5E129FC4BCD0059F323 /* LazyVGridPaymentType.swift in Sources */,
 				ACFB982729F187A20046BA06 /* ContentView.swift in Sources */,
 				ACFB984729F270250046BA06 /* AppBackground.swift in Sources */,
 				ACFB985929F2E7730046BA06 /* countStartToView.swift in Sources */,
@@ -400,6 +410,7 @@
 				ACC826CB29F42281004423C8 /* parenthingsViewModel.swift in Sources */,
 				ACFB984029F188CC0046BA06 /* CustomNavigationBar.swift in Sources */,
 				AC34EDB429FBA063002AED7C /* Consultation_ExpertPaymentView.swift in Sources */,
+				ACF7F5DF29FC449C0059F323 /* UserModel.swift in Sources */,
 				AC5AEB3929FC0CE800BF64F9 /* CustomPicker.swift in Sources */,
 				AC5F371A29F822D400372208 /* Consultation_ExpertDetail.swift in Sources */,
 				ACFB984929F272BB0046BA06 /* BlurBackground.swift in Sources */,
@@ -410,6 +421,7 @@
 				AC5F371429F59C9C00372208 /* ConsultationMainPageView.swift in Sources */,
 				AC5F370E29F50E4800372208 /* Prompt.swift in Sources */,
 				ACC826CD29F42529004423C8 /* EncodedBase64Extension.swift in Sources */,
+				ACDE995E29FD51B200E32E5A /* SignInPopUP.swift in Sources */,
 				AC5F371C29F84A3D00372208 /* ExpertDetailImage.swift in Sources */,
 				AC5F371229F59B4D00372208 /* HomeRootView.swift in Sources */,
 				AC34EDB629FBCFD5002AED7C /* ConsultationTransactionModel.swift in Sources */,

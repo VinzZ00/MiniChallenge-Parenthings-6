@@ -49,7 +49,8 @@ extension Prompt {
         static let seeAll = "See All"
         static let topUp = "Top Up"
         static let startConsulting = "Start Consulting"
-        
+        static let logIn = "Log In"
+        static let signUp = "I'm new, sign me up"
         private init() {}
     }
 }
@@ -57,20 +58,11 @@ extension Prompt {
 extension Prompt {
     struct Title {
         static let consultation = "Consultation"
-        static let consultationDetail = "Consultation Detail"
         static let articles = "Articles"
         static let profiles = "Profiles"
-<<<<<<< HEAD
-        static let signIn = "Sign In"
-        static let signUp = "Sign Up"
-        static let payment = "Payment"
-        static let topUp = "Top Up"
-        static let topUpConfirmation = "Top Up Confirmation"
-=======
         static let consultationDetail = "Consultation Detail"
         static let payment  = "Payment"
         
->>>>>>> Elvin
         private init() {}
     }
 }
