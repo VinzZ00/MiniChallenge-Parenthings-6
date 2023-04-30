@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PaymentSuccessPageView: View {
     var body: some View {
-        ZStack() {
+        ZStack {
             Image("BackgroundPaymentSuccess")
                 .resizable()
                 .scaledToFill()
@@ -19,24 +19,27 @@ struct PaymentSuccessPageView: View {
                 Image(systemName: "checkmark.seal.fill")
                     .resizable()
                     .scaledToFit()
-                    .padding(50)
+                    .padding([.top, .horizontal], 50)
+                    .padding(.bottom, 10)
                 
                 VStack(alignment: .center) {
                     Text(Prompt.subTitle.paymentSuccess)
-                        .font(.largeTitle)
+                        .font(.title)
                         .fontWeight(.bold)
                     
                     Text(Prompt.Caption.paymentSuccessCelebration)
                     
                     Text(Prompt.Info.amountPaid)
-                        .padding(.top)
+                        .padding(.top, 40)
                     Text("Rp 00.000")
-                        .font(.title)
+                        .font(.largeTitle)
                         .fontWeight(.bold)
+                        .padding(.bottom, 40)
                 }
-               
+                .padding(10)
                     
             }
+            .padding(.bottom)
             .foregroundColor(.white)
         }
     }
