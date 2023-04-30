@@ -21,7 +21,7 @@ struct ExpertPaymentView: View {
     
     init(expert : Expert, _ user : User, vm : parenthingsViewModel) {
         self.expert = expert
-        self.transactionDetail = ConsultationTransaction(expert: expert)
+        self.transactionDetail = ConsultationTransaction(expert: expert, TransactionDate: Date())
         self.currentUser = user;
         self.vm = vm;
     }
@@ -58,44 +58,8 @@ struct ExpertPaymentView: View {
             
             
             
-            VStack(alignment: .leading, spacing: 6) {
-                HStack{
-                    Text(Prompt.paymentContent.expertFee)
-                        .font(.system(size: 15, weight: .regular))
-                        .foregroundColor(AppColor.paymentGrayTextColor)
-                    +
-                    Text(" \(Prompt.paymentContent.defaultDuration)")
-                        .font(.system(size : 15, weight: .bold))
-                        .foregroundColor(Color.black)
-                    
-                    Spacer()
-                    
-                    Text("Rp. \(String(format: "%.2f", expert.price))")
-                }
-                .padding(.horizontal, 16)
-                
-                HStack {
-                    Text(Prompt.paymentContent.adminFee)
-                        .font(.system(size: 15, weight: .regular))
-                        .foregroundColor(AppColor.paymentGrayTextColor)
-                    
-                    Spacer()
-                    
-                    Text("Rp. \(String(format: "%.2f", transactionDetail.adminFee))")
-                }.padding(.horizontal, 16)
-            }
-            
-            HStack(spacing: 0) {
-                Text(Prompt.paymentContent.totalPayment)
-                    .font(.system(size: 15, weight: .bold))
-                
-                Spacer()
-                
-                Text("Rp. \(String(format: "%.2f", transactionDetail.totalPrice))")
-                    .font(.system(size: 15, weight: .bold))
-            }
-            .padding(.horizontal, 16)
-            .padding(.top, 12)
+            TransactionDetailViewComponent(transactionDetail: transactionDetail
+            )
             
             
             

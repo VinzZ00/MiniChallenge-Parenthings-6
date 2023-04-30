@@ -62,9 +62,9 @@
             filePath = "MiniChallenge-Parenthings-6/Features/Parenthings/Presenters/Components/CustomPicker.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "TopLeadingRoundedRectangle"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "TopTrailingRoundedRectangle"
             landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>

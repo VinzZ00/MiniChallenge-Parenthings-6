@@ -26,7 +26,7 @@ extension Prompt {
         static let expertFee = "Expert Fee"
         static let adminFee = "Admin Fee"
         static let totalPayment = "Total Payment"
-        static let defaultDuration = "30 Minutes"
+        static let defaultDuration = "40 Minutes"
         
         static let electronicMoney = "Electronic Money"
         static let CC_DC = "Credit/Debit Card"
@@ -55,6 +55,7 @@ extension Prompt {
     }
 }
 
+
 extension Prompt {
     struct Title {
         static let consultation = "Consultation"
@@ -69,6 +70,7 @@ extension Prompt {
 
 extension Prompt {
     struct subTitle {
+        static let onGoingConsultation = "Ongoging Consultation"
         static let recomendedExpert = "Recomended Expert"
         static let discoverOther = "Discover Other"
         static let trending = "Trending"

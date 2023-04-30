@@ -119,7 +119,7 @@ struct MovingGradient: View {
         )
         .animation(
             Animation.linear(duration: 1)
-                .repeatForever(autoreverses: true)
+                .repeatForever(autoreverses: true), value: true
         )
         .onAppear() {
             self.isAnimating = true
@@ -147,7 +147,7 @@ struct MovingGradient2: View {
         .offset(offset)
         .animation(
             Animation.linear(duration: 2.0)
-                .repeatForever(autoreverses: false)
+                .repeatForever(autoreverses: false), value: true
         )
         .onAppear() {
             self.offset = CGSize(width: 300, height: 0)

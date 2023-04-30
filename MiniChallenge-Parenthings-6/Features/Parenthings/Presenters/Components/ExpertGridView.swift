@@ -27,10 +27,11 @@ struct ExpertGridView: View {
             LazyVGrid(columns: columns) {
                 
                 ForEach(experts, id : \.self) { expert in
-                    if let exp = expert {
-                        ShortExpertCard(ExpertData: exp, buttonText: Prompt.Button.chat)
-                            .clipShape(RoundedRectangle(cornerRadius: 15));
-                    }
+
+                    ShortExpertCard(ExpertData: expert, buttonText: Prompt.Button.chat)
+                            .clipShape(RoundedRectangle(cornerRadius: 15))
+                    
+                    
                 }
                 
     //            if let exp1 = experts[0] {

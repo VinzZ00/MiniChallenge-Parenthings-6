@@ -13,10 +13,23 @@ class parenthingsViewModel : ObservableObject {
     @Published var experts : ExpertRepository = ExpertRepository();
     @Published var top3Experts : [Expert] = Array()
     
+    @Published var transactions : TransactionRepository = TransactionRepository();
+    
     @Published var parentingSelected : Bool = true;
     @Published var goPaySelected : Bool = false;
     @Published var ovoSelected : Bool = false;
     @Published var danaSelected : Bool = false;
+    
+    func getUniqueTransactionDate() -> Set<Date>{
+        
+        var DatesUnUnique : [Date] = [];
+        
+        for trx in transactions.savedTransaction {
+            DatesUnUnique.append(trx.TransactionDate)
+        }
+        
+        return Set(DatesUnUnique);
+    }
     
     
 //    var name : String = ""
