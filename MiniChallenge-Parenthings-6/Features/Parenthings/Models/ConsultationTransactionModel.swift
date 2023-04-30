@@ -16,9 +16,19 @@ struct ConsultationTransaction : Identifiable, Hashable {
         return expert.price / 100 * 10
     }
     
-    var timeStart : DateComponents {
-        return TransactionDate.getTimeOnly()
+    var isOngoing : Bool {
+        let finishWhen : Date = TransactionDate.addingTimeInterval(40*60)
+        
+        if finishWhen < Date() {
+            return false
+        } else {
+            return true
+        }
     }
+    
+//    var timeStart : DateComponents {
+//        return TransactionDate.getTimeOnly()
+//    }
     
     var totalPrice : Double  {
         return adminFee + expert.price

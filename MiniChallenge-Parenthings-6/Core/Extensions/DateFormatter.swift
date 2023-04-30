@@ -21,6 +21,7 @@ extension Date {
     func getTimeOnly() -> DateComponents {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.hour, .minute, .second], from: self)
+        return components
     }
 }
 

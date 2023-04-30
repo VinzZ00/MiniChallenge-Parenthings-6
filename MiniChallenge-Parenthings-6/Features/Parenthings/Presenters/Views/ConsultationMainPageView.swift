@@ -58,7 +58,13 @@ struct ConsultationMainPageView: View {
                                     $0.TransactionDate == Date()
                                 }), id : \.self) {
                                     trx in
-                                    LongExpertCard(ExpertData: trx.expert, buttonText: Prompt.Button.viewDetail)
+                                    
+                                    VStack (spacing: 0){
+                                        Text("\(trx.TransactionDate.getTimeOnly()) - \(trx.TransactionDate.addingTimeInterval(40*60).getTimeOnly())")
+                                            .font(.system(size: 13, weight: .semibold))
+                                            .foregroundColor(AppColor.systemGrayDarker)
+                                        LongExpertCard(ExpertData: trx.expert, buttonText: Prompt.Button.viewDetail)
+                                    }
                                 }
                             }.padding(.leading, 16)
 //                            }
