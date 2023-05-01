@@ -12,7 +12,7 @@ struct ExpertPaymentView: View {
     @ObservedObject var vm : parenthingsViewModel;
     var currentUser : User;
     var expert : Expert;
-    var transactionDetail : ConsultationTransaction;
+    @State var transactionDetail : ConsultationTransaction;
     @State var selectedValue = 0;
     
     
@@ -21,7 +21,7 @@ struct ExpertPaymentView: View {
     
     init(expert : Expert, _ user : User, vm : parenthingsViewModel) {
         self.expert = expert
-        self.transactionDetail = ConsultationTransaction(expert: expert, TransactionDate: Date())
+        self._transactionDetail = State(initialValue : ConsultationTransaction(expert: expert, TransactionDate: Date(), payWith: .Parenthing))
         self.currentUser = user;
         self.vm = vm;
     }
@@ -80,6 +80,9 @@ struct ExpertPaymentView: View {
                         LazyVGridPaymentType(typePayment: .Parenthing, transactionDetail: self.transactionDetail, currentUser: self.currentUser, paymentLogo: Image("LogoParenthing"), description: "\((transactionDetail.totalPrice > currentUser.balanceParenting) ? "Not Enough Balance : Rp. " : "Parenting Balance : Rp. ") \(String(format: "%.2f", currentUser.balanceParenting))", iscomingSoon: false)
                         
                         Button {
+                            
+                            transactionDetail.payWith = .Parenthing;
+                            
                             vm.parentingSelected = true;
                             vm.goPaySelected = false;
                             vm.ovoSelected = false
