@@ -51,12 +51,13 @@ struct TransactionDetailViewComponent: View {
             }
             .padding(.horizontal, 16)
             .padding(.top, 12)
+            
         }
     }
 }
 
 struct TransactionDetailViewComponent_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionDetailViewComponent(transactionDetail: ConsultationTransaction(expert: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false) , TransactionDate: Date()))
+        TransactionDetailViewComponent(transactionDetail: ConsultationTransaction(expert: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false) , TransactionDate: Date(), payWith: .Parenthing))
     }
 }

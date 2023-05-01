@@ -9,21 +9,26 @@ import SwiftUI
 
 struct ExpertPaymentView: View {
     
-    @ObservedObject var vm : parenthingsViewModel;
+    @EnvironmentObject var viewModel : parenthingsViewModel;
     var currentUser : User;
     var expert : Expert;
-    var transactionDetail : ConsultationTransaction;
+    @State var transactionDetail : ConsultationTransaction;
     @State var selectedValue = 0;
+    @Environment(\.presentationMode) var presentationMode
     
     
     
-    
-    
-    init(expert : Expert, _ user : User, vm : parenthingsViewModel) {
+//    init(expert : Expert, _ user : User, vm : parenthingsViewModel, backButton : () -> Void) {
+//        self.expert = expert
+//        self._transactionDetail = State(initialValue : ConsultationTransaction(expert: expert, TransactionDate: Date(), payWith: .Parenthing))
+//        self.currentUser = user;
+//        self.vm = vm;
+////        self.backButton = backButton
+//    }
+    init(currentUser: User, expert: Expert) {
+        self.currentUser = currentUser
         self.expert = expert
-        self.transactionDetail = ConsultationTransaction(expert: expert, TransactionDate: Date())
-        self.currentUser = user;
-        self.vm = vm;
+        self._transactionDetail = State(initialValue : ConsultationTransaction(expert: expert, TransactionDate: Date(), payWith: .Parenthing))
     }
     
     var body: some View {
@@ -80,10 +85,13 @@ struct ExpertPaymentView: View {
                         LazyVGridPaymentType(typePayment: .Parenthing, transactionDetail: self.transactionDetail, currentUser: self.currentUser, paymentLogo: Image("LogoParenthing"), description: "\((transactionDetail.totalPrice > currentUser.balanceParenting) ? "Not Enough Balance : Rp. " : "Parenting Balance : Rp. ") \(String(format: "%.2f", currentUser.balanceParenting))", iscomingSoon: false)
                         
                         Button {
-                            vm.parentingSelected = true;
-                            vm.goPaySelected = false;
-                            vm.ovoSelected = false
-                            vm.danaSelected = false
+                            
+                            transactionDetail.payWith = .Parenthing;
+                            
+                            viewModel.parentingSelected = true;
+                            viewModel.goPaySelected = false;
+                            viewModel.ovoSelected = false
+                            viewModel.danaSelected = false
                         } label: {
                             ZStack {
                                 Circle()
@@ -97,7 +105,7 @@ struct ExpertPaymentView: View {
                                     .foregroundColor(Color.white.opacity(0.10))
                                     
                                 Circle()
-                                    .fill((vm.parentingSelected) ? Color.green.opacity(0.5) : Color.white.opacity(0.10))
+                                    .fill((viewModel.parentingSelected) ? Color.green.opacity(0.5) : Color.white.opacity(0.10))
                                     .frame(height: 10)
                                     .foregroundColor(Color.white.opacity(0.10))
                                 
@@ -107,10 +115,10 @@ struct ExpertPaymentView: View {
                         LazyVGridPaymentType(typePayment: .GoPay, transactionDetail: self.transactionDetail, currentUser: self.currentUser, paymentLogo: Image("Gopay"), description: "GoPay", iscomingSoon: true)
 
                         Button {
-                            vm.parentingSelected = false;
-                            vm.goPaySelected = true;
-                            vm.ovoSelected = false
-                            vm.danaSelected = false
+                            viewModel.parentingSelected = false;
+                            viewModel.goPaySelected = true;
+                            viewModel.ovoSelected = false
+                            viewModel.danaSelected = false
                         } label: {
                             ZStack {
                                 Circle()
@@ -124,7 +132,7 @@ struct ExpertPaymentView: View {
                                     .foregroundColor(Color.white.opacity(0.10))
                                     
                                 Circle()
-                                    .fill((vm.goPaySelected) ? Color.green.opacity(0.5) : Color.white.opacity(0.10))
+                                    .fill((viewModel.goPaySelected) ? Color.green.opacity(0.5) : Color.white.opacity(0.10))
                                     .frame(height: 10)
                                     .foregroundColor(Color.white.opacity(0.10))
                                 
@@ -135,10 +143,10 @@ struct ExpertPaymentView: View {
                         
                         
                         Button {
-                            vm.parentingSelected = false;
-                            vm.goPaySelected = false;
-                            vm.ovoSelected = true
-                            vm.danaSelected = false
+                            viewModel.parentingSelected = false;
+                            viewModel.goPaySelected = false;
+                            viewModel.ovoSelected = true
+                            viewModel.danaSelected = false
                         } label: {
                             ZStack {
                                 Circle()
@@ -152,7 +160,7 @@ struct ExpertPaymentView: View {
                                     .foregroundColor(Color.white.opacity(0.10))
                                     
                                 Circle()
-                                    .fill((vm.ovoSelected) ? Color.green.opacity(0.5) : Color.white.opacity(0.10))
+                                    .fill((viewModel.ovoSelected) ? Color.green.opacity(0.5) : Color.white.opacity(0.10))
                                     .frame(height: 10)
                                     .foregroundColor(Color.white.opacity(0.10))
                                 
@@ -162,10 +170,10 @@ struct ExpertPaymentView: View {
                         LazyVGridPaymentType(typePayment: .GoPay, transactionDetail: self.transactionDetail, currentUser: self.currentUser, paymentLogo: Image("Dana"), description: "Dana", iscomingSoon: true)
                         
                         Button {
-                            vm.parentingSelected = false;
-                            vm.goPaySelected = false;
-                            vm.ovoSelected = false
-                            vm.danaSelected = true
+                            viewModel.parentingSelected = false;
+                            viewModel.goPaySelected = false;
+                            viewModel.ovoSelected = false
+                            viewModel.danaSelected = true
                         } label: {
                             ZStack {
                                 Circle()
@@ -179,7 +187,7 @@ struct ExpertPaymentView: View {
                                     .foregroundColor(Color.white.opacity(0.10))
                                     
                                 Circle()
-                                    .fill((vm.danaSelected) ? Color.green.opacity(0.5) : Color.white.opacity(0.10))
+                                    .fill((viewModel.danaSelected) ? Color.green.opacity(0.5) : Color.white.opacity(0.10))
                                     .frame(height: 10)
                                     .foregroundColor(Color.white.opacity(0.10))
                                 
@@ -245,7 +253,6 @@ struct ExpertPaymentView: View {
             .overlay(
                 Rectangle()
                     .stroke(Color.black.opacity(1), lineWidth: 0.2)
-                    .ignoresSafeArea()
                     .shadow(color: .black, radius: 9, y : 5)
                     
             )
@@ -254,7 +261,9 @@ struct ExpertPaymentView: View {
         }.background(
             VStack
             {
-                CustomNavigationBar(title: Prompt.Title.payment, enableBackButton: true)
+                CustomNavigationBar(title: Prompt.Title.payment, enableBackButton: true, backButton: {
+                    presentationMode.wrappedValue.dismiss()
+                })
                     .padding(.bottom, 81)
                 Spacer()
             }.background(
@@ -274,8 +283,10 @@ struct ExpertPaymentView: View {
     }
 }
 
-struct Consultation_ExpertPaymentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ExpertPaymentView(expert: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "gobok")?.toBase64()) ?? "", isAvailable: false), User(name: "Elvin", balanceParenting: 30000), vm: parenthingsViewModel());
-    }
-}
+//struct Consultation_ExpertPaymentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ExpertPaymentView(vm: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "gobok")?.toBase64()) ?? "", isAvailable: false), currentUser: User(name: "Elvin", balanceParenting: 30000), expert: parenthingsViewModel(), backButton: {
+//            print("Clicked")
+//        });
+//    }
+//}
