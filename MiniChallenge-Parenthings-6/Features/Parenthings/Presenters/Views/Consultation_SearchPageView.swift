@@ -15,8 +15,6 @@ struct SearchPage: View {
     @State var currentPage : Int;
     
     
-    
-    
     init(selectedExpert : [Expert]) {
         self.searchedExperts = selectedExpert;
         self.totalPage = searchedExperts.count/4 + ((searchedExperts.count%4 != 0) ? 1 : 0);

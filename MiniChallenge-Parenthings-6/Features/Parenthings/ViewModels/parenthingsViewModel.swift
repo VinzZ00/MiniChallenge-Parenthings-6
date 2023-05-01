@@ -10,15 +10,22 @@ import SwiftUI
 
 class parenthingsViewModel : ObservableObject {
     
-    @Published var experts : ExpertRepository = ExpertRepository();
-    @Published var top3Experts : [Expert] = Array()
     
+    
+    @Published var user : User? = User(name: "Elvin", balanceParenting: 20000);
+    @Published var experts : ExpertRepository = ExpertRepository();
+    
+    @Published var navBarShown : Bool = true;
     @Published var transactions : TransactionRepository = TransactionRepository();
     
     @Published var parentingSelected : Bool = true;
     @Published var goPaySelected : Bool = false;
     @Published var ovoSelected : Bool = false;
     @Published var danaSelected : Bool = false;
+    
+    @Published var buttonClicked : Bool = false;
+    
+    @Published var selectedExpert : Expert?
     
     func getUniqueTransactionDate() -> Set<Date>{
         

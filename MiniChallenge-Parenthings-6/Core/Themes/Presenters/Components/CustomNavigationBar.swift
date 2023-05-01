@@ -14,7 +14,7 @@ struct CustomNavigationBar : View {
     var defaultTextSearchBar : String? = ""
     var searchText : Binding<String>?
     var enableSearchBar : Bool = false;
-    
+    var backButton : () -> Void;
     
     var body: some View {
         VStack{
@@ -22,7 +22,8 @@ struct CustomNavigationBar : View {
             HStack (alignment: .top) {
                 if enableBackButton {
                     Button(action: {
-                        
+                        print("Masuk ke sini")
+                        backButton();
                     }) {
                         Image(systemName: "chevron.left")
                             .foregroundColor(.white)
@@ -65,7 +66,9 @@ struct Previews_customNavbar_Previews: PreviewProvider {
             
             CustomNavigationBar(title: "Testing", enableBackButton: true,
                                 defaultTextSearchBar: "", searchText: .constant(""),
-                                enableSearchBar: true)
+                                enableSearchBar: true, backButton: {
+                print("isclicked")
+            })
             
             Spacer();
         }

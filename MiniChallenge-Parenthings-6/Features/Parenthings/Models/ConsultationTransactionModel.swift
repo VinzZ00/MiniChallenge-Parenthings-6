@@ -15,6 +15,7 @@ struct ConsultationTransaction : Identifiable, Hashable {
     var adminFee : Double {
         return expert.price / 100 * 10
     }
+    var payWith : TypePayment;
     
     var isOngoing : Bool {
         let finishWhen : Date = TransactionDate.addingTimeInterval(40*60)

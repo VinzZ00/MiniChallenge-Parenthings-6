@@ -7,12 +7,7 @@
 
 import SwiftUI
 
-enum TypePayment {
-    case Parenthing;
-    case GoPay;
-    case Ovo;
-    case Dana;
-}
+
 
 struct LazyVGridPaymentType: View {
     
@@ -62,7 +57,7 @@ struct LazyVGridPaymentType: View {
 struct LazyVGridPaymentType_Previews: PreviewProvider {
     static var previews: some View {
         LazyVGrid(columns: [GridItem(.fixed(59.77) ),GridItem(.fixed(240)),GridItem(.flexible()),GridItem(.flexible())]){
-            LazyVGridPaymentType(typePayment: .Parenthing, transactionDetail: ConsultationTransaction(expert: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), TransactionDate: Date()), currentUser: User(name: "Elvin", balanceParenting: 2000), paymentLogo: Image("LogoParenthing"), description: "testing", iscomingSoon: true);
+            LazyVGridPaymentType(typePayment: .Parenthing, transactionDetail: ConsultationTransaction(expert: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), TransactionDate: Date(), payWith: .Parenthing), currentUser: User(name: "Elvin", balanceParenting: 2000), paymentLogo: Image("LogoParenthing"), description: "testing", iscomingSoon: true);
             }
         .padding(.horizontal, 16)
     }
