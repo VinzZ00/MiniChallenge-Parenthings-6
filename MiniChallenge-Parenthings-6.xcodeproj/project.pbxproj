@@ -26,6 +26,7 @@
 		AC5F372729F966AD00372208 /* Consultation_SearchPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F372629F966AD00372208 /* Consultation_SearchPageView.swift */; };
 		AC5F372B29FA858000372208 /* LoadingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F372A29FA858000372208 /* LoadingPageView.swift */; };
 		AC5F372D29FA861900372208 /* HexToColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F372C29FA861900372208 /* HexToColor.swift */; };
+		AC97A51729FFB25D00B66A67 /* PaymentTypeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC97A51629FFB25D00B66A67 /* PaymentTypeHelper.swift */; };
 		AC9FF96129FD9007008766E8 /* OnGoingMainConsultationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FF96029FD9007008766E8 /* OnGoingMainConsultationView.swift */; };
 		AC9FF96329FD9156008766E8 /* TransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FF96229FD9156008766E8 /* TransactionRepository.swift */; };
 		AC9FF96529FD9FB7008766E8 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FF96429FD9FB7008766E8 /* DateFormatter.swift */; };
@@ -51,7 +52,7 @@
 		ACFB984B29F2D6E20046BA06 /* LongExpertCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFB984A29F2D6E20046BA06 /* LongExpertCardView.swift */; };
 		ACFB985229F2D9100046BA06 /* Expert.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFB985129F2D9100046BA06 /* Expert.swift */; };
 		ACFB985729F2DAF80046BA06 /* ShortExpertCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFB985629F2DAF80046BA06 /* ShortExpertCardView.swift */; };
-		ACFB985929F2E7730046BA06 /* countStartToView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFB985829F2E7730046BA06 /* countStartToView.swift */; };
+		ACFB985929F2E7730046BA06 /* CountStartViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFB985829F2E7730046BA06 /* CountStartViewComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		AC5F372629F966AD00372208 /* Consultation_SearchPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consultation_SearchPageView.swift; sourceTree = "<group>"; };
 		AC5F372A29FA858000372208 /* LoadingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingPageView.swift; sourceTree = "<group>"; };
 		AC5F372C29FA861900372208 /* HexToColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexToColor.swift; sourceTree = "<group>"; };
+		AC97A51629FFB25D00B66A67 /* PaymentTypeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTypeHelper.swift; sourceTree = "<group>"; };
 		AC9FF96029FD9007008766E8 /* OnGoingMainConsultationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnGoingMainConsultationView.swift; sourceTree = "<group>"; };
 		AC9FF96229FD9156008766E8 /* TransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepository.swift; sourceTree = "<group>"; };
 		AC9FF96429FD9FB7008766E8 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
@@ -101,7 +103,7 @@
 		ACFB984A29F2D6E20046BA06 /* LongExpertCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongExpertCardView.swift; sourceTree = "<group>"; };
 		ACFB985129F2D9100046BA06 /* Expert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expert.swift; sourceTree = "<group>"; };
 		ACFB985629F2DAF80046BA06 /* ShortExpertCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortExpertCardView.swift; sourceTree = "<group>"; };
-		ACFB985829F2E7730046BA06 /* countStartToView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = countStartToView.swift; sourceTree = "<group>"; };
+		ACFB985829F2E7730046BA06 /* CountStartViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountStartViewComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				85F8D81529FD86B80012A6D1 /* AESHelper.swift */,
+				AC97A51629FFB25D00B66A67 /* PaymentTypeHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -330,7 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				AC5F371729F6F04900372208 /* RoundedShape.swift */,
-				ACFB985829F2E7730046BA06 /* countStartToView.swift */,
+				ACFB985829F2E7730046BA06 /* CountStartViewComponent.swift */,
 				ACFB984A29F2D6E20046BA06 /* LongExpertCardView.swift */,
 				ACFB985629F2DAF80046BA06 /* ShortExpertCardView.swift */,
 				AC5F370F29F56BD300372208 /* ConsultationPagePicker.swift */,
@@ -425,7 +428,7 @@
 				ACF7F5E129FC4BCD0059F323 /* LazyVGridPaymentType.swift in Sources */,
 				ACFB982729F187A20046BA06 /* ContentView.swift in Sources */,
 				ACFB984729F270250046BA06 /* AppBackground.swift in Sources */,
-				ACFB985929F2E7730046BA06 /* countStartToView.swift in Sources */,
+				ACFB985929F2E7730046BA06 /* CountStartViewComponent.swift in Sources */,
 				AC5F371E29F8573000372208 /* ExpertDetailVerticalTrait.swift in Sources */,
 				ACFB983D29F1888D0046BA06 /* ColorPallete.swift in Sources */,
 				ACC826CB29F42281004423C8 /* parenthingsViewModel.swift in Sources */,
@@ -433,6 +436,7 @@
 				ACFB984029F188CC0046BA06 /* CustomNavigationBar.swift in Sources */,
 				AC9FF96C29FEA295008766E8 /* StarRatingComponent.swift in Sources */,
 				AC34EDB429FBA063002AED7C /* Consultation_ExpertPaymentView.swift in Sources */,
+				AC97A51729FFB25D00B66A67 /* PaymentTypeHelper.swift in Sources */,
 				ACF7F5DF29FC449C0059F323 /* UserModel.swift in Sources */,
 				AC5AEB3929FC0CE800BF64F9 /* CustomPicker.swift in Sources */,
 				AC5F371A29F822D400372208 /* Consultation_ExpertDetailView.swift in Sources */,

@@ -7,12 +7,7 @@
 
 import SwiftUI
 
-enum TypePayment {
-    case Parenthing;
-    case GoPay;
-    case Ovo;
-    case Dana;
-}
+
 
 struct LazyVGridPaymentType: View {
     
