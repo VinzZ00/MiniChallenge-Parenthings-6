@@ -9,8 +9,12 @@ import SwiftUI
 
 struct OnGoingMainConsultationPage: View {
     
-    @ObservedObject var viewModel : parenthingsViewModel;
+    @EnvironmentObject var viewModel : parenthingsViewModel;
     
+         //    untuk debug yaa
+    var top3Experts : [Expert] {
+        return Array(viewModel.experts.savedExpert.sorted{$0.starCount > $1.starCount}[0...2])
+    }
     
     var body: some View {
         ScrollView(.vertical) {
@@ -43,19 +47,17 @@ struct OnGoingMainConsultationPage: View {
                 if viewModel.experts.savedExpert.isEmpty {
                     Text("No Expert available")
                         .padding()
-                    
                 } else {
                     ForEach(
-                        // x  //Kalo mau test n mattin if
-                        viewModel.experts.savedExpert
+//                        x[0...2]  //Kalo mau test n mattin if
+                        top3Experts
                         , id: \.self) { exp in
                             LongExpertCard(ExpertData: exp, buttonText: Prompt.Button.chat)
-                                .padding(.bottom, 6)
                         }
                 }
                 Spacer()
-            }.frame(
-                height: (viewModel.top3Experts.isEmpty) ? 108 : 370)
+            }
+            .frame(height:500)
             
             
             HStack(){
@@ -106,6 +108,6 @@ struct OnGoingMainConsultationPage: View {
 
 struct OnGoingMainConsultationPage_Previews: PreviewProvider {
     static var previews: some View {
-        OnGoingMainConsultationPage(viewModel: parenthingsViewModel())
+        OnGoingMainConsultationPage()
     }
 }

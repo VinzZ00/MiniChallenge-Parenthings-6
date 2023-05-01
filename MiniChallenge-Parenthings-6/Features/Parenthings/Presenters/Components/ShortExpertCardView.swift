@@ -11,6 +11,7 @@ struct ShortExpertCard: View {
     
     var ExpertData : Expert;
     
+    @EnvironmentObject var viewModel : parenthingsViewModel;
     
     // Card Component
     var buttonText : String;
@@ -67,7 +68,8 @@ struct ShortExpertCard: View {
                     .font(.system(size: 13, weight: .semibold))
                 Spacer()
                 Button {
-                    
+                    viewModel.buttonClicked = true
+                    viewModel.selectedExpert = ExpertData
                 } label: {
                     VStack {
                         Text(buttonText)
@@ -91,7 +93,7 @@ struct ShortExpertCard: View {
         
 }
 
-struct LongExpertCard_Previews: PreviewProvider {
+struct shortExpertCardPreview: PreviewProvider {
     static var previews: some View {
         VStack{
             Spacer();

@@ -12,10 +12,10 @@ struct ConsultationDetailView: View {
     @State var ratingScore : Int = 0;
     var expert : Expert
     var transactionDetail : ConsultationTransaction
-    
+    var backButton : () -> Void;
     var body: some View {
         VStack{
-            CustomNavigationBar(title: Prompt.Title.consultationDetail, enableBackButton: true)
+            CustomNavigationBar(title: Prompt.Title.consultationDetail, enableBackButton: true, backButton: self.backButton)
             VStack{
                 ZStack(alignment: .leading){
                  TopRoundedRectangle(cornerRadius: 10)
@@ -38,9 +38,7 @@ struct ConsultationDetailView: View {
                 
                 StarRatingButton(rating: $ratingScore)
                     .animation(.linear(duration: 0.3), value: ratingScore)
-                    .padding(.top, 20)
-                    .padding(.bottom, 30)
-                
+                    .padding(.bottom, 20)
                 horizontalLine();
                 
                 HStack(spacing: 0){
@@ -58,6 +56,7 @@ struct ConsultationDetailView: View {
                             .padding(EdgeInsets(top: 14, leading: 28, bottom: 10, trailing: 24))
                     }
                     VStack(alignment: .leading, spacing: 0){
+                        Spacer();
                         Text("\(expert.name)")
                             .font(.system(size: 16, weight: .semibold))
                             .lineLimit(2)
@@ -82,23 +81,72 @@ struct ConsultationDetailView: View {
                         .background(AppColor.systemGray)
                         .cornerRadius(5)
                         
+                        StarRatingView(rating: expert.starCount)
+                            .padding(.top, 4)
                         
                         Spacer()
                     }.frame(height: 85)
                     Spacer(); //Spacer HStack
                 }
                 
+                horizontalLine();
+                
                 TransactionDetailViewComponent(transactionDetail: transactionDetail
                 )
+                .padding(.bottom, 35)
+                
+                HStack{
+                    
+                    switch transactionDetail.payWith{
+                    case .Parenthing :
+                        Text("Pay with Parenthing")
+                            .font(.system(size : 15))
+                            .foregroundColor(AppColor.paymentGrayTextColor)
+                    case .GoPay:
+                        Text("Pay with Gopay")
+                    case .Ovo:
+                        Text("Pay with Ovo")
+                    case .Dana:
+                        Text("Pay with Dana")
+                    }
+                    
+                    Spacer()
+                    Text("Rp.\(transactionDetail.totalPrice)")
+                        .font(.system(size : 15))
+                        .foregroundColor(AppColor.paymentGrayTextColor)
+                }.padding(.horizontal, 16)
                 
                 
                             
                 
                 Spacer();
+                
+                
             }.offset(y : -46)
+            VStack{
+                Button{
+                    
+                } label: {
+                    VStack{
+                        Text(Prompt.Button.reChatExpert)
+                            .foregroundColor(.white)
+                            .font(.system(size: 22, weight: .bold
+                                         ))
+                    }
+                    .frame(width: 357, height: 53)
+                    .background(AppColor.paymentBlueTextColor)
+                    .cornerRadius(15)
+                    .padding(.vertical, 15)
+                    .padding(.horizontal, 18)
+                    
+                }
+            }
+            .frame(width: 393, height: 83)
+            .background(.black.opacity(0.05))
             
-            Spacer()
+                
         }.background(AppBackground())
+        
     }
 }
 
@@ -112,8 +160,8 @@ private struct horizontalLine : View {
     }
 }
 
-struct ConsultationDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        ConsultationDetailView(expert: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false),transactionDetail: ConsultationTransaction(expert: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), TransactionDate: Date(), payWith: .Parenthing))
-    }
-}
+//struct ConsultationDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ConsultationDetailView(expert: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false),transactionDetail: ConsultationTransaction(expert: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), TransactionDate: Date(), payWith: .Parenthing))
+//    }
+//}

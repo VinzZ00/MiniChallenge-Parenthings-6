@@ -149,7 +149,6 @@
 			children = (
 				ACFB983229F187AF0046BA06 /* Application */,
 				ACFB983329F187C20046BA06 /* Core */,
-				ACFB982629F187A20046BA06 /* ContentView.swift */,
 				ACFB984C29F2D89B0046BA06 /* Features */,
 				ACFB982A29F187A30046BA06 /* Preview Content */,
 			);
@@ -172,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				ACFB982429F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift */,
+				ACFB982629F187A20046BA06 /* ContentView.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
