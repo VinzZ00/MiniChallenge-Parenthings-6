@@ -297,7 +297,6 @@
 				8F3CF28D2A011FFB006E03AC /* Text */,
 				ACFB983F29F188CC0046BA06 /* CustomNavigationBar.swift */,
 				ACFB984329F1BDF00046BA06 /* SearchBarComponent.swift */,
-				8F3CF2922A012090006E03AC /* LogoComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -378,6 +377,7 @@
 		ACFB985429F2DACE0046BA06 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8F3CF2922A012090006E03AC /* LogoComponent.swift */,
 				AC5F371729F6F04900372208 /* RoundedShape.swift */,
 				ACFB985829F2E7730046BA06 /* CountStartViewComponent.swift */,
 				ACFB984A29F2D6E20046BA06 /* LongExpertCardView.swift */,
