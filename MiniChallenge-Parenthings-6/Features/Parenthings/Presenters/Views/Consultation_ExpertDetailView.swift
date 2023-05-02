@@ -21,7 +21,9 @@ struct ExpertDetail: View {
             VStack(alignment: .leading){
                 CustomNavigationBar(title: Prompt.Title.consultation,
                                     enableBackButton: true, backButton: {
-                    presentationMode.wrappedValue.dismiss()
+                    withAnimation {
+                        viewModel.expertDetailIsPresented = false
+                    }
                 })
                 
                 

@@ -76,25 +76,11 @@ struct ConsultationMainPageView: View {
                         Spacer()
                     }
                     .blur(radius: searchBarValue.isEmpty ? 0 : 20)
-                    
-                    
                 }
                 .background(AppBackground()
                 .blur(radius: searchBarValue.isEmpty ? 0 : 10))
                 .navigationBarHidden(true)
-                .fullScreenCover(isPresented: $viewModel.expertDetailIsPresented) {
-                    if viewModel.selectedExpert != nil {
-                        if viewModel.user != nil {
-//                            NavigationLink("", destination: ExpertDetail().navigationBarHidden(true), isActive: $viewModel.buttonClicked)
-                            ExpertDetail()
-                                
-                                
-//                                .navigationBarHidden(true)
-                                                        } else {
-//                            //tunjukan signin page
-                        }
-                    }
-                }
+                .ignoresSafeArea(.keyboard, edges: .bottom)
         }
     }
 }

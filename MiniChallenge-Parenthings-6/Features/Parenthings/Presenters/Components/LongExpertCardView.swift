@@ -79,8 +79,10 @@ struct LongExpertCard : View {
                             StarRatingView(rating: ExpertData.starCount)
                             Spacer()
                             Button {
-                                viewModel.expertDetailIsPresented = true
-                                viewModel.selectedExpert = ExpertData
+                                withAnimation {
+                                    viewModel.expertDetailIsPresented = true
+                                    viewModel.selectedExpert = ExpertData
+                                }
                             } label: {
                                 VStack {
                                     Text(buttonText)

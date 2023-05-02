@@ -16,58 +16,63 @@ struct HomeRootView: View {
     var body: some View {
 //        NavigationView{
 //            VStack{
-                TabView(selection : $selectedView){
-                        VStack {
-                            ConsultationMainPageView(backButton: {
-                                presentationMode.wrappedValue.dismiss()
-                            })
-                    }.tabItem {
-                        VStack{
-                            Image(systemName:  "rectangle.3.group.bubble.left.fill")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 85, height: 21)
-                                .padding(.bottom, 7)
-                                .foregroundColor(AppColor.paymentBlueTextColor)
-                            
-                            Text(Prompt.Title.consultation)
-                                .foregroundColor(AppColor.paymentBlueTextColor)
-                        }
-                    }.tag("Consultation")
-                    
+        if viewModel.expertDetailIsPresented {
+            ExpertDetail()
+                .transition(.move(edge: .trailing))
+                .environmentObject(viewModel)
+            
+        } else {
+            
+            TabView(selection : $selectedView){
+                VStack {
+                    ConsultationMainPageView(backButton: {
+                        presentationMode.wrappedValue.dismiss()
+                    })
+                }.tabItem {
                     VStack{
-                        Text("Articles View")
-                    }.tabItem{
-                        Image(systemName: "heart.text.square")
+                        Image(systemName:  "rectangle.3.group.bubble.left.fill")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 85, height: 21)
                             .padding(.bottom, 7)
                             .foregroundColor(AppColor.paymentBlueTextColor)
                         
-                        Text(Prompt.Title.articles)
-                            .foregroundColor(AppColor.paymentBlueTextColor)
-                    }.tag("Articles")
-                    
-                    VStack{
-                        Text("Profile View")
-                        
-                        //Masukan Profile view
-                    }.tabItem{
-                        Image(systemName: "person.text.rectangle")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 85, height: 21)
-                            .padding(.bottom, 7)
-                            .foregroundColor(AppColor.paymentBlueTextColor)
-                        
-                        Text(Prompt.Title.profiles)
+                        Text(Prompt.Title.consultation)
                             .foregroundColor(AppColor.paymentBlueTextColor)
                     }
-                }.environmentObject(viewModel)
+                }.tag("Consultation")
                 
-//            }.environmentObject(viewModel)
-//        }
+                VStack{
+                    Text("Articles View")
+                }.tabItem{
+                    Image(systemName: "heart.text.square")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 85, height: 21)
+                        .padding(.bottom, 7)
+                        .foregroundColor(AppColor.paymentBlueTextColor)
+                    
+                    Text(Prompt.Title.articles)
+                        .foregroundColor(AppColor.paymentBlueTextColor)
+                }.tag("Articles")
+                
+                VStack{
+                    Text("Profile View")
+                    
+                    //Masukan Profile view
+                }.tabItem{
+                    Image(systemName: "person.text.rectangle")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 85, height: 21)
+                        .padding(.bottom, 7)
+                        .foregroundColor(AppColor.paymentBlueTextColor)
+                    
+                    Text(Prompt.Title.profiles)
+                        .foregroundColor(AppColor.paymentBlueTextColor)
+                }
+            }.environmentObject(viewModel)
+        }
     }
 }
 
