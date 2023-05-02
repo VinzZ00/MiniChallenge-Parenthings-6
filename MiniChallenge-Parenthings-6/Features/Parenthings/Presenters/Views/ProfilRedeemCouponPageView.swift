@@ -19,8 +19,7 @@ struct ProfilRedeemCouponPageView: View {
         
 //        NavigationView {
             VStack (spacing: 0){
-                CustomNavigationBar(title: Prompt.Title.profiles, enableBackButton: false, enableSearchBar: false, backButton: {} )
-                
+                CustomNavigationBar(title: Prompt.Title.profiles, enableBackButton: false, enableSearchBar: false, backButton: {})
                 
                 //Contents
                 VStack {
