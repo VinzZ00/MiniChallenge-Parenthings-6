@@ -68,7 +68,7 @@ struct ShortExpertCard: View {
                     .font(.system(size: 13, weight: .semibold))
                 Spacer()
                 Button {
-                    viewModel.buttonClicked = true
+                    viewModel.expertDetailIsPresented = true
                     viewModel.selectedExpert = ExpertData
                 } label: {
                     VStack {

@@ -90,3 +90,20 @@ extension Prompt {
         private init() {}
     }
 }
+
+
+
+extension Prompt {
+    struct Network {
+        static let somethingWrong = "Sorry, something went wrong."
+        static let connectionFailed = "Sorry, the connection to our server failed."
+        
+        static let unknownError = "Unknown Error."
+        static let invalidURL = "Invalid URL."
+        static let urlSessionError = "URL session error."
+        static let parsingError = "Parsing error  %@."
+        static let badResponse = "Bad response with status code %@."
+        
+        private init() {}
+    }
+}

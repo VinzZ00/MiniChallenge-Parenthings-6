@@ -10,7 +10,7 @@ import SwiftUI
 
 class parenthingsViewModel : ObservableObject {
     
-    
+    @Published var expertDetailIsPresented : Bool = false;
     
     @Published var user : User? = User(name: "Elvin", balanceParenting: 20000);
     @Published var experts : ExpertRepository = ExpertRepository();
@@ -23,7 +23,7 @@ class parenthingsViewModel : ObservableObject {
     @Published var ovoSelected : Bool = false;
     @Published var danaSelected : Bool = false;
     
-    @Published var buttonClicked : Bool = false;
+//    @Published var buttonClicked : Bool = false;
     
     @Published var selectedExpert : Expert?
     

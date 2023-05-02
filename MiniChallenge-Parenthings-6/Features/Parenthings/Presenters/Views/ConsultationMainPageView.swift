@@ -77,19 +77,25 @@ struct ConsultationMainPageView: View {
                     }
                     .blur(radius: searchBarValue.isEmpty ? 0 : 20)
                     
+                    
+                }
+                .background(AppBackground()
+                .blur(radius: searchBarValue.isEmpty ? 0 : 10))
+                .navigationBarHidden(true)
+                .fullScreenCover(isPresented: $viewModel.expertDetailIsPresented) {
                     if viewModel.selectedExpert != nil {
                         if viewModel.user != nil {
-                            NavigationLink("", destination: ExpertDetail( selectedExpert : viewModel.selectedExpert!, loggedUser: viewModel.user!).navigationBarHidden(true), isActive: $viewModel.buttonClicked)
-                        } else {
-                            //tunjukan signin page
+//                            NavigationLink("", destination: ExpertDetail().navigationBarHidden(true), isActive: $viewModel.buttonClicked)
+                            ExpertDetail()
+                                
+                                
+//                                .navigationBarHidden(true)
+                                                        } else {
+//                            //tunjukan signin page
                         }
                     }
-                }.background(AppBackground()
-                .blur(radius: searchBarValue.isEmpty ? 0 : 20))
-                .navigationBarHidden(true)
-
-        }.background(AppBackground()
-            .blur(radius: searchBarValue.isEmpty ? 0 : 20))
+                }
+        }
     }
 }
 

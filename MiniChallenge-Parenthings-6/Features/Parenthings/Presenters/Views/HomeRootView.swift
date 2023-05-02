@@ -14,13 +14,13 @@ struct HomeRootView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        NavigationView{
-            VStack{
+//        NavigationView{
+//            VStack{
                 TabView(selection : $selectedView){
-                    VStack {
-                        ConsultationMainPageView(backButton: {
-                            presentationMode.wrappedValue.dismiss()
-                        });
+                        VStack {
+                            ConsultationMainPageView(backButton: {
+                                presentationMode.wrappedValue.dismiss()
+                            })
                     }.tabItem {
                         VStack{
                             Image(systemName:  "rectangle.3.group.bubble.left.fill")
@@ -64,10 +64,10 @@ struct HomeRootView: View {
                         Text(Prompt.Title.profiles)
                             .foregroundColor(AppColor.paymentBlueTextColor)
                     }
-                }
+                }.environmentObject(viewModel)
                 
-            }.environmentObject(viewModel)
-        }
+//            }.environmentObject(viewModel)
+//        }
     }
 }
 
