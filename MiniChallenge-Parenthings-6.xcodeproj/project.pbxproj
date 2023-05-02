@@ -14,6 +14,12 @@
 		85F8D81F2A003D740012A6D1 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F8D81E2A003D740012A6D1 /* ApiError.swift */; };
 		85F8D8212A003FC60012A6D1 /* JsonFileOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F8D8202A003FC60012A6D1 /* JsonFileOpener.swift */; };
 		85F8D8252A0041F00012A6D1 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 85F8D8242A0041F00012A6D1 /* test.json */; };
+		8F3CF28F2A01200E006E03AC /* SubTitleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3CF28E2A01200E006E03AC /* SubTitleText.swift */; };
+		8F3CF2912A01201B006E03AC /* ImageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3CF2902A01201B006E03AC /* ImageLabel.swift */; };
+		8F3CF2932A012091006E03AC /* LogoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3CF2922A012090006E03AC /* LogoComponent.swift */; };
+		8F3CF2952A012133006E03AC /* ProfileMenuComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3CF2942A012133006E03AC /* ProfileMenuComponent.swift */; };
+		8F3CF2972A012182006E03AC /* PaymentSuccessPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3CF2962A012182006E03AC /* PaymentSuccessPageView.swift */; };
+		8F3CF2992A0121A2006E03AC /* ProfileMenuComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3CF2982A0121A2006E03AC /* ProfileMenuComponent.swift */; };
 		AC1AEF172A010DE1006C5F01 /* hiddenTabBar Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AEF162A010DE1006C5F01 /* hiddenTabBar Testing.swift */; };
 		AC34EDB429FBA063002AED7C /* Consultation_ExpertPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC34EDB329FBA063002AED7C /* Consultation_ExpertPaymentView.swift */; };
 		AC34EDB629FBCFD5002AED7C /* ConsultationTransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC34EDB529FBCFD5002AED7C /* ConsultationTransactionModel.swift */; };
@@ -70,6 +76,12 @@
 		85F8D81E2A003D740012A6D1 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		85F8D8202A003FC60012A6D1 /* JsonFileOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonFileOpener.swift; sourceTree = "<group>"; };
 		85F8D8242A0041F00012A6D1 /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = test.json; path = "MiniChallenge-Parenthings-6/test.json"; sourceTree = SOURCE_ROOT; };
+		8F3CF28E2A01200E006E03AC /* SubTitleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTitleText.swift; sourceTree = "<group>"; };
+		8F3CF2902A01201B006E03AC /* ImageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLabel.swift; sourceTree = "<group>"; };
+		8F3CF2922A012090006E03AC /* LogoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoComponent.swift; sourceTree = "<group>"; };
+		8F3CF2942A012133006E03AC /* ProfileMenuComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuComponent.swift; sourceTree = "<group>"; };
+		8F3CF2962A012182006E03AC /* PaymentSuccessPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSuccessPageView.swift; sourceTree = "<group>"; };
+		8F3CF2982A0121A2006E03AC /* ProfileMenuComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuComponent.swift; sourceTree = "<group>"; };
 		AC1AEF162A010DE1006C5F01 /* hiddenTabBar Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "hiddenTabBar Testing.swift"; sourceTree = "<group>"; };
 		AC34EDB329FBA063002AED7C /* Consultation_ExpertPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consultation_ExpertPaymentView.swift; sourceTree = "<group>"; };
 		AC34EDB529FBCFD5002AED7C /* ConsultationTransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationTransactionModel.swift; sourceTree = "<group>"; };
@@ -141,6 +153,15 @@
 				85F8D8202A003FC60012A6D1 /* JsonFileOpener.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		8F3CF28D2A011FFB006E03AC /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				8F3CF28E2A01200E006E03AC /* SubTitleText.swift */,
+				8F3CF2902A01201B006E03AC /* ImageLabel.swift */,
+			);
+			path = Text;
 			sourceTree = "<group>";
 		};
 		ACC826C929F41D88004423C8 /* Extensions */ = {
@@ -279,6 +300,7 @@
 		ACFB983E29F188C10046BA06 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8F3CF28D2A011FFB006E03AC /* Text */,
 				ACFB983F29F188CC0046BA06 /* CustomNavigationBar.swift */,
 				ACFB984329F1BDF00046BA06 /* SearchBarComponent.swift */,
 			);
@@ -354,6 +376,8 @@
 				ACDE995D29FD51B200E32E5A /* SignInPopUPView.swift */,
 				AC9FF96029FD9007008766E8 /* OnGoingMainConsultationView.swift */,
 				AC9FF96629FE9B35008766E8 /* ConsultationDetailView.swift */,
+				8F3CF2962A012182006E03AC /* PaymentSuccessPageView.swift */,
+				8F3CF2982A0121A2006E03AC /* ProfileMenuComponent.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -361,6 +385,7 @@
 		ACFB985429F2DACE0046BA06 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8F3CF2922A012090006E03AC /* LogoComponent.swift */,
 				AC5F371729F6F04900372208 /* RoundedShape.swift */,
 				ACFB985829F2E7730046BA06 /* CountStartViewComponent.swift */,
 				ACFB984A29F2D6E20046BA06 /* LongExpertCardView.swift */,
@@ -373,6 +398,7 @@
 				ACF7F5E029FC4BCD0059F323 /* LazyVGridPaymentType.swift */,
 				AC9FF96929FEA0A0008766E8 /* TransactionDetailViewComponent.swift */,
 				AC9FF96B29FEA295008766E8 /* StarRatingComponent.swift */,
+				8F3CF2942A012133006E03AC /* ProfileMenuComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -457,8 +483,11 @@
 			files = (
 				ACF7F5E129FC4BCD0059F323 /* LazyVGridPaymentType.swift in Sources */,
 				ACFB982729F187A20046BA06 /* ContentView.swift in Sources */,
+				8F3CF2912A01201B006E03AC /* ImageLabel.swift in Sources */,
+				8F3CF28F2A01200E006E03AC /* SubTitleText.swift in Sources */,
 				ACFB984729F270250046BA06 /* AppBackground.swift in Sources */,
 				ACFB985929F2E7730046BA06 /* CountStartViewComponent.swift in Sources */,
+				8F3CF2972A012182006E03AC /* PaymentSuccessPageView.swift in Sources */,
 				AC5F371E29F8573000372208 /* ExpertDetailVerticalTrait.swift in Sources */,
 				ACFB983D29F1888D0046BA06 /* ColorPallete.swift in Sources */,
 				ACC826CB29F42281004423C8 /* parenthingsViewModel.swift in Sources */,
@@ -467,6 +496,7 @@
 				AC9FF96C29FEA295008766E8 /* StarRatingComponent.swift in Sources */,
 				AC34EDB429FBA063002AED7C /* Consultation_ExpertPaymentView.swift in Sources */,
 				AC97A51729FFB25D00B66A67 /* PaymentTypeHelper.swift in Sources */,
+				8F3CF2952A012133006E03AC /* ProfileMenuComponent.swift in Sources */,
 				ACF7F5DF29FC449C0059F323 /* UserModel.swift in Sources */,
 				AC5AEB3929FC0CE800BF64F9 /* CustomPicker.swift in Sources */,
 				AC5F371A29F822D400372208 /* Consultation_ExpertDetailView.swift in Sources */,
@@ -492,10 +522,12 @@
 				ACFB982529F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift in Sources */,
 				ACFB985729F2DAF80046BA06 /* ShortExpertCardView.swift in Sources */,
 				85F8D8212A003FC60012A6D1 /* JsonFileOpener.swift in Sources */,
+				8F3CF2932A012091006E03AC /* LogoComponent.swift in Sources */,
 				85F8D81629FD86B80012A6D1 /* AESHelper.swift in Sources */,
 				AC5F371029F56BD300372208 /* ConsultationPagePicker.swift in Sources */,
 				AC5F371629F5A43300372208 /* ExpertRepository.swift in Sources */,
 				85F8D81F2A003D740012A6D1 /* ApiError.swift in Sources */,
+				8F3CF2992A0121A2006E03AC /* ProfileMenuComponent.swift in Sources */,
 				AC5F372329F9212B00372208 /* TestingOnboarding.swift in Sources */,
 				ACC826CF29F455EC004423C8 /* ImageExtension.swift in Sources */,
 				AC5F371829F6F04900372208 /* RoundedShape.swift in Sources */,
