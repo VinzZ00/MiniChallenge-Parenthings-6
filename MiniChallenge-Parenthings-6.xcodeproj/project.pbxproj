@@ -16,6 +16,7 @@
 		85F8D8252A0041F00012A6D1 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 85F8D8242A0041F00012A6D1 /* test.json */; };
 		8F3CF28F2A01200E006E03AC /* SubTitleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3CF28E2A01200E006E03AC /* SubTitleText.swift */; };
 		8F3CF2912A01201B006E03AC /* ImageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3CF2902A01201B006E03AC /* ImageLabel.swift */; };
+		8F3CF2932A012091006E03AC /* LogoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3CF2922A012090006E03AC /* LogoComponent.swift */; };
 		AC1AEF172A010DE1006C5F01 /* hiddenTabBar Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AEF162A010DE1006C5F01 /* hiddenTabBar Testing.swift */; };
 		AC34EDB429FBA063002AED7C /* Consultation_ExpertPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC34EDB329FBA063002AED7C /* Consultation_ExpertPaymentView.swift */; };
 		AC34EDB629FBCFD5002AED7C /* ConsultationTransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC34EDB529FBCFD5002AED7C /* ConsultationTransactionModel.swift */; };
@@ -74,6 +75,7 @@
 		85F8D8242A0041F00012A6D1 /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = test.json; path = "MiniChallenge-Parenthings-6/test.json"; sourceTree = SOURCE_ROOT; };
 		8F3CF28E2A01200E006E03AC /* SubTitleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTitleText.swift; sourceTree = "<group>"; };
 		8F3CF2902A01201B006E03AC /* ImageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLabel.swift; sourceTree = "<group>"; };
+		8F3CF2922A012090006E03AC /* LogoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoComponent.swift; sourceTree = "<group>"; };
 		AC1AEF162A010DE1006C5F01 /* hiddenTabBar Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "hiddenTabBar Testing.swift"; sourceTree = "<group>"; };
 		AC34EDB329FBA063002AED7C /* Consultation_ExpertPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consultation_ExpertPaymentView.swift; sourceTree = "<group>"; };
 		AC34EDB529FBCFD5002AED7C /* ConsultationTransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationTransactionModel.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				8F3CF28D2A011FFB006E03AC /* Text */,
 				ACFB983F29F188CC0046BA06 /* CustomNavigationBar.swift */,
 				ACFB984329F1BDF00046BA06 /* SearchBarComponent.swift */,
+				8F3CF2922A012090006E03AC /* LogoComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				ACFB982529F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift in Sources */,
 				ACFB985729F2DAF80046BA06 /* ShortExpertCardView.swift in Sources */,
 				85F8D8212A003FC60012A6D1 /* JsonFileOpener.swift in Sources */,
+				8F3CF2932A012091006E03AC /* LogoComponent.swift in Sources */,
 				85F8D81629FD86B80012A6D1 /* AESHelper.swift in Sources */,
 				AC5F371029F56BD300372208 /* ConsultationPagePicker.swift in Sources */,
 				AC5F371629F5A43300372208 /* ExpertRepository.swift in Sources */,
