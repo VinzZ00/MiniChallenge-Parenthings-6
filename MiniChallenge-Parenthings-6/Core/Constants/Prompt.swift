@@ -59,29 +59,31 @@ extension Prompt {
     }
 }
 
-struct Button {
-    static let chat = "Chat"
-    static let viewDetail = "View Detail"
-    static let seeAll = "See All"
-    static let continueProcess = "Continue"
-      
-    static let consultNow = "Consult Now"
-    static let startConsulting = "Start Consulting"
-    static let reChatExpert = "Rechat Expert"
+extension Prompt {
+    struct Button {
+        static let chat = "Chat"
+        static let viewDetail = "View Detail"
+        static let seeAll = "See All"
+        static let continueProcess = "Continue"
+          
+        static let consultNow = "Consult Now"
+        static let startConsulting = "Start Consulting"
+        static let reChatExpert = "Rechat Expert"
 
-    static let logIn = "Log In"
-    static let logOut = "Log Out"
-    static let signUp = "I'm New, Sign Me Up"
-      
-    static let paymentMethod = "Payment Method"
-    static let help = "Help"
-    static let redeemCoupon = "Redeem Coupon"
-      
-    static let topUp = "Top Up"
-    static let typeTheAmount = "type the amount"
-    static let confirmAndTopUp = "Confirm & Top Up"
-    
-    private init() {}
+        static let logIn = "Log In"
+        static let logOut = "Log Out"
+        static let signUp = "I'm New, Sign Me Up"
+          
+        static let paymentMethod = "Payment Method"
+        static let help = "Help"
+        static let redeemCoupon = "Redeem Coupon"
+          
+        static let topUp = "Top Up"
+        static let typeTheAmount = "type the amount"
+        static let confirmAndTopUp = "Confirm & Top Up"
+        
+        private init() {}
+    }
 }
 
 extension Prompt {
