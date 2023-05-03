@@ -24,7 +24,6 @@
 		AC1AEF1F2A014B28006C5F01 /* ChatExpertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AEF1E2A014B28006C5F01 /* ChatExpertView.swift */; };
 		AC34EDB429FBA063002AED7C /* Consultation_ExpertPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC34EDB329FBA063002AED7C /* Consultation_ExpertPaymentView.swift */; };
 		AC34EDB629FBCFD5002AED7C /* ConsultationTransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC34EDB529FBCFD5002AED7C /* ConsultationTransactionModel.swift */; };
-		AC5A823C2A022F0E008F0C5A /* Data in Resources */ = {isa = PBXBuildFile; fileRef = AC5A823B2A022F0E008F0C5A /* Data */; };
 		AC5AEB3929FC0CE800BF64F9 /* CustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AEB3829FC0CE800BF64F9 /* CustomPicker.swift */; };
 		AC5F370E29F50E4800372208 /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F370D29F50E4800372208 /* Prompt.swift */; };
 		AC5F371029F56BD300372208 /* ConsultationPagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F370F29F56BD300372208 /* ConsultationPagePicker.swift */; };
@@ -87,7 +86,6 @@
 		AC1AEF1E2A014B28006C5F01 /* ChatExpertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatExpertView.swift; sourceTree = "<group>"; };
 		AC34EDB329FBA063002AED7C /* Consultation_ExpertPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consultation_ExpertPaymentView.swift; sourceTree = "<group>"; };
 		AC34EDB529FBCFD5002AED7C /* ConsultationTransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationTransactionModel.swift; sourceTree = "<group>"; };
-		AC5A823B2A022F0E008F0C5A /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
 		AC5AEB3829FC0CE800BF64F9 /* CustomPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPicker.swift; sourceTree = "<group>"; };
 		AC5F370D29F50E4800372208 /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
 		AC5F370F29F56BD300372208 /* ConsultationPagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationPagePicker.swift; sourceTree = "<group>"; };
@@ -341,7 +339,6 @@
 		ACFB984E29F2D8CF0046BA06 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AC5A823B2A022F0E008F0C5A /* Data */,
 				ACFB985129F2D9100046BA06 /* Expert.swift */,
 				AC5F371529F5A43300372208 /* ExpertRepository.swift */,
 				AC34EDB529FBCFD5002AED7C /* ConsultationTransactionModel.swift */,
@@ -481,7 +478,6 @@
 			files = (
 				ACFB982C29F187A30046BA06 /* Preview Assets.xcassets in Resources */,
 				ACFB982929F187A30046BA06 /* Assets.xcassets in Resources */,
-				AC5A823C2A022F0E008F0C5A /* Data in Resources */,
 				85F8D8252A0041F00012A6D1 /* test.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
