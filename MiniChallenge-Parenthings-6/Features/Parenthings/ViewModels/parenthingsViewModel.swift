@@ -22,20 +22,35 @@ class parenthingsViewModel : ObservableObject {
     @Published var navBarShown : Bool = true;
     @Published var transactions : TransactionRepository = TransactionRepository();
     
-    @Published var parentingSelected : Bool = true;
-    @Published var goPaySelected : Bool = false;
-    @Published var ovoSelected : Bool = false;
-    @Published var danaSelected : Bool = false;
-    
+    @Published var selectedPayment : TypePayment = .Parenthing
     
     @Published var startConsulting : Bool = false;
     @Published var remainingTime : Int  = 0;
-//    @Published var CurrenttimeRemaining?;
-//    @Published var buttonClicked : Bool = false;
+    //    @Published var CurrenttimeRemaining?;
+    //    @Published var buttonClicked : Bool = false;
     
+    @Published var choosePayment : Bool =  false;
+    
+    
+    var paymentDetail : (Image, String, Double) {
+        switch self.selectedPayment {
+        case .Parenthing  :
+            return (Image("LogoParenthing"), "Parenthing", selectedConsultation?.totalPrice ?? 0)
+            
+        case .GoPay:
+            return (Image(""), "Gopay", selectedConsultation?.totalPrice ?? 0)
 
-    
-    
+        case .Ovo:
+            return (Image(""), "Ovo", selectedConsultation?.totalPrice ?? 0)
+
+        case .Dana:
+            return (Image(""), "Dana", selectedConsultation?.totalPrice ?? 0)
+
+        case .BankTransfer:
+            return (Image(""), "Bank Transfer", selectedConsultation?.totalPrice ?? 0)
+
+        }
+    }
     
     
     func getUniqueTransactionDate() -> Set<Date>{

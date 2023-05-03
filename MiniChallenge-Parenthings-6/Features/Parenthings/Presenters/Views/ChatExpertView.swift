@@ -56,6 +56,8 @@ struct ChatExpert: View {
                     viewModel.remainingTime -= 1
                 }
             }
+            
+//            ChatView(messages: <#T##[Message]#>, didSendMessage: <#T##(DraftMessage) -> Void#>, messageBuilder: <#T##MessageBuilderClosure#>, inputViewBuilder: <#T##InputViewBuilderClosure#>)
             Spacer();
         }.background(
             AppBackground()

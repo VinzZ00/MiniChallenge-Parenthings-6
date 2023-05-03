@@ -12,4 +12,5 @@ enum TypePayment {
     case GoPay;
     case Ovo;
     case Dana;
+    case BankTransfer
 }

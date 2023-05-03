@@ -13,7 +13,7 @@ struct ExpertPaymentView: View {
     var currentUser : User;
     var expert : Expert;
     @State var transactionDetail : ConsultationTransaction;
-    @State var selectedValue = 0;
+    
     @Environment(\.presentationMode) var presentationMode
     
     
@@ -29,6 +29,7 @@ struct ExpertPaymentView: View {
         self.currentUser = currentUser
         self.expert = expert
         self._transactionDetail = State(initialValue : ConsultationTransaction(expert: expert, TransactionDate: Date(), payWith: .Parenthing))
+        
     }
     
     var body: some View {
@@ -75,139 +76,7 @@ struct ExpertPaymentView: View {
                     .padding(.top, 34)
                     .padding(.bottom, 17)
                 
-                VStack(spacing: 0){
-                CustomPicker(CustomPickerList: [Prompt.paymentContent.electronicMoney, Prompt.paymentContent.CC_DC], selectedValue: self.$selectedValue)
-                    .padding(.horizontal, 16)
-    //                VStack {
-                    
-                    if selectedValue == 0 {
-                        LazyVGrid(columns: [GridItem(.fixed(59.77) ),GridItem(.fixed(210)),GridItem(.flexible())]){
-                            
-                            LazyVGridPaymentType(typePayment: .Parenthing, transactionDetail: self.transactionDetail, currentUser: self.currentUser, paymentLogo: Image("LogoParenthing"), description: "\((transactionDetail.totalPrice > currentUser.balanceParenting) ? "Not Enough Balance : Rp. " : "Parenting Balance : Rp. ") \(String(format: "%.2f", currentUser.balanceParenting))", iscomingSoon: false)
-                            
-                            Button {
-                                
-                                transactionDetail.payWith = .Parenthing;
-                                
-                                viewModel.parentingSelected = true;
-                                viewModel.goPaySelected = false;
-                                viewModel.ovoSelected = false
-                                viewModel.danaSelected = false
-                            } label: {
-                                ZStack {
-                                    Circle()
-                                        .fill(Color.white
-                                            .opacity(0.10))
-                                        .overlay(
-                                            Circle()
-                                                .stroke(AppColor.systemGray, lineWidth: 3)
-                                        )
-                                        .frame(height: 20)
-                                        .foregroundColor(Color.white.opacity(0.10))
-                                        
-                                    Circle()
-                                        .fill((viewModel.parentingSelected) ? Color.green.opacity(0.5) : Color.white.opacity(0.10))
-                                        .frame(height: 10)
-                                        .foregroundColor(Color.white.opacity(0.10))
-                                    
-                                }.padding(.top, 10)
-                            }
-                            
-                            LazyVGridPaymentType(typePayment: .GoPay, transactionDetail: self.transactionDetail, currentUser: self.currentUser, paymentLogo: Image("Gopay"), description: "GoPay", iscomingSoon: true)
 
-                            Button {
-                                viewModel.parentingSelected = false;
-                                viewModel.goPaySelected = true;
-                                viewModel.ovoSelected = false
-                                viewModel.danaSelected = false
-                            } label: {
-                                ZStack {
-                                    Circle()
-                                        .fill(Color.white
-                                            .opacity(0.10))
-                                        .overlay(
-                                            Circle()
-                                                .stroke(AppColor.systemGray, lineWidth: 3)
-                                        )
-                                        .frame(height: 20)
-                                        .foregroundColor(Color.white.opacity(0.10))
-                                        
-                                    Circle()
-                                        .fill((viewModel.goPaySelected) ? Color.green.opacity(0.5) : Color.white.opacity(0.10))
-                                        .frame(height: 10)
-                                        .foregroundColor(Color.white.opacity(0.10))
-                                    
-                                }.padding(.top, 10)
-                            }
-                            
-                            LazyVGridPaymentType(typePayment: .GoPay, transactionDetail: self.transactionDetail, currentUser: self.currentUser, paymentLogo: Image("Ovo"), description: "Ovo", iscomingSoon: true)
-                            
-                            
-                            Button {
-                                viewModel.parentingSelected = false;
-                                viewModel.goPaySelected = false;
-                                viewModel.ovoSelected = true
-                                viewModel.danaSelected = false
-                            } label: {
-                                ZStack {
-                                    Circle()
-                                        .fill(Color.white
-                                            .opacity(0.10))
-                                        .overlay(
-                                            Circle()
-                                                .stroke(AppColor.systemGray, lineWidth: 3)
-                                        )
-                                        .frame(height: 20)
-                                        .foregroundColor(Color.white.opacity(0.10))
-                                        
-                                    Circle()
-                                        .fill((viewModel.ovoSelected) ? Color.green.opacity(0.5) : Color.white.opacity(0.10))
-                                        .frame(height: 10)
-                                        .foregroundColor(Color.white.opacity(0.10))
-                                    
-                                }.padding(.top, 10)
-                            }
-                            
-                            LazyVGridPaymentType(typePayment: .GoPay, transactionDetail: self.transactionDetail, currentUser: self.currentUser, paymentLogo: Image("Dana"), description: "Dana", iscomingSoon: true)
-                            
-                            Button {
-                                viewModel.parentingSelected = false;
-                                viewModel.goPaySelected = false;
-                                viewModel.ovoSelected = false
-                                viewModel.danaSelected = true
-                            } label: {
-                                ZStack {
-                                    Circle()
-                                        .fill(Color.white
-                                            .opacity(0.10))
-                                        .overlay(
-                                            Circle()
-                                                .stroke(AppColor.systemGray, lineWidth: 3)
-                                        )
-                                        .frame(height: 20)
-                                        .foregroundColor(Color.white.opacity(0.10))
-                                        
-                                    Circle()
-                                        .fill((viewModel.danaSelected) ? Color.green.opacity(0.5) : Color.white.opacity(0.10))
-                                        .frame(height: 10)
-                                        .foregroundColor(Color.white.opacity(0.10))
-                                    
-                                }.padding(.top, 10)
-                            }
-                            
-                            
-                            }
-                        .padding(.horizontal, 16)
-                    } else {
-                        VStack{
-                            Spacer()
-                            Text("Coming Soon!!")
-                                .foregroundColor(.red)
-                                .font(.system(size : 22, weight: .bold))
-                            Spacer()
-                        }
-                    }
-                }
                 
                 .padding(.bottom, 16)
                 .overlay(
@@ -221,16 +90,40 @@ struct ExpertPaymentView: View {
                     
                 
                 Spacer()
-                HStack(alignment : .center){
-                    VStack{
-                        Text(Prompt.paymentContent.yourPayment)
-                        Text("Rp. \(String(format: "%.2f", transactionDetail.totalPrice))")
-                    }
-                    .padding(.horizontal, 18)
-                    .padding(.bottom, 21)
-                    .padding(.top, 22)
-                    
-                    Spacer()
+                VStack{
+                    HStack{
+                        HStack{
+                            viewModel.paymentDetail.0
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 25, height: 25)
+                                .overlay {
+                                    Circle()
+                                        .stroke(.gray.opacity(0.5), lineWidth: 1)
+                                }
+                            
+                            
+                            VStack(alignment: .leading) {
+                                Text(viewModel.paymentDetail.1)
+                                    .font(.system(size : 12))
+                                Text("\(String(format: "%.2f", transactionDetail.totalPrice))")
+                                    .font(.system(size: 15, weight: .bold))
+                            }
+                        }
+                        .padding(.leading, 16)
+                        
+                        Spacer()
+                        
+                        Button{
+                            viewModel.choosePayment = true
+                        } label : {
+                            Image(systemName: "ellipsis.circle.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 15, height: 16)
+                        }
+                    }.padding(.horizontal, 16)
+                        .padding(.top, 15)
                     
                     Button {
                         viewModel.selectedConsultation = ConsultationTransaction(expert: viewModel.selectedExpert!, TransactionDate: Date(), payWith: .Parenthing)
@@ -243,12 +136,12 @@ struct ExpertPaymentView: View {
                                 .font(.system(size: 15, weight: .bold))
                                 .foregroundColor(.white)
                         }
-                        .frame(width: 140, height: 47)
+                        .frame(width: 357, height: 53)
                         .background(
                             AppColor.paymentBlueTextColor
                         )
                         .cornerRadius(15)
-                        .padding(.trailing, 18)
+                        .padding(.horizontal, 18)
                         .padding(.bottom, 18)
                         .padding(.top, 18)
                         
@@ -276,6 +169,44 @@ struct ExpertPaymentView: View {
                 AppBackground()
                 )
             )
+            .sheet(isPresented: $viewModel.choosePayment) {
+                VStack(alignment: .leading) {
+                    Text("Select a payment method")
+                        .font(.system(size: 22, weight: .bold))
+                    
+                    HStack{
+                        LazyVGridPaymentType(typePayment: .Parenthing, transactionDetail: self.transactionDetail, currentUser: self.currentUser, paymentLogo: Image("LogoParenthing"), description: "Parenthing", iscomingSoon: false)
+                    }
+                    
+                    Divider()
+                    
+                
+                    HStack{
+                        LazyVGridPaymentType(typePayment: .BankTransfer, transactionDetail: self.transactionDetail, currentUser: self.currentUser, paymentLogo: Image(systemName: "banknote.fill"), description: "Bank Transfer", iscomingSoon: false)
+                    }
+                
+                    Divider();
+                    
+                    HStack{
+                        LazyVGridPaymentType(typePayment: .GoPay, transactionDetail: self.transactionDetail, currentUser: self.currentUser, paymentLogo: Image("Gopay"), description: "GoPay", iscomingSoon: false)
+                    }
+                    
+                    Divider();
+                    
+                    HStack{
+                        LazyVGridPaymentType(typePayment: .GoPay, transactionDetail: self.transactionDetail, currentUser: self.currentUser, paymentLogo: Image("Ovo"), description: "Ovo", iscomingSoon: false)
+                    }
+                    
+                    Divider();
+                    
+                    HStack{
+                        LazyVGridPaymentType(typePayment: .GoPay, transactionDetail: self.transactionDetail, currentUser: self.currentUser, paymentLogo: Image("Dana"), description: "Dana", iscomingSoon: false)
+                    }
+                    
+                                                
+                        
+                }
+            }
             .navigationBarHidden(false)
         }
     }
