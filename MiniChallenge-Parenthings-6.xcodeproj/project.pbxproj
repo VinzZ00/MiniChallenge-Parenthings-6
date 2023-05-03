@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		858627FE2A02413B0077F60D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858627FD2A02413B0077F60D /* SignInView.swift */; };
+		858628002A02472F0077F60D /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858627FF2A02472F0077F60D /* ClearButton.swift */; };
+		858628022A02505D0077F60D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858628012A02505D0077F60D /* SignUpView.swift */; };
+		858628042A0258700077F60D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858628032A0258700077F60D /* StringExtension.swift */; };
+		858628062A0258EA0077F60D /* OtpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858628052A0258EA0077F60D /* OtpView.swift */; };
 		85F8D81629FD86B80012A6D1 /* AESHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F8D81529FD86B80012A6D1 /* AESHelper.swift */; };
 		85F8D8192A003C810012A6D1 /* BreedFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F8D8182A003C810012A6D1 /* BreedFetcher.swift */; };
 		85F8D81B2A003C970012A6D1 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F8D81A2A003C970012A6D1 /* APIService.swift */; };
@@ -70,6 +75,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		858627FD2A02413B0077F60D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		858627FF2A02472F0077F60D /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
+		858628012A02505D0077F60D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		858628032A0258700077F60D /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		858628052A0258EA0077F60D /* OtpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpView.swift; sourceTree = "<group>"; };
 		85F8D81529FD86B80012A6D1 /* AESHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AESHelper.swift; sourceTree = "<group>"; };
 		85F8D8182A003C810012A6D1 /* BreedFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedFetcher.swift; sourceTree = "<group>"; };
 		85F8D81A2A003C970012A6D1 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -173,6 +183,7 @@
 				ACC826CE29F455EC004423C8 /* ImageExtension.swift */,
 				AC5F372C29FA861900372208 /* HexToColor.swift */,
 				AC9FF96429FD9FB7008766E8 /* DateFormatter.swift */,
+				858628032A0258700077F60D /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -376,10 +387,13 @@
 				AC5F372A29FA858000372208 /* LoadingPageView.swift */,
 				AC34EDB329FBA063002AED7C /* Consultation_ExpertPaymentView.swift */,
 				ACDE995D29FD51B200E32E5A /* SignInPopUPView.swift */,
+				858627FD2A02413B0077F60D /* SignInView.swift */,
+				858628012A02505D0077F60D /* SignUpView.swift */,
 				AC9FF96029FD9007008766E8 /* OnGoingMainConsultationView.swift */,
 				AC9FF96629FE9B35008766E8 /* ConsultationDetailView.swift */,
 				8F3CF2962A012182006E03AC /* PaymentSuccessPageView.swift */,
 				AC1AEF1E2A014B28006C5F01 /* ChatExpertView.swift */,
+				858628052A0258EA0077F60D /* OtpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -401,6 +415,7 @@
 				AC9FF96929FEA0A0008766E8 /* TransactionDetailViewComponent.swift */,
 				AC9FF96B29FEA295008766E8 /* StarRatingComponent.swift */,
 				8F3CF2942A012133006E03AC /* ProfileMenuComponent.swift */,
+				858627FF2A02472F0077F60D /* ClearButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -510,16 +525,19 @@
 				AC5AEB3929FC0CE800BF64F9 /* CustomPicker.swift in Sources */,
 				AC5F371A29F822D400372208 /* Consultation_ExpertDetailView.swift in Sources */,
 				ACFB984929F272BB0046BA06 /* BlurBackground.swift in Sources */,
+				858628022A02505D0077F60D /* SignUpView.swift in Sources */,
 				AC5F372D29FA861900372208 /* HexToColor.swift in Sources */,
 				AC9FF96329FD9156008766E8 /* TransactionRepository.swift in Sources */,
 				ACFB985229F2D9100046BA06 /* Expert.swift in Sources */,
 				ACFB984B29F2D6E20046BA06 /* LongExpertCardView.swift in Sources */,
 				AC5F372529F95FA400372208 /* ExpertGridView.swift in Sources */,
 				AC1AEF172A010DE1006C5F01 /* hiddenTabBar Testing.swift in Sources */,
+				858628062A0258EA0077F60D /* OtpView.swift in Sources */,
 				AC5F371429F59C9C00372208 /* ConsultationMainPageView.swift in Sources */,
 				AC5F370E29F50E4800372208 /* Prompt.swift in Sources */,
 				ACC826CD29F42529004423C8 /* EncodedBase64Extension.swift in Sources */,
 				AC9FF96129FD9007008766E8 /* OnGoingMainConsultationView.swift in Sources */,
+				858628042A0258700077F60D /* StringExtension.swift in Sources */,
 				85F8D8192A003C810012A6D1 /* BreedFetcher.swift in Sources */,
 				ACDE995E29FD51B200E32E5A /* SignInPopUPView.swift in Sources */,
 				AC5F371C29F84A3D00372208 /* ExpertDetailImage.swift in Sources */,
@@ -532,11 +550,13 @@
 				ACFB985729F2DAF80046BA06 /* ShortExpertCardView.swift in Sources */,
 				85F8D8212A003FC60012A6D1 /* JsonFileOpener.swift in Sources */,
 				8F3CF2932A012091006E03AC /* LogoComponent.swift in Sources */,
+				858628002A02472F0077F60D /* ClearButton.swift in Sources */,
 				85F8D81629FD86B80012A6D1 /* AESHelper.swift in Sources */,
 				AC5F371029F56BD300372208 /* ConsultationPagePicker.swift in Sources */,
 				AC5F371629F5A43300372208 /* ExpertRepository.swift in Sources */,
 				85F8D81F2A003D740012A6D1 /* ApiError.swift in Sources */,
 				AC5F372329F9212B00372208 /* TestingOnboarding.swift in Sources */,
+				858627FE2A02413B0077F60D /* SignInView.swift in Sources */,
 				ACC826CF29F455EC004423C8 /* ImageExtension.swift in Sources */,
 				AC5F371829F6F04900372208 /* RoundedShape.swift in Sources */,
 				AC9FF96A29FEA0A0008766E8 /* TransactionDetailViewComponent.swift in Sources */,

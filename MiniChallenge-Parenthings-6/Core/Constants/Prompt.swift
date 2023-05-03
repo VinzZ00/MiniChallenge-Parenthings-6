@@ -70,6 +70,7 @@ extension Prompt {
         static let startConsulting = "Start Consulting"
         static let reChatExpert = "Rechat Expert"
 
+        static let next = "Continue"
         static let logIn = "Log In"
         static let logOut = "Log Out"
         static let signUp = "I'm New, Sign Me Up"
