@@ -19,10 +19,12 @@
 		8F3CF2932A012091006E03AC /* LogoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3CF2922A012090006E03AC /* LogoComponent.swift */; };
 		8F3CF2952A012133006E03AC /* ProfileMenuComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3CF2942A012133006E03AC /* ProfileMenuComponent.swift */; };
 		8F3CF2972A012182006E03AC /* PaymentSuccessPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3CF2962A012182006E03AC /* PaymentSuccessPageView.swift */; };
-		8F3CF2992A0121A2006E03AC /* ProfileMenuComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3CF2982A0121A2006E03AC /* ProfileMenuComponent.swift */; };
 		AC1AEF172A010DE1006C5F01 /* hiddenTabBar Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AEF162A010DE1006C5F01 /* hiddenTabBar Testing.swift */; };
+		AC1AEF1A2A0142AE006C5F01 /* Chat in Frameworks */ = {isa = PBXBuildFile; productRef = AC1AEF192A0142AE006C5F01 /* Chat */; };
+		AC1AEF1F2A014B28006C5F01 /* ChatExpertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AEF1E2A014B28006C5F01 /* ChatExpertView.swift */; };
 		AC34EDB429FBA063002AED7C /* Consultation_ExpertPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC34EDB329FBA063002AED7C /* Consultation_ExpertPaymentView.swift */; };
 		AC34EDB629FBCFD5002AED7C /* ConsultationTransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC34EDB529FBCFD5002AED7C /* ConsultationTransactionModel.swift */; };
+		AC5A823C2A022F0E008F0C5A /* Data in Resources */ = {isa = PBXBuildFile; fileRef = AC5A823B2A022F0E008F0C5A /* Data */; };
 		AC5AEB3929FC0CE800BF64F9 /* CustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5AEB3829FC0CE800BF64F9 /* CustomPicker.swift */; };
 		AC5F370E29F50E4800372208 /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F370D29F50E4800372208 /* Prompt.swift */; };
 		AC5F371029F56BD300372208 /* ConsultationPagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F370F29F56BD300372208 /* ConsultationPagePicker.swift */; };
@@ -81,10 +83,11 @@
 		8F3CF2922A012090006E03AC /* LogoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoComponent.swift; sourceTree = "<group>"; };
 		8F3CF2942A012133006E03AC /* ProfileMenuComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuComponent.swift; sourceTree = "<group>"; };
 		8F3CF2962A012182006E03AC /* PaymentSuccessPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSuccessPageView.swift; sourceTree = "<group>"; };
-		8F3CF2982A0121A2006E03AC /* ProfileMenuComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuComponent.swift; sourceTree = "<group>"; };
 		AC1AEF162A010DE1006C5F01 /* hiddenTabBar Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "hiddenTabBar Testing.swift"; sourceTree = "<group>"; };
+		AC1AEF1E2A014B28006C5F01 /* ChatExpertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatExpertView.swift; sourceTree = "<group>"; };
 		AC34EDB329FBA063002AED7C /* Consultation_ExpertPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consultation_ExpertPaymentView.swift; sourceTree = "<group>"; };
 		AC34EDB529FBCFD5002AED7C /* ConsultationTransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationTransactionModel.swift; sourceTree = "<group>"; };
+		AC5A823B2A022F0E008F0C5A /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
 		AC5AEB3829FC0CE800BF64F9 /* CustomPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPicker.swift; sourceTree = "<group>"; };
 		AC5F370D29F50E4800372208 /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
 		AC5F370F29F56BD300372208 /* ConsultationPagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationPagePicker.swift; sourceTree = "<group>"; };
@@ -137,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC1AEF1A2A0142AE006C5F01 /* Chat in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +341,7 @@
 		ACFB984E29F2D8CF0046BA06 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AC5A823B2A022F0E008F0C5A /* Data */,
 				ACFB985129F2D9100046BA06 /* Expert.swift */,
 				AC5F371529F5A43300372208 /* ExpertRepository.swift */,
 				AC34EDB529FBCFD5002AED7C /* ConsultationTransactionModel.swift */,
@@ -377,7 +382,7 @@
 				AC9FF96029FD9007008766E8 /* OnGoingMainConsultationView.swift */,
 				AC9FF96629FE9B35008766E8 /* ConsultationDetailView.swift */,
 				8F3CF2962A012182006E03AC /* PaymentSuccessPageView.swift */,
-				8F3CF2982A0121A2006E03AC /* ProfileMenuComponent.swift */,
+				AC1AEF1E2A014B28006C5F01 /* ChatExpertView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -426,6 +431,9 @@
 			dependencies = (
 			);
 			name = "MiniChallenge-Parenthings-6";
+			packageProductDependencies = (
+				AC1AEF192A0142AE006C5F01 /* Chat */,
+			);
 			productName = "MiniChallenge-Parenthings-6";
 			productReference = ACFB982129F187A20046BA06 /* MiniChallenge-Parenthings-6.app */;
 			productType = "com.apple.product-type.application";
@@ -454,6 +462,9 @@
 				Base,
 			);
 			mainGroup = ACFB981829F187A20046BA06;
+			packageReferences = (
+				AC1AEF182A0142AE006C5F01 /* XCRemoteSwiftPackageReference "Chat" */,
+			);
 			productRefGroup = ACFB982229F187A20046BA06 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -470,6 +481,7 @@
 			files = (
 				ACFB982C29F187A30046BA06 /* Preview Assets.xcassets in Resources */,
 				ACFB982929F187A30046BA06 /* Assets.xcassets in Resources */,
+				AC5A823C2A022F0E008F0C5A /* Data in Resources */,
 				85F8D8252A0041F00012A6D1 /* test.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +503,7 @@
 				AC5F371E29F8573000372208 /* ExpertDetailVerticalTrait.swift in Sources */,
 				ACFB983D29F1888D0046BA06 /* ColorPallete.swift in Sources */,
 				ACC826CB29F42281004423C8 /* parenthingsViewModel.swift in Sources */,
+				AC1AEF1F2A014B28006C5F01 /* ChatExpertView.swift in Sources */,
 				AC9FF96729FE9B35008766E8 /* ConsultationDetailView.swift in Sources */,
 				ACFB984029F188CC0046BA06 /* CustomNavigationBar.swift in Sources */,
 				AC9FF96C29FEA295008766E8 /* StarRatingComponent.swift in Sources */,
@@ -527,7 +540,6 @@
 				AC5F371029F56BD300372208 /* ConsultationPagePicker.swift in Sources */,
 				AC5F371629F5A43300372208 /* ExpertRepository.swift in Sources */,
 				85F8D81F2A003D740012A6D1 /* ApiError.swift in Sources */,
-				8F3CF2992A0121A2006E03AC /* ProfileMenuComponent.swift in Sources */,
 				AC5F372329F9212B00372208 /* TestingOnboarding.swift in Sources */,
 				ACC826CF29F455EC004423C8 /* ImageExtension.swift in Sources */,
 				AC5F371829F6F04900372208 /* RoundedShape.swift in Sources */,
@@ -737,6 +749,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AC1AEF182A0142AE006C5F01 /* XCRemoteSwiftPackageReference "Chat" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/Chat.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AC1AEF192A0142AE006C5F01 /* Chat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC1AEF182A0142AE006C5F01 /* XCRemoteSwiftPackageReference "Chat" */;
+			productName = Chat;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ACFB981929F187A20046BA06 /* Project object */;
 }

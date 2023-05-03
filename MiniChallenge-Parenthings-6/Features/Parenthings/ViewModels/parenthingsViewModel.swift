@@ -9,10 +9,14 @@ import Foundation
 import SwiftUI
 
 class parenthingsViewModel : ObservableObject {
-    
     @Published var expertDetailIsPresented : Bool = false;
+    @Published var selectedExpert : Expert?
     
-    @Published var user : User? = User(name: "Elvin", balanceParenting: 20000);
+    @Published var consultationDetailIsPresented : Bool = false;
+    @Published var selectedConsultation : ConsultationTransaction?
+    
+    
+    @Published var user : User? = User(name: "Elvin", balanceParenting: 20000); //in Production ini tidak diisi disini tp, dari sign in page.
     @Published var experts : ExpertRepository = ExpertRepository();
     
     @Published var navBarShown : Bool = true;
@@ -23,19 +27,32 @@ class parenthingsViewModel : ObservableObject {
     @Published var ovoSelected : Bool = false;
     @Published var danaSelected : Bool = false;
     
+    
+    @Published var startConsulting : Bool = false;
+    @Published var remainingTime : Int  = 0;
+//    @Published var CurrenttimeRemaining?;
 //    @Published var buttonClicked : Bool = false;
     
-    @Published var selectedExpert : Expert?
+
+    
+    
+    
     
     func getUniqueTransactionDate() -> Set<Date>{
+//        var DatesUnUnique : [Date] = transactions.savedTransaction[0].TransactionDate
+//        if !transactions.savedTransaction.isEmpty {
+//            DatesUnUnique.insert(transactions.savedTransaction[0].TransactionDate)
+//        }
+        let calendar = Calendar.current
         
-        var DatesUnUnique : [Date] = [];
+        var uniqueDates = Set<Date>()
         
         for trx in transactions.savedTransaction {
-            DatesUnUnique.append(trx.TransactionDate)
+            let uniqueDate = calendar.startOfDay(for: trx.TransactionDate)
+               uniqueDates.insert(uniqueDate)
         }
         
-        return Set(DatesUnUnique);
+        return Set(uniqueDates);
     }
     
     
