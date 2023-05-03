@@ -117,7 +117,7 @@ struct ExpertDetail: View {
                
                 if viewModel.user != nil
                 {
-                    NavigationLink("", destination: ExpertPaymentView(currentUser: viewModel.user!, expert: viewModel.selectedExpert!).navigationBarHidden(true), isActive: $consultNow)
+                    NavigationLink("", destination: ExpertPaymentView(expert: viewModel.selectedExpert!).navigationBarHidden(true), isActive: $consultNow)
                 }
                 
             }

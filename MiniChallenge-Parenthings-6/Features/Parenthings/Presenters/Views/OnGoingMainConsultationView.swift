@@ -33,6 +33,7 @@ struct OnGoingMainConsultationPage: View {
                     }, id : \.self) {
                         trx in
                         LongExpertCard(ExpertData: trx.expert, buttonText: Prompt.Button.chat)
+                            .frame(height: 150)
                     }
                     Spacer()
                 }
