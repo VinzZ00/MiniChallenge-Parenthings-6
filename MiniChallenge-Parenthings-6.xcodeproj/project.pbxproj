@@ -24,6 +24,10 @@
 		8F3CF2932A012091006E03AC /* LogoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3CF2922A012090006E03AC /* LogoComponent.swift */; };
 		8F3CF2952A012133006E03AC /* ProfileMenuComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3CF2942A012133006E03AC /* ProfileMenuComponent.swift */; };
 		8F3CF2972A012182006E03AC /* PaymentSuccessPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3CF2962A012182006E03AC /* PaymentSuccessPageView.swift */; };
+		AC0338B32A02B0E30010349E /* ChatInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0338B22A02B0E30010349E /* ChatInteractorProtocol.swift */; };
+		AC0338B52A02B30B0010349E /* ChatInteractorClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0338B42A02B30B0010349E /* ChatInteractorClass.swift */; };
+		AC0338B72A02B55E0010349E /* ChatDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0338B62A02B55E0010349E /* ChatDataClass.swift */; };
+		AC0338B92A02DC7F0010349E /* ChatRepoExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0338B82A02DC7F0010349E /* ChatRepoExtension.swift */; };
 		AC1AEF172A010DE1006C5F01 /* hiddenTabBar Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AEF162A010DE1006C5F01 /* hiddenTabBar Testing.swift */; };
 		AC1AEF1A2A0142AE006C5F01 /* Chat in Frameworks */ = {isa = PBXBuildFile; productRef = AC1AEF192A0142AE006C5F01 /* Chat */; };
 		AC1AEF1F2A014B28006C5F01 /* ChatExpertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AEF1E2A014B28006C5F01 /* ChatExpertView.swift */; };
@@ -92,6 +96,10 @@
 		8F3CF2922A012090006E03AC /* LogoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoComponent.swift; sourceTree = "<group>"; };
 		8F3CF2942A012133006E03AC /* ProfileMenuComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuComponent.swift; sourceTree = "<group>"; };
 		8F3CF2962A012182006E03AC /* PaymentSuccessPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSuccessPageView.swift; sourceTree = "<group>"; };
+		AC0338B22A02B0E30010349E /* ChatInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInteractorProtocol.swift; sourceTree = "<group>"; };
+		AC0338B42A02B30B0010349E /* ChatInteractorClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInteractorClass.swift; sourceTree = "<group>"; };
+		AC0338B62A02B55E0010349E /* ChatDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataClass.swift; sourceTree = "<group>"; };
+		AC0338B82A02DC7F0010349E /* ChatRepoExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRepoExtension.swift; sourceTree = "<group>"; };
 		AC1AEF162A010DE1006C5F01 /* hiddenTabBar Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "hiddenTabBar Testing.swift"; sourceTree = "<group>"; };
 		AC1AEF1E2A014B28006C5F01 /* ChatExpertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatExpertView.swift; sourceTree = "<group>"; };
 		AC34EDB329FBA063002AED7C /* Consultation_ExpertPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consultation_ExpertPaymentView.swift; sourceTree = "<group>"; };
@@ -176,6 +184,16 @@
 			path = Text;
 			sourceTree = "<group>";
 		};
+		AC0338B12A02B0D40010349E /* ChatHelper */ = {
+			isa = PBXGroup;
+			children = (
+				AC0338B22A02B0E30010349E /* ChatInteractorProtocol.swift */,
+				AC0338B42A02B30B0010349E /* ChatInteractorClass.swift */,
+				AC0338B62A02B55E0010349E /* ChatDataClass.swift */,
+			);
+			path = ChatHelper;
+			sourceTree = "<group>";
+		};
 		ACC826C929F41D88004423C8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +202,7 @@
 				AC5F372C29FA861900372208 /* HexToColor.swift */,
 				AC9FF96429FD9FB7008766E8 /* DateFormatter.swift */,
 				858628032A0258700077F60D /* StringExtension.swift */,
+				AC0338B82A02DC7F0010349E /* ChatRepoExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -280,6 +299,7 @@
 		ACFB983829F187F00046BA06 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				AC0338B12A02B0D40010349E /* ChatHelper */,
 				85F8D81529FD86B80012A6D1 /* AESHelper.swift */,
 				AC97A51629FFB25D00B66A67 /* PaymentTypeHelper.swift */,
 			);
@@ -522,6 +542,7 @@
 				AC97A51729FFB25D00B66A67 /* PaymentTypeHelper.swift in Sources */,
 				8F3CF2952A012133006E03AC /* ProfileMenuComponent.swift in Sources */,
 				ACF7F5DF29FC449C0059F323 /* UserModel.swift in Sources */,
+				AC0338B32A02B0E30010349E /* ChatInteractorProtocol.swift in Sources */,
 				AC5AEB3929FC0CE800BF64F9 /* CustomPicker.swift in Sources */,
 				AC5F371A29F822D400372208 /* Consultation_ExpertDetailView.swift in Sources */,
 				ACFB984929F272BB0046BA06 /* BlurBackground.swift in Sources */,
@@ -530,6 +551,7 @@
 				AC9FF96329FD9156008766E8 /* TransactionRepository.swift in Sources */,
 				ACFB985229F2D9100046BA06 /* Expert.swift in Sources */,
 				ACFB984B29F2D6E20046BA06 /* LongExpertCardView.swift in Sources */,
+				AC0338B52A02B30B0010349E /* ChatInteractorClass.swift in Sources */,
 				AC5F372529F95FA400372208 /* ExpertGridView.swift in Sources */,
 				AC1AEF172A010DE1006C5F01 /* hiddenTabBar Testing.swift in Sources */,
 				858628062A0258EA0077F60D /* OtpView.swift in Sources */,
@@ -537,8 +559,10 @@
 				AC5F370E29F50E4800372208 /* Prompt.swift in Sources */,
 				ACC826CD29F42529004423C8 /* EncodedBase64Extension.swift in Sources */,
 				AC9FF96129FD9007008766E8 /* OnGoingMainConsultationView.swift in Sources */,
+				AC0338B72A02B55E0010349E /* ChatDataClass.swift in Sources */,
 				858628042A0258700077F60D /* StringExtension.swift in Sources */,
 				85F8D8192A003C810012A6D1 /* BreedFetcher.swift in Sources */,
+				AC0338B92A02DC7F0010349E /* ChatRepoExtension.swift in Sources */,
 				ACDE995E29FD51B200E32E5A /* SignInPopUPView.swift in Sources */,
 				AC5F371C29F84A3D00372208 /* ExpertDetailImage.swift in Sources */,
 				AC9FF96529FD9FB7008766E8 /* DateFormatter.swift in Sources */,
