@@ -38,6 +38,7 @@
 		AC0338B52A02B30B0010349E /* ChatInteractorClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0338B42A02B30B0010349E /* ChatInteractorClass.swift */; };
 		AC0338B72A02B55E0010349E /* ChatDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0338B62A02B55E0010349E /* ChatDataClass.swift */; };
 		AC0338B92A02DC7F0010349E /* ChatRepoExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0338B82A02DC7F0010349E /* ChatRepoExtension.swift */; };
+		AC0338BB2A03B2520010349E /* ConsultationSearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0338BA2A03B2520010349E /* ConsultationSearchPage.swift */; };
 		AC1AEF172A010DE1006C5F01 /* hiddenTabBar Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AEF162A010DE1006C5F01 /* hiddenTabBar Testing.swift */; };
 		AC1AEF1A2A0142AE006C5F01 /* Chat in Frameworks */ = {isa = PBXBuildFile; productRef = AC1AEF192A0142AE006C5F01 /* Chat */; };
 		AC1AEF1F2A014B28006C5F01 /* ChatExpertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1AEF1E2A014B28006C5F01 /* ChatExpertView.swift */; };
@@ -56,7 +57,7 @@
 		AC5F372029F912C200372208 /* TestingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F371F29F912C200372208 /* TestingScrollView.swift */; };
 		AC5F372329F9212B00372208 /* TestingOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F372229F9212B00372208 /* TestingOnboarding.swift */; };
 		AC5F372529F95FA400372208 /* ExpertGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F372429F95FA400372208 /* ExpertGridView.swift */; };
-		AC5F372729F966AD00372208 /* Consultation_SearchPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F372629F966AD00372208 /* Consultation_SearchPageView.swift */; };
+		AC5F372729F966AD00372208 /* Consultation_SearchPageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F372629F966AD00372208 /* Consultation_SearchPageComponent.swift */; };
 		AC5F372B29FA858000372208 /* LoadingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F372A29FA858000372208 /* LoadingPageView.swift */; };
 		AC5F372D29FA861900372208 /* HexToColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F372C29FA861900372208 /* HexToColor.swift */; };
 		AC97A51729FFB25D00B66A67 /* PaymentTypeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC97A51629FFB25D00B66A67 /* PaymentTypeHelper.swift */; };
@@ -120,6 +121,7 @@
 		AC0338B42A02B30B0010349E /* ChatInteractorClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInteractorClass.swift; sourceTree = "<group>"; };
 		AC0338B62A02B55E0010349E /* ChatDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataClass.swift; sourceTree = "<group>"; };
 		AC0338B82A02DC7F0010349E /* ChatRepoExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRepoExtension.swift; sourceTree = "<group>"; };
+		AC0338BA2A03B2520010349E /* ConsultationSearchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsultationSearchPage.swift; sourceTree = "<group>"; };
 		AC1AEF162A010DE1006C5F01 /* hiddenTabBar Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "hiddenTabBar Testing.swift"; sourceTree = "<group>"; };
 		AC1AEF1E2A014B28006C5F01 /* ChatExpertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatExpertView.swift; sourceTree = "<group>"; };
 		AC34EDB329FBA063002AED7C /* Consultation_ExpertPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consultation_ExpertPaymentView.swift; sourceTree = "<group>"; };
@@ -138,7 +140,7 @@
 		AC5F372129F9161B00372208 /* TestingSwift.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestingSwift.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AC5F372229F9212B00372208 /* TestingOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingOnboarding.swift; sourceTree = "<group>"; };
 		AC5F372429F95FA400372208 /* ExpertGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertGridView.swift; sourceTree = "<group>"; };
-		AC5F372629F966AD00372208 /* Consultation_SearchPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consultation_SearchPageView.swift; sourceTree = "<group>"; };
+		AC5F372629F966AD00372208 /* Consultation_SearchPageComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consultation_SearchPageComponent.swift; sourceTree = "<group>"; };
 		AC5F372A29FA858000372208 /* LoadingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingPageView.swift; sourceTree = "<group>"; };
 		AC5F372C29FA861900372208 /* HexToColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexToColor.swift; sourceTree = "<group>"; };
 		AC97A51629FFB25D00B66A67 /* PaymentTypeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTypeHelper.swift; sourceTree = "<group>"; };
@@ -435,7 +437,6 @@
 				AC5F371129F59B4D00372208 /* HomeRootView.swift */,
 				AC5F371329F59C9C00372208 /* ConsultationMainPageView.swift */,
 				AC5F371929F822D300372208 /* Consultation_ExpertDetailView.swift */,
-				AC5F372629F966AD00372208 /* Consultation_SearchPageView.swift */,
 				AC5F372A29FA858000372208 /* LoadingPageView.swift */,
 				851DC3192A03B4A00025DD5C /* ProgressPageView.swift */,
 				8586280F2A0387440077F60D /* Article_SearchPageView.swift */,
@@ -450,6 +451,7 @@
 				858628052A0258EA0077F60D /* OtpView.swift */,
 				858628112A038DA00077F60D /* ArticleDetailView.swift */,
 				858628072A03493C0077F60D /* ArticleMainPageView.swift */,
+				AC0338BA2A03B2520010349E /* ConsultationSearchPage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -474,6 +476,7 @@
 				858627FF2A02472F0077F60D /* ClearButton.swift */,
 				858628092A034B100077F60D /* ShortArticleCardView.swift */,
 				8586280B2A034B1D0077F60D /* LongArticleCardView.swift */,
+				AC5F372629F966AD00372208 /* Consultation_SearchPageComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				8F3CF2952A012133006E03AC /* ProfileMenuComponent.swift in Sources */,
 				ACF7F5DF29FC449C0059F323 /* UserModel.swift in Sources */,
 				AC0338B32A02B0E30010349E /* ChatInteractorProtocol.swift in Sources */,
+				AC0338BB2A03B2520010349E /* ConsultationSearchPage.swift in Sources */,
 				AC5AEB3929FC0CE800BF64F9 /* CustomPicker.swift in Sources */,
 				AC5F371A29F822D400372208 /* Consultation_ExpertDetailView.swift in Sources */,
 				ACFB984929F272BB0046BA06 /* BlurBackground.swift in Sources */,
@@ -613,7 +617,7 @@
 				AC5F371229F59B4D00372208 /* HomeRootView.swift in Sources */,
 				AC34EDB629FBCFD5002AED7C /* ConsultationTransactionModel.swift in Sources */,
 				ACFB984429F1BDF00046BA06 /* SearchBarComponent.swift in Sources */,
-				AC5F372729F966AD00372208 /* Consultation_SearchPageView.swift in Sources */,
+				AC5F372729F966AD00372208 /* Consultation_SearchPageComponent.swift in Sources */,
 				ACFB982529F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift in Sources */,
 				ACFB985729F2DAF80046BA06 /* ShortExpertCardView.swift in Sources */,
 				858628102A0387450077F60D /* Article_SearchPageView.swift in Sources */,
