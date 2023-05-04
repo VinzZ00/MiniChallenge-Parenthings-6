@@ -10,20 +10,17 @@ import SwiftUI
 struct ExpertDetail: View {
     
     @EnvironmentObject var viewModel : parenthingsViewModel;
+    var selectedExpert : Expert;
+    var loggedUser : User;
     @State var consultNow : Bool = false;
     @Environment(\.presentationMode) var presentationMode
-    
-    
-    
     
     var body: some View {
         NavigationView {
             VStack(alignment: .leading){
                 CustomNavigationBar(title: Prompt.Title.consultation,
                                     enableBackButton: true, backButton: {
-                    withAnimation {
-                        viewModel.expertDetailIsPresented = false
-                    }
+                    presentationMode.wrappedValue.dismiss()
                 })
                 
                 
@@ -31,17 +28,17 @@ struct ExpertDetail: View {
                     VStack(alignment: .leading){
                         HStack {
                             Spacer()
-                            ExpertDetailImage(selectedExpert: viewModel.selectedExpert!)
+                            ExpertDetailImage(selectedExpert: selectedExpert)
                                 .background(AppColor.systemGray.opacity(0.75))
                                 .cornerRadius(10)
                             Spacer()
                             
                         }
                         
-                        Text("\(viewModel.selectedExpert!.name)")
+                        Text("\(selectedExpert.name)")
                             .font(.system(size: 22, weight: .bold))
                             .padding(.leading, 16)
-                        Text("\(viewModel.selectedExpert!.role)")
+                        Text("\(selectedExpert.role)")
                             .font(.system(size: 15, weight: .regular))
                             .foregroundColor(AppColor.expertTextGrayColor)
                             .padding(.leading, 16)
@@ -49,7 +46,7 @@ struct ExpertDetail: View {
                         HStack{
                             HStack {
                                 Image(systemName: "cross.case.fill")
-                                Text("\(viewModel.selectedExpert!.longExp) Years")
+                                Text("\(selectedExpert.longExp) Years")
                                     .font(.system(size: 12))
                                 
                             }
@@ -61,7 +58,7 @@ struct ExpertDetail: View {
                             
                             HStack {
                                 Image(systemName: "hand.thumbsup.fill")
-                                Text("\(String(format: "%.1f", viewModel.selectedExpert!.starCount))  Stars")
+                                Text("\(String(format: "%.1f", selectedExpert.starCount))  Stars")
                                     .font(.system(size: 10))
                                 
                             }
@@ -72,7 +69,7 @@ struct ExpertDetail: View {
                             .cornerRadius(5)
                         }.padding(.leading, 16)
                         
-                        Text("\(String(format : "Rp. %.0f", viewModel.selectedExpert!.price))")
+                        Text("\(String(format : "Rp. %.0f", selectedExpert.price))")
                             .font(.system(size: 22, weight: .bold))
                             .padding(.leading, 16)
                         
@@ -81,9 +78,9 @@ struct ExpertDetail: View {
                             .padding(.horizontal, 16)
                         
                         VStack{
-                            ExpertDetailVerticalTrait(traitIcon: Image(systemName: "graduationcap.fill"), traitTitle: "Education", traitDescription: viewModel.selectedExpert!.educationDesc)
+                            ExpertDetailVerticalTrait(traitIcon: Image(systemName: "graduationcap.fill"), traitTitle: "Education", traitDescription: selectedExpert.educationDesc)
                                 .padding()
-                            ExpertDetailVerticalTrait(traitIcon: Image(systemName: "case.fill"), traitTitle: "Experience", traitDescription: viewModel.selectedExpert!.expDesc)
+                            ExpertDetailVerticalTrait(traitIcon: Image(systemName: "case.fill"), traitTitle: "Experience", traitDescription: selectedExpert.expDesc)
                                 .padding(.leading, 16)
                         }
                         
@@ -94,6 +91,7 @@ struct ExpertDetail: View {
                             Spacer()
                             Button(action: {
                                 consultNow = true
+                                viewModel.selectedExpert = self.selectedExpert
                             }, label: {
                                 VStack {
                                     Spacer();
@@ -112,21 +110,14 @@ struct ExpertDetail: View {
                         }
                         Spacer();
                     }
-                }
-                    .frame(height: 640)
-               
-                if viewModel.user != nil
-                {
-                    NavigationLink("", destination: ExpertPaymentView(expert: viewModel.selectedExpert!).navigationBarHidden(true), isActive: $consultNow)
-                }
+                }.offset(y : -35)
+                
+                NavigationLink("", destination: ExpertPaymentView(currentUser: viewModel.user!, expert: viewModel.selectedExpert!).navigationBarHidden(true), isActive: $consultNow)
                 
             }
-            .transition(.move(edge: .leading))
             .background(
                 AppBackground()
             )
-            
-            
             
             
         }
