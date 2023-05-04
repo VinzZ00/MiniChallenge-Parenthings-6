@@ -28,16 +28,11 @@ struct OnGoingMainConsultationPage: View {
                             .padding(.leading, 18)
                         Spacer();
                     }
-                    ForEach(viewModel.transactions.savedTransaction.filter{
-                        $0.isOngoing == true;
-                    }, id : \.self) {
+                    ForEach(viewModel.transactions.savedTransaction, id : \.self) {
                         trx in
                         LongExpertCard(ExpertData: trx.expert, buttonText: Prompt.Button.chat)
-                            .frame(height: 150)
                     }
-                    Spacer()
                 }
-                
             }
             
             
@@ -114,5 +109,6 @@ struct OnGoingMainConsultationPage: View {
 struct OnGoingMainConsultationPage_Previews: PreviewProvider {
     static var previews: some View {
         OnGoingMainConsultationPage()
+            .environmentObject(parenthingsViewModel())
     }
 }

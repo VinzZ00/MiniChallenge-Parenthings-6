@@ -36,7 +36,7 @@ enum APIError: Error, CustomStringConvertible {
         case .parsing(let error):
             return String(format: Prompt.Network.parsingError, arguments: [(error?.localizedDescription ?? "")])
         case .badResponse(statusCode: let statusCode):
-            return String(format: Prompt.Network.badResponse, arguments: [statusCode])
+            return String(format: Prompt.Network.badResponse, arguments: ["\(statusCode)"])
         }
     }
 }

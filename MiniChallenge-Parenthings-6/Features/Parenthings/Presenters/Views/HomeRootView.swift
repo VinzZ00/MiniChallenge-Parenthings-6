@@ -43,7 +43,9 @@ struct HomeRootView: View {
                 }.tag("Consultation")
                 
                 VStack{
-                    Text("Articles View")
+                    ArticleMainPageView(backButton: {
+                        presentationMode.wrappedValue.dismiss()
+                    })
                 }.tabItem{
                     Image(systemName: "heart.text.square")
                         .resizable()

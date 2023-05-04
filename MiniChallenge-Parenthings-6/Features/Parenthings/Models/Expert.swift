@@ -12,14 +12,31 @@ typealias encodedBase64 = String;
 
 struct Expert : Identifiable, Hashable {
     let id = UUID();
-    var name : String;
-    var role : String;
-    var education : String
-    var educationDesc : String
-    var longExp : Int;
-    var expDesc : String;
-    var price : Double;
-    var starCount : Double;
-    var imageBase64 : encodedBase64;
-    var isAvailable : Bool;
+    var name : String = ""
+    var role : String = ""
+    var education : String = ""
+    var educationDesc : String = ""
+    var longExp : Int = 0
+    var expDesc : String = ""
+    var price : Double = 0.0
+    var starCount : Double = 0.0
+    var imageBase64 : encodedBase64 = ""
+    var isAvailable : Bool = false
+    
+    
+    func sampleData(img: String = "UniversalPlaceHolder")-> Expert {
+        
+        
+        return Expert(name: "Peter Parker"
+                      ,role: "Dokter Kandungan"
+                      ,education: "Dokter"
+                      ,educationDesc: "EducationDescription"
+                      ,longExp: 5
+                      ,expDesc: "Experience Description"
+                      ,price: 20_000
+                      ,starCount:  4.5
+                      ,imageBase64: (UIImage(named: img)?.toBase64()) ?? ""
+                      ,isAvailable: false)
+    }
 }
+

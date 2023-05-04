@@ -57,8 +57,13 @@
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
+            key = "BASE_URL"
+            value = "https://parenthings.herokuapp.com/api/v1/"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
             key = "AES_KEY"
-            value = "Zr4u7x!A%D*G-JaNdRgUkXp2s5v8y/B? "
+            value = "Zr4u7x!A%D*G-JaNdRgUkXp2s5v8y/B?"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
