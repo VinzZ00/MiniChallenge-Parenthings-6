@@ -4,7 +4,6 @@
 //
 //  Created by Elvin Sestomi on 30/04/23.
 //
-
 import SwiftUI
 
 struct ConsultationDetailView: View {
@@ -108,6 +107,8 @@ struct ConsultationDetailView: View {
                         Text("Pay with Ovo")
                     case .Dana:
                         Text("Pay with Dana")
+                    default:
+                        Text("Pay with .")
                     }
                     
                     Spacer()

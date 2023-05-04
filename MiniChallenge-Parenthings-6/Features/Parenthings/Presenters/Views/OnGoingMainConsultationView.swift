@@ -109,6 +109,5 @@ struct OnGoingMainConsultationPage: View {
 struct OnGoingMainConsultationPage_Previews: PreviewProvider {
     static var previews: some View {
         OnGoingMainConsultationPage()
-            .environmentObject(parenthingsViewModel())
     }
 }

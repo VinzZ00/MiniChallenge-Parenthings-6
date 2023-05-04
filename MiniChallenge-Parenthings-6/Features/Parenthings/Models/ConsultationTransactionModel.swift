@@ -4,7 +4,6 @@
 //
 //  Created by Elvin Sestomi on 28/04/23.
 //
-
 import Foundation
 
 struct ConsultationTransaction : Identifiable, Hashable {
@@ -35,5 +34,3 @@ struct ConsultationTransaction : Identifiable, Hashable {
         return adminFee + expert.price
     }
 }
-
-
