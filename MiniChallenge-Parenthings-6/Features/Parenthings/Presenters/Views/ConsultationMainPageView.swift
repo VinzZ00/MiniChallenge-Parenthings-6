@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ConsultationMainPageView: View {
     
-    @State var searchBarValue : String = "";
+    @State var searchBarValue : String = "2";
     @State var SegmentedPickerValue : String = "Ongoing"
     
     
@@ -95,10 +95,10 @@ struct ConsultationMainPageView: View {
     }
 }
 
-//struct ConsultationMainPageView_Previews: PreviewProvider {
-//
-//    static var previews: some View {
-//        ConsultationMainPageView()
-//    }
-//
-//}
+struct ConsultationMainPageView_Previews: PreviewProvider {
+
+    static var previews: some View {
+        ConsultationMainPageView(backButton: {}).environmentObject(parenthingsViewModel())
+    }
+
+}

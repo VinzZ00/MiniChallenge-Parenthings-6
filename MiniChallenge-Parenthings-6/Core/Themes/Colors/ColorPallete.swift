@@ -30,7 +30,8 @@ struct AppColor {
     static let grayLightColor : Color = Color(UIColor(red:0.820, green:0.820, blue:0.839, alpha:1.00))
     static let paymentGrayTextColor : Color = Color(UIColor(red:0.235, green:0.235, blue:0.263, alpha:0.60))
     static let paymentBlueTextColor : Color = Color(UIColor(red:0.078, green:0.424, blue:0.580, alpha:1.00))
-    
+    static let textCyanColor : Color = Color(hex: 0x146C94)
+
     private init(){}
     
 }
