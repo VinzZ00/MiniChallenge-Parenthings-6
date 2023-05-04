@@ -23,7 +23,6 @@
 		830BB9052A03FF1C00F7C406 /* LongExpertCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830BB8F42A03FF1B00F7C406 /* LongExpertCardView.swift */; };
 		830BB9062A03FF1C00F7C406 /* BottomConfirmationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830BB8F52A03FF1B00F7C406 /* BottomConfirmationComponent.swift */; };
 		830BB9072A03FF1C00F7C406 /* ShortExpertCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830BB8F62A03FF1B00F7C406 /* ShortExpertCardView.swift */; };
-		830BB9082A03FF1C00F7C406 /* CustomTabVIewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830BB8F72A03FF1C00F7C406 /* CustomTabVIewStyle.swift */; };
 		830BB91A2A03FF3800F7C406 /* PaymentSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830BB9092A03FF3700F7C406 /* PaymentSuccessView.swift */; };
 		830BB91B2A03FF3800F7C406 /* Consultation_SearchPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830BB90A2A03FF3700F7C406 /* Consultation_SearchPageView.swift */; };
 		830BB91C2A03FF3800F7C406 /* CouponVerifiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830BB90B2A03FF3700F7C406 /* CouponVerifiedView.swift */; };
@@ -43,6 +42,7 @@
 		830BB92A2A03FF3800F7C406 /* InsertTopUpAmountSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830BB9192A03FF3800F7C406 /* InsertTopUpAmountSheetView.swift */; };
 		830BB92C2A03FF5500F7C406 /* parenthingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830BB92B2A03FF5500F7C406 /* parenthingsViewModel.swift */; };
 		830BB92E2A03FF9000F7C406 /* TestingOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830BB92D2A03FF9000F7C406 /* TestingOnboarding.swift */; };
+		830BB9302A04032F00F7C406 /* CustomTabVIewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830BB92F2A04032F00F7C406 /* CustomTabVIewStyle.swift */; };
 		851DC3122A03A38C0025DD5C /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851DC3112A03A38C0025DD5C /* UserViewModel.swift */; };
 		851DC3142A03A8490025DD5C /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851DC3132A03A8490025DD5C /* DataExtension.swift */; };
 		851DC3182A03A8EB0025DD5C /* UserApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851DC3172A03A8EB0025DD5C /* UserApiModel.swift */; };
@@ -101,7 +101,6 @@
 		830BB8F42A03FF1B00F7C406 /* LongExpertCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongExpertCardView.swift; sourceTree = "<group>"; };
 		830BB8F52A03FF1B00F7C406 /* BottomConfirmationComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomConfirmationComponent.swift; sourceTree = "<group>"; };
 		830BB8F62A03FF1B00F7C406 /* ShortExpertCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortExpertCardView.swift; sourceTree = "<group>"; };
-		830BB8F72A03FF1C00F7C406 /* CustomTabVIewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTabVIewStyle.swift; path = "../../../../../../../../Downloads/MiniChallenge-Parenthings-6-ed9e813dbd750a5e1a2eb334c4d52c6c44f66d51/MiniChallenge-Parenthings-6/Features/Parenthings/Presenters/Components/CustomTabVIewStyle.swift"; sourceTree = "<group>"; };
 		830BB9092A03FF3700F7C406 /* PaymentSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentSuccessView.swift; sourceTree = "<group>"; };
 		830BB90A2A03FF3700F7C406 /* Consultation_SearchPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Consultation_SearchPageView.swift; sourceTree = "<group>"; };
 		830BB90B2A03FF3700F7C406 /* CouponVerifiedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponVerifiedView.swift; sourceTree = "<group>"; };
@@ -121,6 +120,7 @@
 		830BB9192A03FF3800F7C406 /* InsertTopUpAmountSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsertTopUpAmountSheetView.swift; sourceTree = "<group>"; };
 		830BB92B2A03FF5500F7C406 /* parenthingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = parenthingsViewModel.swift; sourceTree = "<group>"; };
 		830BB92D2A03FF9000F7C406 /* TestingOnboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingOnboarding.swift; sourceTree = "<group>"; };
+		830BB92F2A04032F00F7C406 /* CustomTabVIewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabVIewStyle.swift; sourceTree = "<group>"; };
 		851DC3112A03A38C0025DD5C /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		851DC3132A03A8490025DD5C /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
 		851DC3172A03A8EB0025DD5C /* UserApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiModel.swift; sourceTree = "<group>"; };
@@ -441,7 +441,6 @@
 				830BB8EA2A03FF1B00F7C406 /* ConsultationPagePicker.swift */,
 				830BB8EB2A03FF1B00F7C406 /* CountStartViewComponent.swift */,
 				830BB8E92A03FF1B00F7C406 /* CustomPicker.swift */,
-				830BB8F72A03FF1C00F7C406 /* CustomTabVIewStyle.swift */,
 				830BB8E72A03FF1B00F7C406 /* ExpertDetailImage.swift */,
 				830BB8F22A03FF1B00F7C406 /* ExpertDetailVerticalTrait.swift */,
 				830BB8E82A03FF1B00F7C406 /* ExpertGridView.swift */,
@@ -454,6 +453,7 @@
 				830BB8ED2A03FF1B00F7C406 /* StarRatingComponent.swift */,
 				830BB8F32A03FF1B00F7C406 /* TopUpAmountComponent.swift */,
 				830BB8F02A03FF1B00F7C406 /* TransactionDetailViewComponent.swift */,
+				830BB92F2A04032F00F7C406 /* CustomTabVIewStyle.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -577,6 +577,7 @@
 				830BB9032A03FF1C00F7C406 /* ExpertDetailVerticalTrait.swift in Sources */,
 				830BB8F92A03FF1C00F7C406 /* ExpertGridView.swift in Sources */,
 				858628042A0258700077F60D /* StringExtension.swift in Sources */,
+				830BB9302A04032F00F7C406 /* CustomTabVIewStyle.swift in Sources */,
 				85F8D8192A003C810012A6D1 /* BreedFetcher.swift in Sources */,
 				AC0338B92A02DC7F0010349E /* ChatRepoExtension.swift in Sources */,
 				851DC3182A03A8EB0025DD5C /* UserApiModel.swift in Sources */,
@@ -597,7 +598,6 @@
 				85F8D81629FD86B80012A6D1 /* AESHelper.swift in Sources */,
 				AC5F371629F5A43300372208 /* ExpertRepository.swift in Sources */,
 				851DC3122A03A38C0025DD5C /* UserViewModel.swift in Sources */,
-				830BB9082A03FF1C00F7C406 /* CustomTabVIewStyle.swift in Sources */,
 				85F8D81F2A003D740012A6D1 /* ApiError.swift in Sources */,
 				830BB9012A03FF1C00F7C406 /* TransactionDetailViewComponent.swift in Sources */,
 				830BB9252A03FF3800F7C406 /* Profile_TopUpView.swift in Sources */,
