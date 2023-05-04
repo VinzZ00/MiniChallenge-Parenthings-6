@@ -11,13 +11,24 @@ import Combine
 
 struct SignUpView: View {
     @Environment(\.presentationMode) var presentationMode
-    
+    @StateObject var userViewModel = UserViewModel()
+
     @State var name: String = ""
-    @State var email: String = ""
     @State var phone: String = ""
     @State var isOtp: Bool = false
     
     var body: some View {
+        ZStack{
+            contentView
+            if(userViewModel.isLoading){
+                ProgressPage()
+            }
+        } .alert(userViewModel.errorMessage ?? "",
+                 isPresented: $userViewModel.isError) {
+        }
+    }
+    
+    var contentView: some View {
         VStack(alignment: .leading,spacing: 8){
             Button(action: {
                 //                        backButton();
@@ -56,24 +67,6 @@ struct SignUpView: View {
                 }
             }
             
-            HStack(spacing: 0) {
-                Text("Email")
-                    .font(.system(size : 13, weight: .regular))
-                Text("*")
-                    .font(.system(size : 13, weight: .regular))
-                    .foregroundColor(Color.red)
-                
-            }.padding(.top, 8)
-            
-            HStack(spacing: 0) {
-                VStack(spacing: 4) {
-                    TextField("Enter Your Email Address" , text: $email)
-                      
-                    Rectangle()
-                        .frame(height: 1)
-                        .foregroundColor(.black)
-                }
-            }
             HStack(spacing: 0) {
                 
                 Text("Phone number")
@@ -115,7 +108,8 @@ struct SignUpView: View {
             Spacer()
             NavigationLink(destination:  OtpView(title: "Sign Up", phone: "+62\(phone)"), isActive: $isOtp){
                 Button {
-                    isOtp = true
+//                    isOtp = true
+                    userViewModel.doSignup(phone:  "+62\(phone)", name: name)
                 } label: {
                     VStack{
                         Text(Prompt.Button.next)

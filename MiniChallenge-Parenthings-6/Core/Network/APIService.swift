@@ -84,7 +84,7 @@ struct APIService {
 enum APIMethod: CustomStringConvertible {
     case POST
     case GET
-    case PUT
+    case PATCH
     case DELETE
     
     
@@ -93,7 +93,7 @@ enum APIMethod: CustomStringConvertible {
         switch self {
         case .POST: return "POST"
         case .GET: return "GET"
-        case .PUT: return "PUT"
+        case .PATCH: return "PATCH"
         case .DELETE: return "DEL"
        
         }

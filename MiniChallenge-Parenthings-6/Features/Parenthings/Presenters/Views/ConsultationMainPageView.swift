@@ -19,86 +19,86 @@ struct ConsultationMainPageView: View {
     
     
     
-//    var x : [Expert] = [Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), Expert(name: "Strange Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false) ] untuk debug yaa
+    //    var x : [Expert] = [Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), Expert(name: "Strange Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false) ] untuk debug yaa
     
     var body: some View {
         NavigationView{
-                VStack(spacing: 0){
-                    CustomNavigationBar(title: Prompt.Title.consultation, enableBackButton: false, defaultTextSearchBar: Prompt.searchBar.consultationMainPage, searchText: $searchBarValue, enableSearchBar: true, backButton: self.backButton)
-                    VStack {
-                        if (!searchBarValue.isEmpty) {
-                            VStack {
-                                SearchPage(selectedExpert:  viewModel.experts.savedExpert.filter{
-                                    $0.name.contains(searchBarValue)
-                                })
-                                .frame(maxHeight: 320)
-                                .padding(.vertical, 16)
-                            }
+            VStack(spacing: 0){
+                CustomNavigationBar(title: Prompt.Title.consultation, enableBackButton: false, defaultTextSearchBar: Prompt.searchBar.consultationMainPage, searchText: $searchBarValue, enableSearchBar: true, backButton: self.backButton)
+                VStack {
+                    if (!searchBarValue.isEmpty) {
+                        VStack {
+                            SearchPage(selectedExpert:  viewModel.experts.savedExpert.filter{
+                                $0.name.contains(searchBarValue)
+                            })
+                            .frame(maxHeight: 320)
+                            .padding(.vertical, 16)
                         }
                     }
-                        
-                    
-                    VStack {
-                        Picker("listFilter", selection: $SegmentedPickerValue) {
-                            ForEach( Prompt.Picker.pickerList, id : \.self) {item in
-                                Text(item).tag(item)
-                            }
-                        }.pickerStyle(.segmented)
-                            .padding(EdgeInsets(top: 2, leading: 18, bottom: 18, trailing: 18))
-                        
-                        if (SegmentedPickerValue == "Ongoing"){
-                            OnGoingMainConsultationPage()
-                        } else {
-                            ScrollView(.vertical) {
-                                VStack{
-                                    ForEach(Array(viewModel.getUniqueTransactionDate()), id : \.self ) { date in
-                                        VStack(alignment: .leading){
-                                            HStack{
-                                                Text(date.dateFormatWithSuffix())
-                                                    .font(.system(size: 22, weight: .bold))
-                                                Spacer();
-                                            }
-                                            
-                                            ForEach(Array(viewModel.transactions.savedTransaction.filter{
-                                                let calendar = Calendar.current
-                                                let transactionDate = calendar.component(.day, from: $0.TransactionDate)
-                                                let clasifyDate = calendar.component(.day, from : date)
-                                                
-                                                return transactionDate == clasifyDate;
-                                            }), id : \.self) {
-                                                trx in
-                                                
-                                                VStack (alignment: .leading ,spacing: 0){
-                                                    Text("\(trx.TransactionDate.getTimeOnly().hour!).\(trx.TransactionDate.getTimeOnly().minute!) - \(trx.TransactionDate.addingTimeInterval(40*60).getTimeOnly().hour!).\(trx.TransactionDate.addingTimeInterval(40*60).getTimeOnly().minute!)")
-                                                        .font(.system(size: 13, weight: .semibold))
-                                                        .foregroundColor(AppColor.systemGrayDarker)
-                                                    LongExpertCard(ExpertData: trx.expert, ConusultationData : trx, buttonText: Prompt.Button.viewDetail)
-                                                        .frame(height: 150)
-                                                }
-                                            }
-                                        }.padding(.leading, 16)
-                                        
-                                    }
-                                    Spacer();
-                                }
-                            }
-                        }
-                        Spacer()
-                    }
-                    .blur(radius: searchBarValue.isEmpty ? 0 : 20)
                 }
-                .background(AppBackground()
+                
+                
+                VStack {
+                    Picker("listFilter", selection: $SegmentedPickerValue) {
+                        ForEach( Prompt.Picker.pickerList, id : \.self) {item in
+                            Text(item).tag(item)
+                        }
+                    }.pickerStyle(.segmented)
+                        .padding(EdgeInsets(top: 2, leading: 18, bottom: 18, trailing: 18))
+                    
+                    if (SegmentedPickerValue == "Ongoing"){
+                        OnGoingMainConsultationPage()
+                    } else {
+                        ScrollView(.vertical) {
+                            VStack{
+                                ForEach(Array(viewModel.getUniqueTransactionDate()), id : \.self ) { date in
+                                    VStack(alignment: .leading){
+                                        HStack{
+                                            Text(date.dateFormatWithSuffix())
+                                                .font(.system(size: 22, weight: .bold))
+                                            Spacer();
+                                        }
+                                        
+                                        ForEach(Array(viewModel.transactions.savedTransaction.filter{
+                                            let calendar = Calendar.current
+                                            let transactionDate = calendar.component(.day, from: $0.TransactionDate)
+                                            let clasifyDate = calendar.component(.day, from : date)
+                                            
+                                            return transactionDate == clasifyDate;
+                                        }), id : \.self) {
+                                            trx in
+                                            
+                                            VStack (alignment: .leading ,spacing: 0){
+                                                Text("\(trx.TransactionDate.getTimeOnly().hour!).\(trx.TransactionDate.getTimeOnly().minute!) - \(trx.TransactionDate.addingTimeInterval(40*60).getTimeOnly().hour!).\(trx.TransactionDate.addingTimeInterval(40*60).getTimeOnly().minute!)")
+                                                    .font(.system(size: 13, weight: .semibold))
+                                                    .foregroundColor(AppColor.systemGrayDarker)
+                                                LongExpertCard(ExpertData: trx.expert, ConusultationData : trx, buttonText: Prompt.Button.viewDetail)
+                                                    .frame(height: 150)
+                                            }
+                                        }
+                                    }.padding(.leading, 16)
+                                    
+                                }
+                                Spacer();
+                            }
+                        }
+                    }
+                    Spacer()
+                }
+                .blur(radius: searchBarValue.isEmpty ? 0 : 20)
+            }
+            .background(AppBackground()
                 .blur(radius: searchBarValue.isEmpty ? 0 : 10))
-                .navigationBarHidden(true)
-                .ignoresSafeArea(.keyboard, edges: .bottom)
+            .navigationBarHidden(true)
+            .ignoresSafeArea(.keyboard, edges: .bottom)
         }
     }
 }
 
 struct ConsultationMainPageView_Previews: PreviewProvider {
-
+    
     static var previews: some View {
         ConsultationMainPageView(backButton: {}).environmentObject(parenthingsViewModel())
     }
-
+    
 }

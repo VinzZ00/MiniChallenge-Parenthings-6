@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		851DC3122A03A38C0025DD5C /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851DC3112A03A38C0025DD5C /* UserViewModel.swift */; };
+		851DC3142A03A8490025DD5C /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851DC3132A03A8490025DD5C /* DataExtension.swift */; };
+		851DC3182A03A8EB0025DD5C /* UserApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851DC3172A03A8EB0025DD5C /* UserApiModel.swift */; };
+		851DC31A2A03B4A00025DD5C /* ProgressPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851DC3192A03B4A00025DD5C /* ProgressPageView.swift */; };
 		858627FE2A02413B0077F60D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858627FD2A02413B0077F60D /* SignInView.swift */; };
 		858628002A02472F0077F60D /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858627FF2A02472F0077F60D /* ClearButton.swift */; };
 		858628022A02505D0077F60D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858628012A02505D0077F60D /* SignUpView.swift */; };
@@ -85,6 +89,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		851DC3112A03A38C0025DD5C /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		851DC3132A03A8490025DD5C /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
+		851DC3172A03A8EB0025DD5C /* UserApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiModel.swift; sourceTree = "<group>"; };
+		851DC3192A03B4A00025DD5C /* ProgressPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressPageView.swift; sourceTree = "<group>"; };
 		858627FD2A02413B0077F60D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		858627FF2A02472F0077F60D /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		858628012A02505D0077F60D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -175,10 +183,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		851DC3162A03A8DF0025DD5C /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				851DC3172A03A8EB0025DD5C /* UserApiModel.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
 		85F8D8172A0034590012A6D1 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				85F8D8182A003C810012A6D1 /* BreedFetcher.swift */,
+				851DC3112A03A38C0025DD5C /* UserViewModel.swift */,
 				85F8D81A2A003C970012A6D1 /* APIService.swift */,
 				85F8D81C2A003D190012A6D1 /* Breed.swift */,
 				85F8D81E2A003D740012A6D1 /* ApiError.swift */,
@@ -216,6 +233,7 @@
 				858628032A0258700077F60D /* StringExtension.swift */,
 				AC0338B82A02DC7F0010349E /* ChatRepoExtension.swift */,
 				8586280D2A0384E20077F60D /* ScreenExtension.swift */,
+				851DC3132A03A8490025DD5C /* DataExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -383,6 +401,7 @@
 		ACFB984E29F2D8CF0046BA06 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				851DC3162A03A8DF0025DD5C /* Api */,
 				ACFB985129F2D9100046BA06 /* Expert.swift */,
 				AC5F371529F5A43300372208 /* ExpertRepository.swift */,
 				AC34EDB529FBCFD5002AED7C /* ConsultationTransactionModel.swift */,
@@ -418,6 +437,7 @@
 				AC5F371929F822D300372208 /* Consultation_ExpertDetailView.swift */,
 				AC5F372629F966AD00372208 /* Consultation_SearchPageView.swift */,
 				AC5F372A29FA858000372208 /* LoadingPageView.swift */,
+				851DC3192A03B4A00025DD5C /* ProgressPageView.swift */,
 				8586280F2A0387440077F60D /* Article_SearchPageView.swift */,
 				AC34EDB329FBA063002AED7C /* Consultation_ExpertPaymentView.swift */,
 				ACDE995D29FD51B200E32E5A /* SignInPopUPView.swift */,
@@ -554,6 +574,7 @@
 				ACFB983D29F1888D0046BA06 /* ColorPallete.swift in Sources */,
 				ACC826CB29F42281004423C8 /* parenthingsViewModel.swift in Sources */,
 				AC1AEF1F2A014B28006C5F01 /* ChatExpertView.swift in Sources */,
+				851DC31A2A03B4A00025DD5C /* ProgressPageView.swift in Sources */,
 				AC9FF96729FE9B35008766E8 /* ConsultationDetailView.swift in Sources */,
 				ACFB984029F188CC0046BA06 /* CustomNavigationBar.swift in Sources */,
 				AC9FF96C29FEA295008766E8 /* StarRatingComponent.swift in Sources */,
@@ -585,6 +606,7 @@
 				858628042A0258700077F60D /* StringExtension.swift in Sources */,
 				85F8D8192A003C810012A6D1 /* BreedFetcher.swift in Sources */,
 				AC0338B92A02DC7F0010349E /* ChatRepoExtension.swift in Sources */,
+				851DC3182A03A8EB0025DD5C /* UserApiModel.swift in Sources */,
 				ACDE995E29FD51B200E32E5A /* SignInPopUPView.swift in Sources */,
 				AC5F371C29F84A3D00372208 /* ExpertDetailImage.swift in Sources */,
 				AC9FF96529FD9FB7008766E8 /* DateFormatter.swift in Sources */,
@@ -602,8 +624,10 @@
 				85F8D81629FD86B80012A6D1 /* AESHelper.swift in Sources */,
 				AC5F371029F56BD300372208 /* ConsultationPagePicker.swift in Sources */,
 				AC5F371629F5A43300372208 /* ExpertRepository.swift in Sources */,
+				851DC3122A03A38C0025DD5C /* UserViewModel.swift in Sources */,
 				85F8D81F2A003D740012A6D1 /* ApiError.swift in Sources */,
 				AC5F372329F9212B00372208 /* TestingOnboarding.swift in Sources */,
+				851DC3142A03A8490025DD5C /* DataExtension.swift in Sources */,
 				858627FE2A02413B0077F60D /* SignInView.swift in Sources */,
 				ACC826CF29F455EC004423C8 /* ImageExtension.swift in Sources */,
 				AC5F371829F6F04900372208 /* RoundedShape.swift in Sources */,

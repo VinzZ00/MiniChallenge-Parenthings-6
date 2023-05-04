@@ -11,11 +11,22 @@ import Combine
 
 struct SignInView: View {
     @Environment(\.presentationMode) var presentationMode
-    
+    @StateObject var userViewModel = UserViewModel()
     @State var phone: String = ""
     @State var isOtp: Bool = false
     
     var body: some View {
+        ZStack{
+            contentView
+            if(userViewModel.isLoading){
+                ProgressPage()
+            }
+        } .alert(userViewModel.errorMessage ?? "",
+                 isPresented: $userViewModel.isError) {
+        }
+    }
+    
+    var contentView: some View{
         VStack(alignment: .leading,spacing: 8){
             Button(action: {
                 //                        backButton();
@@ -33,7 +44,6 @@ struct SignInView: View {
                         .frame(height: 34)
                 }
             }
-            
             
             
             Text("Enter your phone number")
@@ -56,7 +66,7 @@ struct SignInView: View {
             
             HStack(spacing: 0) {
                 HStack(spacing: 2) {
-                    Text("ID".getFlag())                  .font(.system(size : 13, weight: .regular))
+                    Text("ID".getFlag()).font(.system(size : 13, weight: .regular))
                     Text("+62")
                         .font(.system(size : 13, weight: .regular))
                 }
@@ -86,8 +96,9 @@ struct SignInView: View {
             Spacer()
             NavigationLink(destination:  OtpView(title: "Sign In", phone: "+62\(phone)"), isActive: $isOtp){
                 Button {
-                    isOtp = true
+                    //                    isOtp = true
                     //Login Function
+                    userViewModel.doSignin(phone: "+62\(phone)")
                 } label: {
                     VStack{
                         Text(Prompt.Button.next)
