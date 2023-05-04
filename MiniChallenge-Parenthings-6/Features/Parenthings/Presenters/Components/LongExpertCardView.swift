@@ -12,9 +12,8 @@ import SwiftUI
 struct LongExpertCard : View {
     
     //  Expert Data
-    var ExpertData : Expert?;
+    var ExpertData : Expert;
     
-    var ConusultationData : ConsultationTransaction?;
     
     // Card Component
     var buttonText : String;
@@ -24,7 +23,7 @@ struct LongExpertCard : View {
     
     var body: some View {
                 HStack{
-                    if let decodedimage = (ExpertData ?? ConusultationData!.expert).imageBase64
+                    if let decodedimage = ExpertData.imageBase64
                         .toUIImage() {
                         Image(uiImage : decodedimage)
                             .resizable()
@@ -41,17 +40,17 @@ struct LongExpertCard : View {
                         HStack {
                             Circle()
                                 .frame(width: 12, height: 12)
-                                .foregroundColor(((ExpertData ?? ConusultationData!.expert).isAvailable) ? .green : .red)
+                                .foregroundColor((ExpertData.isAvailable) ? .green : .red)
                                 .padding(.trailing, 4)
                                 .padding(.bottom, 1)
-                            Text("\((ExpertData ?? ConusultationData!.expert).name)")
+                            Text("\(ExpertData.name)")
                                 .font(.system(size: 16, weight: .semibold))
                                 .lineLimit(2)
                                 .fixedSize(horizontal: false, vertical: true)
                                 .minimumScaleFactor(0.75)
                         }
                         
-                        Text("\((ExpertData ?? ConusultationData!.expert).role)")
+                        Text("\(ExpertData.role)")
                             .font(.system(size : 12))
                             .foregroundColor(AppColor.grayOpacity60)
                             .padding(.bottom, 4)
@@ -59,7 +58,7 @@ struct LongExpertCard : View {
                         HStack {
                             HStack {
                                 Image(systemName: "cross.case.fill")
-                                Text("\((ExpertData ?? ConusultationData!.expert).longExp) Years")
+                                Text("\(ExpertData.longExp) Years")
                                     .font(.system(size: 12))
                                 
                             }
@@ -70,26 +69,16 @@ struct LongExpertCard : View {
                             .cornerRadius(5)
                             
                             Spacer()
-                            Text("Rp. \(String(format :  "%.2f", (ExpertData ?? ConusultationData!.expert).price))")
+                            Text("Rp. \(String(format :  "%.2f", ExpertData.price))")
                                 .font(.system(size: 13, weight: .semibold))
                         }
                         
                         HStack {
-                            StarRatingView(rating: (ExpertData ?? ConusultationData!.expert).starCount)
+                            StarRatingView(rating: ExpertData.starCount)
                             Spacer()
                             Button {
-                                if (self.buttonText == Prompt.Button.chat) {
-                                    withAnimation {
-                                        viewModel.expertDetailIsPresented = true
-                                        viewModel.selectedExpert = ExpertData
-                                    }
-                                } else if (self.buttonText == Prompt.Button.viewDetail) {
-                                    withAnimation {
-                                        viewModel.consultationDetailIsPresented = true
-                                        
-                                        viewModel.selectedConsultation = ConusultationData;
-                                    }
-                                }
+                                viewModel.buttonClicked = true
+                                viewModel.selectedExpert = ExpertData
                             } label: {
                                 VStack {
                                     Text(buttonText)

@@ -32,7 +32,7 @@ struct LazyVGridPaymentType: View {
             .padding(.leading, 60)
 //        "\((transactionDetail.totalPrice > currentUser.balanceParenting) ? "Not Enough Balance : Rp. " : "Parenting Balance : Rp. ") \(String(format: "%.2f", currentUser.balanceParenting))"
         
-        VStack(alignment: .leading) {
+        VStack {
             if iscomingSoon {
                 Text("\(description) Coming Soon !!")
                 .frame(width: 220)
@@ -45,13 +45,12 @@ struct LazyVGridPaymentType: View {
             } else {
                 Text("\(description)")
                 .frame(width: 220)
-                .font(.system(size : 15, weight: .bold))
+                .font(.system(size : 15))
                 .padding(.leading, 30)
                 .padding(.top, 10)
-//                .foregroundColor( (transactionDetail.totalPrice > currentUser.balanceParenting) ? Color.red : Color.black )
+                .foregroundColor( (transactionDetail.totalPrice > currentUser.balanceParenting) ? Color.red : Color.black )
             }
         }
-        
     }
 }
 

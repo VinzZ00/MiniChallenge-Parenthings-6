@@ -104,20 +104,10 @@ struct ConsultationDetailView: View {
                             .foregroundColor(AppColor.paymentGrayTextColor)
                     case .GoPay:
                         Text("Pay with Gopay")
-                            .font(.system(size : 15))
-                            .foregroundColor(AppColor.paymentGrayTextColor)
                     case .Ovo:
                         Text("Pay with Ovo")
-                            .font(.system(size : 15))
-                            .foregroundColor(AppColor.paymentGrayTextColor)
                     case .Dana:
                         Text("Pay with Dana")
-                            .font(.system(size : 15))
-                            .foregroundColor(AppColor.paymentGrayTextColor)
-                    case .BankTransfer :
-                        Text("pay by Bank Transfer")
-                            .font(.system(size : 15))
-                            .foregroundColor(AppColor.paymentGrayTextColor)
                     }
                     
                     Spacer()

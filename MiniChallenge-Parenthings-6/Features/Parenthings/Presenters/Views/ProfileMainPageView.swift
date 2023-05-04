@@ -1,16 +1,15 @@
 //
-//  ProfilRedeemCouponPageView.swift
+//  ProfileMainPageView.swift
 //  MiniChallenge-Parenthings-6
 //
-//  Created by Celine Margaretha on 02/05/23.
+//  Created by Celine Margaretha on 03/05/23.
 //
 
 import SwiftUI
 
-struct ProfilRedeemCouponPageView: View {
+struct ProfileMainPageView: View {
     
     var profileName = "Username"
-    var profileEmail = "emailName@gmail.com"
     var profilePhone = "+6200000000000"
     
     var profileBalance = 0
@@ -19,7 +18,8 @@ struct ProfilRedeemCouponPageView: View {
         
 //        NavigationView {
             VStack (spacing: 0){
-                CustomNavigationBar(title: Prompt.Title.profiles, enableBackButton: false, enableSearchBar: false, backButton: {})
+                CustomNavigationBar(title: Prompt.Title.profiles, enableBackButton: false, enableSearchBar: false, backButton: {} )
+                
                 
                 //Contents
                 VStack {
@@ -32,9 +32,22 @@ struct ProfilRedeemCouponPageView: View {
                             .clipShape(Circle())
 
                         VStack (alignment: .leading) {
-                            Text(profileName)
-                                .font(.system(size: 22, weight: .bold))
-                            Text(profileEmail)
+                            HStack (alignment: .bottom) {
+                                Text(profileName)
+                                    .font(.system(size: 22, weight: .bold))
+                                
+                                Button {
+                                    
+                                } label: {
+                                    Image(systemName: Prompt.Icon.edit)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(maxHeight:20)
+                                        .foregroundColor(.gray)
+                                        .padding(.bottom, 3)
+                                }
+                                .buttonStyle(.borderless)
+                            }
                             Text(profilePhone)
                         }
                         .padding(.leading, 20)
@@ -47,22 +60,22 @@ struct ProfilRedeemCouponPageView: View {
                     VStack {
                         HStack {
                             //Current Balance
-                            VStack (alignment: .leading) {
+                            VStack (alignment: .leading, spacing: 3) {
                                 LogoComponent()
                                 HStack {
                                     Text(Prompt.paymentContent.balance)
-                                    
-                                    Text("Rp. \(profileBalance)")
+                                        .foregroundColor(.gray)
+                                    Text("Rp \(profileBalance)")
                                         .bold()
+                                    Spacer()
                                 }
-                                .padding(0)
                             }
+                            
                             
                             Spacer()
                             
                             //Top up button
                             Button {
-                            
                                 
                             } label: {
                                 VStack {
@@ -85,11 +98,15 @@ struct ProfilRedeemCouponPageView: View {
                         .padding(.horizontal, 30)
                         .cornerRadius(10)
                         .background(AppColor.systemGray)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(AppColor.grayLightColor, lineWidth: 2)
+                        )
 //                        .border(.gray)
 
                     }
                     .cornerRadius(10)
-                    .padding(.top, 5)
+                    .padding(.top, 20)
 
                     
                     //Profile Menus
@@ -101,7 +118,7 @@ struct ProfilRedeemCouponPageView: View {
 //                        ProfileMenuComponent(imageName: Prompt.Icon.help, imageText: Prompt.Button.help)
                         
                         //Reddem coupon
-                        ProfileMenuComponent(imageName: Prompt.Icon.reedeemCoupon, imageText: Prompt.Button.redeemCoupon)
+//                        ProfileMenuComponent(imageName: Prompt.Icon.reedeemCoupon, imageText: Prompt.Button.redeemCoupon)
                     }
                     .padding(.top, 20)
                     
@@ -112,7 +129,11 @@ struct ProfilRedeemCouponPageView: View {
                     } label: {
                         ImageLabel(imageName: Prompt.Icon.logOut, imageText: Prompt.Button.logOut, isCustom: false)
                             .frame(maxWidth: .infinity)
-                            .padding(.vertical, 5)
+                            .padding(.vertical, 10)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(AppColor.grayLightColor, lineWidth: 1)
+                            )
                     }
                     .padding(.top, 50)
 //                    .buttonStyle(.bordered)
@@ -120,18 +141,17 @@ struct ProfilRedeemCouponPageView: View {
                     
                     Spacer()
                 }
-                .padding(.horizontal, 35)
-                
+                .padding(.horizontal, 25)
+                .offset(y: -15)
                 
             }
 //        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        
-        .background(AppBackground())
+            .background(AppBackground())
     }
 }
 
-struct ProfilRedeemCouponPageView_Previews: PreviewProvider {
+struct ProfileMainPageView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfilRedeemCouponPageView()
+        ProfileMainPageView()
     }
 }

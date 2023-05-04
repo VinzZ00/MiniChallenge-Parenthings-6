@@ -1,13 +1,13 @@
- //
-//  PaymentSuccessPageView.swift
+//
+//  CouponVerifiedView.swift
 //  MiniChallenge-Parenthings-6
 //
-//  Created by Celine Margaretha on 28/04/23.
+//  Created by Celine Margaretha on 03/05/23.
 //
 
 import SwiftUI
 
-struct PaymentSuccessPageView: View {
+struct CouponVerifiedView: View {
     var body: some View {
         ZStack {
             Image("BackgroundPaymentSuccess")
@@ -16,7 +16,7 @@ struct PaymentSuccessPageView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack(alignment: .center) {
-                Image(systemName: "checkmark.seal.fill")
+                Image(systemName: Prompt.Icon.checkMarkSeal)
                     .resizable()
                     .scaledToFit()
                     .padding([.top, .horizontal], 50)
@@ -26,15 +26,19 @@ struct PaymentSuccessPageView: View {
                     Text(Prompt.subTitle.paymentSuccess)
                         .font(.title)
                         .fontWeight(.bold)
-                    
                     Text(Prompt.Caption.paymentSuccessCelebration)
+                        .padding(.top, -8)
+
+                    Text(Prompt.paymentContent.balanceAdded)
+                        .textCase(.uppercase)
+                        .padding(.top, 30)
                     
-                    Text(Prompt.paymentContent.amountPaid)
-                        .padding(.top, 40)
                     Text("Rp 00.000")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .padding(.bottom, 40)
+                        .padding(.top, -8)
+
                 }
                 .padding(10)
                     
@@ -45,9 +49,9 @@ struct PaymentSuccessPageView: View {
     }
 }
 
-struct PaymentSuccessPageView_Previews: PreviewProvider {
+struct CouponVerifiedView_Previews: PreviewProvider {
     static var previews: some View {
-        PaymentSuccessPageView()
+        CouponVerifiedView()
     }
 }
 

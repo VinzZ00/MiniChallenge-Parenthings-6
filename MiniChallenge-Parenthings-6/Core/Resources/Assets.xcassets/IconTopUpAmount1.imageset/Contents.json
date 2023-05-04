@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "promo-code copy.png",
+      "filename" : "IconTopUpAmount1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "promo-code copy@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "promo-code copy@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
