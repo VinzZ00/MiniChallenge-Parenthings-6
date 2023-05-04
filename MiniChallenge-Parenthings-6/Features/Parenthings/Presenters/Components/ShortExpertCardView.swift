@@ -68,10 +68,8 @@ struct ShortExpertCard: View {
                     .font(.system(size: 13, weight: .semibold))
                 Spacer()
                 Button {
-                    withAnimation {
-                        viewModel.expertDetailIsPresented = true
-                        viewModel.selectedExpert = ExpertData
-                    }
+                    viewModel.buttonClicked = true
+                    viewModel.selectedExpert = ExpertData
                 } label: {
                     VStack {
                         Text(buttonText)

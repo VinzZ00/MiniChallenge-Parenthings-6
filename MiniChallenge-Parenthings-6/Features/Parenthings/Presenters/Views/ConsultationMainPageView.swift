@@ -49,49 +49,47 @@ struct ConsultationMainPageView: View {
                         if (SegmentedPickerValue == "Ongoing"){
                             OnGoingMainConsultationPage()
                         } else {
-                            ScrollView(.vertical) {
-                                VStack{
-                                    ForEach(Array(viewModel.getUniqueTransactionDate()), id : \.self ) { date in
-                                        VStack(alignment: .leading){
-                                            HStack{
-                                                Text(date.dateFormatWithSuffix())
-                                                    .font(.system(size: 22, weight: .bold))
-                                                Spacer();
-                                            }
-                                            
-                                            ForEach(Array(viewModel.transactions.savedTransaction.filter{
-                                                let calendar = Calendar.current
-                                                let transactionDate = calendar.component(.day, from: $0.TransactionDate)
-                                                let clasifyDate = calendar.component(.day, from : date)
-                                                
-                                                return transactionDate == clasifyDate;
-                                            }), id : \.self) {
-                                                trx in
-                                                
-                                                VStack (alignment: .leading ,spacing: 0){
-                                                    Text("\(trx.TransactionDate.getTimeOnly().hour!).\(trx.TransactionDate.getTimeOnly().minute!) - \(trx.TransactionDate.addingTimeInterval(40*60).getTimeOnly().hour!).\(trx.TransactionDate.addingTimeInterval(40*60).getTimeOnly().minute!)")
-                                                        .font(.system(size: 13, weight: .semibold))
-                                                        .foregroundColor(AppColor.systemGrayDarker)
-                                                    LongExpertCard(ExpertData: trx.expert, ConusultationData : trx, buttonText: Prompt.Button.viewDetail)
-                                                        .frame(height: 150)
-                                                }
-                                            }
-                                        }.padding(.leading, 16)
-                                        
-                                    }
+                            ForEach(Array(viewModel.getUniqueTransactionDate()), id : \.self ) { date in
+                            VStack{
+                                HStack{
+                                    Text(date.dateFormatWithSuffix())
+                                        .font(.system(size: 22, weight: .bold))
                                     Spacer();
                                 }
+                                
+                                ForEach(Array(viewModel.transactions.savedTransaction.filter{
+                                    $0.TransactionDate == date
+                                }), id : \.self) {
+                                    trx in
+                                    
+                                    VStack (spacing: 0){
+                                        Text("\(trx.TransactionDate.getTimeOnly()) - \(trx.TransactionDate.addingTimeInterval(40*60).getTimeOnly())")
+                                            .font(.system(size: 13, weight: .semibold))
+                                            .foregroundColor(AppColor.systemGrayDarker)
+                                        LongExpertCard(ExpertData: trx.expert, buttonText: Prompt.Button.viewDetail)
+                                    }
+                                }
+                            }.padding(.leading, 16)
+                                    
                             }
                         }
                         Spacer()
                     }
                     .blur(radius: searchBarValue.isEmpty ? 0 : 20)
-                }
-                .background(AppBackground()
-                .blur(radius: searchBarValue.isEmpty ? 0 : 10))
+                    
+                    if viewModel.selectedExpert != nil {
+                        if viewModel.user != nil {
+                            NavigationLink("", destination: ExpertDetail( selectedExpert : viewModel.selectedExpert!, loggedUser: viewModel.user!).navigationBarHidden(true), isActive: $viewModel.buttonClicked)
+                        } else {
+                            //tunjukan signin page
+                        }
+                    }
+                }.background(AppBackground()
+                .blur(radius: searchBarValue.isEmpty ? 0 : 20))
                 .navigationBarHidden(true)
-                .ignoresSafeArea(.keyboard, edges: .bottom)
-        }
+
+        }.background(AppBackground()
+            .blur(radius: searchBarValue.isEmpty ? 0 : 20))
     }
 }
 
