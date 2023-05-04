@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 MiniChallenge-Parenthings-6.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
 MiniChallenge-Parenthings-6.xcodeproj/project.xcworkspace/xcuserdata/celinemargaretha.xcuserdatad/UserInterfaceState.xcuserstate
 MiniChallenge-Parenthings-6.xcodeproj/project.xcworkspace/xcuserdata/celinemargaretha.xcuserdatad/UserInterfaceState.xcuserstate
 
 *.DS_Store
 
+=======
+MiniChallenge-Parenthings-6/.DS_Store
+MiniChallenge-Parenthings-6/Core/.DS_Store
+MiniChallenge-Parenthings-6/Features/.DS_Store
+MiniChallenge-Parenthings-6/Features/Parenthings/Presenters/.DS_Store
+MiniChallenge-Parenthings-6/Features/Parenthings/.DS_Store
+>>>>>>> 5cca748 (testing ignore)
