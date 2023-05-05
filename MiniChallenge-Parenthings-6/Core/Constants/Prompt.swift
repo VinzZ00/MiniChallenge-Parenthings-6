@@ -83,6 +83,28 @@ extension Prompt {
     }
 }
 
+
+extension Prompt {
+    struct AlertTitle {
+        static let logOut = "Log Out"
+        private init() {}
+    }
+}
+
+extension Prompt {
+    struct AlertMessages {
+        static let logOutMessage = "Are you sure you want to log out?"
+        private init() {}
+    }
+}
+
+extension Prompt {
+    struct ActionSheeetDialog {
+        static let editDialog = "Cancel editing profile?"
+        private init() {}
+    }
+}
+
 extension Prompt {
     struct Button {
         static let chat = "Chat"
@@ -203,26 +225,6 @@ extension Prompt {
         static let parsingError = "Parsing error  %@."
         static let badResponse = "Bad response with status code %@."
         
-        private init() {}
-    }
-}
-
-extension Prompt {
-    struct AlertTitle {
-        static let logOut = "Log Out"
-        private init() {}
-    }
-}
-extension Prompt {
-    struct AlertMessages {
-        static let logOutMessage = "Are you sure you want to log out?"
-        private init() {}
-    }
-}
-
-extension Prompt {
-    struct ActionSheeetDialog {
-        static let logOutMessage = "Are you sure you want to log out?"
         private init() {}
     }
 }
