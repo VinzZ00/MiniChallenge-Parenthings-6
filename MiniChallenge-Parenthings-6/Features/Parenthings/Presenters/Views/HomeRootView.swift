@@ -24,6 +24,7 @@ struct HomeRootView: View {
         } else {
             
             TabView(selection : $selectedView){
+                //Consultation
                 VStack {
                     ConsultationMainPageView(backButton: {
                         presentationMode.wrappedValue.dismiss()
@@ -42,6 +43,7 @@ struct HomeRootView: View {
                     }
                 }.tag("Consultation")
                 
+                //Articles
                 VStack{
                     ArticleMainPageView(backButton: {
                         presentationMode.wrappedValue.dismiss()
@@ -57,10 +59,14 @@ struct HomeRootView: View {
                     Text(Prompt.Title.articles)
                         .foregroundColor(AppColor.paymentBlueTextColor)
                 }.tag("Articles")
-                
+
+                //Profile
                 VStack{
-                    Text("Profile View")
-                    
+                    ZStack {
+                        ProfileMainPageView(backButton: {
+                            presentationMode.wrappedValue.dismiss()
+                        })
+                    }
                     //Masukan Profile view
                 }.tabItem{
                     Image(systemName: "person.text.rectangle")
