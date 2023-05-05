@@ -228,3 +228,14 @@ extension Prompt {
         private init() {}
     }
 }
+
+extension Prompt {
+    struct Padding {
+        struct CardPadding {
+            struct ExpertCard {
+                static let horizontal = 16;
+                static let vertical = 8;
+            }
+        }
+    }
+}
