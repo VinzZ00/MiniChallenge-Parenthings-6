@@ -76,13 +76,13 @@ struct OnGoingMainConsultationPage: View {
                     VStack {
                         Text(Prompt.Button.seeAll)
                             .font(.system(size: 12, weight: .medium))
-                            .foregroundColor(AppColor.red)
+                            .foregroundColor(AppColor.paymentBlueTextColor)
                             .padding(EdgeInsets(top: 3, leading: 14, bottom: 3, trailing: 14))
                     }
                     .cornerRadius(5)
                     .overlay(
                         RoundedRectangle(cornerRadius: 5)
-                            .stroke(AppColor.red, lineWidth: 1)
+                            .stroke(AppColor.paymentBlueTextColor, lineWidth: 1)
                     )
                     .padding(.trailing, 18)
                 }
