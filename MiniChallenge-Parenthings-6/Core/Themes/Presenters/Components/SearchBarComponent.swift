@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SearchBar: View {
     let defaultText : String;
-    @Binding var text: String
+    @Binding var text: String;
+    @EnvironmentObject var viewModel : parenthingsViewModel
     
     var body: some View {
         HStack {
@@ -19,6 +20,11 @@ struct SearchBar: View {
             
             TextField(defaultText, text: $text)
                 .foregroundColor(.black)
+                .onTapGesture {
+                    withAnimation {
+                        viewModel.textFieldIsClicked = true
+                    }
+                }
         }
         .frame(width: 357, height: 49)
         .background(Color(UIColor(red:0.949, green:0.949, blue:0.969, alpha:1.00)))
@@ -32,7 +38,8 @@ struct SearchBarComponent_Previews: PreviewProvider {
     
     static var previews: some View {
         VStack {
-            SearchBar(defaultText :  " Search Expert or Transaction", text: .constant(""))
+            SearchBar(defaultText :  " Search Expert or Transaction", text: .constant("")) //, textFieldIsClicked:
+//                    .constant(false))
         }
     }
 }

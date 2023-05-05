@@ -13,6 +13,8 @@ import Chat
 class parenthingsViewModel : ObservableObject {
     @Published var expertDetailIsPresented : Bool = false;
     @Published var selectedExpert : Expert?
+    @Published var textFieldIsClicked = false;
+    @Published var searchExpertBarValue : String = "";
     
     @Published var consultationDetailIsPresented : Bool = false;
     @Published var selectedConsultation : ConsultationTransaction?

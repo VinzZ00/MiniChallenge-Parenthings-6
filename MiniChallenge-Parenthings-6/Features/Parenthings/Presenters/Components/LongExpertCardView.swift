@@ -23,8 +23,6 @@ struct LongExpertCard : View {
     
     
     var body: some View {
-        NavigationView {
-            VStack{
                 HStack{
                     if let decodedimage = (ExpertData ?? ConusultationData!.expert).imageBase64
                         .toUIImage() {
@@ -109,13 +107,11 @@ struct LongExpertCard : View {
                 }.padding(EdgeInsets(top: 13, leading: 10, bottom: 11, trailing: 12))
                     .background(.white)
                     .cornerRadius(15)
-                    .frame(width: 357)
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
                             .stroke(AppColor.systemGray, lineWidth: 2)
                     )
-            }
-        }
+                    .padding(.horizontal, 18)
     }
 }
 
@@ -127,7 +123,7 @@ struct LongCardView_Previews: PreviewProvider {
             {
 
                 LongExpertCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), buttonText: "Click")
-
+                    .background(.red)
 //                LongExpertCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), buttonText: "Click")
             }
             Spacer();
