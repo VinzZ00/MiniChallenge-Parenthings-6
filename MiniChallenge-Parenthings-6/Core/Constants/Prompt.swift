@@ -132,6 +132,8 @@ extension Prompt {
  
         //alert and action sheets
         static let cancel = "Cancel"
+        static let delete = "Delete"
+        
         static let logOutAlert = "Log out"
         static let keepEditing = "Keep editing"
         
