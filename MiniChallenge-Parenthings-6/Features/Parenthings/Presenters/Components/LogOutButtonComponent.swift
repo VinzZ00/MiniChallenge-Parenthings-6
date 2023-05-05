@@ -28,7 +28,7 @@ struct LogOutButtonComponent: View {
            Alert(
             title: Text(Prompt.AlertTitle.logOut),
               message: Text(Prompt.AlertMessages.logOutMessage),
-            primaryButton: .destructive(Text(Prompt.Button.delete)) {
+            primaryButton: .destructive(Text(Prompt.Button.logOutAlert)) {
                   //action here
               },
               secondaryButton: .cancel()
