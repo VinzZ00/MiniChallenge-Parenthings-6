@@ -93,7 +93,7 @@ struct ExpertDetail: View {
                         HStack{
                             Spacer()
                             Button(action: {
-                                consultNow = true
+                                viewModel.isSignIn = true
                             }, label: {
                                 VStack {
                                     Spacer();
@@ -103,7 +103,7 @@ struct ExpertDetail: View {
                                     Spacer();
                                 }
                                 .frame(width: 358, height: 53)
-                                .background(AppColor.systemPink)
+                                .background(AppColor.paymentBlueTextColor)
                                 .cornerRadius(15)
                                 
                             })
@@ -117,7 +117,9 @@ struct ExpertDetail: View {
                
                 if viewModel.user != nil
                 {
-                    NavigationLink("", destination: ExpertPaymentView(expert: viewModel.selectedExpert!).navigationBarHidden(true), isActive: $consultNow)
+                    NavigationLink("", destination: ExpertPaymentView(expert: viewModel.selectedExpert!).navigationBarHidden(true), isActive: $viewModel.isSignIn)
+                } else {
+                    NavigationLink("", destination: SignInPopUP().navigationBarHidden(true), isActive: $viewModel.isSignIn)
                 }
                 
             }
