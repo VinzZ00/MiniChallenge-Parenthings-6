@@ -129,6 +129,11 @@ extension Prompt {
         static let topUp = "Top Up"
         static let typeTheAmount = "type the amount"
         static let confirmAndTopUp = "Confirm & Top Up"
+ 
+        //alert and action sheets
+        static let cancel = "Cancel"
+        static let logOutAlert = "Log out"
+        static let keepEditing = "Keep editing"
         
         private init() {}
     }
