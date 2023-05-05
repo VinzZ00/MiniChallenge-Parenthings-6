@@ -14,6 +14,12 @@ struct BottomConfirmationComponent: View {
         VStack{
             VStack {
                 HStack {
+                    Image("")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxWidth: 35, maxHeight: 35)
+                        .background(.pink)
+                    
                     VStack(alignment: .leading) {
                         Text(Prompt.paymentContent.topUpWith)
                             .font(.callout)
