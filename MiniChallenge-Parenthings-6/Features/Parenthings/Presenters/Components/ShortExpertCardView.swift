@@ -85,8 +85,13 @@ struct ShortExpertCard: View {
                 }
             }
         }
-        .frame(width: 170, height: 132)
-        .padding(EdgeInsets(top: 13, leading: 5, bottom: 8, trailing: 5))
+        .frame(height: 132)
+        .padding(EdgeInsets(
+            top:CGFloat(Prompt.Padding.CardPadding.ExpertCard.vertical),
+            leading: CGFloat(Prompt.Padding.CardPadding.ExpertCard.horizontal),
+            bottom: CGFloat(Prompt.Padding.CardPadding.ExpertCard.vertical),
+            trailing: CGFloat(Prompt.Padding.CardPadding.ExpertCard.horizontal)
+        ))
         .background(.white)
         .overlay(
             RoundedRectangle(cornerRadius: 15)
