@@ -23,7 +23,7 @@ struct Profile_TopUpView: View {
     @Environment(\.presentationMode) var presentationMode
 
     @State private var showInsertTopUpAmountView = false
-    @State private var amountTextfield = "0"
+//    @State private var amountTextfield = "0"
     @State private var isSelected = true
     
     var profileBalance = 0
@@ -140,45 +140,45 @@ struct Profile_TopUpView: View {
                                     .frame(width: 35, height: 5)
                                     .padding(.top, 15)
                                 
-                                //Sheet content
-                                VStack (alignment: .leading){
-                                    
-                                    Text(Prompt.Caption.enterTopUpAmount)
-                                        .font(.callout)
-                                    
-                                    //Text Field
-                                    VStack {
-                                        TextField(Prompt.paymentContent.redeemCode, text: $amountTextfield)
-                                            .keyboardType(.numberPad)
-                                            .padding(.leading, 10)
-                                            .font(.system(size: 22, weight: .bold))
-                                        
-                                        Divider()
-                                            .background(.black)
-                                    }
-                                    .bold()
-                                    .padding(.top)
-                                }
-                                .padding(.top, 20)
-                                .padding(.horizontal, 25)
-                                
-                                Spacer()
-                                
-                                //Button Continue
-                                NavigationLink {
-                                    //Go to top up confirmation
-                                    Profile_TopUpConfirmation()
-                                } label: {
-                                    Text(Prompt.Button.continueProcess)
-                                        .frame(maxWidth: .infinity)
-                                        .padding(.vertical, 15)
-                                }
-                                .onTapGesture(perform: {showInsertTopUpAmountView.toggle()})
-                                .font(.title2)
-                                .bold()
-                                .foregroundColor(.white)
-                                .background(AppColor.paymentBlueTextColor)
-                                .buttonStyle(.borderless)
+//                                //Sheet content
+//                                VStack (alignment: .leading){
+//                                    
+//                                    Text(Prompt.Caption.enterTopUpAmount)
+//                                        .font(.callout)
+//                                    
+//                                    //Text Field
+//                                    VStack {
+//                                        TextField(Prompt.paymentContent.redeemCode, text: $amountTextfield)
+//                                            .keyboardType(.numberPad)
+//                                            .padding(.leading, 10)
+//                                            .font(.system(size: 22, weight: .bold))
+//                                        
+//                                        Divider()
+//                                            .background(.black)
+//                                    }
+//                                    .bold()
+//                                    .padding(.top)
+//                                }
+//                                .padding(.top, 20)
+//                                .padding(.horizontal, 25)
+//                                
+//                                Spacer()
+//                                
+//                                //Button Continue
+//                                NavigationLink {
+//                                    //Go to top up confirmation
+//                                    Profile_TopUpConfirmation()
+//                                } label: {
+//                                    Text(Prompt.Button.continueProcess)
+//                                        .frame(maxWidth: .infinity)
+//                                        .padding(.vertical, 15)
+//                                }
+//                                .onTapGesture(perform: {showInsertTopUpAmountView.toggle()})
+//                                .font(.title2)
+//                                .bold()
+//                                .foregroundColor(.white)
+//                                .background(AppColor.paymentBlueTextColor)
+//                                .buttonStyle(.borderless)
                             }
                             .presentationDetents([.medium])
                             
@@ -210,8 +210,8 @@ struct Profile_TopUpView: View {
                 .padding(.top, 10)
             }
             .background(AppBackground())
-            .blur(radius: showInsertTopUpAmountView ? 2 : 0)
-            .animation(.easeOut(duration: 0.2), value: showInsertTopUpAmountView)
+//            .blur(radius: showInsertTopUpAmountView ? 2 : 0)
+//            .animation(.easeOut(duration: 0.2), value: showInsertTopUpAmountView)
     }
 }
 
