@@ -11,9 +11,7 @@ import SwiftUI
 struct LongArticleCard: View {
     
     var articleData : ArticleModel;
-    
-    @EnvironmentObject var viewModel : parenthingsViewModel;
-    
+        
     // Card Component
     var buttonText : String;
     
@@ -32,13 +30,16 @@ struct LongArticleCard: View {
             
             Text(articleData.tag)
                 .font(.system(size: 13,weight: .semibold))
-                .foregroundColor(.cyan)
+                .foregroundColor(AppColor.textCyanColor)
             
             Text(articleData.title)
                 .font(.system(size: 22,weight: .bold))
                 .lineLimit(2)
+                .multilineTextAlignment(.leading)
                 .fixedSize(horizontal: false, vertical: true)
                 .frame(height: 30)
+                .foregroundColor(.black)
+
 
         }
         .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
@@ -53,12 +54,10 @@ struct LongArticleCard_Preview: PreviewProvider {
     static var previews: some View {
         VStack{
             Spacer();
-            if (UIImage(systemName: "person.fill")?.toBase64()) != nil
-            {
+          
+            LongArticleCard(articleData: ArticleModel().sampleData(), buttonText: "Click")
 
-                LongArticleCard(articleData: ArticleModel().sampleData(), buttonText: "Click")
-
-            }
+            
             Spacer();
         }.background(.white)
 

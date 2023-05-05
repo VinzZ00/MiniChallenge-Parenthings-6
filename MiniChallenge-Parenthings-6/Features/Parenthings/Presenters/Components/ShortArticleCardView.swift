@@ -9,8 +9,7 @@ import Foundation
 import SwiftUI
 
 struct ShortArticleCard: View {
-    
-    var ExpertData : Expert;
+    var articleData : ArticleModel;
     
     @EnvironmentObject var viewModel : parenthingsViewModel;
     
@@ -20,19 +19,27 @@ struct ShortArticleCard: View {
     var body: some View {
         
         
-        VStack{
-            if let expImage = ExpertData.imageBase64.toUIImage() {
-                Image(uiImage: expImage)
+        VStack(alignment: .leading){
+
+            Image(uiImage: UIImage(named: articleData.image)!)
                     .resizable()
                     .scaledToFit()
                     .mask {
                         RoundedRectangle(cornerRadius: 15)
                     }
+                    .aspectRatio(16/9,contentMode: .fit)
+
                   
-            }
+            
+            Text(articleData.title)
+                .font(.system(size: 12,weight: .bold))
+                .lineLimit(2)
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(height: 28)
+                .foregroundColor(.black)
+
             
         }
-        .aspectRatio(16/9,contentMode: .fit)
         .frame(width: UIScreen.screenWidth / 2)
         .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
         .background(.white)
@@ -46,12 +53,10 @@ struct ShortArticleCard_Preview: PreviewProvider {
     static var previews: some View {
         VStack{
             Spacer();
-            if (UIImage(systemName: "person.fill")?.toBase64()) != nil
-            {
+          
+                ShortArticleCard(articleData: ArticleModel().sampleData(), buttonText: "Click")
 
-                ShortArticleCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "ParentingPlaceHolder")?.toBase64()) ?? "", isAvailable: false), buttonText: "Click")
-
-            }
+            
             Spacer();
         }.background(.white)
 

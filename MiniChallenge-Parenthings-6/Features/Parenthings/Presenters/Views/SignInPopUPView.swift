@@ -70,7 +70,7 @@ struct SignInPopUP: View {
                         }
                         .padding(.bottom, 15)
                     }
-                    NavigationLink(destination:                     SignUpView(), isActive: $isRegist){
+                    NavigationLink(destination: SignUpView(), isActive: $isRegist){
                         Button {
                             //Sign UP Function
                             isRegist = true

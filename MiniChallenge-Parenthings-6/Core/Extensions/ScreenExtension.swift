@@ -19,8 +19,7 @@ extension UIScreen{
         let window = UIApplication.shared.windows.first
         let topPadding = window?.safeAreaInsets.top ?? CGFloat(0)
         let bottomPadding = window?.safeAreaInsets.bottom ?? CGFloat(0)
-        var height = UIScreen.main.bounds.size.height - topPadding - bottomPadding
-        
+        let height = UIScreen.main.bounds.size.height - topPadding - bottomPadding
         
         return height
     }
