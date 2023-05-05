@@ -16,15 +16,17 @@ struct HomeRootView: View {
     var body: some View {
 //        NavigationView{
 //            VStack{
-        if viewModel.expertDetailIsPresented {
+        if viewModel.startConsulting {
+            ChatExpert()
+                .transition(.move(edge: .leading))
+                .environmentObject(viewModel)
+        } else if viewModel.expertDetailIsPresented {
             ExpertDetail()
                 .transition(.move(edge: .trailing))
                 .environmentObject(viewModel)
-            
         } else {
             
             TabView(selection : $selectedView){
-                //Consultation
                 VStack {
                     ConsultationMainPageView(backButton: {
                         presentationMode.wrappedValue.dismiss()
@@ -43,7 +45,6 @@ struct HomeRootView: View {
                     }
                 }.tag("Consultation")
                 
-                //Articles
                 VStack{
                     ArticleMainPageView(backButton: {
                         presentationMode.wrappedValue.dismiss()
@@ -59,8 +60,7 @@ struct HomeRootView: View {
                     Text(Prompt.Title.articles)
                         .foregroundColor(AppColor.paymentBlueTextColor)
                 }.tag("Articles")
-
-                //Profile
+                
                 VStack{
                     ZStack {
                         ProfileMainPageView(backButton: {

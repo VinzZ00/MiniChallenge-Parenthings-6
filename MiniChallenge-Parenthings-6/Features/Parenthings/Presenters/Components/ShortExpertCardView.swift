@@ -79,7 +79,7 @@ struct ShortExpertCard: View {
                             .foregroundColor(.white)
                     }
                     .frame(width: 70, height: 22)
-                    .background(AppColor.systemPink)
+                    .background(AppColor.paymentBlueTextColor)
                     .cornerRadius(5)
                 }
             }

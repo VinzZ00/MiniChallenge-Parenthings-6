@@ -32,7 +32,7 @@ struct OnGoingMainConsultationPage: View {
                         $0.isOngoing == true;
                     }, id : \.self) {
                         trx in
-                        LongExpertCard(ExpertData: trx.expert, buttonText: Prompt.Button.chat)
+                        LongExpertCard(ExpertData: trx.expert, ConusultationData: trx, buttonText: Prompt.Button.chat)
                             .frame(height: 150)
                     }
                     Spacer()
