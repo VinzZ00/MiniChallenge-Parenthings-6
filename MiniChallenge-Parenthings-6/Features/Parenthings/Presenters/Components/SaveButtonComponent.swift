@@ -8,20 +8,35 @@
 import SwiftUI
 
 struct SaveButtonComponent: View {
-    @Binding var showAlert : Bool
+    @Binding var showOptions : Bool
+    @Binding var selectedOption : String
     
     var body: some View {
-        Button(Prompt.AlertTitle.logOut) {
-            showAlert = true
+        Button {
+            //
+        } label: {
+            Text(Prompt.Button.save)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 15)
+            
         }
-        .alert(Prompt.AlertMessages.logOutMessage, isPresented: $showAlert) {
-            Button("OK", role: .cancel) { }
+        .font(.title2)
+        .bold()
+        .foregroundColor(.white)
+        .background(AppColor.paymentBlueTextColor)
+        .buttonStyle(.borderless)
+        .cornerRadius(15)
+        .confirmationDialog(Prompt.ActionSheeetDialog.editDialog, isPresented: $showOptions, titleVisibility: .visible) {
+            Button(Prompt.Button.keepEditing, role: .destructive) {
+                selectedOption = Prompt.Button.keepEditing
+            }
         }
     }
 }
 
-struct AlertLogOut_Previews: PreviewProvider {
+struct SaveButtonComponent_Previews: PreviewProvider {
     static var previews: some View {
-        SaveButtonComponent(showAlert: .constant(true))
+        SaveButtonComponent(showOptions: .constant(true), selectedOption: .constant("none"))
+//        SaveButtonComponent(showOptions: true, selectedOption: "none")
     }
 }
