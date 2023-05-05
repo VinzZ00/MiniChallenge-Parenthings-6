@@ -126,20 +126,20 @@ struct ProfileMainPageView: View {
                     .padding(.top, 20)
                     
                     
-                    //Log out button
-                    Button {
-                        
-                    } label: {
-                        ImageLabel(imageName: Prompt.Icon.logOut, imageText: Prompt.Button.logOut, isCustom: false)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 10)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(AppColor.grayLightColor, lineWidth: 1)
-                            )
-                    }
-                    .padding(.top, 50)
-                    .foregroundColor(AppColor.paymentBlueTextColor)
+//                    //Log out button
+//                    Button {
+//                        
+//                    } label: {
+//                        ImageLabel(imageName: Prompt.Icon.logOut, imageText: Prompt.Button.logOut, isCustom: false)
+//                            .frame(maxWidth: .infinity)
+//                            .padding(.vertical, 10)
+//                            .overlay(
+//                                RoundedRectangle(cornerRadius: 10)
+//                                    .stroke(AppColor.grayLightColor, lineWidth: 1)
+//                            )
+//                    }
+//                    .padding(.top, 50)
+//                    .foregroundColor(AppColor.paymentBlueTextColor)
                     
                     Spacer()
                 }
