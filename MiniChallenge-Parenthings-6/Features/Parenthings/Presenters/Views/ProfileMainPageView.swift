@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileMainPageView: View {
+    @State private var showAlert: Bool = false
     
     var profileName = "Username"
     var profilePhone = "+6200000000000"
@@ -20,7 +21,6 @@ struct ProfileMainPageView: View {
         NavigationView {
             VStack (spacing: 0){
                 CustomNavigationBar(title: Prompt.Title.profiles, enableBackButton: false, enableSearchBar: false, backButton: self.backButton)
-                
                 
                 //Contents
                 VStack {
@@ -127,6 +127,7 @@ struct ProfileMainPageView: View {
                     
                     
 //                    //Log out button
+                    LogOutButtonComponent(showAlert: $showAlert)
 //                    Button {
 //                        
 //                    } label: {
