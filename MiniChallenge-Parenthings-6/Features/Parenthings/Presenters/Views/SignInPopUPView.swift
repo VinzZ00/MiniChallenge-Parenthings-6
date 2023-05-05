@@ -9,13 +9,16 @@ import SwiftUI
 
 struct SignInPopUP: View {
     
-    @State var isShown : Bool = true;
+//    @State var isShown : Bool = true;
+    @State var isDisposed : Bool = false
     @State var isLogin : Bool = false;
     @State var isRegist : Bool = false;
     
+    @Environment(\.presentationMode) var presentationMode;
+    
     var body: some View {
         
-        if isShown {
+        if !isDisposed {
             NavigationView{
                 VStack{
                     HStack {
@@ -26,7 +29,7 @@ struct SignInPopUP: View {
                         Spacer();
                         
                         Button {
-                            isShown = false;
+                            presentationMode.wrappedValue.dismiss()
                         } label : {
                             Image(systemName:  "x.circle.fill")
                                 .resizable()
@@ -56,7 +59,8 @@ struct SignInPopUP: View {
                     
                     NavigationLink(destination:                     SignInView(), isActive: $isLogin){
                         Button {
-                            isLogin = true
+//                            isLogin = true
+                            isDisposed = true;
                             //Login Function
                         } label: {
                             VStack{
@@ -70,7 +74,7 @@ struct SignInPopUP: View {
                         }
                         .padding(.bottom, 15)
                     }
-                    NavigationLink(destination:                     SignUpView(), isActive: $isRegist){
+                    NavigationLink(destination: SignUpView(), isActive: $isRegist){
                         Button {
                             //Sign UP Function
                             isRegist = true

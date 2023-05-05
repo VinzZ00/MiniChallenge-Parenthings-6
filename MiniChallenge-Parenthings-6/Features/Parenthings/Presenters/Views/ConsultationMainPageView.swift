@@ -27,7 +27,7 @@ struct ConsultationMainPageView: View {
                 ConsultationSearchPage()
             } else {
                 VStack(spacing: 0){
-                    CustomNavigationBar(title: Prompt.Title.consultation, enableBackButton: false, defaultTextSearchBar: Prompt.searchBar.consultationMainPage, searchText: $searchBarValue, enableSearchBar: true, backButton: self.backButton)
+                    CustomNavigationBar(title: Prompt.Title.consultation, enableBackButton: false, defaultTextSearchBar: Prompt.searchBar.consultationMainPage, searchText: $searchBarValue, enableSearchBar: true, backButton: {})
                     VStack {
                         Picker("listFilter", selection: $SegmentedPickerValue) {
                             ForEach( Prompt.Picker.pickerList, id : \.self) {item in
@@ -85,6 +85,10 @@ struct ConsultationMainPageView: View {
         }
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 43806e1 (Adding from elvin 4 may)
 
 struct ConsultationMainPageView_Previews: PreviewProvider {
     

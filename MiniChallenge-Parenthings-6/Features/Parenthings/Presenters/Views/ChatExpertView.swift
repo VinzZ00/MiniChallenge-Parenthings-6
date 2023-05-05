@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Chat
 
 struct ChatExpert: View {
     
@@ -15,7 +16,6 @@ struct ChatExpert: View {
 //    var selectedConsultation : ConsultationTransaction
     
     @EnvironmentObject var viewModel : parenthingsViewModel;
-    
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -57,10 +57,26 @@ struct ChatExpert: View {
                 }
             }
             
-//            ChatView(messages: <#T##[Message]#>, didSendMessage: <#T##(DraftMessage) -> Void#>, messageBuilder: <#T##MessageBuilderClosure#>, inputViewBuilder: <#T##InputViewBuilderClosure#>)
+            
+            ChatView(messages: viewModel.messages) { draft in
+                viewModel.send(draft: draft)
+            }
+            .onAppear{
+                viewModel.onStart()
+            }
+            .onDisappear{
+                viewModel.onStop()
+            }
+            
+            
             Spacer();
         }.background(
-            AppBackground()
+            VStack{
+                Spacer()
+            }.background(
+                AppBackground()
+            )
+            .ignoresSafeArea(.keyboard, edges: .bottom)
         )
     }
 }

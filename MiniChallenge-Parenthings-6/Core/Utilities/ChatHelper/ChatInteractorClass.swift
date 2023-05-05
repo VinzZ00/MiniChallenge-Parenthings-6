@@ -4,7 +4,7 @@ import Foundation
 import Combine
 
 final class ChatInteractor: ChatInteractorProtocol {
-    private var chatData : ChatData = ChatData(currentUsername: "Testing1", expertName: "Testing2", allChatData: [Message(id: UUID().uuidString, user: Chat.User(id: "1", name: "Testing1", avatarURL: nil, isCurrentUser: true), text: "Chat 1"), Message(id: UUID().uuidString, user: Chat.User(id: "2", name: "Testing2", avatarURL: nil, isCurrentUser: true), text: "Chat 1")]);
+    private var chatData : ChatData = ChatData(currentUsername: "Testing1", expertName: "Testing2", allChatData: [Message(id: UUID().uuidString, user: Chat.User(id: "1", name: "Testing1", avatarURL: nil, isCurrentUser: true), text: "Chat 1 testing dari sender"), Message(id: UUID().uuidString, user: Chat.User(id: "2", name: "Testing2", avatarURL: nil, isCurrentUser: true), text: "Chat 2 TESTING DARI other sender")]);
 
     private lazy var chatState = CurrentValueSubject<[Message], Never>(generateStartMessages())
     private lazy var sharedState = chatState.share()
@@ -33,7 +33,6 @@ final class ChatInteractor: ChatInteractorProtocol {
 //        self.chatData =
     }
 
-    /// TODO: Generate error with random chance
     /// TODO: Save images from url to files. Imitate upload process
     func send(message: CreateMessage) {
         if message.uid != nil {

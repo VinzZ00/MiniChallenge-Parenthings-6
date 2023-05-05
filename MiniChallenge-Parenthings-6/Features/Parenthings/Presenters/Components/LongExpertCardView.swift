@@ -79,15 +79,26 @@ struct LongExpertCard : View {
                             Spacer()
                             Button {
                                 if (self.buttonText == Prompt.Button.chat) {
-                                    withAnimation {
-                                        viewModel.expertDetailIsPresented = true
-                                        viewModel.selectedExpert = ExpertData
+                                    if ((ConusultationData?.isOngoing) != nil) {
+                                        withAnimation{
+                                            viewModel.selectedConsultation = ConusultationData!
+                                            viewModel.startConsulting = true;
+                                        }
+                                    } else {
+                                        withAnimation {
+                                            viewModel.expertDetailIsPresented = true
+                                            viewModel.selectedExpert = ExpertData
+                                        }
                                     }
                                 } else if (self.buttonText == Prompt.Button.viewDetail) {
                                     withAnimation {
                                         viewModel.consultationDetailIsPresented = true
                                         
                                         viewModel.selectedConsultation = ConusultationData;
+                                    }
+                                } else if (self.buttonText == Prompt.Button.viewDetail) {
+                                    withAnimation {
+                                        viewModel.isDetailConsultationShown = true
                                     }
                                 }
                             } label: {
@@ -97,7 +108,7 @@ struct LongExpertCard : View {
                                         .foregroundColor(.white)
                                 }
                                 .frame(width: 70, height: 22)
-                                .background(AppColor.systemPink)
+                                .background(AppColor.paymentBlueTextColor)
                                 .cornerRadius(5)
                             }
                         }

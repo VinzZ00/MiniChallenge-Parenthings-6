@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StarRatingButton: View {
-    @Binding var rating: Int
+    @EnvironmentObject var viewModel : parenthingsViewModel
     
     var maxRating = 5
     
@@ -19,9 +19,9 @@ struct StarRatingButton: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 51)
-                    .foregroundColor(index < rating ? Color.yellow : Color.gray.opacity(0.2))
+                    .foregroundColor(index < viewModel.ratingScore ? Color.yellow : Color.gray.opacity(0.2))
                     .onTapGesture {
-                        rating = index + 1
+                        viewModel.ratingScore = index + 1
                     }
                     
             }
@@ -29,8 +29,8 @@ struct StarRatingButton: View {
     }
 }
 
-struct Previews_StarRatingComponent_Previews: PreviewProvider {
-    static var previews: some View {
-        StarRatingButton(rating: .constant(4))
-    }
-}
+//struct Previews_StarRatingComponent_Previews: PreviewProvider {
+//    static var previews: some View {
+//        StarRatingButton()
+//    }
+//}

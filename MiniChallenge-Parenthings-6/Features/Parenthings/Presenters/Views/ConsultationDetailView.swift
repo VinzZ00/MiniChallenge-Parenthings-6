@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ConsultationDetailView: View {
     
-    @State var ratingScore : Int = 0;
+    @EnvironmentObject var viewModel : parenthingsViewModel;
     var expert : Expert
     var transactionDetail : ConsultationTransaction
     var backButton : () -> Void;
@@ -36,8 +36,8 @@ struct ConsultationDetailView: View {
                         .font(.system(size : 20, weight: .bold))
                 }.padding(.top, 23)
                 
-                StarRatingButton(rating: $ratingScore)
-                    .animation(.linear(duration: 0.3), value: ratingScore)
+                StarRatingButton()
+                    .animation(.linear(duration: 0.3), value: viewModel.ratingScore)
                     .padding(.bottom, 20)
                 horizontalLine();
                 

@@ -16,11 +16,14 @@ struct HomeRootView: View {
     var body: some View {
 //        NavigationView{
 //            VStack{
-        if viewModel.expertDetailIsPresented {
+        if viewModel.startConsulting {
+            ChatExpert()
+                .transition(.move(edge: .leading))
+                .environmentObject(viewModel)
+        } else if viewModel.expertDetailIsPresented {
             ExpertDetail()
                 .transition(.move(edge: .trailing))
                 .environmentObject(viewModel)
-            
         } else {
             
             TabView(selection : $selectedView){

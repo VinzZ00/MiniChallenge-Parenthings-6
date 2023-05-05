@@ -14,7 +14,7 @@ struct CustomNavigationBar : View {
     var defaultTextSearchBar : String? = ""
     var searchText : Binding<String>?
     var enableSearchBar : Bool = false;
-    var backButton : () -> Void;
+    var backButton : () -> Void?;
     
     var body: some View {
         VStack{
