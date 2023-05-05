@@ -15,6 +15,7 @@ struct OtpView: View {
     var title: String = ""
     var phone: String = ""
     @State var otp: String = ""
+    @State var isOtpOk: Bool = false
     
     var body: some View {
         VStack(alignment: .leading,spacing: 8){
@@ -34,7 +35,6 @@ struct OtpView: View {
                         .frame(height: 34)
                 }
             }
-            
             
             
             Text("OTP sent securely to SMS")
@@ -76,19 +76,22 @@ struct OtpView: View {
                         .foregroundColor(.black)
                 }
             
-            
             Spacer()
-            Button {
-                //Login Function
-            } label: {
-                VStack{
-                    Text(Prompt.Button.next)
-                        .font(.system(size: 22, weight: .bold))
-                        .foregroundColor(Color.white)
+            NavigationLink(destination:  HomeRootView(), isActive: $isOtpOk){
+                Button {
+                    if(!otp.isEmpty){
+                        isOtpOk = true
+                    }
+                } label: {
+                    VStack{
+                        Text(Prompt.Button.next)
+                            .font(.system(size: 22, weight: .bold))
+                            .foregroundColor(Color.white)
+                    }
+                    .frame(width: 357, height: 53)
+                    .background(AppColor.paymentBlueTextColor)
+                    .cornerRadius(15)
                 }
-                .frame(width: 357, height: 53)
-                .background(AppColor.paymentBlueTextColor)
-                .cornerRadius(15)
             }
             
         }

@@ -18,8 +18,7 @@ struct ArticleModel : Codable {
     var source : String = ""
     
     func sampleData(img: String = "Article1")-> ArticleModel {
-        
-        
+
         return ArticleModel(id: 0
                             ,title: "Dokter Kandungan"
                             ,author: "Dokter Boyke"

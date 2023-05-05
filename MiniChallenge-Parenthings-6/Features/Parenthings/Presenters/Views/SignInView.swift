@@ -94,7 +94,7 @@ struct SignInView: View {
             }
             
             Spacer()
-            NavigationLink(destination:  OtpView(title: "Sign In", phone: "+62\(phone)"), isActive: $isOtp){
+            NavigationLink(destination:  OtpView(title: "Sign In", phone: "+62\(phone)"), isActive: $userViewModel.isSigninSuccess){
                 Button {
                     //                    isOtp = true
                     //Login Function

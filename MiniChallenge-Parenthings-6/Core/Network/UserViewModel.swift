@@ -99,7 +99,7 @@ class UserViewModel: ObservableObject {
 //            request?.allHTTPHeaderFields = headers
 //        }
         
-        service.fetch(UserApiModel.self, request: request!) { [unowned self] result in
+        service.fetch(BaseApiModel<UserApiModel>.self, request: request!) { [unowned self] result in
             
             DispatchQueue.main.async {
                 

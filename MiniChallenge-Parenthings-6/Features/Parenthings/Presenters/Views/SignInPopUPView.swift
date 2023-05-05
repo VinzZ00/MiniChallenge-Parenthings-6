@@ -36,7 +36,6 @@ struct SignInPopUP: View {
                             .frame(width: 35, height: 34)
                             .foregroundColor(AppColor.grayLightColor)
                     }
-                    
                 }.padding(.horizontal, 18)
                 Spacer()
                 
@@ -66,6 +65,7 @@ struct SignInPopUP: View {
                             Text(Prompt.Button.logIn)
                                 .font(.system(size: 22, weight: .bold))
                                 .foregroundColor(Color.white)
+
                         }
                         .frame(width: 357, height: 53)
                         .background(AppColor.paymentBlueTextColor)
@@ -73,6 +73,7 @@ struct SignInPopUP: View {
                     }
                     .padding(.bottom, 15)
                 }
+                
                 NavigationLink(destination: SignUpView(), isActive: $isRegist){
                     Button {
                         //Sign UP Function

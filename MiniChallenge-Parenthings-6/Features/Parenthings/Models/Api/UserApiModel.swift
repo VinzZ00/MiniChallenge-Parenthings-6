@@ -14,4 +14,11 @@ struct UserApiModel : Codable {
     var phone : String = ""
     var balance : Int = 0
 
+    enum CodingKeys: String, CodingKey
+       {
+           case id = "id"
+           case name = "name"
+           case phone = "phone"
+           case balance = "balance"
+       }
 }
