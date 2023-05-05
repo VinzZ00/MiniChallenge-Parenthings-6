@@ -10,7 +10,7 @@ import SwiftUI
 
 struct LongArticleCard: View {
     
-    var ExpertData : Expert;
+    var articleData : ArticleModel;
     
     @EnvironmentObject var viewModel : parenthingsViewModel;
     
@@ -20,26 +20,29 @@ struct LongArticleCard: View {
     var body: some View {
         
         VStack(alignment: .leading){
-            if let expImage = ExpertData.imageBase64.toUIImage() {
-                Image(uiImage: expImage)
+            
+            Image(uiImage: UIImage(named: articleData.image)!)
+                .resizable()
+                .scaledToFit()
                     .mask {
                         RoundedRectangle(cornerRadius: 15)
                     }
-            }
+                    .aspectRatio(16/9,contentMode: .fit)
+
             
-            Text("#Depresi")
+            Text(articleData.tag)
                 .font(.system(size: 13,weight: .semibold))
                 .foregroundColor(.cyan)
             
-            Text("Anak Depresi? Lakukan 10 Hal Berikut")
+            Text(articleData.title)
                 .font(.system(size: 22,weight: .bold))
                 .lineLimit(2)
                 .fixedSize(horizontal: false, vertical: true)
                 .frame(height: 30)
 
         }
-        .padding(EdgeInsets(top: 0, leading: 16, bottom: 8, trailing: 16))
-        .aspectRatio(16/9,contentMode: .fit)
+        .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+        .frame(width: UIScreen.screenWidth)
         .background(.white)
     }
         
@@ -53,7 +56,7 @@ struct LongArticleCard_Preview: PreviewProvider {
             if (UIImage(systemName: "person.fill")?.toBase64()) != nil
             {
 
-                LongArticleCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "ParentingPlaceHolder")?.toBase64()) ?? "", isAvailable: false), buttonText: "Click")
+                LongArticleCard(articleData: ArticleModel().sampleData(), buttonText: "Click")
 
             }
             Spacer();

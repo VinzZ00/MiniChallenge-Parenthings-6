@@ -15,8 +15,9 @@ struct ArticleSearchPage: View {
     var body: some View {
         List{
             ForEach(0..<4, id : \.self) { indx in
-                let expert = Expert().sampleData(img: "ParentingPlaceHolder")
-                LongArticleCard(ExpertData: expert, buttonText: Prompt.Button.chat)
+              
+                LongArticleCard(articleData: ArticleModel().sampleData(), buttonText: Prompt.Button.chat)
+                
                     .frame(width: UIScreen.screenWidth)
                 
             }.listRowSeparator(.hidden)

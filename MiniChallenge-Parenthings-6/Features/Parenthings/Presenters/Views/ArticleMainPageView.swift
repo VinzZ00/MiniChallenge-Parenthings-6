@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ArticleMainPageView: View {
     
-    @State var searchBarValue : String = "3";
+    @State var searchBarValue : String = "";
     @EnvironmentObject var viewModel : parenthingsViewModel
     
     var backButton : () -> Void;
@@ -21,10 +21,10 @@ struct ArticleMainPageView: View {
                 CustomNavigationBar(title: Prompt.Title.articles, enableBackButton: false, defaultTextSearchBar: Prompt.searchBar.articlesPage, searchText: $searchBarValue, enableSearchBar: true, backButton: self.backButton)
                 VStack {
                     if (!searchBarValue.isEmpty) {
-                            
-                            VStack {
-                                ArticleSearchPage(searchedExperts: [Expert().sampleData(), Expert().sampleData()])
-                                    .padding(.vertical, 16)
+                        
+                        VStack {
+                            ArticleSearchPage(searchedExperts: [Expert().sampleData(), Expert().sampleData()])
+                                .padding(.vertical, 16)
                         }
                     }else{
                         ScrollView(.vertical) {
@@ -40,10 +40,9 @@ struct ArticleMainPageView: View {
                                     HStack {
                                         ForEach(0...4, id : \.self) {
                                             _ in
-                                            let expert = Expert().sampleData(img: "ParentingPlaceHolder")
-                                            LongArticleCard(ExpertData: expert, buttonText: Prompt.Button.chat)
-                                                .frame(width: UIScreen.screenWidth)
-                                            
+                                            let article = ArticleModel().sampleData()
+                                            LongArticleCard(articleData: article, buttonText: Prompt.Button.chat)
+                                                .padding(0)
                                         }
                                     }
                                 }
@@ -133,8 +132,8 @@ struct ArticleMainPageView: View {
                 .blur(radius: searchBarValue.isEmpty ? 0 : 10))
             .navigationBarHidden(true)
             .ignoresSafeArea(.keyboard, edges: .bottom)
-//            .edgesIgnoringSafeArea(.bottom)
-
+            //            .edgesIgnoringSafeArea(.bottom)
+            
         }
     }
 }
