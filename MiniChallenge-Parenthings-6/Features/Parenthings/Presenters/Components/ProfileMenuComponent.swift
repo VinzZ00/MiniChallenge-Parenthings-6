@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct ProfileMenuComponent: View {
+    // samudra
     // Celine
+
     var imageName: String
     var imageText: String
     
     // celine was here
     var body: some View {
-        
+        // ea eae a
         VStack (alignment: .leading){
             Button {
                 print()
