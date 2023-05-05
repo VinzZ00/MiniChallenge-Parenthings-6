@@ -29,7 +29,7 @@ class BreedFetcher: ObservableObject {
         
         
         //DON'T FORGET INSERT BASE_URL inside ENV
-        var urlEndPoint: String = "breeds"
+        let urlEndPoint: String = "breeds"
         let fullUrl = URL(string: (ProcessInfo.processInfo.environment["BASE_URL"] ?? "")  + urlEndPoint)
         var request: URLRequest? = URLRequest(url: fullUrl!)
         
