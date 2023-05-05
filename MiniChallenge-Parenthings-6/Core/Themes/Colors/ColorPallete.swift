@@ -21,6 +21,8 @@ struct AppColor {
     
     static let grayOpacity60 : Color = Color(UIColor(red:0.235, green:0.235, blue:0.263, alpha:0.60))
     
+    static let titleColor : Color = Color(UIColor(red:0.235, green:0.235, blue:0.263, alpha:0.90))
+    
     static let systemGreen : Color = Color(UIColor(red:0.204, green:0.780, blue:0.349, alpha:1.00))
     
     static let expertTextGrayColor : Color = Color(UIColor(red:0.235, green:0.235, blue:0.263, alpha:0.60))

@@ -43,6 +43,7 @@ struct ShortExpertCard: View {
                         Text("\(ExpertData.name)")
                             .font(.system(size: 16, weight: .semibold))
                             .lineLimit(2)
+                            .foregroundColor(AppColor.titleColor)
                             .fixedSize(horizontal: false, vertical: true)
                             .minimumScaleFactor(0.75)
                     }

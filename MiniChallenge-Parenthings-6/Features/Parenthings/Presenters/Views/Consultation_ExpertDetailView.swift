@@ -41,6 +41,7 @@ struct ExpertDetail: View {
                         Text("\(viewModel.selectedExpert!.name)")
                             .font(.system(size: 22, weight: .bold))
                             .padding(.leading, 16)
+                            .foregroundColor(AppColor.titleColor)
                         Text("\(viewModel.selectedExpert!.role)")
                             .font(.system(size: 15, weight: .regular))
                             .foregroundColor(AppColor.expertTextGrayColor)
@@ -74,6 +75,7 @@ struct ExpertDetail: View {
                         
                         Text("\(String(format : "Rp. %.0f", viewModel.selectedExpert!.price))")
                             .font(.system(size: 22, weight: .bold))
+                            .foregroundColor(AppColor.titleColor)
                             .padding(.leading, 16)
                         
                         Divider()
