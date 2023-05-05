@@ -34,6 +34,7 @@ struct ShortArticleCard: View {
             Text(articleData.title)
                 .font(.system(size: 12,weight: .bold))
                 .lineLimit(2)
+                .multilineTextAlignment(.leading)
                 .fixedSize(horizontal: false, vertical: true)
                 .frame(height: 28)
                 .foregroundColor(.black)

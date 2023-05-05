@@ -28,4 +28,15 @@ struct ArticleModel : Codable {
                             ,date: "20 Mei 2023"
                             ,source: "www.google.com")
     }
+    
+    func reformat(articlesCD: ArticleE) -> ArticleModel {
+        return ArticleModel(id: Int(articlesCD.id)
+                            ,title: articlesCD.title ?? ""
+                            ,author: articlesCD.author  ?? ""
+                            ,tag: articlesCD.tag  ?? ""
+                            ,image: articlesCD.image  ?? ""
+                            ,article: articlesCD.image  ?? ""
+                            ,date: articlesCD.date  ?? ""
+                            ,source: articlesCD.source  ?? "")
+    }
 }
