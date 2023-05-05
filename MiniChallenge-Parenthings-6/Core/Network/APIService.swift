@@ -16,7 +16,7 @@ struct APIService {
         self.isLogActive = isLogActive
     }
     
-    func fetch<T: Decodable>(_ type: T.Type, request: URLRequest, completion: @escaping(Result<T,APIError>) -> Void) {
+    func fetch<T: Codable>(_ type: T.Type, request: URLRequest, completion: @escaping(Result<T,APIError>) -> Void) {
         
         if(isLogActive){
             print("REQUEST URL: \(request.httpMethod ?? "") \(request.url?.absoluteURL) ")
@@ -35,6 +35,7 @@ struct APIService {
                 completion(Result.failure(APIError.badResponse(statusCode: response.statusCode)))
             }else if let data = data {
                 let decoder = JSONDecoder()
+                print("data: \(String(decoding: data ?? Data(), as: UTF8.self))")
                 do {
                     let result = try decoder.decode(type, from: data)
                     completion(Result.success(result))

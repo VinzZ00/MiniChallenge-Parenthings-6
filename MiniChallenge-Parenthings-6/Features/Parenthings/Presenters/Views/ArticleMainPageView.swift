@@ -9,13 +9,28 @@ import Foundation
 import SwiftUI
 
 struct ArticleMainPageView: View {
-    
+    @StateObject var articleViewModel = ArticleViewModel()
     @State var searchBarValue : String = "";
     @EnvironmentObject var viewModel : parenthingsViewModel
     
     var backButton : () -> Void;
     
     var body: some View {
+        ZStack{
+            contentView
+            if(articleViewModel.isLoading){
+                ProgressPage()
+            }
+        }
+        .onAppear{
+            articleViewModel.getArticle()
+        }
+        .alert(articleViewModel.errorMessage ?? "",
+               isPresented: $articleViewModel.isError) {
+        }
+    }
+    
+    var contentView: some View {
         NavigationView{
             VStack(spacing: 0){
                 CustomNavigationBar(title: Prompt.Title.articles, enableBackButton: false, defaultTextSearchBar: Prompt.searchBar.articlesPage, searchText: $searchBarValue, enableSearchBar: true, backButton: self.backButton)
@@ -38,11 +53,12 @@ struct ArticleMainPageView: View {
                                 }
                                 ScrollView(.horizontal) {
                                     HStack {
-                                        ForEach(0...4, id : \.self) {
-                                            _ in
-                                            let article = ArticleModel().sampleData()
-                                            LongArticleCard(articleData: article, buttonText: Prompt.Button.chat)
-                                                .padding(0)
+                                        ForEach(0..<articleViewModel.articles.count, id : \.self) {
+                                            pos in
+                                            NavigationLink(destination: ArticleDetailView(article: self.articleViewModel.articles[pos],backButton: backButton)) {
+                                                LongArticleCard(articleData: articleViewModel.articles[pos], buttonText: Prompt.Button.chat)
+                                                    .padding(0)
+                                            }
                                         }
                                     }
                                 }
@@ -76,9 +92,12 @@ struct ArticleMainPageView: View {
                                     .padding(.top, 19)
                                 ScrollView(.horizontal) {
                                     HStack(spacing: 0){
-                                        ForEach(0...2, id : \.self) {
-                                            _ in
-                                            ShortArticleCard(ExpertData: Expert().sampleData(img: "ParentingPlaceHolder"), buttonText: Prompt.Button.chat)
+                                        ForEach(1..<3, id : \.self) {
+                                            pos in
+                                            NavigationLink(destination: ArticleDetailView(article: self.articleViewModel.articles[pos],backButton: backButton)) {
+                                                ShortArticleCard(articleData: articleViewModel.articles[pos], buttonText: Prompt.Button.chat)
+                                                    .padding(0)
+                                            }
                                         }
                                     }
                                 }
@@ -111,9 +130,11 @@ struct ArticleMainPageView: View {
                                     .padding(.top, 19)
                                 ScrollView(.horizontal) {
                                     HStack(spacing: 0){
-                                        ForEach(0...2, id : \.self) {
-                                            _ in
-                                            ShortArticleCard(ExpertData: Expert().sampleData(img: "ParentingPlaceHolder"), buttonText: Prompt.Button.chat)
+                                        ForEach(3..<5, id : \.self) {
+                                            pos in
+                                            NavigationLink(destination: ArticleDetailView(article: self.articleViewModel.articles[pos],backButton: backButton)) {
+                                                ShortArticleCard(articleData: articleViewModel.articles[pos], buttonText: Prompt.Button.chat)
+                                            }
                                         }
                                     }
                                 }
