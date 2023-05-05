@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchBar: View {
     let defaultText : String;
     @Binding var text: String
+    @EnvironmentObject var viewModel : parenthingsViewModel;
     
     var body: some View {
         HStack {
@@ -19,6 +20,9 @@ struct SearchBar: View {
             
             TextField(defaultText, text: $text)
                 .foregroundColor(.black)
+                .onTapGesture {
+                    viewModel.textFieldIsClicked = true
+                }
         }
         .frame(width: 357, height: 49)
         .background(Color(UIColor(red:0.949, green:0.949, blue:0.969, alpha:1.00)))
