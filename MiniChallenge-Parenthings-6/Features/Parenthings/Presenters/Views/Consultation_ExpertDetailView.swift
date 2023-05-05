@@ -103,7 +103,7 @@ struct ExpertDetail: View {
                                     Spacer();
                                 }
                                 .frame(width: 358, height: 53)
-                                .background(AppColor.systemPink)
+                                .background(AppColor.paymentBlueTextColor)
                                 .cornerRadius(15)
                                 
                             })
@@ -118,6 +118,10 @@ struct ExpertDetail: View {
                 if viewModel.user != nil
                 {
                     NavigationLink("", destination: ExpertPaymentView(expert: viewModel.selectedExpert!).navigationBarHidden(true), isActive: $consultNow)
+                } else {
+                    if consultNow {
+                        NavigationLink("", destination: SignInPopUP().navigationBarHidden(true), isActive: .constant(viewModel.user == nil))
+                    }
                 }
                 
             }

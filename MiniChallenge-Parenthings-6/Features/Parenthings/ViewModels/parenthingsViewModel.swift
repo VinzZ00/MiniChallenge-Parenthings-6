@@ -13,12 +13,15 @@ import Chat
 class parenthingsViewModel : ObservableObject {
     @Published var expertDetailIsPresented : Bool = false;
     @Published var selectedExpert : Expert?
+    @Published var textFieldIsClicked = false;
+    @Published var searchExpertBarValue : String = "";
     
     @Published var consultationDetailIsPresented : Bool = false;
     @Published var selectedConsultation : ConsultationTransaction?
     
     
-    @Published var user : User? = User(name: "Elvin", balanceParenting: 20000); //in Production ini tidak diisi disini tp, dari sign in page.
+    @Published var user : User?
+    = User(name: "Elvin", balanceParenting: 20000); //in Production ini tidak diisi disini tp, dari sign in page.
     @Published var experts : ExpertRepository = ExpertRepository();
     
     @Published var navBarShown : Bool = true;
@@ -32,6 +35,12 @@ class parenthingsViewModel : ObservableObject {
     //    @Published var buttonClicked : Bool = false;
     
     @Published var choosePayment : Bool =  false;
+    
+    @Published var isDetailConsultationShown : Bool = false;
+    @Published var ratingScore : Int = 0;
+    
+    
+    
     
     
     var paymentDetail : (Image, String, Double) {
