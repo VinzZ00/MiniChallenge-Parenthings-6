@@ -149,6 +149,17 @@ struct ProfileMainPageView: View {
                 
             }
             .background(AppBackground())
+            .alert(isPresented: $showAlert) {
+                Alert(
+                 title: Text(Prompt.AlertTitle.logOut),
+                   message: Text(Prompt.AlertMessages.logOutMessage),
+                 primaryButton: .destructive(Text(Prompt.Button.delete)) {
+                       //action here
+                   },
+                   secondaryButton: .cancel()
+               )
+                
+            }
         }
     }
 }
