@@ -26,26 +26,13 @@ extension Prompt {
         //system icon
         static let logOut = "rectangle.portrait.and.arrow.right.fill"
         static let help = "questionmark.circle.fill"
-        static let edit = "pencil.line"
         
         static let topUp = "plus.app.fill"
         static let paymentMethod = "creditcard.fill"
         static let reedeemCoupon = "ticket.fill"
-        static let checkMarkSeal = "checkmark.seal.fill"
-        static let checkMarkCircle = "checkmark.circle.fill"
-        
-        
-        static let add = "plus.circle.fill"
-        static let circleAndThreeDots = "ellipsis.circle.fill"
-        static let amount1 = "IconTopUpAmount1"
-        static let amount2 = "IconTopUpAmount2"
-        static let amount3 = "IconTopUpAmount3"
-        static let amount4 = "IconTopUpAmount4"
-        static let amount5 = "IconTopUpAmount5"
-        static let amount6 = "IconTopUpAmount6"
         
         //custom icon
-        static let promoCode = "IconPromoCode"
+        
         
         private init() {}
     }
@@ -66,19 +53,8 @@ extension Prompt {
         static let choosePayment = "Choose your payment method"
         
         static let balance = "Balance: "
-        static let chooseAmount = "Choose an amount"
+        static let amountPaid = "AMOUNT PAID"
         
-        static let topUpWith = "Top up with"
-        static let topUpTo = "Top up to"
-        static let topUpDetail = "Top up detail"
-        static let topUpAmount = "Top up amount"
-        static let topUpFee = "Top up fee"
-        static let total = "Total"
-
-        static let amountPaid = "Amount Paid"
-        static let balanceAdded = "Balance Added"
-        
-        static let redeemCode = "coupon code"
         private init() {}
     }
 }
@@ -94,6 +70,7 @@ extension Prompt {
         static let startConsulting = "Start Consulting"
         static let reChatExpert = "Rechat Expert"
 
+        static let next = "Continue"
         static let logIn = "Log In"
         static let logOut = "Log Out"
         static let signUp = "I'm New, Sign Me Up"
@@ -101,10 +78,9 @@ extension Prompt {
         static let paymentMethod = "Payment Method"
         static let help = "Help"
         static let redeemCoupon = "Redeem Coupon"
-        static let verifyCode = "Verify Your Code"
           
         static let topUp = "Top Up"
-        static let typeTheAmount = "or, type the amount"
+        static let typeTheAmount = "type the amount"
         static let confirmAndTopUp = "Confirm & Top Up"
         
         private init() {}
@@ -124,7 +100,6 @@ extension Prompt {
         static let payment = "Payment"
         static let topUp = "Top Up"
         static let topUpConfirmation = "Top Up Confirmation"
-        static let redeemCoupon = "Redeem Coupon"
         
         private init() {}
     }
@@ -149,10 +124,8 @@ extension Prompt {
         static let chooseAnAmount = "Choose an amount"
         static let topUpAmount = "Top up amount"
         static let selectPaymentMethod = "Select a payment method"
-        static let haveCouponCode = "Have a coupon code?"
-        
         static let paymentSuccess = "Payment Successful"
-        static let couponVerified = "Coupon Verified"
+        
         
         private init() {}
     }
@@ -167,13 +140,8 @@ extension Prompt {
         
         static let enterPhoneNumGuide = "You can log in or make an account if you're new to Parenthings"
         static let otpSentToSmsGuide = "Enter the OTP we've just sent to"
-        static let enterCouponGuide = "Enter your coupon code below to redeem it"
-        static let selectTopUpWithGuide = "Select a top up method"
-        static let selectTopUpMethodGuide = "Select a method first"
-        static let enterTopUpAmount = "Enter top up amount"
-        
+
         static let paymentSuccessCelebration = "Hooray! You have completed your payment"
-        static let couponVerifiedCelebration = "Hooray! Your Coupon Have Been Verified"
         
         private init() {}
     }

@@ -1,13 +1,13 @@
-//
-//  CouponVerifiedView.swift
+ //
+//  PaymentSuccessPageView.swift
 //  MiniChallenge-Parenthings-6
 //
-//  Created by Celine Margaretha on 03/05/23.
+//  Created by Celine Margaretha on 28/04/23.
 //
 
 import SwiftUI
 
-struct CouponVerifiedView: View {
+struct PaymentSuccessPageView: View {
     var body: some View {
         ZStack {
             Image("BackgroundPaymentSuccess")
@@ -16,7 +16,7 @@ struct CouponVerifiedView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack(alignment: .center) {
-                Image(systemName: Prompt.Icon.checkMarkSeal)
+                Image(systemName: "checkmark.seal.fill")
                     .resizable()
                     .scaledToFit()
                     .padding([.top, .horizontal], 50)
@@ -26,19 +26,15 @@ struct CouponVerifiedView: View {
                     Text(Prompt.subTitle.paymentSuccess)
                         .font(.title)
                         .fontWeight(.bold)
-                    Text(Prompt.Caption.paymentSuccessCelebration)
-                        .padding(.top, -8)
-
-                    Text(Prompt.paymentContent.balanceAdded)
-                        .textCase(.uppercase)
-                        .padding(.top, 30)
                     
+                    Text(Prompt.Caption.paymentSuccessCelebration)
+                    
+                    Text(Prompt.paymentContent.amountPaid)
+                        .padding(.top, 40)
                     Text("Rp 00.000")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .padding(.bottom, 40)
-                        .padding(.top, -8)
-
                 }
                 .padding(10)
                     
@@ -49,9 +45,9 @@ struct CouponVerifiedView: View {
     }
 }
 
-struct CouponVerifiedView_Previews: PreviewProvider {
+struct PaymentSuccessPageView_Previews: PreviewProvider {
     static var previews: some View {
-        CouponVerifiedView()
+        PaymentSuccessPageView()
     }
 }
 

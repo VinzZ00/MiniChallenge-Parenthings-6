@@ -10,6 +10,7 @@ import SwiftUI
 struct TransactionDetailViewComponent: View {
     
     var transactionDetail : ConsultationTransaction;
+    var useDivider : Bool? = false;
     
     var body: some View {
         VStack{
@@ -40,6 +41,12 @@ struct TransactionDetailViewComponent: View {
                 }.padding(.horizontal, 16)
             }
             
+            if (useDivider!) {
+                Rectangle()
+                    .frame(width : 357, height: 1)
+                    .foregroundColor(AppColor.paymentGrayTextColor)
+            }
+            
             HStack(spacing: 0) {
                 Text(Prompt.paymentContent.totalPayment)
                     .font(.system(size: 15, weight: .bold))
@@ -52,12 +59,19 @@ struct TransactionDetailViewComponent: View {
             .padding(.horizontal, 16)
             .padding(.top, 12)
             
+            
+            if (useDivider!) {
+                Rectangle()
+                    .frame(width : 357, height: 1)
+                    .foregroundColor(AppColor.paymentGrayTextColor)
+            }
+            
         }
     }
 }
 
-struct TransactionDetailViewComponent_Previews: PreviewProvider {
-    static var previews: some View {
-        TransactionDetailViewComponent(transactionDetail: ConsultationTransaction(expert: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false) , TransactionDate: Date(), payWith: .Parenthing))
-    }
-}
+//struct TransactionDetailViewComponent_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TransactionDetailViewComponent(transactionDetail: ConsultationTransaction(expert: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false) , TransactionDate: Date(), payWith: .Parenthing))
+//    }
+//}

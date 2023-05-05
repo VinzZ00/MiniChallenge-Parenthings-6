@@ -13,7 +13,7 @@ struct LogoComponent: View {
             Image("LogoParenthing")
                 .resizable()
                 .scaledToFit()
-                .frame(maxHeight: 30)
+                .frame(maxWidth: 120)
         }
     }
 }
