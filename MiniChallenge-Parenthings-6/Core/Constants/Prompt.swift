@@ -220,13 +220,8 @@ extension Prompt {
     }
 }
 
-struct AlertTitle {
-        static let logOut = "Log Out"
-        private init() {}
-    }
-}
 extension Prompt {
-    struct AlertMessages {
+    struct ActionSheeetDialog {
         static let logOutMessage = "Are you sure you want to log out?"
         private init() {}
     }
