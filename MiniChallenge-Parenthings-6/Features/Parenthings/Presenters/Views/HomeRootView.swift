@@ -31,6 +31,9 @@ struct HomeRootView: View {
                     ConsultationMainPageView(backButton: {
                         presentationMode.wrappedValue.dismiss()
                     })
+                    .onAppear {
+                        viewModel.textFieldIsClicked = false;
+                    }
                 }.tabItem {
                     VStack{
                         Image(systemName:  "rectangle.3.group.bubble.left.fill")
@@ -49,6 +52,9 @@ struct HomeRootView: View {
                     ArticleMainPageView(backButton: {
                         presentationMode.wrappedValue.dismiss()
                     })
+                    .onAppear {
+                        viewModel.textFieldIsClicked = false;
+                    }
                 }.tabItem{
                     Image(systemName: "heart.text.square")
                         .resizable()

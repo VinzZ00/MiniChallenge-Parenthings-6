@@ -23,6 +23,7 @@ struct ConsultationSearchPage: View {
                     SearchPage(searchedExperts: viewModel.experts.savedExpert.filter{
                         $0.name.contains(viewModel.searchExpertBarValue)
                     })
+                    
                 }
             }
             Spacer();
