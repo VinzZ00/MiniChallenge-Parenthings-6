@@ -116,7 +116,12 @@ struct LongExpertCard : View {
                         
                     }
                     Spacer()
-                }.padding(EdgeInsets(top: 13, leading: 10, bottom: 11, trailing: 12))
+                }.padding(EdgeInsets(
+                    top:CGFloat(Prompt.Padding.CardPadding.ExpertCard.vertical),
+                    leading: CGFloat(Prompt.Padding.CardPadding.ExpertCard.horizontal),
+                    bottom: CGFloat(Prompt.Padding.CardPadding.ExpertCard.vertical),
+                    trailing: CGFloat(Prompt.Padding.CardPadding.ExpertCard.horizontal)
+                ))
                     .background(.white)
                     .cornerRadius(15)
                     .overlay(
