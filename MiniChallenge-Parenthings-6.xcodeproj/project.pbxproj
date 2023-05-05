@@ -14,8 +14,9 @@
 		851DC31A2A03B4A00025DD5C /* ProgressPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851DC3192A03B4A00025DD5C /* ProgressPageView.swift */; };
 		851DC31C2A0420E90025DD5C /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851DC31B2A0420E90025DD5C /* ArticleModel.swift */; };
 		8542E0712A04F286000D7A78 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8542E0702A04F286000D7A78 /* ArticleViewModel.swift */; };
-		8542E0752A0501D6000D7A78 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8542E0732A0501D6000D7A78 /* CoreDataModel.xcdatamodeld */; };
 		8542E0772A0507E4000D7A78 /* BaseApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8542E0762A0507E4000D7A78 /* BaseApiModel.swift */; };
+		856849BA2A056AA600517DDF /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856849B92A056AA600517DDF /* PersistenceController.swift */; };
+		856849C02A05764C00517DDF /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 856849BE2A05764C00517DDF /* CoreDataModel.xcdatamodeld */; };
 		858627FE2A02413B0077F60D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858627FD2A02413B0077F60D /* SignInView.swift */; };
 		858628002A02472F0077F60D /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858627FF2A02472F0077F60D /* ClearButton.swift */; };
 		858628022A02505D0077F60D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858628012A02505D0077F60D /* SignUpView.swift */; };
@@ -108,8 +109,9 @@
 		851DC3192A03B4A00025DD5C /* ProgressPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressPageView.swift; sourceTree = "<group>"; };
 		851DC31B2A0420E90025DD5C /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
 		8542E0702A04F286000D7A78 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
-		8542E0742A0501D6000D7A78 /* ArticleCD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ArticleCD.xcdatamodel; sourceTree = "<group>"; };
 		8542E0762A0507E4000D7A78 /* BaseApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApiModel.swift; sourceTree = "<group>"; };
+		856849B92A056AA600517DDF /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		856849BF2A05764C00517DDF /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		858627FD2A02413B0077F60D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		858627FF2A02472F0077F60D /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		858628012A02505D0077F60D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -218,7 +220,8 @@
 		8542E0722A0501BE000D7A78 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				8542E0732A0501D6000D7A78 /* CoreDataModel.xcdatamodeld */,
+				856849BE2A05764C00517DDF /* CoreDataModel.xcdatamodeld */,
+				856849B92A056AA600517DDF /* PersistenceController.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -607,7 +610,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F03623D2A04E13C0085D7F5 /* TopUpAmountComponent.swift in Sources */,
-				8542E0752A0501D6000D7A78 /* CoreDataModel.xcdatamodeld in Sources */,
 				ACF7F5E129FC4BCD0059F323 /* LazyVGridPaymentType.swift in Sources */,
 				8F03623B2A04E13C0085D7F5 /* BottomConfirmationComponent.swift in Sources */,
 				ACFB982729F187A20046BA06 /* ContentView.swift in Sources */,
@@ -639,6 +641,7 @@
 				AC5F371A29F822D400372208 /* Consultation_ExpertDetailView.swift in Sources */,
 				ACFB984929F272BB0046BA06 /* BlurBackground.swift in Sources */,
 				858628022A02505D0077F60D /* SignUpView.swift in Sources */,
+				856849BA2A056AA600517DDF /* PersistenceController.swift in Sources */,
 				AC5F372D29FA861900372208 /* HexToColor.swift in Sources */,
 				AC9FF96329FD9156008766E8 /* TransactionRepository.swift in Sources */,
 				ACFB985229F2D9100046BA06 /* Expert.swift in Sources */,
@@ -663,6 +666,7 @@
 				AC5F371C29F84A3D00372208 /* ExpertDetailImage.swift in Sources */,
 				AC9FF96529FD9FB7008766E8 /* DateFormatter.swift in Sources */,
 				AC5F371229F59B4D00372208 /* HomeRootView.swift in Sources */,
+				856849C02A05764C00517DDF /* CoreDataModel.xcdatamodeld in Sources */,
 				8F0362312A04DD5D0085D7F5 /* ProfileMainPageView.swift in Sources */,
 				AC34EDB629FBCFD5002AED7C /* ConsultationTransactionModel.swift in Sources */,
 				8F03622F2A04DD5D0085D7F5 /* Profile_TopUpView.swift in Sources */,
@@ -914,12 +918,12 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		8542E0732A0501D6000D7A78 /* CoreDataModel.xcdatamodeld */ = {
+		856849BE2A05764C00517DDF /* CoreDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				8542E0742A0501D6000D7A78 /* ArticleCD.xcdatamodel */,
+				856849BF2A05764C00517DDF /* CoreDataModel.xcdatamodel */,
 			);
-			currentVersion = 8542E0742A0501D6000D7A78 /* ArticleCD.xcdatamodel */;
+			currentVersion = 856849BF2A05764C00517DDF /* CoreDataModel.xcdatamodel */;
 			path = CoreDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
