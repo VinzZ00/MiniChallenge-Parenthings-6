@@ -9,8 +9,22 @@ import SwiftUI
 
 struct ActionSheetEditProfile: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button {
+            //
+        } label: {
+            Text(Prompt.Button.)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 15)
+            
+        }
+        .font(.title2)
+        .bold()
+        .foregroundColor(.white)
+        .background(AppColor.paymentBlueTextColor)
+        .buttonStyle(.borderless)
+        .cornerRadius(15)
     }
+    
 }
 
 struct ActionSheetEditProfile_Previews: PreviewProvider {
