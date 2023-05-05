@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileMenuComponent: View {
     
+    // Celine
     var imageName: String
     var imageText: String
     
