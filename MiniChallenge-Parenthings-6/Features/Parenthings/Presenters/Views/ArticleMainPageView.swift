@@ -48,9 +48,9 @@ struct ArticleMainPageView: View {
                                 HStack{
                                     Text(Prompt.subTitle.trending)
                                         .font(.system(size: 22, weight: .bold))
-                                        .padding(.leading, 18)
                                     Spacer();
-                                }
+                                }.padding(.horizontal, 16)
+                                
                                 ScrollView(.horizontal) {
                                     HStack {
                                         ForEach(0..<articleViewModel.articles.count, id : \.self) {
@@ -70,7 +70,6 @@ struct ArticleMainPageView: View {
                                 HStack(){
                                     Text("\(Prompt.subTitle.latestArticles)")
                                         .font(.system(size: 22, weight: .bold))
-                                        .padding(.leading, 18)
                                     Spacer()
                                     Button {
                                         
@@ -78,18 +77,17 @@ struct ArticleMainPageView: View {
                                         VStack {
                                             Text(Prompt.Button.seeAll)
                                                 .font(.system(size: 12, weight: .medium))
-                                                .foregroundColor(AppColor.red)
+                                                .foregroundColor(AppColor.paymentBlueTextColor)
                                                 .padding(EdgeInsets(top: 3, leading: 14, bottom: 3, trailing: 14))
                                         }
                                         .cornerRadius(5)
                                         .overlay(
                                             RoundedRectangle(cornerRadius: 5)
-                                                .stroke(AppColor.red, lineWidth: 1)
+                                                .stroke(AppColor.paymentBlueTextColor, lineWidth: 1)
                                         )
-                                        .padding(.trailing, 18)
                                     }
-                                }.padding(.bottom, 6)
-                                    .padding(.top, 19)
+                                }.padding(16)
+                                
                                 ScrollView(.horizontal) {
                                     HStack(spacing: 0){
                                         ForEach(1..<3, id : \.self) {
@@ -101,14 +99,16 @@ struct ArticleMainPageView: View {
                                         }
                                     }
                                 }
+                                .padding(.horizontal, 16)
                                 
                                 Spacer()
                             }
+                            
                             VStack{
                                 HStack(){
                                     Text("\(Prompt.subTitle.suggestedForYou)")
                                         .font(.system(size: 22, weight: .bold))
-                                        .padding(.leading, 18)
+                                    
                                     Spacer()
                                     Button {
                                         
@@ -116,18 +116,17 @@ struct ArticleMainPageView: View {
                                         VStack {
                                             Text(Prompt.Button.seeAll)
                                                 .font(.system(size: 12, weight: .medium))
-                                                .foregroundColor(AppColor.red)
+                                                .foregroundColor(AppColor.paymentBlueTextColor)
                                                 .padding(EdgeInsets(top: 3, leading: 14, bottom: 3, trailing: 14))
                                         }
                                         .cornerRadius(5)
                                         .overlay(
                                             RoundedRectangle(cornerRadius: 5)
-                                                .stroke(AppColor.red, lineWidth: 1)
+                                                .stroke(AppColor.paymentBlueTextColor, lineWidth: 1)
                                         )
-                                        .padding(.trailing, 18)
                                     }
-                                }.padding(.bottom, 6)
-                                    .padding(.top, 19)
+                                }.padding(16)
+                                
                                 ScrollView(.horizontal) {
                                     HStack(spacing: 0){
                                         ForEach(3..<5, id : \.self) {
@@ -138,6 +137,7 @@ struct ArticleMainPageView: View {
                                         }
                                     }
                                 }
+                                .padding(.horizontal, 16)
                                 
                                 Spacer()
                             }

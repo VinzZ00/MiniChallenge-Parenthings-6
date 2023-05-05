@@ -117,10 +117,10 @@ struct LongExpertCard : View {
                     }
                     Spacer()
                 }.padding(EdgeInsets(
-                    top:CGFloat(Prompt.Padding.CardPadding.ExpertCard.vertical),
-                    leading: CGFloat(Prompt.Padding.CardPadding.ExpertCard.horizontal),
-                    bottom: CGFloat(Prompt.Padding.CardPadding.ExpertCard.vertical),
-                    trailing: CGFloat(Prompt.Padding.CardPadding.ExpertCard.horizontal)
+                    top:CGFloat(Prompt.Padding.paddingSmall),
+                    leading: CGFloat(Prompt.Padding.paddingMedium),
+                    bottom: CGFloat(Prompt.Padding.paddingSmall),
+                    trailing: CGFloat(Prompt.Padding.paddingMedium)
                 ))
                     .background(.white)
                     .cornerRadius(15)
