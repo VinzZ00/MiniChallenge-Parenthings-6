@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HomeRootView();
+        HomeRootView().preferredColorScheme(.light)
 //        SignInPopUP()
 //        ChatExpert();
 //        ContentView4();
