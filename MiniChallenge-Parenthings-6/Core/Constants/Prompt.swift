@@ -111,7 +111,8 @@ extension Prompt {
         static let viewDetail = "View Detail"
         static let seeAll = "See All"
         static let continueProcess = "Continue"
-          
+        static let save = "Save"
+        
         static let consultNow = "Consult Now"
         static let startConsulting = "Start Consulting"
         static let reChatExpert = "Rechat Expert"
