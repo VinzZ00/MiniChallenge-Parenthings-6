@@ -90,6 +90,7 @@ struct ArticleDetailView: View {
             .background(AppBackground())
             .ignoresSafeArea(.keyboard, edges: .bottom)
             .edgesIgnoringSafeArea(.bottom)
+            .padding(.horizontal, CGFloat(Prompt.Padding.paddingMedium))
 
         }
         .navigationBarHidden(true)

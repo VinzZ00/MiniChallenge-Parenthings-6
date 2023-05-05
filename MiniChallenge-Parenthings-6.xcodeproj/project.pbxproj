@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		835819C52A05216700F31638 /* LogOutButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835819C42A05216700F31638 /* LogOutButtonComponent.swift */; };
 		851DC3122A03A38C0025DD5C /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851DC3112A03A38C0025DD5C /* UserViewModel.swift */; };
 		851DC3142A03A8490025DD5C /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851DC3132A03A8490025DD5C /* DataExtension.swift */; };
 		851DC3182A03A8EB0025DD5C /* UserApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851DC3172A03A8EB0025DD5C /* UserApiModel.swift */; };
@@ -100,6 +101,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		835819C42A05216700F31638 /* LogOutButtonComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutButtonComponent.swift; sourceTree = "<group>"; };
 		851DC3112A03A38C0025DD5C /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		851DC3132A03A8490025DD5C /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
 		851DC3172A03A8EB0025DD5C /* UserApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiModel.swift; sourceTree = "<group>"; };
@@ -495,6 +497,7 @@
 		ACFB985429F2DACE0046BA06 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				835819C42A05216700F31638 /* LogOutButtonComponent.swift */,
 				8F03623E2A04E1DF0085D7F5 /* LogoComponent.swift */,
 				8F0362372A04E13C0085D7F5 /* BottomConfirmationComponent.swift */,
 				8F0362392A04E13C0085D7F5 /* TopUpAmountComponent.swift */,
@@ -664,6 +667,7 @@
 				AC34EDB629FBCFD5002AED7C /* ConsultationTransactionModel.swift in Sources */,
 				8F03622F2A04DD5D0085D7F5 /* Profile_TopUpView.swift in Sources */,
 				ACFB984429F1BDF00046BA06 /* SearchBarComponent.swift in Sources */,
+				835819C52A05216700F31638 /* LogOutButtonComponent.swift in Sources */,
 				AC5F372729F966AD00372208 /* Consultation_SearchPageComponent.swift in Sources */,
 				8F0362302A04DD5D0085D7F5 /* Profile_TopUpConfirmation.swift in Sources */,
 				ACFB982529F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift in Sources */,
