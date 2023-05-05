@@ -106,7 +106,7 @@ struct SignUpView: View {
             }
             
             Spacer()
-            NavigationLink(destination:  OtpView(title: "Sign Up", phone: "+62\(phone)"), isActive: $isOtp){
+            NavigationLink(destination:  OtpView(title: "Sign Up", phone: "+62\(phone)"), isActive: $userViewModel.isSignupSuccess){
                 Button {
 //                    isOtp = true
                     userViewModel.doSignup(phone:  "+62\(phone)", name: name)
@@ -126,7 +126,6 @@ struct SignUpView: View {
         .padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
         .onAppear{
             UITextField.appearance().clearButtonMode = .whileEditing
-            
         }
     }
 }
