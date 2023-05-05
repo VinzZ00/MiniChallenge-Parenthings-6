@@ -43,6 +43,7 @@ struct ShortExpertCard: View {
                         Text("\(ExpertData.name)")
                             .font(.system(size: 16, weight: .semibold))
                             .lineLimit(2)
+                            .foregroundColor(AppColor.titleColor)
                             .fixedSize(horizontal: false, vertical: true)
                             .minimumScaleFactor(0.75)
                     }
@@ -84,8 +85,13 @@ struct ShortExpertCard: View {
                 }
             }
         }
-        .frame(width: 170, height: 132)
-        .padding(EdgeInsets(top: 13, leading: 5, bottom: 8, trailing: 5))
+        .frame(height: 132)
+        .padding(EdgeInsets(
+            top:CGFloat(Prompt.Padding.paddingSmall),
+            leading: CGFloat(Prompt.Padding.paddingMedium),
+            bottom: CGFloat(Prompt.Padding.paddingSmall),
+            trailing: CGFloat(Prompt.Padding.paddingMedium)
+        ))
         .background(.white)
         .overlay(
             RoundedRectangle(cornerRadius: 15)
