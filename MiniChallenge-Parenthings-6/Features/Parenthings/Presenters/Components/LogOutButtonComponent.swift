@@ -12,7 +12,7 @@ struct LogOutButtonComponent: View {
 
     var body: some View {
         Button {
-            
+            showAlert = true
         } label: {
            ImageLabel(imageName: Prompt.Icon.logOut, imageText: Prompt.Button.logOut, isCustom: false)
                .frame(maxWidth: .infinity)
