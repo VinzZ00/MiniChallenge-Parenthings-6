@@ -83,13 +83,36 @@ extension Prompt {
     }
 }
 
+
+extension Prompt {
+    struct AlertTitle {
+        static let logOut = "Log Out"
+        private init() {}
+    }
+}
+
+extension Prompt {
+    struct AlertMessages {
+        static let logOutMessage = "Are you sure you want to log out?"
+        private init() {}
+    }
+}
+
+extension Prompt {
+    struct ActionSheeetDialog {
+        static let editDialog = "Cancel editing profile?"
+        private init() {}
+    }
+}
+
 extension Prompt {
     struct Button {
         static let chat = "Chat"
         static let viewDetail = "View Detail"
         static let seeAll = "See All"
         static let continueProcess = "Continue"
-          
+        static let save = "Save"
+        
         static let consultNow = "Consult Now"
         static let startConsulting = "Start Consulting"
         static let reChatExpert = "Rechat Expert"
@@ -107,6 +130,13 @@ extension Prompt {
         static let topUp = "Top Up"
         static let typeTheAmount = "type the amount"
         static let confirmAndTopUp = "Confirm & Top Up"
+ 
+        //alert and action sheets
+        static let cancel = "Cancel"
+        static let delete = "Delete"
+        
+        static let logOutAlert = "Log out"
+        static let keepEditing = "Keep editing"
         
         private init() {}
     }

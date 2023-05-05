@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileMainPageView: View {
+    @State private var showAlert: Bool = false
     
     var profileName = "Username"
     var profilePhone = "+6200000000000"
@@ -20,7 +21,6 @@ struct ProfileMainPageView: View {
         NavigationView {
             VStack (spacing: 0){
                 CustomNavigationBar(title: Prompt.Title.profiles, enableBackButton: false, enableSearchBar: false, backButton: self.backButton)
-                
                 
                 //Contents
                 VStack {
@@ -126,20 +126,21 @@ struct ProfileMainPageView: View {
                     .padding(.top, 20)
                     
                     
-                    //Log out button
-                    Button {
-                        
-                    } label: {
-                        ImageLabel(imageName: Prompt.Icon.logOut, imageText: Prompt.Button.logOut, isCustom: false)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 10)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(AppColor.grayLightColor, lineWidth: 1)
-                            )
-                    }
-                    .padding(.top, 50)
-                    .foregroundColor(AppColor.paymentBlueTextColor)
+//                    //Log out button
+                    LogOutButtonComponent(showAlert: $showAlert)
+//                    Button {
+//                        
+//                    } label: {
+//                        ImageLabel(imageName: Prompt.Icon.logOut, imageText: Prompt.Button.logOut, isCustom: false)
+//                            .frame(maxWidth: .infinity)
+//                            .padding(.vertical, 10)
+//                            .overlay(
+//                                RoundedRectangle(cornerRadius: 10)
+//                                    .stroke(AppColor.grayLightColor, lineWidth: 1)
+//                            )
+//                    }
+//                    .padding(.top, 50)
+//                    .foregroundColor(AppColor.paymentBlueTextColor)
                     
                     Spacer()
                 }
