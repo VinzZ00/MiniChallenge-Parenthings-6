@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ProfileMenuComponent: View {
-    
+    // samudra
     var imageName: String
     var imageText: String
     
     var body: some View {
-        
+        // ea eae a
         VStack (alignment: .leading){
             Button {
                 print()
