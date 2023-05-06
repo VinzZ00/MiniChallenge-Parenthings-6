@@ -82,7 +82,7 @@ struct ArticleDetailView: View {
                             }
                             
                         }
-                        .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                     
                     Spacer()
                 }
@@ -90,6 +90,7 @@ struct ArticleDetailView: View {
             .background(AppBackground())
             .ignoresSafeArea(.keyboard, edges: .bottom)
             .edgesIgnoringSafeArea(.bottom)
+            .padding(.horizontal, CGFloat(Prompt.Padding.paddingMedium))
 
         }
         .navigationBarHidden(true)

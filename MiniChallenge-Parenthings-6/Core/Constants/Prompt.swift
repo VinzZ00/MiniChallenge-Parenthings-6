@@ -236,3 +236,19 @@ extension Prompt {
         private init() {}
     }
 }
+
+extension Prompt {
+    struct Padding {
+//        struct CardPadding {
+//            struct ExpertCard {
+//                static let horizontal = 16;
+//                static let vertical = 8;
+//            }
+//        }
+        
+        static let paddingSmall = 8;
+        static let paddingMedium = 16;
+        static let paddingLarge = 24;
+        static let paddingXtraLarge = 32;
+    }
+}

@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    let persistenceController = PersistenceController.shared
+
     var body: some View {
-        HomeRootView();
+        HomeRootView().preferredColorScheme(.light)
+            .environment(\.managedObjectContext,
+                                        persistenceController.container.viewContext)
 //        SignInPopUP()
 //        ChatExpert();
 //        ContentView4();
+//        ContentViews();
     }
 }
 
