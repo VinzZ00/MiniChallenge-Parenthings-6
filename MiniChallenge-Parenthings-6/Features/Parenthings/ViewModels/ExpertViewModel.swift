@@ -20,7 +20,7 @@ class ExpertViewModel : ObservableObject {
     
     
     
-    func getAllExpert() -> [Expert]? {
+    func getAllExpert() {
         isLoading = true
         errorMessage = nil
         isError = false
@@ -35,7 +35,7 @@ class ExpertViewModel : ObservableObject {
         if request == nil {
             let error = APIError.badURL
             print(error)
-            return nil;
+            return;
         }
         
         service.fetch([ExpertAPIModel].self, request: request!) { [unowned self] result in
@@ -50,29 +50,40 @@ class ExpertViewModel : ObservableObject {
                     print(error)
                 case .success(let retrievedExperts):
                     print("--- sucess with \(retrievedExperts.count)")
+                    var edus = ExpertEducationViewModel()
+                    var exps = ExpertExperienceViewModel()
+                    
+                    edus.getExpertEducations()
+                    
+                    exps.getExpertExperience()
+                    
                     var gottenExpert : ExpertAPIModel;
+                    
                     for exp in retrievedExperts {
                         gottenExpert = exp;
                         
-                        var edus = ExpertEducationViewModel()
-                        var exps = ExpertExperienceViewModel()
+                    var lastEducation : ExpertEducationAPIModel? =
+                        edus.Educations.filter{
+                            $0.expert_id == exp.id
+                        }.last ?? nil
                         
-                        edus.getExpertEducations(id: gottenExpert.id)
-                        var lastEducation : ExpertEducationAPIModel?
+//                        if edus.Educations.count != 0 {
+//                            lastEducation = edus.Educations.last!
+//                        }
                         
-                        if edus.Educations.count != 0 {
-                            lastEducation = edus.Educations.last!
-                        }
+//                        exps.getExpertExperience(id: gottenExpert.id)
                         
-                        exps.getExpertExperience(id: gottenExpert.id)
+                    var lastExperience : ExpertExperienceAPIModel? =
+                        exps.Experiences.filter{
+                            $0.expert_id == exp.id
+                        }.last ?? nil
                         
-                        var lastExperience : ExpertExperienceAPIModel?
-                        
-                        if exps.Experiences.count != 0 {
-                            lastExperience = exps.Experiences.last!
-                        }
+//                        if exps.Experiences.count != 0 {
+//                            lastExperience = exps.Experiences.last!
+//                        }
                         
                         var expertImage : UIImage? = nil;
+                        
                         let url = URL(string: gottenExpert.photo_url)
                         
                         if let data = try? Data(contentsOf: url!)
@@ -90,11 +101,12 @@ class ExpertViewModel : ObservableObject {
                             isAvailable: true
                             )
                         
-                        experts.append(readyToUseExpert)
+                        self.experts.append(readyToUseExpert)
+                        print("Expert with id \(readyToUseExpert.id) is inserted")
                     }
                 }
             }
         }
-        return experts;
+        
     }
 }
