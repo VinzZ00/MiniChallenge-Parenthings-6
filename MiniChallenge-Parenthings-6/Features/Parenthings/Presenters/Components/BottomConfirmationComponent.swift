@@ -49,8 +49,9 @@ struct BottomConfirmationComponent: View {
                 
                 //Button confirm and top up
                 VStack {
-                    Button {
-                        
+                    NavigationLink {
+                        PaymentSuccessPageView()
+                            .navigationBarHidden(true)
                     } label: {
                         Text(Prompt.Button.confirmAndTopUp)
                             .frame(maxWidth: .infinity)
