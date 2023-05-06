@@ -10,6 +10,7 @@ import SwiftUI
 struct TopUpAmountComponent: View {
 //    @Binding var isSelected: topUPType
     @Binding var isSelected: Bool
+    
     var amountIcon: String
     var amount: Int
     
@@ -26,7 +27,7 @@ struct TopUpAmountComponent: View {
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .fill(AppColor.paymentBlueTextColor)
-                        .opacity(isSelected ? 0.2: 0)
+                        .opacity(isSelected ? 0.07: 0)
                 ).overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(isSelected ? AppColor.paymentBlueTextColor : AppColor.grayLightColor , lineWidth: 1)
@@ -73,6 +74,6 @@ struct TopUpAmountComponent: View {
 
 struct TopUpAmountComponent_Previews: PreviewProvider {
     static var previews: some View {
-        TopUpAmountComponent(isSelected: .constant(false), amountIcon: Prompt.Icon.amount1, amount: 199999)
+        TopUpAmountComponent(isSelected: .constant(true), amountIcon: Prompt.Icon.amount1, amount: 199999)
     }
 }
