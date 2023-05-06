@@ -86,6 +86,9 @@
 		ACEA1BDE2A06216900D7C411 /* ExpertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEA1BDC2A06216900D7C411 /* ExpertViewModel.swift */; };
 		ACEA1BDF2A06216900D7C411 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEA1BDD2A06216900D7C411 /* UserViewModel.swift */; };
 		ACEA1BE12A06217800D7C411 /* ExpertAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEA1BE02A06217800D7C411 /* ExpertAPIModel.swift */; };
+		ACEA1BE32A062B6A00D7C411 /* ExpertEducationAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEA1BE22A062B6A00D7C411 /* ExpertEducationAPIModel.swift */; };
+		ACEA1BE72A062BEC00D7C411 /* ExpertExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEA1BE62A062BEC00D7C411 /* ExpertExperience.swift */; };
+		ACEA1BE92A0631AD00D7C411 /* ExpertEducationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEA1BE82A0631AD00D7C411 /* ExpertEducationViewModel.swift */; };
 		ACF7F5DF29FC449C0059F323 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7F5DE29FC449C0059F323 /* UserModel.swift */; };
 		ACF7F5E129FC4BCD0059F323 /* LazyVGridPaymentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7F5E029FC4BCD0059F323 /* LazyVGridPaymentType.swift */; };
 		ACFB982529F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFB982429F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift */; };
@@ -184,6 +187,9 @@
 		ACEA1BDC2A06216900D7C411 /* ExpertViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpertViewModel.swift; sourceTree = "<group>"; };
 		ACEA1BDD2A06216900D7C411 /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		ACEA1BE02A06217800D7C411 /* ExpertAPIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpertAPIModel.swift; sourceTree = "<group>"; };
+		ACEA1BE22A062B6A00D7C411 /* ExpertEducationAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertEducationAPIModel.swift; sourceTree = "<group>"; };
+		ACEA1BE62A062BEC00D7C411 /* ExpertExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertExperience.swift; sourceTree = "<group>"; };
+		ACEA1BE82A0631AD00D7C411 /* ExpertEducationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertEducationViewModel.swift; sourceTree = "<group>"; };
 		ACF7F5DE29FC449C0059F323 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		ACF7F5E029FC4BCD0059F323 /* LazyVGridPaymentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyVGridPaymentType.swift; sourceTree = "<group>"; };
 		ACFB982129F187A20046BA06 /* MiniChallenge-Parenthings-6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MiniChallenge-Parenthings-6.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,8 +224,8 @@
 		851DC3162A03A8DF0025DD5C /* Api */ = {
 			isa = PBXGroup;
 			children = (
-				ACEA1BE02A06217800D7C411 /* ExpertAPIModel.swift */,
 				851DC3172A03A8EB0025DD5C /* UserApiModel.swift */,
+				ACEA1BE42A062B7100D7C411 /* Expert */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -277,6 +283,16 @@
 				851DC3132A03A8490025DD5C /* DataExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ACEA1BE42A062B7100D7C411 /* Expert */ = {
+			isa = PBXGroup;
+			children = (
+				ACEA1BE02A06217800D7C411 /* ExpertAPIModel.swift */,
+				ACEA1BE22A062B6A00D7C411 /* ExpertEducationAPIModel.swift */,
+				ACEA1BE62A062BEC00D7C411 /* ExpertExperience.swift */,
+			);
+			path = Expert;
 			sourceTree = "<group>";
 		};
 		ACFB981829F187A20046BA06 = {
@@ -462,6 +478,7 @@
 				ACEA1BDD2A06216900D7C411 /* UserViewModel.swift */,
 				ACC826CA29F42281004423C8 /* parenthingsViewModel.swift */,
 				8542E0702A04F286000D7A78 /* ArticleViewModel.swift */,
+				ACEA1BE82A0631AD00D7C411 /* ExpertEducationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -646,6 +663,7 @@
 				AC97A51729FFB25D00B66A67 /* PaymentTypeHelper.swift in Sources */,
 				8586280C2A034B1D0077F60D /* LongArticleCardView.swift in Sources */,
 				8F3CF2952A012133006E03AC /* ProfileMenuComponent.swift in Sources */,
+				ACEA1BE32A062B6A00D7C411 /* ExpertEducationAPIModel.swift in Sources */,
 				ACF7F5DF29FC449C0059F323 /* UserModel.swift in Sources */,
 				AC0338B32A02B0E30010349E /* ChatInteractorProtocol.swift in Sources */,
 				AC5AEB3929FC0CE800BF64F9 /* CustomPicker.swift in Sources */,
@@ -681,7 +699,9 @@
 				856849C02A05764C00517DDF /* CoreDataModel.xcdatamodeld in Sources */,
 				8F0362312A04DD5D0085D7F5 /* ProfileMainPageView.swift in Sources */,
 				AC34EDB629FBCFD5002AED7C /* ConsultationTransactionModel.swift in Sources */,
+				ACEA1BE92A0631AD00D7C411 /* ExpertEducationViewModel.swift in Sources */,
 				8F03622F2A04DD5D0085D7F5 /* Profile_TopUpView.swift in Sources */,
+				ACEA1BE72A062BEC00D7C411 /* ExpertExperience.swift in Sources */,
 				ACFB984429F1BDF00046BA06 /* SearchBarComponent.swift in Sources */,
 				8FA3683A2A051CED003377E3 /* LogOutButtonComponent.swift in Sources */,
 				AC5F372729F966AD00372208 /* Consultation_SearchPageComponent.swift in Sources */,
