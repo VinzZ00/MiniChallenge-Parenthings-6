@@ -21,12 +21,14 @@ enum topUPType: Int {
 struct Profile_TopUpView: View {
     
     @Environment(\.presentationMode) var presentationMode
-
+    
+    @EnvironmentObject var viewModel: parenthingsViewModel
+    
     @State private var showInsertTopUpAmountView = false
-//    @State private var amountTextfield = "0"
+    @State private var amountInput = ""
     @State private var isSelected = true
     
-    var profileBalance = 0
+    var profileBalanceDefault: Double = 50_000
 
     var body: some View {
         
@@ -65,7 +67,7 @@ struct Profile_TopUpView: View {
                                 HStack {
                                     Text(Prompt.paymentContent.balance)
                                         .foregroundColor(.gray)
-                                    Text("Rp. \(profileBalance)")
+                                    Text("Rp \(viewModel.userTest?.balanceParenting.defaultTrailingZero() ?? profileBalanceDefault.defaultTrailingZero())")
                                         .bold()
                                 }
                             }
@@ -108,7 +110,7 @@ struct Profile_TopUpView: View {
                         NavigationLink {
                             // Toggle
 //                            showInsertTopUpAmountView.toggle()
-                            Profile_EnterTopUpAmount()
+                            Profile_EnterTopUpAmount(amountInput: $amountInput)
                                 .navigationBarHidden(true)
                             
                         } label: {
@@ -152,7 +154,7 @@ struct Profile_TopUpView: View {
 //
 //                                    //Text Field
 //                                    VStack {
-//                                        TextField(Prompt.paymentContent.redeemCode, text: $amountTextfield)
+//                                        TextField(Prompt.paymentContent.redeemCode, text: $amountInput)
 //                                            .keyboardType(.numberPad)
 //                                            .padding(.leading, 10)
 //                                            .font(.system(size: 22, weight: .bold))
@@ -194,7 +196,7 @@ struct Profile_TopUpView: View {
                     //Button continue
                     VStack {
                         NavigationLink {
-                            Profile_TopUpConfirmation()
+                            Profile_TopUpConfirmation(amountInput: $amountInput)
                                 .navigationBarHidden(true)
                         } label: {
                             Text(Prompt.Button.continueProcess)
@@ -223,5 +225,6 @@ struct Profile_TopUpView: View {
 struct Profile_TopUpView_Previews: PreviewProvider {
     static var previews: some View {
         Profile_TopUpView()
+            .environmentObject(parenthingsViewModel())
     }
 }
