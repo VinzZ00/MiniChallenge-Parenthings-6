@@ -47,6 +47,8 @@ struct Profile_EnterTopUpAmount: View {
             NavigationLink {
                 //Go to top up confirmation
                 Profile_TopUpConfirmation()
+                    .navigationBarHidden(true)
+                
             } label: {
                 Text(Prompt.Button.continueProcess)
                     .frame(maxWidth: .infinity)
