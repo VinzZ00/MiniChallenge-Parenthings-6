@@ -16,25 +16,26 @@ class ExpertExperienceViewModel : ObservableObject {
     var service : APIService = APIService(isLogActive: true)
     
     
-    func getExpertExperience(id : String) {
+    func getExpertExperience() {
         isLoading = true
         errorMessage = nil
         isError = false
         
-        let urlEndPoint: String = "expert_educations/\(id)"
+        let urlEndPoint: String = "expert_educations"
         let fullUrl = URL(string: (ProcessInfo.processInfo.environment["BASE_URL"] ?? "")  + urlEndPoint)
         var request: URLRequest? = URLRequest(url: fullUrl!)
         request?.httpMethod = APIMethod.GET.description
         
         if request == nil {
             print(APIError.badURL)
+            return
         }
         
-        service.fetch([ExpertExperienceAPIModel].self, request: request!) { [unowned self] result in
+        service.fetch([ExpertExperienceAPIModel].self, request: request!) { [self] result in
             
             DispatchQueue.main.async {
-                self.isLoading = false;
                 
+                self.isLoading = false;
                 switch result {
                 case .failure(let error) :
                     self.errorMessage = error.localizedDescription
@@ -42,10 +43,10 @@ class ExpertExperienceViewModel : ObservableObject {
                 case .success(let Experiences) :
                     print("success retrieving \(Experiences.count) rows")
                     self.Experiences = Experiences;
-                    
-                    self.Experiences = self.Experiences.filter{
-                        $0.id == id;
-                    }
+                    print("Done Fetching")
+//                    self.Experiences = self.Experiences.filter{
+//                        $0.id == id;
+//                    }
                 }
                 
             }

@@ -11,13 +11,13 @@ class ExpertEducationViewModel : ObservableObject {
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
     @Published var isError: Bool = false
-    @Published var Educations : [ExpertEducationAPIModel] = []
+    @Published var Educations : [ExpertEducationAPIModel] = [ExpertEducationAPIModel]()
     
     let service : APIService = APIService(isLogActive: true)
     
     
     
-    func getExpertEducations(id : String) {
+    func getExpertEducations() {
         isLoading = true
         errorMessage = nil
         isError = false
@@ -29,13 +29,14 @@ class ExpertEducationViewModel : ObservableObject {
         
         if request == nil {
             print(APIError.badURL)
+            return
         }
         
-        service.fetch([ExpertEducationAPIModel].self, request: request!) { [unowned self] result in
+        service.fetch([ExpertEducationAPIModel].self, request: request!) { [self] result in
             
             DispatchQueue.main.async {
                 
-                self.isLoading = false;
+//                self.isLoading = false;
                 
                 switch result {
                 case .failure(let error) :
@@ -43,12 +44,14 @@ class ExpertEducationViewModel : ObservableObject {
                     self.errorMessage = error.localizedDescription
                 case .success(let expertEducations) :
                     print("success retrieving \(expertEducations.count) rows")
-                    
-                    for education in expertEducations {
-                        if education.expert_id == id {
-                            self.Educations.append(education)
-                        }
-                    }
+//
+//                    for education in expertEducations {
+//                        if education.expert_id == id {
+//                            self.Educations.append(education)
+//                        }
+//                    }
+                   
+                    self.Educations = expertEducations
                     print("Done Retrieving")
                 }
             }

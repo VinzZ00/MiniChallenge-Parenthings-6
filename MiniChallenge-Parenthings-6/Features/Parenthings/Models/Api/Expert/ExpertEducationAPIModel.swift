@@ -10,8 +10,8 @@ import Foundation
 struct ExpertEducationAPIModel : Codable {
     var id : String
     var name : String
-    var yearStart : Int
-    var yearEnd : Int
+    var year_start : Int
+    var year_end : Int
     var expert_id : String
 }
 
@@ -19,8 +19,8 @@ enum CodingKeys: String, CodingKey
    {
     case id = "id"
     case name = "name"
-    case yearStart = "yearStart"
-    case yearEnd = "yearEnd"
+    case year_start = "year_start"
+    case year_end = "year_end"
     case expert_id = "expert_id"
    }
 
