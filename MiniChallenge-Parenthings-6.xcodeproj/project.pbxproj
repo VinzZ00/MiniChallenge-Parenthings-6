@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		835819C52A05216700F31638 /* LogOutButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835819C42A05216700F31638 /* LogOutButtonComponent.swift */; };
 		851DC3142A03A8490025DD5C /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851DC3132A03A8490025DD5C /* DataExtension.swift */; };
 		851DC3182A03A8EB0025DD5C /* UserApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851DC3172A03A8EB0025DD5C /* UserApiModel.swift */; };
 		851DC31A2A03B4A00025DD5C /* ProgressPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851DC3192A03B4A00025DD5C /* ProgressPageView.swift */; };
@@ -89,6 +88,7 @@
 		ACEA1BE32A062B6A00D7C411 /* ExpertEducationAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEA1BE22A062B6A00D7C411 /* ExpertEducationAPIModel.swift */; };
 		ACEA1BE72A062BEC00D7C411 /* ExpertExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEA1BE62A062BEC00D7C411 /* ExpertExperience.swift */; };
 		ACEA1BE92A0631AD00D7C411 /* ExpertEducationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEA1BE82A0631AD00D7C411 /* ExpertEducationViewModel.swift */; };
+		ACEA1BEB2A06921500D7C411 /* ExpertExperienceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEA1BEA2A06921500D7C411 /* ExpertExperienceViewModel.swift */; };
 		ACF7F5DF29FC449C0059F323 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7F5DE29FC449C0059F323 /* UserModel.swift */; };
 		ACF7F5E129FC4BCD0059F323 /* LazyVGridPaymentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7F5E029FC4BCD0059F323 /* LazyVGridPaymentType.swift */; };
 		ACFB982529F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFB982429F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift */; };
@@ -190,6 +190,7 @@
 		ACEA1BE22A062B6A00D7C411 /* ExpertEducationAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertEducationAPIModel.swift; sourceTree = "<group>"; };
 		ACEA1BE62A062BEC00D7C411 /* ExpertExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertExperience.swift; sourceTree = "<group>"; };
 		ACEA1BE82A0631AD00D7C411 /* ExpertEducationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertEducationViewModel.swift; sourceTree = "<group>"; };
+		ACEA1BEA2A06921500D7C411 /* ExpertExperienceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertExperienceViewModel.swift; sourceTree = "<group>"; };
 		ACF7F5DE29FC449C0059F323 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		ACF7F5E029FC4BCD0059F323 /* LazyVGridPaymentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyVGridPaymentType.swift; sourceTree = "<group>"; };
 		ACFB982129F187A20046BA06 /* MiniChallenge-Parenthings-6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MiniChallenge-Parenthings-6.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -479,6 +480,7 @@
 				ACC826CA29F42281004423C8 /* parenthingsViewModel.swift */,
 				8542E0702A04F286000D7A78 /* ArticleViewModel.swift */,
 				ACEA1BE82A0631AD00D7C411 /* ExpertEducationViewModel.swift */,
+				ACEA1BEA2A06921500D7C411 /* ExpertExperienceViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -705,6 +707,7 @@
 				ACFB984429F1BDF00046BA06 /* SearchBarComponent.swift in Sources */,
 				8FA3683A2A051CED003377E3 /* LogOutButtonComponent.swift in Sources */,
 				AC5F372729F966AD00372208 /* Consultation_SearchPageComponent.swift in Sources */,
+				ACEA1BEB2A06921500D7C411 /* ExpertExperienceViewModel.swift in Sources */,
 				8F0362302A04DD5D0085D7F5 /* Profile_TopUpConfirmation.swift in Sources */,
 				ACFB982529F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift in Sources */,
 				8F0362352A04DEC70085D7F5 /* Consultation_RedeemCouponView.swift in Sources */,

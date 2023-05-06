@@ -108,8 +108,8 @@ struct Profile_TopUpView: View {
                         NavigationLink {
                             // Toggle
 //                            showInsertTopUpAmountView.toggle()
-                            Profile_EnterTopUpAmount()
-                                .navigationBarHidden(true)
+//                            Profile_EnterTopUpAmount()
+//                                .navigationBarHidden(true)
                             
                         } label: {
                             HStack {
