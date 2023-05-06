@@ -18,7 +18,7 @@ struct ProfileMainPageView: View {
 
     var body: some View {
         
-        NavigationView {
+        NavigationStack {
             VStack (spacing: 0){
                 CustomNavigationBar(title: Prompt.Title.profiles, enableBackButton: false, enableSearchBar: false, backButton: self.backButton)
                 
@@ -80,6 +80,7 @@ struct ProfileMainPageView: View {
                                 //Go to top up page
                                 Profile_TopUpView()
                                     .navigationBarHidden(true)
+                                    .toolbar(.hidden, for: .tabBar)
                             } label: {
                                 VStack {
                                     Image(systemName: Prompt.Icon.topUp)
@@ -113,7 +114,7 @@ struct ProfileMainPageView: View {
                     
                     
                     //Profile Menus
-                    VStack {
+//                    VStack {
                         //Payment Method
                         //                        ProfileMenuComponent(imageName: Prompt.Icon.paymentMethod, imageText: Prompt.Button.paymentMethod)
                         
@@ -122,8 +123,8 @@ struct ProfileMainPageView: View {
                         
                         //Reddem coupon
                         //                        ProfileMenuComponent(imageName: Prompt.Icon.reedeemCoupon, imageText: Prompt.Button.redeemCoupon)
-                    }
-                    .padding(.top, 20)
+//                    }
+//                    .padding(.top, 20)
                     
                     
 //                    //Log out button
@@ -149,12 +150,27 @@ struct ProfileMainPageView: View {
                 
             }
             .background(AppBackground())
+            .alert(isPresented: $showAlert) {
+                Alert(
+                 title: Text(Prompt.AlertTitle.logOut),
+                   message: Text(Prompt.AlertMessages.logOutMessage),
+                 primaryButton: .destructive(Text(Prompt.Button.delete)) {
+                       //action here
+                   },
+                   secondaryButton: .cancel()
+               )
+                
+            }
         }
+        .transition(.move(edge: .leading))
+        .background(
+            AppBackground()
+        )
     }
 }
 
-//struct ProfileMainPageView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ProfileMainPageView()
-//    }
-//}
+struct ProfileMainPageView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProfileMainPageView(backButton: {self})
+    }
+}

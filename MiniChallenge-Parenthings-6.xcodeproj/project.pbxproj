@@ -45,6 +45,7 @@
 		8F3CF2912A01201B006E03AC /* ImageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3CF2902A01201B006E03AC /* ImageLabel.swift */; };
 		8F3CF2952A012133006E03AC /* ProfileMenuComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3CF2942A012133006E03AC /* ProfileMenuComponent.swift */; };
 		8F3CF2972A012182006E03AC /* PaymentSuccessPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3CF2962A012182006E03AC /* PaymentSuccessPageView.swift */; };
+		8FA3683A2A051CED003377E3 /* LogOutButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA368392A051CED003377E3 /* LogOutButtonComponent.swift */; };
 		AC0338B32A02B0E30010349E /* ChatInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0338B22A02B0E30010349E /* ChatInteractorProtocol.swift */; };
 		AC0338B52A02B30B0010349E /* ChatInteractorClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0338B42A02B30B0010349E /* ChatInteractorClass.swift */; };
 		AC0338B72A02B55E0010349E /* ChatDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0338B62A02B55E0010349E /* ChatDataClass.swift */; };
@@ -142,6 +143,7 @@
 		8F3CF2902A01201B006E03AC /* ImageLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLabel.swift; sourceTree = "<group>"; };
 		8F3CF2942A012133006E03AC /* ProfileMenuComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuComponent.swift; sourceTree = "<group>"; };
 		8F3CF2962A012182006E03AC /* PaymentSuccessPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSuccessPageView.swift; sourceTree = "<group>"; };
+		8FA368392A051CED003377E3 /* LogOutButtonComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutButtonComponent.swift; sourceTree = "<group>"; };
 		AC0338B22A02B0E30010349E /* ChatInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInteractorProtocol.swift; sourceTree = "<group>"; };
 		AC0338B42A02B30B0010349E /* ChatInteractorClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInteractorClass.swift; sourceTree = "<group>"; };
 		AC0338B62A02B55E0010349E /* ChatDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataClass.swift; sourceTree = "<group>"; };
@@ -520,6 +522,7 @@
 				AC5F372429F95FA400372208 /* ExpertGridView.swift */,
 				AC5AEB3829FC0CE800BF64F9 /* CustomPicker.swift */,
 				ACF7F5E029FC4BCD0059F323 /* LazyVGridPaymentType.swift */,
+				8FA368392A051CED003377E3 /* LogOutButtonComponent.swift */,
 				AC9FF96929FEA0A0008766E8 /* TransactionDetailViewComponent.swift */,
 				AC9FF96B29FEA295008766E8 /* StarRatingComponent.swift */,
 				8F3CF2942A012133006E03AC /* ProfileMenuComponent.swift */,
@@ -680,7 +683,7 @@
 				AC34EDB629FBCFD5002AED7C /* ConsultationTransactionModel.swift in Sources */,
 				8F03622F2A04DD5D0085D7F5 /* Profile_TopUpView.swift in Sources */,
 				ACFB984429F1BDF00046BA06 /* SearchBarComponent.swift in Sources */,
-				835819C52A05216700F31638 /* LogOutButtonComponent.swift in Sources */,
+				8FA3683A2A051CED003377E3 /* LogOutButtonComponent.swift in Sources */,
 				AC5F372729F966AD00372208 /* Consultation_SearchPageComponent.swift in Sources */,
 				8F0362302A04DD5D0085D7F5 /* Profile_TopUpConfirmation.swift in Sources */,
 				ACFB982529F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift in Sources */,

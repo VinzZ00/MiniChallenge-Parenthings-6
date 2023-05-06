@@ -31,6 +31,7 @@ struct Profile_TopUpView: View {
     var body: some View {
         
 //        NavigationView {
+        VStack {
             VStack (spacing: 0){
                 CustomNavigationBar(title: Prompt.Title.topUp, enableBackButton: true, enableSearchBar: false, backButton: {
                     presentationMode.wrappedValue.dismiss()
@@ -104,9 +105,12 @@ struct Profile_TopUpView: View {
                     
                     //Button type amount
                     VStack {
-                        Button {
+                        NavigationLink {
                             // Toggle
-                            showInsertTopUpAmountView.toggle()
+//                            showInsertTopUpAmountView.toggle()
+                            Profile_EnterTopUpAmount()
+                                .navigationBarHidden(true)
+                            
                         } label: {
                             HStack {
                                 Image(systemName: Prompt.Icon.add)
@@ -131,28 +135,28 @@ struct Profile_TopUpView: View {
                             RoundedRectangle(cornerRadius: 10)
                                 .stroke(AppColor.grayLightColor, lineWidth: 1.5)
                         )
-                        .sheet(isPresented: $showInsertTopUpAmountView) {
-                            VStack {
-                                //Drag indicator
-                                Capsule()
-                                    .fill(Color.secondary)
-                                    .opacity(0.5)
-                                    .frame(width: 35, height: 5)
-                                    .padding(.top, 15)
-                                
+//                        .sheet(isPresented: $showInsertTopUpAmountView) {
+//                            VStack {
+//                                //Drag indicator
+//                                Capsule()
+//                                    .fill(Color.secondary)
+//                                    .opacity(0.5)
+//                                    .frame(width: 35, height: 5)
+//                                    .padding(.top, 15)
+//
 //                                //Sheet content
 //                                VStack (alignment: .leading){
-//                                    
+//
 //                                    Text(Prompt.Caption.enterTopUpAmount)
 //                                        .font(.callout)
-//                                    
+//
 //                                    //Text Field
 //                                    VStack {
 //                                        TextField(Prompt.paymentContent.redeemCode, text: $amountTextfield)
 //                                            .keyboardType(.numberPad)
 //                                            .padding(.leading, 10)
 //                                            .font(.system(size: 22, weight: .bold))
-//                                        
+//
 //                                        Divider()
 //                                            .background(.black)
 //                                    }
@@ -161,9 +165,9 @@ struct Profile_TopUpView: View {
 //                                }
 //                                .padding(.top, 20)
 //                                .padding(.horizontal, 25)
-//                                
+//
 //                                Spacer()
-//                                
+//
 //                                //Button Continue
 //                                NavigationLink {
 //                                    //Go to top up confirmation
@@ -179,8 +183,8 @@ struct Profile_TopUpView: View {
 //                                .foregroundColor(.white)
 //                                .background(AppColor.paymentBlueTextColor)
 //                                .buttonStyle(.borderless)
-                            }
-                            .presentationDetents([.medium])
+//                            }
+//                            .presentationDetents([.medium])
                             
                         }
                     }
@@ -189,8 +193,9 @@ struct Profile_TopUpView: View {
                     
                     //Button continue
                     VStack {
-                        Button {
+                        NavigationLink {
                             Profile_TopUpConfirmation()
+                                .navigationBarHidden(true)
                         } label: {
                             Text(Prompt.Button.continueProcess)
                                 .frame(maxWidth: .infinity)
@@ -208,8 +213,8 @@ struct Profile_TopUpView: View {
                 .offset(y: -20)
                 .padding(.horizontal, 25)
                 .padding(.top, 10)
-            }
-            .background(AppBackground())
+        }
+        .background(AppBackground())
 //            .blur(radius: showInsertTopUpAmountView ? 2 : 0)
 //            .animation(.easeOut(duration: 0.2), value: showInsertTopUpAmountView)
     }
