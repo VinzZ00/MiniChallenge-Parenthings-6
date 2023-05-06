@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ExpertAPI : Codable, Hashable {
+struct ExpertAPIModel : Codable, Hashable {
     var id : String = ""
     var name : String = ""
     var year_of_experience : Int = 0

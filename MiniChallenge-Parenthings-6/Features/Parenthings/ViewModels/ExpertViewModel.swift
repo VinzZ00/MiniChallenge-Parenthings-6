@@ -12,11 +12,9 @@ class ExpertViewModel : ObservableObject {
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
     @Published var isError: Bool = false
-    @Published var experts : [ExpertAPI] = [ExpertAPI]()
+    @Published var experts : [ExpertAPIModel] = [ExpertAPIModel]()
     
     let service : APIService = APIService(isLogActive: true)
-    
-    init() {};
     
     
     
@@ -39,7 +37,7 @@ class ExpertViewModel : ObservableObject {
             return
         }
         
-        service.fetch([ExpertAPI].self, request: request!) { [unowned self] result in
+        service.fetch([ExpertAPIModel].self, request: request!) { [unowned self] result in
             
             DispatchQueue.main.async {
                 
@@ -49,10 +47,14 @@ class ExpertViewModel : ObservableObject {
                     self.errorMessage = error.localizedDescription
                     // print(error.description)
                     print(error)
-                case .success(let expert):
-                    print("--- sucess with \(expert.count)")
-                    
-                    self.experts = expert
+                case .success(let experts):
+                    print("--- sucess with \(experts.count)")
+                    var gottenExpert : ExpertAPIModel;
+                    for exp in experts {
+                        gottenExpert = exp;
+                        
+                        //
+                    }
                 }
             }
         }
