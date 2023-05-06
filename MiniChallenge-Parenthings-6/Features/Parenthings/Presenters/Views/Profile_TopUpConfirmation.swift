@@ -11,7 +11,8 @@ struct Profile_TopUpConfirmation: View {
     @Environment(\.presentationMode) var presentationMode
 
     var profileBalance = 0
-    
+    @Binding var amountInput : String
+
     var body: some View {
         
 //        NavigationView {
@@ -27,10 +28,13 @@ struct Profile_TopUpConfirmation: View {
                         .font(.system(size: 17, weight: .bold))
                         .foregroundColor(.gray)
         
-                    Text("Rp \(profileBalance)")
-                        .font(.system(size: 22, weight: .bold))
-                        .padding(.top, 3)
-                        .padding(.leading, 10)
+                    HStack {
+                        Text("\(Prompt.paymentContent.rupiah)")
+                        Text("\(amountInput)")
+                    }
+                    .font(.system(size: 22, weight: .bold))
+                    .padding(.top, 3)
+                    .padding(.leading, 10)
                     
                     
                     Divider()
@@ -62,9 +66,12 @@ struct Profile_TopUpConfirmation: View {
                                     .font(.callout)
                                     .foregroundColor(.gray)
                                 Spacer()
-                                Text("Rp \(profileBalance)")
-                                    .font(.callout)
-                                    .bold()
+                                HStack {
+                                    Text("\(Prompt.paymentContent.rupiah)")
+                                    Text("\(amountInput)")
+                                }
+                                .font(.callout)
+                                .bold()
                             }
                             .foregroundColor(.gray)
                             
@@ -114,6 +121,7 @@ struct Profile_TopUpConfirmation: View {
 
 struct Profile_TopUpConfirmation_Previews: PreviewProvider {
     static var previews: some View {
-        Profile_TopUpConfirmation()
+        Profile_TopUpConfirmation(amountInput: .constant("0"))
+            .environmentObject(parenthingsViewModel())
     }
 }
