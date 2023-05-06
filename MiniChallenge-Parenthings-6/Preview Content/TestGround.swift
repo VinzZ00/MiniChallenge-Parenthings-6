@@ -1,13 +1,17 @@
 import SwiftUI
 
 struct ContentViews: View {
+    
+    var expertViewModel : ExpertViewModel  = ExpertViewModel()
+    
     var body: some View {
-        NavigationView {
-            VStack {
-                Text("Hello, world!")
-                NavigationLink("Next page", destination: NextView())
+        VStack{
+            ForEach(expertViewModel.experts, id : \.self) {
+                exp in
+                Text("exp")
             }
-            .navigationTitle("My App")
+        }.onAppear{
+            expertViewModel.getAllExpert()
         }
     }
 }
