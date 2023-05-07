@@ -76,6 +76,5 @@ struct Profile_EnterTopUpAmount_Previews: PreviewProvider {
     static var previews: some View {
         Profile_EnterTopUpAmount(amountInput: .constant("0"))
             .environmentObject(parenthingsViewModel())
-
     }
 }
