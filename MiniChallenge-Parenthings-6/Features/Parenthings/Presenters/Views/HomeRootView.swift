@@ -12,6 +12,7 @@ struct HomeRootView: View {
     @StateObject var viewModel = parenthingsViewModel();
     @StateObject var userViewModel = UserViewModel()
     @State private var selectedView = ""
+    @State private var lastSelectedView = "Consultation"
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -25,6 +26,14 @@ struct HomeRootView: View {
             ExpertDetail()
                 .transition(.move(edge: .trailing))
                 .environmentObject(viewModel)
+        }else if userViewModel.gotoLoginPage {
+            SignInPopUP()
+               .transition(.move(edge: .bottom))
+               .animation(.linear, value: true)
+               .navigationBarHidden(true)
+               .environmentObject(userViewModel)
+
+            
         } else {
             
             TabView(selection : $selectedView){
@@ -32,6 +41,7 @@ struct HomeRootView: View {
                     ConsultationMainPageView(backButton: {
                         presentationMode.wrappedValue.dismiss()
                     })
+                    .navigationBarHidden(true)
                     .onAppear {
                         viewModel.textFieldIsClicked = false;
                     }
@@ -53,6 +63,7 @@ struct HomeRootView: View {
                     ArticleMainPageView(backButton: {
                         presentationMode.wrappedValue.dismiss()
                     })
+                    .navigationBarHidden(true)
                     .onAppear {
                         viewModel.textFieldIsClicked = false;
                     }
@@ -74,16 +85,12 @@ struct HomeRootView: View {
                             ProfileMainPageView(selection: $selectedView, backButton: {
                                 presentationMode.wrappedValue.dismiss()
                             })
+                            .environmentObject(userViewModel)
+                            .navigationBarHidden(true)
+
                         }
                     }else{
-                        NavigationView{
-                        NavigationLink(destination:  SignInPopUP()
-                            .transition(.move(edge: .bottom))
-                            .navigationBarHidden(true)
-                                       , isActive: .constant(true)) {
-                          EmptyView()
-                        }
-                        }
+//                        userViewModel.gotoLoginPage = true
                     }
                     //Masukan Profile view
                 }.tabItem{
@@ -97,11 +104,29 @@ struct HomeRootView: View {
                     Text(Prompt.Title.profiles)
                         .foregroundColor(AppColor.paymentBlueTextColor)
                 }
+                
                 .tag("Profile")
             }
-            .onAppear{
-                print("isLoggedIn: \(userViewModel.isLoggedIn)")
+            .onChange(of: selectedView) { newValue in
+               
+                print(newValue)
+                var _ = userViewModel.getLoginSession()
+                if(!userViewModel.isLoggedIn) {
+
+                    if(lastSelectedView.isEmpty){
+                        lastSelectedView = selectedView
+                    }
+                    
+                        if(selectedView == "Profile"){
+                            userViewModel.gotoLoginPage = true
+                            selectedView = lastSelectedView
+                        }else{
+                             lastSelectedView = selectedView
+                        }
+                    
+                }
             }
+            
             .environmentObject(viewModel)
         }
     }

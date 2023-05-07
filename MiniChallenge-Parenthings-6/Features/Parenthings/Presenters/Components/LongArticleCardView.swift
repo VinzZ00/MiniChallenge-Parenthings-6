@@ -42,7 +42,7 @@ struct LongArticleCard: View {
 
 
         }
-        .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+        .padding(EdgeInsets(top: 0, leading: 4, bottom: 0, trailing: 4))
         .frame(width: UIScreen.screenWidth)
         .background(.white)
     }
