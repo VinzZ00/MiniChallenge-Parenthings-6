@@ -75,7 +75,7 @@ extension Prompt {
         static let topUpFee = "Top up fee"
         static let total = "Total"
         static let rupiah = "Rp"
-        static let defaultAmount = "0"
+        static let defaultAmount = "20000"
         
 
         static let amountPaid = "Amount Paid"

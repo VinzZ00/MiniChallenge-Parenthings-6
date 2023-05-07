@@ -124,9 +124,9 @@ struct Profile_TopUpConfirmation: View {
     }
 }
 
-//struct Profile_TopUpConfirmation_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Profile_TopUpConfirmation(totalTopUp: 10.0, amountInput: .constant("0"))
-//            .environmentObject(parenthingsViewModel())
-//    }
-//}
+struct Profile_TopUpConfirmation_Previews: PreviewProvider {
+    static var previews: some View {
+        Profile_TopUpConfirmation( amountInput: .constant("0"))
+            .environmentObject(parenthingsViewModel())
+    }
+}
