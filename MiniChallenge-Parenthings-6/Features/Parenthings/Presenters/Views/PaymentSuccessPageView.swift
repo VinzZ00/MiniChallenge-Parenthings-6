@@ -45,7 +45,8 @@ struct PaymentSuccessPageView: View {
             }
             .padding(.bottom)
             .foregroundColor(.white)
-        }.onTapGesture {
+        }
+        .onTapGesture {
             presentationMode.wrappedValue.dismiss()
         }
         
