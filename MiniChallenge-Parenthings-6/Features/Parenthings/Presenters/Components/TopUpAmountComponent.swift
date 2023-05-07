@@ -12,7 +12,7 @@ struct TopUpAmountComponent: View {
     @Binding var isSelected: Bool
     
     var amountIcon: String
-    var amount: Int
+    var amount: Double
     
     var body: some View {
         VStack {
@@ -59,7 +59,7 @@ struct TopUpAmountComponent: View {
                                 .frame(maxWidth: .infinity)
                                 .padding(5)
                             
-                            Text("Rp \(amount)")
+                            Text("Rp \(amount.defaultTrailingZero())")
                                 .font(.system(size: 12, weight: .bold))
                                 .padding(.bottom, 5)
                         }
