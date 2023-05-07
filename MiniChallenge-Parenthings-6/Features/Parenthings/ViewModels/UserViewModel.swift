@@ -11,6 +11,7 @@ class UserViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var isSigninSuccess: Bool = false
     @Published var isSignupSuccess: Bool = false
+    @Published var isLoggedIn: Bool = false
     @Published var errorMessage: String? = nil
     @Published var isError: Bool = false
     @Published var response: UserApiModel = UserApiModel()
@@ -19,6 +20,7 @@ class UserViewModel: ObservableObject {
     
     init(service: APIService = APIService(isLogActive: true)) {
         self.service = service
+        getLoginSession()
     }
     
     func doSignin(phone: String) {
@@ -143,11 +145,13 @@ class UserViewModel: ObservableObject {
             let dataFromJsonString = stringData.data(using: .utf8)
             let userApiData = try JSONDecoder().decode(UserApiModel.self,
                                                        from: dataFromJsonString!)
+            isLoggedIn = true
             return userApiData
 
         }catch {
             print("error: \(error.localizedDescription)")
         }
+        
         return nil
     }
     

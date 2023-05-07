@@ -69,17 +69,20 @@ struct HomeRootView: View {
                 }.tag("Articles")
                 
                 VStack{
-                    if ((userViewModel.getLoginSession()!) != nil){
+                    if (userViewModel.isLoggedIn){
                         ZStack {
                             ProfileMainPageView(selection: $selectedView, backButton: {
                                 presentationMode.wrappedValue.dismiss()
                             })
                         }
                     }else{
+                        NavigationView{
                         NavigationLink(destination:  SignInPopUP()
                             .transition(.move(edge: .bottom))
-                            .padding(.vertical, 16)) {
+                            .navigationBarHidden(true)
+                                       , isActive: .constant(true)) {
                           EmptyView()
+                        }
                         }
                     }
                     //Masukan Profile view
@@ -95,6 +98,9 @@ struct HomeRootView: View {
                         .foregroundColor(AppColor.paymentBlueTextColor)
                 }
                 .tag("Profile")
+            }
+            .onAppear{
+                print("isLoggedIn: \(userViewModel.isLoggedIn)")
             }
             .environmentObject(viewModel)
         }
