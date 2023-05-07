@@ -46,9 +46,9 @@ struct OnGoingMainConsultationPage: View {
                 HStack(){
                     Text("\(Prompt.subTitle.recomendedExpert)")
                         .font(.system(size: 22, weight: .bold))
-                        .padding(.leading, 18)
                     Spacer()
-                }.padding(.bottom, 6)
+                }
+                .padding(.horizontal, Prompt.Padding.paddingMedium)
                 Spacer()
                 if expertViewModel.experts.isEmpty {
                     Text("No Expert available")
