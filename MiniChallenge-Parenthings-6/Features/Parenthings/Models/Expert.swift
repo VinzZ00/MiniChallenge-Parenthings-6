@@ -11,7 +11,7 @@ import SwiftUI
 typealias encodedBase64 = String;
 
 struct Expert : Identifiable, Hashable {
-    let id = UUID();
+    let id : UUID?
     var name : String = ""
     var role : String = ""
     var education : String = ""
@@ -27,7 +27,9 @@ struct Expert : Identifiable, Hashable {
     func sampleData(img: String = "UniversalPlaceHolder")-> Expert {
         
         
-        return Expert(name: "Peter Parker"
+        return Expert(
+            id : UUID(),
+            name: "Peter Parker"
                       ,role: "Dokter Kandungan"
                       ,education: "Dokter"
                       ,educationDesc: "EducationDescription"

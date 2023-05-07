@@ -12,7 +12,7 @@ struct ChatExpert: View {
     
     
     //Testing doang
-    var selectedExpert : Expert = Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false)
+    var selectedExpert : Expert = Expert(id : UUID(), name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false)
 //    var selectedConsultation : ConsultationTransaction
     
     @EnvironmentObject var viewModel : parenthingsViewModel;

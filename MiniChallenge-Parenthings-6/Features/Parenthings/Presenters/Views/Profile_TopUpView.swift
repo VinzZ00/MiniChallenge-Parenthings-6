@@ -26,7 +26,7 @@ struct Profile_TopUpView: View {
     @EnvironmentObject var viewModel : parenthingsViewModel;
     @State private var showInsertTopUpAmountView = false
     
-    @State private var amountInput = "0"
+    @State private var amountInput = ""
     
     var profileBalanceDefault: Double = 50_000
 

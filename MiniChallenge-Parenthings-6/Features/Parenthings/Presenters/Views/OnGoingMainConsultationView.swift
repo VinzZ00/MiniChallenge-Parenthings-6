@@ -78,7 +78,8 @@ struct OnGoingMainConsultationPage: View {
                     .font(.system(size: 22, weight: .bold))
                 Spacer()
                 Button {
-                    
+                    viewModel.textFieldIsClicked = true
+                    viewModel.showAllExpert = true;
                 } label: {
                     VStack {
                         Text(Prompt.Button.seeAll)
