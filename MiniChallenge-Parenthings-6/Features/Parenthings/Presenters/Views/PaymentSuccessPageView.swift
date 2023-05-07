@@ -10,7 +10,8 @@ import SwiftUI
 struct PaymentSuccessPageView: View {
     @Environment(\.presentationMode) var presentationMode
 
-    @Binding var totalTopUp : Double
+    @Binding var amountInput : String
+    @Binding var topUpFee : Double
     
     var body: some View {
         ZStack {
@@ -35,7 +36,7 @@ struct PaymentSuccessPageView: View {
                     
                     Text(Prompt.paymentContent.amountPaid)
                         .padding(.top, 40)
-                    Text("\(Prompt.paymentContent.rupiah) \(totalTopUp.defaultTrailingZero())")
+                    Text("\(Prompt.paymentContent.rupiah) \((parenthingsViewModel().getTotalAmountPaid(amount: Double(amountInput) ?? 0, fee: topUpFee)).defaultTrailingZero())")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .padding(.bottom, 40)
@@ -55,7 +56,8 @@ struct PaymentSuccessPageView: View {
 
 struct PaymentSuccessPageView_Previews: PreviewProvider {
     static var previews: some View {
-        PaymentSuccessPageView(totalTopUp: .constant(12))
+        PaymentSuccessPageView(amountInput: .constant("0"), topUpFee: .constant(0.0))
+            .environmentObject(parenthingsViewModel())
     }
 }
 
