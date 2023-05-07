@@ -11,9 +11,18 @@ struct PaymentSuccessPageView: View {
     @Environment(\.presentationMode) var presentationMode
 
     @Binding var totalTopUp : Double
+    @State var navigate : Bool = false
     
     var body: some View {
         ZStack {
+            NavigationView{
+                NavigationLink(destination: HomeRootView()
+                    .navigationBarHidden(true)
+                    .toolbar(.hidden, for: .tabBar)
+                               , isActive: $navigate){
+                    EmptyView()
+                }
+            }
             Image("BackgroundPaymentSuccess")
                 .resizable()
                 .scaledToFill()
@@ -46,8 +55,11 @@ struct PaymentSuccessPageView: View {
             .padding(.bottom)
             .foregroundColor(.white)
         }
-        .onTapGesture {
-            presentationMode.wrappedValue.dismiss()
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+                navigate = true
+            }
+//            presentationMode.wrappedValue.dismiss()
         }
         
     }
