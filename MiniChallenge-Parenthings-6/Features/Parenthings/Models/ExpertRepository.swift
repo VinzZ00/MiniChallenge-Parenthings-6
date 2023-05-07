@@ -14,7 +14,7 @@ struct ExpertRepository {
     var expertAPIService : ExpertViewModel = ExpertViewModel();
     
     var savedExpert : [Expert] {
-        expertAPIService.getAllExpert();
+        
         return expertAPIService.experts
     }
     

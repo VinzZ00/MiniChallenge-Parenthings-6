@@ -46,30 +46,36 @@ struct OnGoingMainConsultationPage: View {
                 HStack(){
                     Text("\(Prompt.subTitle.recomendedExpert)")
                         .font(.system(size: 22, weight: .bold))
-                        .padding(.leading, 18)
                     Spacer()
-                }.padding(.bottom, 6)
-                Spacer()
-                if expertViewModel.experts.isEmpty {
-                    Text("No Expert available")
-                        .padding()
-                } else {
-                    ForEach(
-//                        x[0...2]  //Kalo mau test n mattin if
-                        top3Experts
-                        , id: \.self) { exp in
-                            LongExpertCard(ExpertData: exp, buttonText: Prompt.Button.chat)
-                        }
                 }
-                Spacer()
+                
+                VStack(alignment: .center) {
+                    if expertViewModel.isLoading {
+                        ProgressView()
+                            .padding(.vertical, Prompt.Padding.paddingLarge)
+                    } else {
+                        if expertViewModel.experts.isEmpty {
+                            Text("No Expert available")
+                                .padding()
+                        } else {
+                            ForEach(
+        //                        x[0...2]  //Kalo mau test n mattin if
+                                top3Experts
+                                , id: \.self) { exp in
+                                    LongExpertCard(ExpertData: exp, buttonText: Prompt.Button.chat)
+                                }
+                        }
+                    }
+                }
+                .padding(.bottom, Prompt.Padding.paddingLarge)
+                
             }
-            .frame(height:500)
+            .padding(.horizontal, Prompt.Padding.paddingMedium)
             
             
             HStack(){
                 Text("\(Prompt.subTitle.discoverOther)")
                     .font(.system(size: 22, weight: .bold))
-                    .padding(.leading, 18)
                 Spacer()
                 Button {
                     
@@ -85,29 +91,35 @@ struct OnGoingMainConsultationPage: View {
                         RoundedRectangle(cornerRadius: 5)
                             .stroke(AppColor.paymentBlueTextColor, lineWidth: 1)
                     )
-                    .padding(.trailing, 18)
                 }
-            }.padding(.bottom, 6)
-                .padding(.top, 19)
+            }.padding(.horizontal, Prompt.Padding.paddingMedium)
             
-            if (expertViewModel.experts.isEmpty) {
-                Text("No Expert available")
-                    .padding(.vertical, 20)
-                
+            if expertViewModel.isLoading {
+                ProgressView()
+                    .padding(.vertical, Prompt.Padding.paddingLarge)
             } else {
-                ScrollView(.horizontal) {
+                if (expertViewModel.experts.isEmpty) {
+                    Text("No Expert available")
+                        .padding(.vertical, 20)
                     
-                    HStack {
-                        ForEach(
-                            expertViewModel.experts.prefix(3)
-                            //                            x // Use this for testing
-                            , id: \.self) { expert in
-                                ShortExpertCard(ExpertData: expert, buttonText: Prompt.Button.chat)
-                                    .padding()
-                            }
+                } else {
+                    ScrollView(.horizontal) {
+                        
+                        HStack {
+                            ForEach(
+                                expertViewModel.experts.prefix(3)
+                                //                            x // Use this for testing
+                                , id: \.self) { expert in
+                                    ShortExpertCard(ExpertData: expert, buttonText: Prompt.Button.chat)
+                                }
+                        }
                     }
-                }.frame(height: 170)
+                    .frame(height: 170)
+                    .padding(.horizontal, Prompt.Padding.paddingMedium)
+                }
             }
+            
+            
         }
     }
 }

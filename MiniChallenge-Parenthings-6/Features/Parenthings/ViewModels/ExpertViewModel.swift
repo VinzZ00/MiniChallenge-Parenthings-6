@@ -15,7 +15,13 @@ class ExpertViewModel : ObservableObject {
     @Published var isError: Bool = false
     @Published var experts : [Expert] = [Expert]()
     
+    @Published var edus = ExpertEducationViewModel()
+    @Published var exps = ExpertExperienceViewModel()
+    
+    
     let service : APIService = APIService(isLogActive: true)
+    
+    
     
     init() {
         getAllExpert()
@@ -52,53 +58,48 @@ class ExpertViewModel : ObservableObject {
                     print(error)
                 case .success(let retrievedExperts):
                     print("--- sucess with \(retrievedExperts.count)")
-                    var edus = ExpertEducationViewModel()
-                    var exps = ExpertExperienceViewModel()
-                    
-                    edus.getExpertEducations()
-                    
-                    exps.getExpertExperience()
                     
                     var gottenExpert : ExpertAPIModel;
                     
+                    var educations : [ExpertEducationAPIModel] {
+                        print("In the expert View Model Edus " ,edus.Educations.count, "ROws")
+                        return edus.Educations
+                    }
+                    
+                    var experiences : [ExpertExperienceAPIModel] {
+                        print("In the expert View Model Exper " ,exps.Experiences.count, "ROws")
+                        return exps.Experiences
+                    }
+                    
                     for exp in retrievedExperts {
                         gottenExpert = exp;
+                     
+                        
                         
                     var lastEducation : ExpertEducationAPIModel? =
-                        edus.Educations.filter{
+                        educations.filter{
                             $0.expert_id == exp.id
                         }.last ?? nil
-                        
-//                        if edus.Educations.count != 0 {
-//                            lastEducation = edus.Educations.last!
-//                        }
-                        
-//                        exps.getExpertExperience(id: gottenExpert.id)
-                        
+
+
                     var lastExperience : ExpertExperienceAPIModel? =
-                        exps.Experiences.filter{
+                        experiences.filter{
                             $0.expert_id == exp.id
                         }.last ?? nil
                         
-//                        if exps.Experiences.count != 0 {
-//                            lastExperience = exps.Experiences.last!
-//                        }
-                        
-//                        var expertImage : UIImage? = nil;
-//
-//                        let url = URL(string: gottenExpert.photo_url)
-//
-//                        if let data = try? Data(contentsOf: url!)
-//                        {
-//                            expertImage = UIImage(data: data) ?? UIImage(systemName: "person.fill")!
-//                        }
+                        var calendar = Calendar.current
+                        var currentYear = calendar.component(.year, from: Date());
                         
                         var readyToUseExpert : Expert =
                         Expert(
                             name: gottenExpert.name,
+                            role : lastEducation?.name ?? "UNknown",
                             education: lastEducation?.name ?? "unknown",
-                            educationDesc: "",
-                            expDesc: "",
+                            educationDesc: lastEducation?.name ?? "Unknown",
+                            longExp: currentYear - gottenExpert.year_of_experience,
+                            expDesc: (lastExperience)?.name ?? "No description",
+                            price: gottenExpert.price,
+                            starCount: 5,
                             imageBase64: gottenExpert.photo_url,
                             isAvailable: true
                             )

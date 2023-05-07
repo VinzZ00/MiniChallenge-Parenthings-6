@@ -74,6 +74,9 @@ extension Prompt {
         static let topUpAmount = "Top up amount"
         static let topUpFee = "Top up fee"
         static let total = "Total"
+        static let rupiah = "Rp"
+        static let defaultAmount = "0"
+        
 
         static let amountPaid = "Amount Paid"
         static let balanceAdded = "Balance Added"
@@ -248,16 +251,9 @@ extension Prompt {
 
 extension Prompt {
     struct Padding {
-//        struct CardPadding {
-//            struct ExpertCard {
-//                static let horizontal = 16;
-//                static let vertical = 8;
-//            }
-//        }
-        
-        static let paddingSmall = 8;
-        static let paddingMedium = 16;
-        static let paddingLarge = 24;
-        static let paddingXtraLarge = 32;
+        static let paddingSmall = CGFloat(8);
+        static let paddingMedium = CGFloat(16);
+        static let paddingLarge = CGFloat(24);
+        static let paddingXtraLarge = CGFloat(32);
     }
 }
