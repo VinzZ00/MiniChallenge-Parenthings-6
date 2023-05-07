@@ -8,23 +8,25 @@
 import SwiftUI
 
 //Nanti taro di model
-enum topUPType: Int {
-    case topUP1 = 19000
-    case topUP2 = 49000
-    case topUp3 = 99000
-    case topUP4 = 199000
-    case topUP5 = 299000
-    case topUp6 = 499000
-    
-}
+//enum topUPType: Int {
+//    case topUP1 =
+//    case topUP2 = 49000
+//    case topUp3 = 99000
+//    case topUP4 = 199000
+//    case topUP5 = 299000
+//    case topUp6 = 499000
+//
+//}
 
 struct Profile_TopUpView: View {
     
     @Environment(\.presentationMode) var presentationMode
-
+    @EnvironmentObject var viewModel : parenthingsViewModel;
     @State private var showInsertTopUpAmountView = false
 //    @State private var amountTextfield = "0"
-    @State private var isSelected = true
+    @State var isSelected20 = false
+    @State var isSelected50 = false
+    @State var isSelected100 = false;
     
     var profileBalance = 0
 
@@ -86,11 +88,38 @@ struct Profile_TopUpView: View {
                     
                     VStack {
                         HStack {
-                            TopUpAmountComponent(isSelected: $isSelected, amountIcon: Prompt.Icon.amount1, amount: 20000)
+                            TopUpAmountComponent(isSelected: $isSelected20, amountIcon: Prompt.Icon.amount1, amount: 20000)
+                                .onTapGesture {
+                                    isSelected20.toggle();
+                                    if isSelected20 {
+                                        isSelected50 = false;
+                                        isSelected100 = false;
+                                        viewModel.topUpAmount = 20000
+                                    }
+                                }
                             Spacer()
-                            TopUpAmountComponent(isSelected: $isSelected, amountIcon: Prompt.Icon.amount2, amount: 50000)
+                            TopUpAmountComponent(isSelected: $isSelected50, amountIcon: Prompt.Icon.amount2, amount: 50000)
+                                .onTapGesture {
+                                    isSelected50.toggle();
+                                    if isSelected50
+                                    {
+                                        isSelected20 = false;
+                                        isSelected100 = false;
+                                        
+                                        viewModel.topUpAmount = 50000
+                                    }
+                                }
                             Spacer()
-                            TopUpAmountComponent(isSelected: $isSelected, amountIcon: Prompt.Icon.amount3, amount: 100000)
+                            TopUpAmountComponent(isSelected: $isSelected100, amountIcon: Prompt.Icon.amount3, amount: 100000)
+                                .onTapGesture {
+                                    isSelected100.toggle();
+                                    if isSelected100 {
+                                        isSelected50 = false;
+                                        isSelected20 = false;
+                                        
+                                        viewModel.topUpAmount = 100000
+                                    }
+                                }
                         }
                         
 //                        HStack {

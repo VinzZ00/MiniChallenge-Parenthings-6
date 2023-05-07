@@ -17,7 +17,6 @@ struct TopUpAmountComponent: View {
         VStack {
             VStack {
                 Button{
-                    
                 } label: {
                 }
                 .buttonStyle(.plain)
