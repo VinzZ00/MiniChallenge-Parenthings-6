@@ -9,7 +9,11 @@ import SwiftUI
 
 struct BottomConfirmationComponent: View {
     @EnvironmentObject var viewModel : parenthingsViewModel
-    @Binding var totalTopUp : Double
+    
+    @State private var isActive: Bool = false
+    @State private var totalTopUp : Double = 0.0
+
+    @Binding var topUpFee : Double
     @Binding var amountInput : String
     
     var body: some View {
@@ -52,20 +56,42 @@ struct BottomConfirmationComponent: View {
                 
                 //Button confirm and top up
                 VStack {
-                    NavigationLink {
+                    NavigationLink{
+                    } label: {
+                        Button {
+                            viewModel.addUserBalance(amount: Double(amountInput) ?? 0)
+                            totalTopUp = viewModel.getTotalAmountPaid(amount: Double(amountInput) ?? 0, fee: topUpFee)
+                            isActive = true
+                        } label: {
+                            Text(Prompt.Button.confirmAndTopUp)
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 15)
+                        }
+                    }
+                    .navigationDestination(isPresented: $isActive) {
                         PaymentSuccessPageView(totalTopUp: $totalTopUp)
                             .navigationBarHidden(true)
-                    } label: {
-                        Text(Prompt.Button.confirmAndTopUp)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 15)
+                            .toolbar(.hidden, for: .tabBar)
                     }
-                    .onAppear() {
-//                        viewModel.addUserBalance(amount: Double(amountInput) ?? 0)
-                        viewModel.userTest?.balanceParenting += Double(amountInput)!
-                        print("lala top upp")
-                        print(viewModel.userTest?.balanceParenting)
-                    }
+                    
+//                    NavigationLink (
+//                        destination: PaymentSuccessPageView(totalTopUp: $totalTopUp)
+//                            .navigationBarHidden(true),
+//                        isActive: $isActive,
+//                        label: {
+//                            Text(Prompt.Button.confirmAndTopUp)
+//                                .frame(maxWidth: .infinity)
+//                                .padding(.vertical, 15)
+//                        }
+//                    )
+//                    .onChange(of: isActive) { (newValue) in
+//                        if newValue {
+//                            viewModel.addUserBalance(amount: Double(amountInput) ?? 0)
+//                            totalTopUp = viewModel.getTotalAmountPaid(amount: Double(amountInput) ?? 0, fee: 2)
+//    //                        viewModel.userTest?.balanceParenting += Double(amountInput)!
+//                        }
+                       
+//                    }
                     .font(.title2)
                     .bold()
                     .foregroundColor(.white)
@@ -88,6 +114,7 @@ struct BottomConfirmationComponent: View {
 
 struct BottomConfirmationComponent_Previews: PreviewProvider {
     static var previews: some View {
-        BottomConfirmationComponent(totalTopUp: .constant(10), amountInput: .constant("0"))
+        BottomConfirmationComponent(topUpFee: .constant(10), amountInput: .constant("0"))
+            .environmentObject(parenthingsViewModel())
     }
 }
