@@ -11,7 +11,9 @@ struct Profile_TopUpConfirmation: View {
     @Environment(\.presentationMode) var presentationMode
 
     @EnvironmentObject var viewModel : parenthingsViewModel
-    @State private var topUpFee = 2000.0
+    @State private var showInsertTopUpAmountView : Bool = false
+    @State private var topUpFee = 0.0
+    @State private var selectedPaymentType = TypePayment.Parenthing
     @Binding var amountInput : String
     
     var profileBalance = 0
@@ -118,15 +120,17 @@ struct Profile_TopUpConfirmation: View {
                 
                 Spacer()
                 
-                BottomConfirmationComponent(topUpFee: $topUpFee, amountInput: $amountInput)
+                BottomConfirmationComponent(selectedPaymentType: $selectedPaymentType, showInsertTopUpAmountView: $showInsertTopUpAmountView, topUpFee: $topUpFee, amountInput: $amountInput)
+                    .environmentObject(PaymentTypeViewModel())
             }
             .background(AppBackground())
     }
 }
 
-//struct Profile_TopUpConfirmation_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Profile_TopUpConfirmation(totalTopUp: 10.0, amountInput: .constant("0"))
-//            .environmentObject(parenthingsViewModel())
-//    }
-//}
+struct Profile_TopUpConfirmation_Previews: PreviewProvider {
+    static var previews: some View {
+        Profile_TopUpConfirmation(amountInput: .constant("0"))
+            .environmentObject(parenthingsViewModel())
+            .environmentObject(PaymentTypeViewModel())
+    }
+}
