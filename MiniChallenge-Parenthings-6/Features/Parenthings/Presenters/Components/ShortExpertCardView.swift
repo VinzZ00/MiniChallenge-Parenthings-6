@@ -20,34 +20,38 @@ struct ShortExpertCard: View {
         
         
         VStack{
-            HStack{
-//                if let expImage = ExpertData.imageBase64.toUIImage() {
-//                    Image(uiImage: expImage)
-//                        .resizable()
-//                        .scaledToFit()
-//                        .frame(width: 62, height: 100)
-//                        .mask {
-//                            RoundedRectangle(cornerRadius: 15)
-//
-//                        }
-//                }
-                AsyncImage(url: URL(string: ExpertData.imageBase64 ?? "")) { image in
-                            image
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 67, height: 84)
-                        .mask(
-                            RoundedRectangle(cornerRadius: 15)
-                            
-                        )
-                                
-                        } placeholder: {
-                            Image(uiImage : UIImage(named: "UniversalPlaceHolder")!)
-                            
-                        }
-                        .frame(width: 67, height: 84)
+            HStack(spacing:20){
+                //                if let expImage = ExpertData.imageBase64.toUIImage() {
+                //                    Image(uiImage: expImage)
+                //                        .resizable()
+                //                        .scaledToFit()
+                //                        .frame(width: 62, height: 100)
+                //                        .mask {
+                //                            RoundedRectangle(cornerRadius: 15)
+                //
+                //                        }
+                //                }
+                VStack {
+                    AsyncImage(url: URL(string: ExpertData.imageBase64 ?? "")) { image in
+                        image
+                            .resizable()
+                            .frame(width: 64, height: 64)
+                            .mask(
+                                RoundedRectangle(cornerRadius: 15)
+                            )
+                        
+                    } placeholder: {
+                        Image(uiImage : UIImage(named: "UniversalPlaceHolder")!)
+                            .resizable()
+                            .frame(width: 64, height: 64)
+                            .mask(
+                                RoundedRectangle(cornerRadius: 15)
+                            )
+                    }
+                }
                 
-                VStack{
+                
+                VStack(alignment: .leading){
                     HStack(alignment: .top){
                         Circle()
                             .frame(width: 12, height: 12)
@@ -55,7 +59,7 @@ struct ShortExpertCard: View {
                             .padding(.trailing, 4)
                             .padding(.bottom, 1)
                         
-                        Text("\(ExpertData.name)")
+                        Text("\(ExpertData.name.capitalized)")
                             .font(.system(size: 16, weight: .semibold))
                             .lineLimit(2)
                             .foregroundColor(AppColor.titleColor)
@@ -101,19 +105,15 @@ struct ShortExpertCard: View {
             }
         }
         .frame(height: 132)
-        .padding(EdgeInsets(
-            top:CGFloat(Prompt.Padding.paddingSmall),
-            leading: CGFloat(Prompt.Padding.paddingMedium),
-            bottom: CGFloat(Prompt.Padding.paddingSmall),
-            trailing: CGFloat(Prompt.Padding.paddingMedium)
-        ))
+        .padding(.vertical, Prompt.Padding.paddingSmall)
+        .padding(.horizontal, Prompt.Padding.paddingMedium)
         .background(.white)
         .overlay(
             RoundedRectangle(cornerRadius: 15)
                 .stroke(AppColor.systemGray, lineWidth: 2)
         )
     }
-        
+    
 }
 
 struct shortExpertCardPreview: PreviewProvider {
@@ -122,13 +122,13 @@ struct shortExpertCardPreview: PreviewProvider {
             Spacer();
             if (UIImage(systemName: "person.fill")?.toBase64()) != nil
             {
-
+                
                 ShortExpertCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), buttonText: "Click")
-
-//                ShortExpertCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), buttonText: "Click")
+                
+                //                ShortExpertCard(ExpertData: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false), buttonText: "Click")
             }
             Spacer();
         }.background(.white)
-
+        
     }
 }
