@@ -13,7 +13,7 @@ struct OtpView: View {
     @Environment(\.presentationMode) var presentationMode
     @StateObject var userViewModel = UserViewModel()
     var userData: UserApiModel
-    @EnvironmentObject viewModel : parenthingsViewModel;
+    @EnvironmentObject var viewModel : parenthingsViewModel;
 
     var title: String = ""
     var phone: String = ""
