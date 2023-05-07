@@ -9,14 +9,17 @@ import SwiftUI
 
 struct Profile_TopUpConfirmation: View {
     @Environment(\.presentationMode) var presentationMode
+
     @EnvironmentObject var viewModel : parenthingsViewModel
-    var profileBalance = 0
+    @State private var topUpFee = 2000.0
+//    @Binding var amountInput : String
     
+    var profileBalance = 0
     var body: some View {
         
 //        NavigationView {
             VStack (spacing: 0){
-                CustomNavigationBar(title: Prompt.Title.topUpConfirmation, enableBackButton: true, enableSearchBar: false, backButton: {                    presentationMode.wrappedValue.dismiss()
+                CustomNavigationBar(title: Prompt.Title.topUpConfirmation, enableBackButton: true, enableSearchBar: false, backButton: {presentationMode.wrappedValue.dismiss()
                 } )
                 
                 
@@ -27,10 +30,13 @@ struct Profile_TopUpConfirmation: View {
                         .font(.system(size: 17, weight: .bold))
                         .foregroundColor(.gray)
         
-                    Text("Rp \(profileBalance)")
-                        .font(.system(size: 22, weight: .bold))
-                        .padding(.top, 3)
-                        .padding(.leading, 10)
+                    HStack {
+                        Text("\(Prompt.paymentContent.rupiah)")
+                        Text("\(viewModel.topUpAmount)")
+                    }
+                    .font(.system(size: 22, weight: .bold))
+                    .padding(.top, 3)
+                    .padding(.leading, 10)
                     
                     
                     Divider()
@@ -62,9 +68,12 @@ struct Profile_TopUpConfirmation: View {
                                     .font(.callout)
                                     .foregroundColor(.gray)
                                 Spacer()
-                                Text("Rp \(profileBalance)")
-                                    .font(.callout)
-                                    .bold()
+                                HStack {
+                                    Text("\(Prompt.paymentContent.rupiah)")
+                                    Text("\(viewModel.topUpAmount)")
+                                }
+                                .font(.callout)
+                                .bold()
                             }
                             .foregroundColor(.gray)
                             
@@ -73,12 +82,14 @@ struct Profile_TopUpConfirmation: View {
                                     .font(.callout)
                                     .foregroundColor(.gray)
                                 Spacer()
-                                Text(Prompt.Caption.selectTopUpMethodGuide)
-                                    .font(.callout)
-                                    
-//                                Text("Rp \(profileBalance)")
-//                                    .font(.callout)
-//                                    .bold()
+                                if topUpFee == 0 {
+                                    Text(Prompt.Caption.selectTopUpMethodGuide)
+                                        .font(.callout)
+                                } else {
+                                    Text("Rp \(topUpFee.defaultTrailingZero())")
+                                        .font(.callout)
+                                        .bold()
+                                }
                             }
                             .foregroundColor(.gray)
                         }
@@ -96,7 +107,8 @@ struct Profile_TopUpConfirmation: View {
 //                            .foregroundColor(.gray)
                             .bold()
                         Spacer()
-                        Text("Rp \(profileBalance)")
+                        
+                        Text("Rp \((viewModel.getTotalAmountPaid(amount: Double(viewModel.topUpAmount) ?? 0, fee: topUpFee)).defaultTrailingZero())")
                             .font(.callout)
                             .bold()
                     }
@@ -106,14 +118,15 @@ struct Profile_TopUpConfirmation: View {
                 
                 Spacer()
                 
-                BottomConfirmationComponent()
+//                BottomConfirmationComponent(topUpFee: $topUpFee, amountInput: $amountInput)
             }
             .background(AppBackground())
     }
 }
 
-struct Profile_TopUpConfirmation_Previews: PreviewProvider {
-    static var previews: some View {
-        Profile_TopUpConfirmation()
-    }
-}
+//struct Profile_TopUpConfirmation_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Profile_TopUpConfirmation(totalTopUp: 10.0, amountInput: .constant("0"))
+//            .environmentObject(parenthingsViewModel())
+//    }
+//}

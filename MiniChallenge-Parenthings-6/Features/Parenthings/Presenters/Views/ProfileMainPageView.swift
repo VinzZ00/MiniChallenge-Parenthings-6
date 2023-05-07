@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ProfileMainPageView: View {
+    @EnvironmentObject var viewModel : parenthingsViewModel
+    
     @State private var showAlert: Bool = false
     
-    var profileName = "Username"
-    var profilePhone = "+6200000000000"
-    var profileBalance = 0
+    var profileNameDefault = "Username"
+    var profilePhoneDefault = "+6200000000000"
+    var profileBalanceDefault : Double = 50_000
     
     var backButton : () -> Void;
 
@@ -20,7 +22,7 @@ struct ProfileMainPageView: View {
         
         NavigationStack {
             VStack (spacing: 0){
-                CustomNavigationBar(title: Prompt.Title.profiles, enableBackButton: false, enableSearchBar: false, backButton: self.backButton)
+                CustomNavigationBar(title: Prompt.Title.profiles, enableBackButton: false, enableSearchBar: false, backButton:{})
                 
                 //Contents
                 VStack {
@@ -34,7 +36,7 @@ struct ProfileMainPageView: View {
                         
                         VStack (alignment: .leading) {
                             HStack (alignment: .bottom) {
-                                Text(profileName)
+                                Text(viewModel.userTest?.name ?? "\(profileNameDefault)")
                                     .font(.system(size: 22, weight: .bold))
                                 
                                 Button {
@@ -49,7 +51,7 @@ struct ProfileMainPageView: View {
                                 }
                                 .buttonStyle(.borderless)
                             }
-                            Text(profilePhone)
+                            Text(profilePhoneDefault)
                         }
                         .padding(.leading, 20)
                         
@@ -66,7 +68,7 @@ struct ProfileMainPageView: View {
                                 HStack {
                                     Text(Prompt.paymentContent.balance)
                                         .foregroundColor(.gray)
-                                    Text("Rp \(profileBalance)")
+                                    Text("Rp \(viewModel.userTest?.balanceParenting.defaultTrailingZero() ?? Double(profileBalanceDefault).defaultTrailingZero())")
                                         .bold()
                                     Spacer()
                                 }
@@ -153,11 +155,11 @@ struct ProfileMainPageView: View {
             .alert(isPresented: $showAlert) {
                 Alert(
                  title: Text(Prompt.AlertTitle.logOut),
-                   message: Text(Prompt.AlertMessages.logOutMessage),
+                 message: Text(Prompt.AlertMessages.logOutMessage),
                  primaryButton: .destructive(Text(Prompt.Button.delete)) {
-                       //action here
-                   },
-                   secondaryButton: .cancel()
+                     //action here
+                 },
+                 secondaryButton: .cancel()
                )
                 
             }
@@ -170,7 +172,10 @@ struct ProfileMainPageView: View {
 }
 
 struct ProfileMainPageView_Previews: PreviewProvider {
+    var backButton : () -> Void;
+
     static var previews: some View {
-        ProfileMainPageView(backButton: {self})
+        ProfileMainPageView(backButton: {})
+            .environmentObject(parenthingsViewModel())
     }
 }

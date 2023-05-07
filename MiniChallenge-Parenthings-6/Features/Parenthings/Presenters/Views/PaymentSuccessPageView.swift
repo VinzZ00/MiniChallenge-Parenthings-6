@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct PaymentSuccessPageView: View {
+    @Environment(\.presentationMode) var presentationMode
+
+    @Binding var totalTopUp : Double
+    
     var body: some View {
         ZStack {
             Image("BackgroundPaymentSuccess")
@@ -16,7 +20,7 @@ struct PaymentSuccessPageView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack(alignment: .center) {
-                Image(systemName: "checkmark.seal.fill")
+                Image(systemName: Prompt.Icon.checkMarkSeal)
                     .resizable()
                     .scaledToFit()
                     .padding([.top, .horizontal], 50)
@@ -31,7 +35,7 @@ struct PaymentSuccessPageView: View {
                     
                     Text(Prompt.paymentContent.amountPaid)
                         .padding(.top, 40)
-                    Text("Rp 00.000")
+                    Text("\(Prompt.paymentContent.rupiah) \(totalTopUp.defaultTrailingZero())")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .padding(.bottom, 40)
@@ -42,12 +46,16 @@ struct PaymentSuccessPageView: View {
             .padding(.bottom)
             .foregroundColor(.white)
         }
+        .onTapGesture {
+            presentationMode.wrappedValue.dismiss()
+        }
+        
     }
 }
 
 struct PaymentSuccessPageView_Previews: PreviewProvider {
     static var previews: some View {
-        PaymentSuccessPageView()
+        PaymentSuccessPageView(totalTopUp: .constant(12))
     }
 }
 

@@ -10,8 +10,10 @@ import SwiftUI
 struct Profile_EnterTopUpAmount: View {
     @Environment(\.presentationMode) var presentationMode
 
+    @EnvironmentObject var viewModel : parenthingsViewModel
+    
     @State private var showInsertTopUpAmountView = false
-    @State private var amountTextfield = "0"
+    @Binding var amountInput : String
     
     var body: some View {
         VStack (spacing: 0){
@@ -27,10 +29,14 @@ struct Profile_EnterTopUpAmount: View {
                 
                 //Text Field
                 VStack {
-                    TextField(Prompt.paymentContent.redeemCode, text: $amountTextfield)
-                        .keyboardType(.numberPad)
-                        .padding(.leading, 10)
-                        .font(.system(size: 22, weight: .bold))
+                    HStack {
+                        Text(Prompt.paymentContent.rupiah)
+                        TextField(Prompt.paymentContent.defaultAmount, text: $amountInput)
+                            .keyboardType(.numberPad)
+                    }
+                    .padding(.leading, 10)
+                    .font(.system(size: 22, weight: .bold))
+                   
                     
                     Divider()
                         .background(.black)
@@ -45,6 +51,7 @@ struct Profile_EnterTopUpAmount: View {
             
             //Button Continue
             NavigationLink {
+
                 //Go to top up confirmation
                 Profile_TopUpConfirmation()
                     .navigationBarHidden(true)
@@ -54,7 +61,10 @@ struct Profile_EnterTopUpAmount: View {
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 15)
             }
-            .onTapGesture(perform: {showInsertTopUpAmountView.toggle()})
+            .onTapGesture(perform: {
+                showInsertTopUpAmountView.toggle()
+                viewModel.topUpAmount = Double(amountInput) ?? 0
+            })
             .font(.title2)
             .bold()
             .foregroundColor(.white)
@@ -70,6 +80,7 @@ struct Profile_EnterTopUpAmount: View {
 
 struct Profile_EnterTopUpAmount_Previews: PreviewProvider {
     static var previews: some View {
-        Profile_EnterTopUpAmount()
+        Profile_EnterTopUpAmount(amountInput: .constant("0"))
+            .environmentObject(parenthingsViewModel())
     }
 }

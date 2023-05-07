@@ -19,9 +19,9 @@ class parenthingsViewModel : ObservableObject {
     @Published var consultationDetailIsPresented : Bool = false;
     @Published var selectedConsultation : ConsultationTransaction?
     
-    
     @Published var user : User?
-//    = User(name: "Elvin", balanceParenting: 20000); //in Production ini tidak diisi disini tp, dari sign in page.
+    //bahan cmp nyoba"
+    @Published var userTest: User? = User(name: "Elvin", balanceParenting: 35000); //in Production ini tidak diisi disini tp, dari sign in page.
 //    @Published var experts : ExpertRepository = ExpertRepository();
     
     @Published var navBarShown : Bool = true;
@@ -42,8 +42,10 @@ class parenthingsViewModel : ObservableObject {
     
     @Published var isSignIn = false;
     
-    @Published var topUpAmount = 0;
+    @Published var topUpAmount = 0.0;
+    @Published var totalPayment = 0.0;
     
+    @Published var amountTypeStatus : [Bool] = [false, false, false, false, false, false]
     
     var paymentDetail : (Image, String, Double) {
         switch self.selectedPayment {
@@ -65,6 +67,13 @@ class parenthingsViewModel : ObservableObject {
         }
     }
     
+    func addUserBalance(amount: Double) {
+        userTest?.balanceParenting += amount
+    }
+
+    func getTotalAmountPaid(amount: Double, fee: Double) -> Double{
+        return amount + fee
+    }
     
     func getUniqueTransactionDate() -> Set<Date>{
 //        var DatesUnUnique : [Date] = transactions.savedTransaction[0].TransactionDate
