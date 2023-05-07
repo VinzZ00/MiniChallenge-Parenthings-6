@@ -34,7 +34,7 @@ class ExpertExperienceViewModel : ObservableObject {
             return
         }
         
-        service.fetch([ExpertExperienceAPIModel].self, request: request!) { [unowned self] result in
+        service.fetch([ExpertExperienceAPIModel].self, request: request!) { [self] result in
             
             DispatchQueue.main.async {
                 

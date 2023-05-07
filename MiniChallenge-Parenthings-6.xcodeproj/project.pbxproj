@@ -90,6 +90,9 @@
 		ACEA1BE92A0631AD00D7C411 /* ExpertEducationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEA1BE82A0631AD00D7C411 /* ExpertEducationViewModel.swift */; };
 		ACEA1BEB2A06921500D7C411 /* ExpertExperienceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEA1BEA2A06921500D7C411 /* ExpertExperienceViewModel.swift */; };
 		ACEA1BED2A06A91300D7C411 /* Profile_EnterTopUpAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEA1BEC2A06A91300D7C411 /* Profile_EnterTopUpAmount.swift */; };
+		ACEF81A22A07B9EF00153690 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEF81A12A07B9EF00153690 /* DoubleExtension.swift */; };
+		ACEF81A42A07BA2600153690 /* PaymentMethodOptions in Resources */ = {isa = PBXBuildFile; fileRef = ACEF81A32A07BA2600153690 /* PaymentMethodOptions */; };
+		ACEF81A72A07BB4A00153690 /* TopUpAmountOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEF81A62A07BB4A00153690 /* TopUpAmountOptions.swift */; };
 		ACF7F5DF29FC449C0059F323 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7F5DE29FC449C0059F323 /* UserModel.swift */; };
 		ACF7F5E129FC4BCD0059F323 /* LazyVGridPaymentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7F5E029FC4BCD0059F323 /* LazyVGridPaymentType.swift */; };
 		ACFB982529F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFB982429F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift */; };
@@ -193,6 +196,9 @@
 		ACEA1BE82A0631AD00D7C411 /* ExpertEducationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertEducationViewModel.swift; sourceTree = "<group>"; };
 		ACEA1BEA2A06921500D7C411 /* ExpertExperienceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertExperienceViewModel.swift; sourceTree = "<group>"; };
 		ACEA1BEC2A06A91300D7C411 /* Profile_EnterTopUpAmount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile_EnterTopUpAmount.swift; sourceTree = "<group>"; };
+		ACEF81A12A07B9EF00153690 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		ACEF81A32A07BA2600153690 /* PaymentMethodOptions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PaymentMethodOptions; sourceTree = "<group>"; };
+		ACEF81A62A07BB4A00153690 /* TopUpAmountOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopUpAmountOptions.swift; sourceTree = "<group>"; };
 		ACF7F5DE29FC449C0059F323 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		ACF7F5E029FC4BCD0059F323 /* LazyVGridPaymentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyVGridPaymentType.swift; sourceTree = "<group>"; };
 		ACFB982129F187A20046BA06 /* MiniChallenge-Parenthings-6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MiniChallenge-Parenthings-6.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -276,6 +282,7 @@
 		ACC826C929F41D88004423C8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				ACEF81A12A07B9EF00153690 /* DoubleExtension.swift */,
 				ACC826CC29F42529004423C8 /* EncodedBase64Extension.swift */,
 				ACC826CE29F455EC004423C8 /* ImageExtension.swift */,
 				AC5F372C29FA861900372208 /* HexToColor.swift */,
@@ -530,6 +537,8 @@
 		ACFB985429F2DACE0046BA06 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				ACEF81A62A07BB4A00153690 /* TopUpAmountOptions.swift */,
+				ACEF81A32A07BA2600153690 /* PaymentMethodOptions */,
 				835819C42A05216700F31638 /* LogOutButtonComponent.swift */,
 				8F03623E2A04E1DF0085D7F5 /* LogoComponent.swift */,
 				8F0362372A04E13C0085D7F5 /* BottomConfirmationComponent.swift */,
@@ -630,6 +639,7 @@
 				ACFB982C29F187A30046BA06 /* Preview Assets.xcassets in Resources */,
 				ACFB982929F187A30046BA06 /* Assets.xcassets in Resources */,
 				85F8D8252A0041F00012A6D1 /* article.json in Resources */,
+				ACEF81A42A07BA2600153690 /* PaymentMethodOptions in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +672,7 @@
 				8542E0772A0507E4000D7A78 /* BaseApiModel.swift in Sources */,
 				AC9FF96729FE9B35008766E8 /* ConsultationDetailView.swift in Sources */,
 				ACFB984029F188CC0046BA06 /* CustomNavigationBar.swift in Sources */,
+				ACEF81A72A07BB4A00153690 /* TopUpAmountOptions.swift in Sources */,
 				ACA8410C2A04FD8A001E3127 /* ConsultationSearchPage.swift in Sources */,
 				AC9FF96C29FEA295008766E8 /* StarRatingComponent.swift in Sources */,
 				AC34EDB429FBA063002AED7C /* Consultation_ExpertPaymentView.swift in Sources */,
@@ -712,6 +723,7 @@
 				8FA3683A2A051CED003377E3 /* LogOutButtonComponent.swift in Sources */,
 				AC5F372729F966AD00372208 /* Consultation_SearchPageComponent.swift in Sources */,
 				ACEA1BEB2A06921500D7C411 /* ExpertExperienceViewModel.swift in Sources */,
+				ACEF81A22A07B9EF00153690 /* DoubleExtension.swift in Sources */,
 				8F0362302A04DD5D0085D7F5 /* Profile_TopUpConfirmation.swift in Sources */,
 				ACFB982529F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift in Sources */,
 				8F0362352A04DEC70085D7F5 /* Consultation_RedeemCouponView.swift in Sources */,
