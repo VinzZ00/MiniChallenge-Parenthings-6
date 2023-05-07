@@ -39,6 +39,6 @@ struct ExpertDetailImage: View {
 
 struct ExpertDetailImage_Previews: PreviewProvider {
     static var previews: some View {
-        ExpertDetailImage(selectedExpert: Expert(name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false))
+        ExpertDetailImage(selectedExpert: Expert(id : UUID(), name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false))
     }
 }

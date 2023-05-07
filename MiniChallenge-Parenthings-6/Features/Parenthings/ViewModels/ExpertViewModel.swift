@@ -27,6 +27,11 @@ class ExpertViewModel : ObservableObject {
         getAllExpert()
     }
     
+    func getAExpert(idExpert : String) -> [Expert] {
+        return experts.filter {
+            $0.id! == UUID(uuidString: idExpert)!;
+        }
+    }
     
     func getAllExpert() {
         isLoading = true
@@ -62,13 +67,13 @@ class ExpertViewModel : ObservableObject {
                     var gottenExpert : ExpertAPIModel;
                     
                     var educations : [ExpertEducationAPIModel] {
-                        print("In the expert View Model Edus " ,edus.Educations.count, "ROws")
-                        return edus.Educations
+                        print("In the expert View Model Edus " ,self.edus.Educations.count, "ROws")
+                        return self.edus.Educations
                     }
                     
                     var experiences : [ExpertExperienceAPIModel] {
-                        print("In the expert View Model Exper " ,exps.Experiences.count, "ROws")
-                        return exps.Experiences
+                        print("In the expert View Model Exper " ,self.exps.Experiences.count, "ROws")
+                        return self.exps.Experiences
                     }
                     
                     for exp in retrievedExperts {
@@ -76,22 +81,23 @@ class ExpertViewModel : ObservableObject {
                      
                         
                         
-                    var lastEducation : ExpertEducationAPIModel? =
+                        let lastEducation : ExpertEducationAPIModel? =
                         educations.filter{
                             $0.expert_id == exp.id
                         }.last ?? nil
 
 
-                    var lastExperience : ExpertExperienceAPIModel? =
+                        let lastExperience : ExpertExperienceAPIModel? =
                         experiences.filter{
                             $0.expert_id == exp.id
                         }.last ?? nil
                         
-                        var calendar = Calendar.current
-                        var currentYear = calendar.component(.year, from: Date());
+                        let calendar = Calendar.current
+                        let currentYear = calendar.component(.year, from: Date());
                         
-                        var readyToUseExpert : Expert =
+                        let readyToUseExpert : Expert =
                         Expert(
+                            id : UUID(uuidString : gottenExpert.id) ?? nil,
                             name: gottenExpert.name,
                             role : lastEducation?.name ?? "UNknown",
                             education: lastEducation?.name ?? "unknown",
