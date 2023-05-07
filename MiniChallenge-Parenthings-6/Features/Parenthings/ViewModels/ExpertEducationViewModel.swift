@@ -15,7 +15,9 @@ class ExpertEducationViewModel : ObservableObject {
     
     let service : APIService = APIService(isLogActive: true)
     
-    
+    init() {
+        getExpertEducations();
+    }
     
     func getExpertEducations() {
         isLoading = true
@@ -36,7 +38,7 @@ class ExpertEducationViewModel : ObservableObject {
             
             DispatchQueue.main.async {
                 
-//                self.isLoading = false;
+                self.isLoading = false;
                 
                 switch result {
                 case .failure(let error) :
@@ -44,15 +46,9 @@ class ExpertEducationViewModel : ObservableObject {
                     self.errorMessage = error.localizedDescription
                 case .success(let expertEducations) :
                     print("success retrieving \(expertEducations.count) rows")
-//
-//                    for education in expertEducations {
-//                        if education.expert_id == id {
-//                            self.Educations.append(education)
-//                        }
-//                    }
-                   
-                    self.Educations = expertEducations
-                    print("Done Retrieving")
+                    self.Educations = expertEducations;
+                    print("Done Retrieving education")
+                    print("\(self.Educations.count) rows retrieved educations")
                 }
             }
         }

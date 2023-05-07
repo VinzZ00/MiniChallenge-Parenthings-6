@@ -15,6 +15,9 @@ class ExpertExperienceViewModel : ObservableObject {
     
     var service : APIService = APIService(isLogActive: true)
     
+    init() {
+        getExpertExperience();
+    }
     
     func getExpertExperience() {
         isLoading = true
@@ -31,7 +34,7 @@ class ExpertExperienceViewModel : ObservableObject {
             return
         }
         
-        service.fetch([ExpertExperienceAPIModel].self, request: request!) { [self] result in
+        service.fetch([ExpertExperienceAPIModel].self, request: request!) { [unowned self] result in
             
             DispatchQueue.main.async {
                 
@@ -40,9 +43,11 @@ class ExpertExperienceViewModel : ObservableObject {
                 case .failure(let error) :
                     self.errorMessage = error.localizedDescription
                     
-                case .success(let Experiences) :
+                case .success(let exp) :
                     print("success retrieving \(Experiences.count) rows")
-                    self.Experiences = Experiences;
+                    exp.map { exp in
+                        Experiences.append(exp)
+                    }
                     print("Done Fetching")
 //                    self.Experiences = self.Experiences.filter{
 //                        $0.id == id;
