@@ -129,9 +129,6 @@ struct ExpertDetail: View {
             .background(
                 AppBackground()
             )
-            .onChange(of: $viewModel.isSignIn) {
-                
-            }
             
             
             

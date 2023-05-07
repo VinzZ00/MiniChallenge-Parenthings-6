@@ -14,8 +14,7 @@ struct ExpertPaymentView: View {
     @State var transactionDetail : ConsultationTransaction;
     
     @Environment(\.presentationMode) var presentationMode
-    
-    
+    @State var chatViewModel : ChatViewModel?
     
     //    init(expert : Expert, _ user : User, vm : parenthingsViewModel, backButton : () -> Void) {
     //        self.expert = expert
@@ -167,6 +166,14 @@ struct ExpertPaymentView: View {
                             viewModel.transactions.add(transaction: viewModel.selectedConsultation!)
                             viewModel.startConsulting = true
                             viewModel.remainingTime = viewModel.selectedConsultation!.timeRemaining;
+                            
+                            self.chatViewModel = ChatViewModel(currentUser: viewModel.user!, expert: viewModel.selectedConsultation!.expert);
+                            
+                            if let chatViewModel  = self.chatViewModel {
+                                viewModel.messages = chatViewModel.messagesCurrentUser + chatViewModel.messageExpert
+                            } else {
+                                print("Error")
+                            }
                         } label: {
                             VStack {
                                 Text(Prompt.Button.startConsulting)

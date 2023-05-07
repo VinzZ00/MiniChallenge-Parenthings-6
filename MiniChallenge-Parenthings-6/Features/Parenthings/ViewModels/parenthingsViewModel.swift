@@ -12,7 +12,7 @@ import Chat
 
 class parenthingsViewModel : ObservableObject {
     
-//    @Published
+    @Published var messages : [Chat.Message] = [];
     @Published var expertDetailIsPresented : Bool = false;
     @Published var selectedExpert : Expert?
     @Published var textFieldIsClicked = false;
@@ -132,12 +132,12 @@ class parenthingsViewModel : ObservableObject {
         interactor.otherSenders.count == 1 ? interactor.otherSenders.first!.avatarURL : nil
     }
 
-    private let interactor: ChatInteractorProtocol
-    private var subscriptions = Set<AnyCancellable>()
-
-    init(interactor: ChatInteractorProtocol = ChatInteractor(chatData: <#ChatData#>)) {
-        self.interactor = interactor
+    private var interactor: ChatInteractorProtocol {
+        ChatInteractor(chatData: ChatData(currentUsername: self.user!.name, expertName: self.selectedExpert!.name, allChatData: self.messages))
     }
+    private var subscriptions = Set<AnyCancellable>()
+    
+    
 
     func send(draft: DraftMessage) {
         interactor.send(message: draft.toCreateMessage())

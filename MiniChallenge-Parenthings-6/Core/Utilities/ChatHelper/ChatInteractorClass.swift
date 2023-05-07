@@ -29,8 +29,8 @@ final class ChatInteractor: ChatInteractorProtocol {
     }
     
     
-    init(isActive: Bool = false, chatData : ChatData) {
-        self.isActive = isActive // kegunaan Debug kemarin
+    init(isActive: Bool = true, chatData : ChatData) {
+        self.isActive = isActive 
         self.chatData = chatData
     }
 
