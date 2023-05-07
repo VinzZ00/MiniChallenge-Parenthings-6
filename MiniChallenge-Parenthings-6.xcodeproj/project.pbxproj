@@ -93,6 +93,8 @@
 		ACEF81A22A07B9EF00153690 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEF81A12A07B9EF00153690 /* DoubleExtension.swift */; };
 		ACEF81A42A07BA2600153690 /* PaymentMethodOptions in Resources */ = {isa = PBXBuildFile; fileRef = ACEF81A32A07BA2600153690 /* PaymentMethodOptions */; };
 		ACEF81A72A07BB4A00153690 /* TopUpAmountOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEF81A62A07BB4A00153690 /* TopUpAmountOptions.swift */; };
+		ACEF81A92A08005B00153690 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEF81A82A08005B00153690 /* ChatViewModel.swift */; };
+		ACEF81AC2A08034100153690 /* ChatAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEF81AB2A08034100153690 /* ChatAPIModel.swift */; };
 		ACF7F5DF29FC449C0059F323 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7F5DE29FC449C0059F323 /* UserModel.swift */; };
 		ACF7F5E129FC4BCD0059F323 /* LazyVGridPaymentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7F5E029FC4BCD0059F323 /* LazyVGridPaymentType.swift */; };
 		ACFB982529F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFB982429F187A20046BA06 /* MiniChallenge_Parenthings_6App.swift */; };
@@ -199,6 +201,8 @@
 		ACEF81A12A07B9EF00153690 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		ACEF81A32A07BA2600153690 /* PaymentMethodOptions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PaymentMethodOptions; sourceTree = "<group>"; };
 		ACEF81A62A07BB4A00153690 /* TopUpAmountOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopUpAmountOptions.swift; sourceTree = "<group>"; };
+		ACEF81A82A08005B00153690 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		ACEF81AB2A08034100153690 /* ChatAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAPIModel.swift; sourceTree = "<group>"; };
 		ACF7F5DE29FC449C0059F323 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		ACF7F5E029FC4BCD0059F323 /* LazyVGridPaymentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyVGridPaymentType.swift; sourceTree = "<group>"; };
 		ACFB982129F187A20046BA06 /* MiniChallenge-Parenthings-6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MiniChallenge-Parenthings-6.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -235,6 +239,7 @@
 			children = (
 				851DC3172A03A8EB0025DD5C /* UserApiModel.swift */,
 				ACEA1BE42A062B7100D7C411 /* Expert */,
+				ACEF81AB2A08034100153690 /* ChatAPIModel.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -490,6 +495,7 @@
 				8542E0702A04F286000D7A78 /* ArticleViewModel.swift */,
 				ACEA1BE82A0631AD00D7C411 /* ExpertEducationViewModel.swift */,
 				ACEA1BEA2A06921500D7C411 /* ExpertExperienceViewModel.swift */,
+				ACEF81A82A08005B00153690 /* ChatViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -677,6 +683,7 @@
 				AC9FF96C29FEA295008766E8 /* StarRatingComponent.swift in Sources */,
 				AC34EDB429FBA063002AED7C /* Consultation_ExpertPaymentView.swift in Sources */,
 				AC97A51729FFB25D00B66A67 /* PaymentTypeHelper.swift in Sources */,
+				ACEF81AC2A08034100153690 /* ChatAPIModel.swift in Sources */,
 				8586280C2A034B1D0077F60D /* LongArticleCardView.swift in Sources */,
 				8F3CF2952A012133006E03AC /* ProfileMenuComponent.swift in Sources */,
 				ACEA1BE32A062B6A00D7C411 /* ExpertEducationAPIModel.swift in Sources */,
@@ -746,6 +753,7 @@
 				AC5F372029F912C200372208 /* TestingScrollView.swift in Sources */,
 				ACFB984229F18A9B0046BA06 /* TestGround.swift in Sources */,
 				85F8D81D2A003D190012A6D1 /* Breed.swift in Sources */,
+				ACEF81A92A08005B00153690 /* ChatViewModel.swift in Sources */,
 				AC5F372B29FA858000372208 /* LoadingPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

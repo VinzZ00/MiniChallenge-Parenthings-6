@@ -20,3 +20,7 @@ if let imageString : String = UIImage(systemName: "person.fill")?.toBase64() {
 } else {
     print("ini nil")
 }
+
+
+print(Date())
+print(UUID(uuidString: "3FB8E93A-159A-4827-88BF-B68D759CE431") ?? "nothing")
