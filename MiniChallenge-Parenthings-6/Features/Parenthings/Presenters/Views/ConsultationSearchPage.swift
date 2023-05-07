@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ConsultationSearchPage: View {
     @EnvironmentObject var viewModel : parenthingsViewModel;
-    
+    @StateObject var expertViewModel : ExpertViewModel = ExpertViewModel();
+
     
     var body: some View {
         VStack {
@@ -20,7 +21,7 @@ struct ConsultationSearchPage: View {
             })
             ScrollView(.vertical) {
                 VStack{
-                    SearchPage(searchedExperts: viewModel.experts.savedExpert.filter{
+                    SearchPage(searchedExperts: expertViewModel.experts.filter{
                         $0.name.contains(viewModel.searchExpertBarValue)
                     })
                     

@@ -59,7 +59,7 @@ struct ArticleDetailView: View {
                                 }
                                 
                                
-                                Image(uiImage: UIImage(named:  article.image ?? "ParentingPlaceHolder")!)
+                                Image(uiImage: UIImage(named: article.image)!)
                                     .resizable()
                                     .aspectRatio(16/9,contentMode: .fit)
                                     .padding(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))

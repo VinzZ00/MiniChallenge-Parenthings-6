@@ -22,7 +22,7 @@ class parenthingsViewModel : ObservableObject {
     
     @Published var user : User?
 //    = User(name: "Elvin", balanceParenting: 20000); //in Production ini tidak diisi disini tp, dari sign in page.
-    @Published var experts : ExpertRepository = ExpertRepository();
+//    @Published var experts : ExpertRepository = ExpertRepository();
     
     @Published var navBarShown : Bool = true;
     @Published var transactions : TransactionRepository = TransactionRepository();
@@ -35,7 +35,7 @@ class parenthingsViewModel : ObservableObject {
     //    @Published var buttonClicked : Bool = false;
     
     @Published var choosePayment : Bool =  false;
-    
+        
     @Published var isDetailConsultationShown : Bool = false;
     @Published var ratingScore : Int = 0;
     

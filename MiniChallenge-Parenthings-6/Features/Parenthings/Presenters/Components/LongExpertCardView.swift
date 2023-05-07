@@ -24,9 +24,23 @@ struct LongExpertCard : View {
     
     var body: some View {
                 HStack{
-                    if let decodedimage = (ExpertData ?? ConusultationData!.expert).imageBase64
-                        .toUIImage() {
-                        Image(uiImage : decodedimage)
+                    
+//                    if let decodedimage = (ExpertData ?? ConusultationData!.expert).imageBase64
+//                        .toUIImage() {
+//                        Image(uiImage : decodedimage)
+//                            .resizable()
+//                            .scaledToFit()
+//                            .frame(width: 67, height: 84)
+//                            .mask(
+//                                RoundedRectangle(cornerRadius: 15)
+//
+//                            )
+//                            .padding(.trailing, 24)
+//
+//                    }
+                    
+                    AsyncImage(url: URL(string: ExpertData?.imageBase64 ?? "")) { image in
+                                image
                             .resizable()
                             .scaledToFit()
                             .frame(width: 67, height: 84)
@@ -34,9 +48,13 @@ struct LongExpertCard : View {
                                 RoundedRectangle(cornerRadius: 15)
                                 
                             )
-                            .padding(.trailing, 24)
-                        
-                    }
+                                    
+                            } placeholder: {
+                                Image(uiImage : UIImage(named: "UniversalPlaceHolder")!)
+                                
+                            }
+                            .frame(width: 67, height: 84)
+
                     VStack(alignment: .leading) {
                         HStack {
                             Circle()

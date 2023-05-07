@@ -17,7 +17,9 @@ class ExpertViewModel : ObservableObject {
     
     let service : APIService = APIService(isLogActive: true)
     
-    
+    init() {
+        getAllExpert()
+    }
     
     
     func getAllExpert() {
@@ -82,14 +84,14 @@ class ExpertViewModel : ObservableObject {
 //                            lastExperience = exps.Experiences.last!
 //                        }
                         
-                        var expertImage : UIImage? = nil;
-                        
-                        let url = URL(string: gottenExpert.photo_url)
-                        
-                        if let data = try? Data(contentsOf: url!)
-                        {
-                            expertImage = UIImage(data: data) ?? UIImage(systemName: "person.fill")!
-                        }
+//                        var expertImage : UIImage? = nil;
+//
+//                        let url = URL(string: gottenExpert.photo_url)
+//
+//                        if let data = try? Data(contentsOf: url!)
+//                        {
+//                            expertImage = UIImage(data: data) ?? UIImage(systemName: "person.fill")!
+//                        }
                         
                         var readyToUseExpert : Expert =
                         Expert(
@@ -97,7 +99,7 @@ class ExpertViewModel : ObservableObject {
                             education: lastEducation?.name ?? "unknown",
                             educationDesc: "",
                             expDesc: "",
-                            imageBase64: expertImage?.toBase64() ?? "",
+                            imageBase64: gottenExpert.photo_url,
                             isAvailable: true
                             )
                         
