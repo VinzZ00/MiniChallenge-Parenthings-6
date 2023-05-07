@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Profile_TopUpConfirmation: View {
     @Environment(\.presentationMode) var presentationMode
-
+    @EnvironmentObject var viewModel : parenthingsViewModel
     var profileBalance = 0
     
     var body: some View {
