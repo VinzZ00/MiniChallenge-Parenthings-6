@@ -33,6 +33,9 @@ struct AESHelp{
     
     
     func doDecryptAES(message: String) -> String {
+        if(message.count < 24){
+            return message
+        }
         let secret = ProcessInfo.processInfo.environment["AES_KEY"] ?? ""
         let key = SymmetricKey(data: secret.data(using: .utf8)!)
         let nonce = Data(base64Encoded: ProcessInfo.processInfo.environment["AES_NONCE"] ?? "")

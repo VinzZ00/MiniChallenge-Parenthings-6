@@ -31,7 +31,6 @@ struct ArticleMainPageView: View {
     }
     
     var contentView: some View {
-        NavigationView{
             VStack(spacing: 0){
                 CustomNavigationBar(title: Prompt.Title.articles, enableBackButton: (viewModel.textFieldIsClicked) ? true : false, defaultTextSearchBar: Prompt.searchBar.articlesPage, searchText: $searchBarValue, enableSearchBar: true, backButton: {
                     withAnimation {
@@ -40,12 +39,15 @@ struct ArticleMainPageView: View {
                     })
                 VStack {
                     if (viewModel.textFieldIsClicked) {
-                        
                         VStack {
-                            ArticleSearchPage(searchedExperts: [Expert().sampleData(), Expert().sampleData()])
+                            NavigationLink(destination:  ArticleSearchPage(searchedArticles: articleViewModel.articles.filter{
+                                $0.title.contains(viewModel.searchExpertBarValue)
+                            })
                                 .transition(.move(edge: .bottom))
-                                .padding(.vertical, 16)
-                                
+                                .padding(.vertical, 16)) {
+                              EmptyView()
+                            }
+
                         }
                     }else{
                         ScrollView(.vertical) {
@@ -161,7 +163,7 @@ struct ArticleMainPageView: View {
             .ignoresSafeArea(.keyboard, edges: .bottom)
             //            .edgesIgnoringSafeArea(.bottom)
             
-        }
+        
     }
 }
 

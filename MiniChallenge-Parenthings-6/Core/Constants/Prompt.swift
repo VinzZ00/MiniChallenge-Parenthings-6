@@ -223,6 +223,15 @@ extension Prompt {
 
 
 extension Prompt {
+    struct UserDefault {
+        static let loginData = "login_data"
+        
+    
+        private init() {}
+    }
+}
+
+extension Prompt {
     struct Network {
         static let somethingWrong = "Sorry, something went wrong."
         static let connectionFailed = "Sorry, the connection to our server failed."

@@ -40,14 +40,14 @@ class ExpertViewModel : ObservableObject {
             return;
         }
         
-        service.fetch([ExpertAPIModel].self, request: request!) { [unowned self] result in
+        service.fetch([ExpertAPIModel].self, request: request!) { [weak self] result in
             
             DispatchQueue.main.async {
                 
-                self.isLoading = false
+                self?.isLoading = false
                 switch result {
                 case .failure(let error):
-                    self.errorMessage = error.localizedDescription
+                    self?.errorMessage = error.localizedDescription
                     // print(error.description)
                     print(error)
                 case .success(let retrievedExperts):
@@ -103,7 +103,7 @@ class ExpertViewModel : ObservableObject {
                             isAvailable: true
                             )
                         
-                        self.experts.append(readyToUseExpert)
+                        self?.experts.append(readyToUseExpert)
                         print("Expert with id \(readyToUseExpert.id) is inserted")
                     }
                 }

@@ -25,7 +25,7 @@ struct APIService {
         }
         let task = URLSession.shared.dataTask(with: request) {(data , response, error) in
             if(isLogActive){
-                print("REQUEST URL: \((response as? HTTPURLResponse)!.statusCode)  \(error?.localizedDescription ?? "") \(String(describing: response!.url))")
+                print("REQUEST URL: \((response as? HTTPURLResponse)?.statusCode)  \(error?.localizedDescription ?? "") \(String(describing: response?.url))")
                 print("REQUEST RESPONSE: \(String(decoding: data ?? Data(), as: UTF8.self))")
             }
             

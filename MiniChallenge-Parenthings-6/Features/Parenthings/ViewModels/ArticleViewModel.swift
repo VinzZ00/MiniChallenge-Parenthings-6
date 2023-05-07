@@ -19,14 +19,21 @@ class ArticleViewModel: ObservableObject {
     @Published var isError: Bool = false
     @Published var articles: [ArticleModel] = []
     @Published var articlesCD: [ArticleEntity] = []
-    
+  
+    init() {
+        getArticle()
+    }
     
     func getArticle(){
+//        deleteArticle()
         loadArticles()
         if(articlesCD.count > 0){
+            articles = []
             for a in articlesCD {
                 articles.append(ArticleModel().reformat(articlesCD: a))
             }
+            
+            print("Articles: \(articles.count)")
             return
         }
         else{

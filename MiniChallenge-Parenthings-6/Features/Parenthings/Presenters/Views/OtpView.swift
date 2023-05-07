@@ -11,7 +11,9 @@ import Combine
 
 struct OtpView: View {
     @Environment(\.presentationMode) var presentationMode
-    
+    @StateObject var userViewModel = UserViewModel()
+    var userData: UserApiModel
+
     var title: String = ""
     var phone: String = ""
     @State var otp: String = ""
@@ -80,6 +82,7 @@ struct OtpView: View {
             NavigationLink(destination:  HomeRootView(), isActive: $isOtpOk){
                 Button {
                     if(!otp.isEmpty){
+                        userViewModel.setLoginSession(userData: userData)
                         isOtpOk = true
                     }
                 } label: {
@@ -108,6 +111,6 @@ struct OtpView: View {
 
 struct Otp_Previews: PreviewProvider {
     static var previews: some View {
-        OtpView(title:"Sign In",phone: "+628122909218")
+        OtpView(userData: UserApiModel(), title:"Sign In",phone: "+628122909218")
     }
 }

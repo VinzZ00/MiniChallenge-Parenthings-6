@@ -10,7 +10,8 @@ import SwiftUI
 struct HomeRootView: View {
     
     @StateObject var viewModel = parenthingsViewModel();
-    @State private var selectedView = "Consultation"
+    @StateObject var userViewModel = UserViewModel()
+    @State private var selectedView = ""
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -68,10 +69,18 @@ struct HomeRootView: View {
                 }.tag("Articles")
                 
                 VStack{
-                    ZStack {
-                        ProfileMainPageView(backButton: {
-                            presentationMode.wrappedValue.dismiss()
-                        })
+                    if ((userViewModel.getLoginSession()!) != nil){
+                        ZStack {
+                            ProfileMainPageView(selection: $selectedView, backButton: {
+                                presentationMode.wrappedValue.dismiss()
+                            })
+                        }
+                    }else{
+                        NavigationLink(destination:  SignInPopUP()
+                            .transition(.move(edge: .bottom))
+                            .padding(.vertical, 16)) {
+                          EmptyView()
+                        }
                     }
                     //Masukan Profile view
                 }.tabItem{
@@ -85,7 +94,9 @@ struct HomeRootView: View {
                     Text(Prompt.Title.profiles)
                         .foregroundColor(AppColor.paymentBlueTextColor)
                 }
-            }.environmentObject(viewModel)
+                .tag("Profile")
+            }
+            .environmentObject(viewModel)
         }
     }
 }

@@ -9,9 +9,12 @@ import SwiftUI
 
 struct LogOutButtonComponent: View {
     @Binding var showAlert : Bool
-    
+    @Binding var selection: String
+
     var body: some View {
         Button {
+            selection = "Profile" // (force) set `selection` here
+
             showAlert = true
         } label: {
             ImageLabel(imageName: Prompt.Icon.logOut, imageText: Prompt.Button.logOut, isCustom: false)
@@ -41,6 +44,6 @@ struct LogOutButtonComponent: View {
     
     struct LogOutButtonComponent_Previews: PreviewProvider {
         static var previews: some View {
-            LogOutButtonComponent(showAlert: .constant(true))
+            LogOutButtonComponent(showAlert: .constant(true), selection: .constant("Profile"))
         }
     }
