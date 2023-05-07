@@ -46,6 +46,7 @@ class parenthingsViewModel : ObservableObject {
     
     @Published var isSignIn = false;
     
+    @Published var topUpFee = 0.0;
     @Published var topUpAmount = 0.0;
     @Published var totalPayment = 0.0;
     
