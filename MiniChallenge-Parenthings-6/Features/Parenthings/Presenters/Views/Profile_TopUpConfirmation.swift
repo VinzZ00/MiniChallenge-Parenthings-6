@@ -10,9 +10,12 @@ import SwiftUI
 struct Profile_TopUpConfirmation: View {
     @Environment(\.presentationMode) var presentationMode
 
-    var profileBalance = 0
+    @EnvironmentObject var viewModel : parenthingsViewModel
+    @State private var totalTopUp : Double = 0
     @Binding var amountInput : String
-
+    
+    var profileBalance = 0
+    
     var body: some View {
         
 //        NavigationView {
@@ -83,9 +86,9 @@ struct Profile_TopUpConfirmation: View {
                                 Text(Prompt.Caption.selectTopUpMethodGuide)
                                     .font(.callout)
                                     
-//                                Text("Rp \(profileBalance)")
-//                                    .font(.callout)
-//                                    .bold()
+                                Text("Rp \(totalTopUp.defaultTrailingZero())")
+                                    .font(.callout)
+                                    .bold()
                             }
                             .foregroundColor(.gray)
                         }
@@ -103,9 +106,9 @@ struct Profile_TopUpConfirmation: View {
 //                            .foregroundColor(.gray)
                             .bold()
                         Spacer()
-                        Text("Rp \(profileBalance)")
-                            .font(.callout)
-                            .bold()
+//                        Text("Rp \(viewModel.)")
+//                            .font(.callout)
+//                            .bold()
                     }
                     
                 }
@@ -113,15 +116,15 @@ struct Profile_TopUpConfirmation: View {
                 
                 Spacer()
                 
-                BottomConfirmationComponent()
+                BottomConfirmationComponent(totalTopUp: $totalTopUp, amountInput: $amountInput)
             }
             .background(AppBackground())
     }
 }
 
-struct Profile_TopUpConfirmation_Previews: PreviewProvider {
-    static var previews: some View {
-        Profile_TopUpConfirmation(amountInput: .constant("0"))
-            .environmentObject(parenthingsViewModel())
-    }
-}
+//struct Profile_TopUpConfirmation_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Profile_TopUpConfirmation(totalTopUp: 10.0, amountInput: .constant("0"))
+//            .environmentObject(parenthingsViewModel())
+//    }
+//}
