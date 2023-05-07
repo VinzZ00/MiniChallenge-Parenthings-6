@@ -8,17 +8,31 @@
 import SwiftUI
 
 struct TopUpAmountComponent: View {
-//    @Binding var isSelected: topUPType
+    @Binding var selectedAmount: topUPAmountType
+    @Binding var amountInput: String
     @Binding var isSelected: Bool
     
     var amountIcon: String
-    var amount: Double
+    var amount: topUPAmountType
+
+//    func isSelected() -> Bool {
+//        return amount == selectedAmount
+//    }
+    
+    func setAmount() {
+        amountInput = amount.rawValue
+    }
+    func setSelectedAmount() {
+        selectedAmount = amount
+    }
     
     var body: some View {
         VStack {
             VStack {
                 Button{
-                    
+//                    setSelectedAmount()
+//                    setAmount()
+//                    print(amount)
                 } label: {
                 }
                 .buttonStyle(.plain)
@@ -59,21 +73,33 @@ struct TopUpAmountComponent: View {
                                 .frame(maxWidth: .infinity)
                                 .padding(5)
                             
-                            Text("Rp \(amount.defaultTrailingZero())")
+                            Text("Rp \(Double(amount.rawValue)!.defaultTrailingZero())")
                                 .font(.system(size: 12, weight: .bold))
                                 .padding(.bottom, 5)
                         }
                         .padding(10)
                     }
-                    
                 )
             }
         }
+        
+//        if isSelected {
+//            setSelectedAmount()
+//            setAmount()
+//        }
     }
 }
 
 struct TopUpAmountComponent_Previews: PreviewProvider {
     static var previews: some View {
-        TopUpAmountComponent(isSelected: .constant(true), amountIcon: Prompt.Icon.amount1, amount: 199999)
+//        TopUpAmountComponent(isSelected: .constant(true), amountIcon: Prompt.Icon.amount1, amount: 199999)
+//            .environmentObject(parenthingsViewModel())
+        TopUpAmountComponent(
+            selectedAmount:.constant(topUPAmountType.topUP1),
+            amountInput: .constant("10000"), isSelected: .constant(false),
+            amountIcon: Prompt.Icon.amount1,
+            amount: topUPAmountType.topUP1
+        )
+        .environmentObject(parenthingsViewModel())
     }
 }
