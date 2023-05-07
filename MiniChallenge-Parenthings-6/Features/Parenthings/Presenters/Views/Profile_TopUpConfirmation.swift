@@ -12,7 +12,7 @@ struct Profile_TopUpConfirmation: View {
 
     @EnvironmentObject var viewModel : parenthingsViewModel
     @State private var topUpFee = 2000.0
-//    @Binding var amountInput : String
+    @Binding var amountInput : String
     
     var profileBalance = 0
     var body: some View {
@@ -32,7 +32,7 @@ struct Profile_TopUpConfirmation: View {
         
                     HStack {
                         Text("\(Prompt.paymentContent.rupiah)")
-                        Text("\(viewModel.topUpAmount)")
+                        Text("\(amountInput)")
                     }
                     .font(.system(size: 22, weight: .bold))
                     .padding(.top, 3)
@@ -70,7 +70,7 @@ struct Profile_TopUpConfirmation: View {
                                 Spacer()
                                 HStack {
                                     Text("\(Prompt.paymentContent.rupiah)")
-                                    Text("\(viewModel.topUpAmount)")
+                                    Text("\(amountInput)")
                                 }
                                 .font(.callout)
                                 .bold()
@@ -108,7 +108,7 @@ struct Profile_TopUpConfirmation: View {
                             .bold()
                         Spacer()
                         
-                        Text("Rp \((viewModel.getTotalAmountPaid(amount: Double(viewModel.topUpAmount) ?? 0, fee: topUpFee)).defaultTrailingZero())")
+                        Text("Rp \((viewModel.getTotalAmountPaid(amount: Double(amountInput) ?? 1, fee: topUpFee)).defaultTrailingZero())")
                             .font(.callout)
                             .bold()
                     }
@@ -118,7 +118,7 @@ struct Profile_TopUpConfirmation: View {
                 
                 Spacer()
                 
-//                BottomConfirmationComponent(topUpFee: $topUpFee, amountInput: $amountInput)
+                BottomConfirmationComponent(topUpFee: $topUpFee, amountInput: $amountInput)
             }
             .background(AppBackground())
     }

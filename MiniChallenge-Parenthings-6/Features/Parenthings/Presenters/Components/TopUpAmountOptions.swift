@@ -11,7 +11,6 @@ import SwiftUI
 struct TopUpAmountOptions: View {
     @EnvironmentObject var viewModel : parenthingsViewModel
     @Binding var amountInput: String
-    @State var isSelected: Bool = false
     @State var indexSelected : Int = 0
     
     func setAllFalseExcept(index : Int) {
@@ -34,7 +33,8 @@ struct TopUpAmountOptions: View {
 
                     if viewModel.amountTypeStatus[indexSelected] {
                         setAllFalseExcept(index: indexSelected)
-                        viewModel.topUpAmount = 20000
+//                        viewModel.topUpAmount = 20000
+                        amountInput = "20000"
                     }
                 }
                 
@@ -47,7 +47,8 @@ struct TopUpAmountOptions: View {
 
                     if viewModel.amountTypeStatus[indexSelected] {
                         setAllFalseExcept(index: indexSelected)
-                        viewModel.topUpAmount = 40000
+//                        viewModel.topUpAmount = 40000
+                        amountInput = "40000"
                     }
 
                 }
@@ -61,7 +62,8 @@ struct TopUpAmountOptions: View {
 
                     if viewModel.amountTypeStatus[indexSelected] {
                         setAllFalseExcept(index: indexSelected)
-                        viewModel.topUpAmount = 50000
+//                        viewModel.topUpAmount = 50000
+                        amountInput = "50000"
                     }
                 }
             }
@@ -73,7 +75,8 @@ struct TopUpAmountOptions: View {
 
                     if viewModel.amountTypeStatus[indexSelected] {
                         setAllFalseExcept(index: indexSelected)
-                        viewModel.topUpAmount = 200000
+//                        viewModel.topUpAmount = 200000
+                        amountInput = "200000"
                     }
                 }
                 
@@ -86,7 +89,8 @@ struct TopUpAmountOptions: View {
 
                     if viewModel.amountTypeStatus[indexSelected] {
                         setAllFalseExcept(index: indexSelected)
-                        viewModel.topUpAmount = 300000
+//                        viewModel.topUpAmount = 300000
+                        amountInput = "300000"
                     }
 
                 }
@@ -101,17 +105,10 @@ struct TopUpAmountOptions: View {
                     if viewModel.amountTypeStatus[indexSelected] {
                         setAllFalseExcept(index: indexSelected)
                         viewModel.topUpAmount = 500000
+                        amountInput = "500000"
                     }
                 }
             }
-            
-//                        HStack {
-//                            TopUpAmountComponent(amountIcon: Prompt.Icon.amount4, amount: 200000)
-//                            Spacer()
-//                            TopUpAmountComponent(amountIcon: Prompt.Icon.amount5, amount: 300000)
-//                            Spacer()
-//                            TopUpAmountComponent(amountIcon: Prompt.Icon.amount6, amount: 500000)
-//                        }
         }
     }
 }

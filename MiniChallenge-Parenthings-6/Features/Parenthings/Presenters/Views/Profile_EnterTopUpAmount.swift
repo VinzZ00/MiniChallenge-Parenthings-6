@@ -11,9 +11,8 @@ struct Profile_EnterTopUpAmount: View {
     @Environment(\.presentationMode) var presentationMode
 
     @EnvironmentObject var viewModel : parenthingsViewModel
-    
-    @State private var showInsertTopUpAmountView = false
     @Binding var amountInput : String
+    
     
     var body: some View {
         VStack (spacing: 0){
@@ -53,7 +52,7 @@ struct Profile_EnterTopUpAmount: View {
             NavigationLink {
 
                 //Go to top up confirmation
-                Profile_TopUpConfirmation()
+                Profile_TopUpConfirmation(amountInput: $amountInput)
                     .navigationBarHidden(true)
                 
             } label: {
@@ -61,10 +60,6 @@ struct Profile_EnterTopUpAmount: View {
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 15)
             }
-            .onTapGesture(perform: {
-                showInsertTopUpAmountView.toggle()
-                viewModel.topUpAmount = Double(amountInput) ?? 0
-            })
             .font(.title2)
             .bold()
             .foregroundColor(.white)
