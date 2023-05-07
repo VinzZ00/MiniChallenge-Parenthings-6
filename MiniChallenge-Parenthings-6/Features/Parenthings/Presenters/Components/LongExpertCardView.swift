@@ -23,7 +23,7 @@ struct LongExpertCard : View {
     
     
     var body: some View {
-        HStack{
+        HStack(spacing: 20){
             
             //                    if let decodedimage = (ExpertData ?? ConusultationData!.expert).imageBase64
             //                        .toUIImage() {
@@ -39,21 +39,27 @@ struct LongExpertCard : View {
             //
             //                    }
             
-            AsyncImage(url: URL(string: ExpertData?.imageBase64 ?? "")) { image in
-                image
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 67, height: 84)
-                    .mask(
-                        RoundedRectangle(cornerRadius: 15)
-                        
-                    )
-                
-            } placeholder: {
-                Image(uiImage : UIImage(named: "UniversalPlaceHolder")!)
-                
+            VStack {
+                AsyncImage(url: URL(string: ExpertData?.imageBase64 ?? "")) { image in
+                    image
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                        .mask(
+                            RoundedRectangle(cornerRadius: 15)
+                            
+                        )
+                } placeholder: {
+                    Image(uiImage : UIImage(named: "UniversalPlaceHolder")!)
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                        .mask(
+                            RoundedRectangle(cornerRadius: 15)
+                            
+                        )
+                    
+                }
             }
-            .frame(width: 67, height: 84)
+            
             
             VStack(alignment: .leading) {
                 HStack {
@@ -62,7 +68,7 @@ struct LongExpertCard : View {
                         .foregroundColor(((ExpertData ?? ConusultationData!.expert).isAvailable) ? .green : .red)
                         .padding(.trailing, 4)
                         .padding(.bottom, 1)
-                    Text("\((ExpertData ?? ConusultationData!.expert).name)")
+                    Text("\((ExpertData ?? ConusultationData!.expert).name.capitalized)")
                         .font(.system(size: 16, weight: .semibold))
                         .lineLimit(2)
                         .foregroundColor(AppColor.titleColor)
@@ -135,15 +141,13 @@ struct LongExpertCard : View {
             }
             Spacer()
         }
-        .padding(.horizontal, Prompt.Padding.paddingMedium)
-        .padding(.vertical, Prompt.Padding.paddingSmall)
+        .padding(Prompt.Padding.paddingMedium)
         .background(.white)
         .cornerRadius(15)
         .overlay(
             RoundedRectangle(cornerRadius: 15)
                 .stroke(AppColor.systemGray, lineWidth: 2)
         )
-        .padding(.horizontal, 18)
     }
 }
 

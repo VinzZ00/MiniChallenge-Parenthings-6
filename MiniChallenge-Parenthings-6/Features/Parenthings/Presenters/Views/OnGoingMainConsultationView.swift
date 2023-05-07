@@ -48,7 +48,6 @@ struct OnGoingMainConsultationPage: View {
                         .font(.system(size: 22, weight: .bold))
                     Spacer()
                 }
-                .padding(.horizontal, Prompt.Padding.paddingMedium)
                 
                 VStack(alignment: .center) {
                     if expertViewModel.isLoading {
@@ -68,9 +67,10 @@ struct OnGoingMainConsultationPage: View {
                         }
                     }
                 }
-                .padding(.bottom, 20)
+                .padding(.bottom, Prompt.Padding.paddingLarge)
                 
             }
+            .padding(.horizontal, Prompt.Padding.paddingMedium)
             
             
             HStack(){
