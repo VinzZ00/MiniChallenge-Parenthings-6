@@ -8,6 +8,7 @@
 import Foundation
 import Chat
 
+
 class ChatViewModel : ObservableObject
 {
     @Published var isLoading: Bool = false
@@ -18,17 +19,19 @@ class ChatViewModel : ObservableObject
     @Published var isError : Bool = false;
         
     @Published var ChatItem : [ChatItemAPIModel] = []
-    
+    @Published var userViewModel : UserViewModel = UserViewModel();
     @Published var messagesCurrentUser : [Chat.Message] = []
     @Published var messageExpert : [Chat.Message] = []
     
+    var expertViewModel : ExpertViewModel = ExpertViewModel();
+    
     let service : APIService = APIService(isLogActive: true);
     
-    init(firstUserId : String, secondUserId : String) {
-        getChatData(currentUserID: firstUserId, expertUserId: secondUserId)
+    init(currentUser : User, expert : Expert) {
+        getChatData(currentUser: currentUser, expert: expert)
     }
     
-    func getChatData(currentUserID : String, expertUserId : String) {
+    func getChatData(currentUser : User, expert : Expert) {
         isLoading = true;
         
         errorMessage = "";
@@ -48,8 +51,8 @@ class ChatViewModel : ObservableObject
         }
         
         service.fetch([ChatItemAPIModel].self, request: request!) { [self] result in
-        
-    
+
+
             isLoading = false;
             switch result {
             case .failure(let error) :
@@ -57,7 +60,11 @@ class ChatViewModel : ObservableObject
                 self.errorMessage = error.description
             case .success(let ChatItemAPIModel):
                 ChatItemAPIModel.map {
-                    
+                    if $0.expert_id == expert.id!.uuidString {
+                        self.messageExpert.append(Message(id: $0.id, user: Chat.User(id: expert.id!.uuidString, name: expert.name, avatarURL: URL(string: expert.imageBase64), isCurrentUser: false), createdAt: Date(), text: $0.message))
+                    } else if $0.user_id == currentUser.id!.uuidString {
+                        self.messagesCurrentUser.append(Message(id: $0.id, user: Chat.User(id: currentUser.id!.uuidString, name: currentUser.name, avatarURL: nil , isCurrentUser: true)))
+                    }
                 }
             }
             

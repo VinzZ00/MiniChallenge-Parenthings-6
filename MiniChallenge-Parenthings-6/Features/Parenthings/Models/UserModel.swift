@@ -8,7 +8,7 @@
 import Foundation
 
 struct User : Identifiable, Hashable {
-    var id : UUID  = UUID();
+    var id : UUID?;
     var name : String
     var balanceParenting : Double;
 }

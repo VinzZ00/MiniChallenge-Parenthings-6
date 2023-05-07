@@ -9,6 +9,7 @@ import Foundation
 
 struct ChatItemAPIModel : Codable {
     
+    var id : String
     var message : String
     var date : String
     var order_id : String

@@ -13,6 +13,7 @@ struct OtpView: View {
     @Environment(\.presentationMode) var presentationMode
     @StateObject var userViewModel = UserViewModel()
     var userData: UserApiModel
+    @EnvironmentObject viewModel : parenthingsViewModel;
 
     var title: String = ""
     var phone: String = ""
@@ -84,6 +85,8 @@ struct OtpView: View {
                     if(!otp.isEmpty){
                         userViewModel.setLoginSession(userData: userData)
                         isOtpOk = true
+                        viewModel.user = User(id : UUID(uuidString: self.userData.id),
+                                              name: self.userData.name, balanceParenting: self.userData.balance)
                     }
                 } label: {
                     VStack{

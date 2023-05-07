@@ -63,7 +63,7 @@ class UserViewModel: ObservableObject {
 //                    print("--- sucess with \(breeds.count)")
 //                    self.breeds = breeds
                     self.response = response
-                    self.setLoginSession(userData: response)
+//                    self.setLoginSession(userData: response)
 
                     self.isSigninSuccess = true
                     
@@ -127,7 +127,7 @@ class UserViewModel: ObservableObject {
 //                    print("--- sucess with \(breeds.count)")
 //                    self.breeds = breeds
                     self.response = response.data
-                    setLoginSession(userData:response.data)
+//                    setLoginSession(userData:response.data)
                     self.isSignupSuccess = true
                 }
             }
@@ -200,6 +200,8 @@ class UserViewModel: ObservableObject {
         
     }
     
+    
+    
     func setLoginSession(userData: UserApiModel){
         do {
             let encodedData = try JSONEncoder().encode(userData)
@@ -236,5 +238,6 @@ class UserViewModel: ObservableObject {
         let userDefaults = UserDefaults.standard
         userDefaults.removeObject(forKey:  Prompt.UserDefault.loginData)
     }
+    
     
 }

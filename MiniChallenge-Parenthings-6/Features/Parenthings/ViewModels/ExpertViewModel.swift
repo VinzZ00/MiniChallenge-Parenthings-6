@@ -27,6 +27,11 @@ class ExpertViewModel : ObservableObject {
         getAllExpert()
     }
     
+    func getAExpert(idExpert : String) -> [Expert] {
+        return experts.filter {
+            $0.id! == UUID(uuidString: idExpert)!;
+        }
+    }
     
     func getAllExpert() {
         isLoading = true
