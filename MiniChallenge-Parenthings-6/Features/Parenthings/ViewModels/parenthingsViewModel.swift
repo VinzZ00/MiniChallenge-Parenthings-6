@@ -21,7 +21,8 @@ class parenthingsViewModel : ObservableObject {
     
     
     @Published var user : User?
-//    = User(name: "Elvin", balanceParenting: 20000); //in Production ini tidak diisi disini tp, dari sign in page.
+    //bahan cmp nyoba"
+    @Published var userTest: User? = User(name: "Elvin", balanceParenting: 35000); //in Production ini tidak diisi disini tp, dari sign in page.
     @Published var experts : ExpertRepository = ExpertRepository();
     
     @Published var navBarShown : Bool = true;
@@ -63,6 +64,13 @@ class parenthingsViewModel : ObservableObject {
         }
     }
     
+    func addUserBalance(amount: Double) {
+        userTest?.balanceParenting += amount
+    }
+
+    func getTotalAmountPaid(amount: Double, fee: Double) -> Double{
+        return amount + fee
+    }
     
     func getUniqueTransactionDate() -> Set<Date>{
 //        var DatesUnUnique : [Date] = transactions.savedTransaction[0].TransactionDate
