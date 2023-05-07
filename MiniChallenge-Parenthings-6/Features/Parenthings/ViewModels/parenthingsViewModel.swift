@@ -22,6 +22,8 @@ class parenthingsViewModel : ObservableObject {
     
 //    @Published var articleSearchBarValue : String = ""
     @Published var searchedArticles : [ArticleModel] = [];
+    @Published var showAllExpert : Bool = false;
+    
     
     @Published var user : User?
     //bahan cmp nyoba"
