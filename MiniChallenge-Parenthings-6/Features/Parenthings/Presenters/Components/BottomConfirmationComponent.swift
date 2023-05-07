@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct BottomConfirmationComponent: View {
+    @EnvironmentObject var viewModel : parenthingsViewModel
+    @Binding var totalTopUp : Double
+    @Binding var amountInput : String
+    
     var body: some View {
-        
         //Top up method confirmation
         VStack{
             VStack {
@@ -50,12 +53,18 @@ struct BottomConfirmationComponent: View {
                 //Button confirm and top up
                 VStack {
                     NavigationLink {
-                        PaymentSuccessPageView()
+                        PaymentSuccessPageView(totalTopUp: $totalTopUp)
                             .navigationBarHidden(true)
                     } label: {
                         Text(Prompt.Button.confirmAndTopUp)
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 15)
+                    }
+                    .onAppear() {
+//                        viewModel.addUserBalance(amount: Double(amountInput) ?? 0)
+                        viewModel.userTest?.balanceParenting += Double(amountInput)!
+                        print("lala top upp")
+                        print(viewModel.userTest?.balanceParenting)
                     }
                     .font(.title2)
                     .bold()
@@ -79,6 +88,6 @@ struct BottomConfirmationComponent: View {
 
 struct BottomConfirmationComponent_Previews: PreviewProvider {
     static var previews: some View {
-        BottomConfirmationComponent()
+        BottomConfirmationComponent(totalTopUp: .constant(10), amountInput: .constant("0"))
     }
 }
