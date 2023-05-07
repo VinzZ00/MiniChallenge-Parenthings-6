@@ -4,7 +4,7 @@ import Foundation
 import Combine
 
 final class ChatInteractor: ChatInteractorProtocol {
-    private var chatData : ChatData = ChatData(currentUsername: "Testing1", expertName: "Testing2", allChatData: [Message(id: UUID().uuidString, user: Chat.User(id: "1", name: "Testing1", avatarURL: nil, isCurrentUser: true), text: "Chat 1"), Message(id: UUID().uuidString, user: Chat.User(id: "2", name: "Testing2", avatarURL: nil, isCurrentUser: true), text: "Chat 1")]);
+    private var chatData : ChatData
 
     private lazy var chatState = CurrentValueSubject<[Message], Never>(generateStartMessages())
     private lazy var sharedState = chatState.share()
@@ -28,9 +28,10 @@ final class ChatInteractor: ChatInteractorProtocol {
         senders.filter { !$0.isCurrentUser }
     }
     
-    init(isActive: Bool = false) {
-        self.isActive = isActive
-//        self.chatData =
+    
+    init(isActive: Bool = false, chatData : ChatData) {
+        self.isActive = isActive // kegunaan Debug kemarin
+        self.chatData = chatData
     }
 
     /// TODO: Generate error with random chance

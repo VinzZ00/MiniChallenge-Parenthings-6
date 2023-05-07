@@ -12,6 +12,7 @@ import Chat
 
 class parenthingsViewModel : ObservableObject {
     
+//    @Published
     @Published var expertDetailIsPresented : Bool = false;
     @Published var selectedExpert : Expert?
     @Published var textFieldIsClicked = false;
@@ -118,7 +119,7 @@ class parenthingsViewModel : ObservableObject {
 //        }
 //    }
     
-    @Published var messages: [Message] = []
+//    @Published var messages: [Message] =
     
     var chatTitle: String {
         interactor.otherSenders.count == 1 ? interactor.otherSenders.first!.name : "Group chat"
@@ -133,7 +134,7 @@ class parenthingsViewModel : ObservableObject {
     private let interactor: ChatInteractorProtocol
     private var subscriptions = Set<AnyCancellable>()
 
-    init(interactor: ChatInteractorProtocol = ChatInteractor()) {
+    init(interactor: ChatInteractorProtocol = ChatInteractor(chatData: <#ChatData#>)) {
         self.interactor = interactor
     }
 

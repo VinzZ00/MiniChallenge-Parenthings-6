@@ -59,7 +59,13 @@ class ChatViewModel : ObservableObject
                 self.isError = true
                 self.errorMessage = error.description
             case .success(let ChatItemAPIModel):
-                ChatItemAPIModel.map {
+                
+                
+                let chatItemAPIModel = ChatItemAPIModel.filter{
+                    $0.expert_id == expert.id?.uuidString && $0.user_id == currentUser.id?.uuidString
+                }
+                
+                chatItemAPIModel.map{
                     if $0.expert_id == expert.id!.uuidString {
                         self.messageExpert.append(Message(id: $0.id, user: Chat.User(id: expert.id!.uuidString, name: expert.name, avatarURL: URL(string: expert.imageBase64), isCurrentUser: false), createdAt: Date(), text: $0.message))
                     } else if $0.user_id == currentUser.id!.uuidString {
