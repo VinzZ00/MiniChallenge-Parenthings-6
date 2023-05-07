@@ -8,13 +8,14 @@
 import SwiftUI
 
 //Nanti taro di model
-enum topUPType: Int {
-    case topUP1 = 19000
-    case topUP2 = 49000
-    case topUp3 = 99000
-    case topUP4 = 199000
-    case topUP5 = 299000
-    case topUp6 = 499000
+enum topUPAmountType: String {
+//    case topUP0 = "0"
+    case topUP1 = "19000"
+    case topUP2 = "49000"
+    case topUP3 = "99000"
+    case topUP4 = "199000"
+    case topUP5 = "299000"
+    case topUp6 = "499000"
     
 }
 
@@ -25,8 +26,8 @@ struct Profile_TopUpView: View {
     @EnvironmentObject var viewModel: parenthingsViewModel
     
     @State private var showInsertTopUpAmountView = false
-    @State private var amountInput = ""
-    @State private var isSelected = true
+    @State private var amountInput = "0"
+    @State private var selectedAmount = topUPAmountType.topUP1
     
     var profileBalanceDefault: Double = 50_000
 
@@ -86,14 +87,16 @@ struct Profile_TopUpView: View {
                         .font(.callout)
                         .bold()
                     
+                    TopUpAmountOptions(amountInput: $amountInput, selectedAmount: $selectedAmount)
+                    
                     VStack {
-                        HStack {
-                            TopUpAmountComponent(isSelected: $isSelected, amountIcon: Prompt.Icon.amount1, amount: 20000)
-                            Spacer()
-                            TopUpAmountComponent(isSelected: $isSelected, amountIcon: Prompt.Icon.amount2, amount: 50000)
-                            Spacer()
-                            TopUpAmountComponent(isSelected: $isSelected, amountIcon: Prompt.Icon.amount3, amount: 100000)
-                        }
+//                        HStack {
+//                            TopUpAmountComponent(amountSelected: amountInput, isSelected: $isSelected, amountIcon: Prompt.Icon.amount1, amount: 20000)
+//                            Spacer()
+//                            TopUpAmountComponent(isSelected: $isSelected, amountIcon: Prompt.Icon.amount2, amount: 50000)
+//                            Spacer()
+//                            TopUpAmountComponent(isSelected: $isSelected, amountIcon: Prompt.Icon.amount3, amount: 100000)
+//                        }
                         
 //                        HStack {
 //                            TopUpAmountComponent(amountIcon: Prompt.Icon.amount4, amount: 200000)
