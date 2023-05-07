@@ -22,6 +22,7 @@ class ChatViewModel : ObservableObject
     @Published var userViewModel : UserViewModel = UserViewModel();
     @Published var messagesCurrentUser : [Chat.Message] = []
     @Published var messageExpert : [Chat.Message] = []
+    @Published var allChatOnRegarding : [Chat.Message] = [];
     
     var expertViewModel : ExpertViewModel = ExpertViewModel();
     
@@ -60,16 +61,22 @@ class ChatViewModel : ObservableObject
                 self.errorMessage = error.description
             case .success(let ChatItemAPIModel):
                 
+                print("ChatItemAPIModel has \(ChatItemAPIModel.count) datas.")
                 
                 let chatItemAPIModel = ChatItemAPIModel.filter{
                     $0.expert_id == expert.id?.uuidString && $0.user_id == currentUser.id?.uuidString
                 }
                 
+                print("chatItemAPIModel has mapped, \(chatItemAPIModel.count) datas.")
+                
                 chatItemAPIModel.map{
                     if $0.expert_id == expert.id!.uuidString {
                         self.messageExpert.append(Message(id: $0.id, user: Chat.User(id: expert.id!.uuidString, name: expert.name, avatarURL: URL(string: expert.imageBase64), isCurrentUser: false), createdAt: Date(), text: $0.message))
+                        
+                        print("Count Expert Chat : \(self.messageExpert.count)")
                     } else if $0.user_id == currentUser.id!.uuidString {
-                        self.messagesCurrentUser.append(Message(id: $0.id, user: Chat.User(id: currentUser.id!.uuidString, name: currentUser.name, avatarURL: nil , isCurrentUser: true)))
+                        self.messagesCurrentUser.append(Message(id: $0.id, user: Chat.User(id: currentUser.id!.uuidString, name: currentUser.name, avatarURL: nil , isCurrentUser: true), createdAt: Date(), text: $0.message))
+                        print("Count Expert Chat : \(self.messagesCurrentUser.count)")
                     }
                 }
             }
