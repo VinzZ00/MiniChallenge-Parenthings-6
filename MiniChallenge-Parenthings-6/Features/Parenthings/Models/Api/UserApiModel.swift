@@ -12,7 +12,7 @@ struct UserApiModel : Codable {
     var id : String = ""
     var name : String = ""
     var phone : String = ""
-    var balance : Int = 0
+    var balance : Double = 0
 
     enum CodingKeys: String, CodingKey
        {

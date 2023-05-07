@@ -15,6 +15,7 @@
 		8542E0772A0507E4000D7A78 /* BaseApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8542E0762A0507E4000D7A78 /* BaseApiModel.swift */; };
 		856849BA2A056AA600517DDF /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856849B92A056AA600517DDF /* PersistenceController.swift */; };
 		856849C02A05764C00517DDF /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 856849BE2A05764C00517DDF /* CoreDataModel.xcdatamodeld */; };
+		856849CE2A07FDA200517DDF /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856849CD2A07FDA200517DDF /* EditProfileView.swift */; };
 		858627FE2A02413B0077F60D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858627FD2A02413B0077F60D /* SignInView.swift */; };
 		858628002A02472F0077F60D /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858627FF2A02472F0077F60D /* ClearButton.swift */; };
 		858628022A02505D0077F60D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858628012A02505D0077F60D /* SignUpView.swift */; };
@@ -123,6 +124,7 @@
 		8542E0762A0507E4000D7A78 /* BaseApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApiModel.swift; sourceTree = "<group>"; };
 		856849B92A056AA600517DDF /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		856849BF2A05764C00517DDF /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		856849CD2A07FDA200517DDF /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		858627FD2A02413B0077F60D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		858627FF2A02472F0077F60D /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		858628012A02505D0077F60D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -528,6 +530,7 @@
 				ACDE995D29FD51B200E32E5A /* SignInPopUPView.swift */,
 				858627FD2A02413B0077F60D /* SignInView.swift */,
 				858628012A02505D0077F60D /* SignUpView.swift */,
+				856849CD2A07FDA200517DDF /* EditProfileView.swift */,
 				AC9FF96029FD9007008766E8 /* OnGoingMainConsultationView.swift */,
 				AC9FF96629FE9B35008766E8 /* ConsultationDetailView.swift */,
 				8F3CF2962A012182006E03AC /* PaymentSuccessPageView.swift */,
@@ -685,6 +688,7 @@
 				AC97A51729FFB25D00B66A67 /* PaymentTypeHelper.swift in Sources */,
 				ACEF81AC2A08034100153690 /* ChatAPIModel.swift in Sources */,
 				8586280C2A034B1D0077F60D /* LongArticleCardView.swift in Sources */,
+				856849CE2A07FDA200517DDF /* EditProfileView.swift in Sources */,
 				8F3CF2952A012133006E03AC /* ProfileMenuComponent.swift in Sources */,
 				ACEA1BE32A062B6A00D7C411 /* ExpertEducationAPIModel.swift in Sources */,
 				ACF7F5DF29FC449C0059F323 /* UserModel.swift in Sources */,

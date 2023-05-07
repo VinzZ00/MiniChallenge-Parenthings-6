@@ -15,7 +15,9 @@ struct SignInPopUP: View {
     @State var isRegist : Bool = false;
     
     @Environment(\.presentationMode) var presentationMode;
-    
+    @EnvironmentObject var userViewModel: UserViewModel
+
+
     var body: some View {
         
         NavigationView{
@@ -28,7 +30,8 @@ struct SignInPopUP: View {
                     Spacer();
                     
                     Button {
-                        presentationMode.wrappedValue.dismiss()
+//                        presentationMode.wrappedValue.dismiss()
+                        userViewModel.gotoLoginPage = false
                     } label : {
                         Image(systemName:  "x.circle.fill")
                             .resizable()
