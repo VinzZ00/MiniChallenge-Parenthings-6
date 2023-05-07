@@ -50,17 +50,22 @@ struct OnGoingMainConsultationPage: View {
                 }
                 .padding(.horizontal, Prompt.Padding.paddingMedium)
                 Spacer()
-                if expertViewModel.experts.isEmpty {
-                    Text("No Expert available")
-                        .padding()
+                if expertViewModel.isLoading {
+                    ProgressView()
                 } else {
-                    ForEach(
-//                        x[0...2]  //Kalo mau test n mattin if
-                        top3Experts
-                        , id: \.self) { exp in
-                            LongExpertCard(ExpertData: exp, buttonText: Prompt.Button.chat)
-                        }
+                    if expertViewModel.experts.isEmpty {
+                        Text("No Expert available")
+                            .padding()
+                    } else {
+                        ForEach(
+    //                        x[0...2]  //Kalo mau test n mattin if
+                            top3Experts
+                            , id: \.self) { exp in
+                                LongExpertCard(ExpertData: exp, buttonText: Prompt.Button.chat)
+                            }
+                    }
                 }
+
                 Spacer()
             }
             .frame(height:500)
