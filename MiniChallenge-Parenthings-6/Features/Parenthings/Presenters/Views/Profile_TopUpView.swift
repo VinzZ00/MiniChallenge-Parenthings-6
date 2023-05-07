@@ -26,9 +26,17 @@ struct Profile_TopUpView: View {
     @EnvironmentObject var viewModel : parenthingsViewModel;
     @State private var showInsertTopUpAmountView = false
 //    @State private var amountTextfield = "0"
-    @State var isSelected20 = false
-    @State var isSelected50 = false
-    @State var isSelected100 = false;
+//    @State var isSelected20 = false
+//    @State var isSelected50 = false
+//    @State var isSelected100 = false;
+    
+//    @State var isSelectedType1 = false
+//    @State var isSelectedType2 = false
+//    @State var isSelectedType3 = false
+//    @State var isSelectedType4 = false
+//    @State var isSelectedType5 = false
+//    @State var isSelectedType6 = false
+    
     
     @State private var amountInput = "0"
 //    @State private var selectedAmount = topUPAmountType.topUP1
@@ -92,42 +100,43 @@ struct Profile_TopUpView: View {
                         .bold()
                     
 //                    TopUpAmountOptions(amountInput: $amountInput, selectedAmount: $selectedAmount)
+                    TopUpAmountOptions(amountInput: $amountInput)
                     
                     VStack {
 
                         HStack {
-                            TopUpAmountComponent(isSelected: $isSelected20, amountIcon: Prompt.Icon.amount1, amount: 20000)
-                                .onTapGesture {
-                                    isSelected20.toggle();
-                                    if isSelected20 {
-                                        isSelected50 = false;
-                                        isSelected100 = false;
-                                        viewModel.topUpAmount = 20000
-                                    }
-                                }
-                            Spacer()
-                            TopUpAmountComponent(isSelected: $isSelected50, amountIcon: Prompt.Icon.amount2, amount: 50000)
-                                .onTapGesture {
-                                    isSelected50.toggle();
-                                    if isSelected50
-                                    {
-                                        isSelected20 = false;
-                                        isSelected100 = false;
-                                        
-                                        viewModel.topUpAmount = 50000
-                                    }
-                                }
-                            Spacer()
-                            TopUpAmountComponent(isSelected: $isSelected100, amountIcon: Prompt.Icon.amount3, amount: 100000)
-                                .onTapGesture {
-                                    isSelected100.toggle();
-                                    if isSelected100 {
-                                        isSelected50 = false;
-                                        isSelected20 = false;
-                                        
-                                        viewModel.topUpAmount = 100000
-                                    }
-                                }
+//                            TopUpAmountComponent(isSelected: $isSelected20, amountIcon: Prompt.Icon.amount1, amount: 20000)
+//                                .onTapGesture {
+//                                    isSelected20.toggle();
+//                                    if isSelected20 {
+//                                        isSelected50 = false;
+//                                        isSelected100 = false;
+//                                        viewModel.topUpAmount = 20000
+//                                    }
+//                                }
+//                            Spacer()
+//                            TopUpAmountComponent(isSelected: $isSelected50, amountIcon: Prompt.Icon.amount2, amount: 50000)
+//                                .onTapGesture {
+//                                    isSelected50.toggle();
+//                                    if isSelected50
+//                                    {
+//                                        isSelected20 = false;
+//                                        isSelected100 = false;
+//                                        
+//                                        viewModel.topUpAmount = 50000
+//                                    }
+//                                }
+//                            Spacer()
+//                            TopUpAmountComponent(isSelected: $isSelected100, amountIcon: Prompt.Icon.amount3, amount: 100000)
+//                                .onTapGesture {
+//                                    isSelected100.toggle();
+//                                    if isSelected100 {
+//                                        isSelected50 = false;
+//                                        isSelected20 = false;
+//                                        
+//                                        viewModel.topUpAmount = 100000
+//                                    }
+//                                }
                         }
 //                        HStack {
 //                            TopUpAmountComponent(amountIcon: Prompt.Icon.amount4, amount: 200000)
@@ -230,7 +239,7 @@ struct Profile_TopUpView: View {
                     //Button continue
                     VStack {
                         NavigationLink {
-                            Profile_TopUpConfirmation(amountInput: $amountInput)
+                            Profile_TopUpConfirmation()
                                 .navigationBarHidden(true)
                         } label: {
                             Text(Prompt.Button.continueProcess)

@@ -10,6 +10,8 @@ import SwiftUI
 struct Profile_EnterTopUpAmount: View {
     @Environment(\.presentationMode) var presentationMode
 
+    @EnvironmentObject var viewModel : parenthingsViewModel
+    
     @State private var showInsertTopUpAmountView = false
     @Binding var amountInput : String
     
@@ -49,8 +51,9 @@ struct Profile_EnterTopUpAmount: View {
             
             //Button Continue
             NavigationLink {
+
                 //Go to top up confirmation
-                Profile_TopUpConfirmation(amountInput: $amountInput)
+                Profile_TopUpConfirmation()
                     .navigationBarHidden(true)
                 
             } label: {
@@ -58,7 +61,10 @@ struct Profile_EnterTopUpAmount: View {
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 15)
             }
-            .onTapGesture(perform: {showInsertTopUpAmountView.toggle()})
+            .onTapGesture(perform: {
+                showInsertTopUpAmountView.toggle()
+                viewModel.topUpAmount = Double(amountInput) ?? 0
+            })
             .font(.title2)
             .bold()
             .foregroundColor(.white)
