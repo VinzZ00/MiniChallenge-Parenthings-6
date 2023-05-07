@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ArticleModel : Codable {
+struct ArticleModel : Codable, Identifiable {
     var id : Int = 0
     var title : String = ""
     var author : String = ""
@@ -35,7 +35,7 @@ struct ArticleModel : Codable {
                             ,author: articlesCD.author  ?? ""
                             ,tag: articlesCD.tag  ?? ""
                             ,image: articlesCD.image  ?? ""
-                            ,article: articlesCD.image  ?? ""
+                            ,article: articlesCD.article  ?? ""
                             ,date: articlesCD.date  ?? ""
                             ,source: articlesCD.source  ?? "")
     }

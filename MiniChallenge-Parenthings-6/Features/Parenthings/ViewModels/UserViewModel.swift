@@ -11,13 +11,16 @@ class UserViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var isSigninSuccess: Bool = false
     @Published var isSignupSuccess: Bool = false
+    @Published var isLoggedIn: Bool = false
     @Published var errorMessage: String? = nil
     @Published var isError: Bool = false
+    @Published var response: UserApiModel = UserApiModel()
     
     let service: APIService
     
     init(service: APIService = APIService(isLogActive: true)) {
         self.service = service
+        getLoginSession()
     }
     
     func doSignin(phone: String) {
@@ -51,11 +54,12 @@ class UserViewModel: ObservableObject {
                     self.errorMessage = error.description
                     // print(error.description)
                     print(error)
-                    isError = true
+                    self.isError = true
                 case .success(let response):
                     print("success: \(response.id)")
 //                    print("--- sucess with \(breeds.count)")
 //                    self.breeds = breeds
+                    self.response = response
                     self.isSigninSuccess = true
                 }
             }
@@ -109,15 +113,52 @@ class UserViewModel: ObservableObject {
                     self.errorMessage = error.localizedDescription
                     // print(error.description)
                     print(error)
-                case .success(_):
+                case .success(let response):
                     print("success")
 //                    print("--- sucess with \(breeds.count)")
 //                    self.breeds = breeds
+                    self.response = response.data
                     self.isSignupSuccess = true
                 }
             }
         }
         
+    }
+    
+    func setLoginSession(userData: UserApiModel){
+        do {
+            let encodedData = try JSONEncoder().encode(userData)
+            let newValue: String =  String(data: encodedData,
+                                   encoding: .utf8) ?? ""
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(newValue.doEncryptAES(), forKey: Prompt.UserDefault.loginData)
+        
+        }catch {
+            print("error: \(error.localizedDescription)")
+        }
+    }
+
+    func getLoginSession() -> UserApiModel? {
+        let userDefaults = UserDefaults.standard
+        let stringData = (userDefaults.string(forKey: Prompt.UserDefault.loginData) ?? "").doDecryptAES()
+        do{
+            let dataFromJsonString = stringData.data(using: .utf8)
+            let userApiData = try JSONDecoder().decode(UserApiModel.self,
+                                                       from: dataFromJsonString!)
+            isLoggedIn = true
+            return userApiData
+
+        }catch {
+            print("error: \(error.localizedDescription)")
+        }
+        
+        return nil
+    }
+    
+    
+    func removeLoginSession(){
+        let userDefaults = UserDefaults.standard
+        userDefaults.removeObject(forKey:  Prompt.UserDefault.loginData)
     }
     
 }

@@ -94,7 +94,6 @@ struct ArticleDetailView: View {
 
         }
         .navigationBarHidden(true)
-        .toolbar(.hidden, for: .tabBar)
 
     }
 }

@@ -15,6 +15,7 @@ struct SignInView: View {
     @State var phone: String = ""
     @State var isOtp: Bool = false
     
+    
     var body: some View {
         ZStack{
             contentView
@@ -94,7 +95,7 @@ struct SignInView: View {
             }
             
             Spacer()
-            NavigationLink(destination:  OtpView(title: "Sign In", phone: "+62\(phone)"), isActive: $userViewModel.isSigninSuccess){
+            NavigationLink(destination:  OtpView(userData: userViewModel.response ,title: "Sign In", phone: "+62\(phone)"), isActive: $userViewModel.isSigninSuccess){
                 Button {
                     //                    isOtp = true
                     //Login Function

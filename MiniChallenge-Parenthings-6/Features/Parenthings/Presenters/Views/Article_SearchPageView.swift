@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ArticleSearchPage: View {
     
-    var searchedExperts : [Expert];
+    var searchedArticles : [ArticleModel];
     
     var body: some View {
         List{
@@ -26,9 +26,6 @@ struct ArticleSearchPage: View {
         .ignoresSafeArea()
         
         
-        
-        
-        
     }
     
 }
@@ -36,7 +33,7 @@ struct ArticleSearchPage: View {
 struct ArticleSearchPage_Previews: PreviewProvider {
     static var previews: some View {
         
-        ArticleSearchPage(searchedExperts: [Expert().sampleData()])
+        ArticleSearchPage(searchedArticles: [ArticleModel().sampleData()])
         
     }
 }

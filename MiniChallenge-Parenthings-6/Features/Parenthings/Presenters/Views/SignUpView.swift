@@ -106,7 +106,7 @@ struct SignUpView: View {
             }
             
             Spacer()
-            NavigationLink(destination:  OtpView(title: "Sign Up", phone: "+62\(phone)"), isActive: $userViewModel.isSignupSuccess){
+            NavigationLink(destination:  OtpView(userData: userViewModel.response, title: "Sign Up", phone: "+62\(phone)"), isActive: $userViewModel.isSignupSuccess){
                 Button {
 //                    isOtp = true
                     userViewModel.doSignup(phone:  "+62\(phone)", name: name)
