@@ -6,17 +6,20 @@
 //
 
 import Foundation
+import SwiftUI
 
 class ExpertViewModel : ObservableObject {
     
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
     @Published var isError: Bool = false
-    @Published var experts : [ExpertAPIModel] = [ExpertAPIModel]()
+    @Published var experts : [Expert] = [Expert]()
     
     let service : APIService = APIService(isLogActive: true)
     
-    
+    init() {
+        getAllExpert()
+    }
     
     
     func getAllExpert() {
@@ -34,7 +37,7 @@ class ExpertViewModel : ObservableObject {
         if request == nil {
             let error = APIError.badURL
             print(error)
-            return
+            return;
         }
         
         service.fetch([ExpertAPIModel].self, request: request!) { [unowned self] result in
@@ -47,18 +50,65 @@ class ExpertViewModel : ObservableObject {
                     self.errorMessage = error.localizedDescription
                     // print(error.description)
                     print(error)
-                case .success(let experts):
-                    print("--- sucess with \(experts.count)")
+                case .success(let retrievedExperts):
+                    print("--- sucess with \(retrievedExperts.count)")
+                    var edus = ExpertEducationViewModel()
+                    var exps = ExpertExperienceViewModel()
+                    
+                    edus.getExpertEducations()
+                    
+                    exps.getExpertExperience()
+                    
                     var gottenExpert : ExpertAPIModel;
-                    for exp in experts {
+                    
+                    for exp in retrievedExperts {
                         gottenExpert = exp;
                         
-                        //
+                    var lastEducation : ExpertEducationAPIModel? =
+                        edus.Educations.filter{
+                            $0.expert_id == exp.id
+                        }.last ?? nil
+                        
+//                        if edus.Educations.count != 0 {
+//                            lastEducation = edus.Educations.last!
+//                        }
+                        
+//                        exps.getExpertExperience(id: gottenExpert.id)
+                        
+                    var lastExperience : ExpertExperienceAPIModel? =
+                        exps.Experiences.filter{
+                            $0.expert_id == exp.id
+                        }.last ?? nil
+                        
+//                        if exps.Experiences.count != 0 {
+//                            lastExperience = exps.Experiences.last!
+//                        }
+                        
+//                        var expertImage : UIImage? = nil;
+//
+//                        let url = URL(string: gottenExpert.photo_url)
+//
+//                        if let data = try? Data(contentsOf: url!)
+//                        {
+//                            expertImage = UIImage(data: data) ?? UIImage(systemName: "person.fill")!
+//                        }
+                        
+                        var readyToUseExpert : Expert =
+                        Expert(
+                            name: gottenExpert.name,
+                            education: lastEducation?.name ?? "unknown",
+                            educationDesc: "",
+                            expDesc: "",
+                            imageBase64: gottenExpert.photo_url,
+                            isAvailable: true
+                            )
+                        
+                        self.experts.append(readyToUseExpert)
+                        print("Expert with id \(readyToUseExpert.id) is inserted")
                     }
                 }
             }
         }
+        
     }
-    
-    
 }

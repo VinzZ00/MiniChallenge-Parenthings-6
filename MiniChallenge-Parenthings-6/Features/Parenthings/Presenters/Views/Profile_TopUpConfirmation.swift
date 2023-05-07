@@ -11,12 +11,10 @@ struct Profile_TopUpConfirmation: View {
     @Environment(\.presentationMode) var presentationMode
 
     @EnvironmentObject var viewModel : parenthingsViewModel
-//    @State private var totalTopUp : Double = 0.0
     @State private var topUpFee = 2000.0
     @Binding var amountInput : String
     
-    
-    
+    var profileBalance = 0
     var body: some View {
         
 //        NavigationView {

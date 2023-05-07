@@ -35,7 +35,7 @@ struct APIService {
                 completion(Result.failure(APIError.badResponse(statusCode: response.statusCode)))
             }else if let data = data {
                 let decoder = JSONDecoder()
-                print("data: \(String(decoding: data ?? Data(), as: UTF8.self))")
+                print("data: \(String(decoding: data , as: UTF8.self))")
                 do {
                     let result = try decoder.decode(type, from: data)
                     completion(Result.success(result))

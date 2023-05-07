@@ -30,9 +30,6 @@ struct TopUpAmountComponent: View {
         VStack {
             VStack {
                 Button{
-//                    setSelectedAmount()
-//                    setAmount()
-//                    print(amount)
                 } label: {
                 }
                 .buttonStyle(.plain)

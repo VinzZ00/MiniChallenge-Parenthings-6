@@ -21,16 +21,31 @@ struct ShortExpertCard: View {
         
         VStack{
             HStack{
-                if let expImage = ExpertData.imageBase64.toUIImage() {
-                    Image(uiImage: expImage)
+//                if let expImage = ExpertData.imageBase64.toUIImage() {
+//                    Image(uiImage: expImage)
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(width: 62, height: 100)
+//                        .mask {
+//                            RoundedRectangle(cornerRadius: 15)
+//
+//                        }
+//                }
+                AsyncImage(url: URL(string: ExpertData.imageBase64 ?? "")) { image in
+                            image
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 62, height: 100)
-                        .mask {
+                        .frame(width: 67, height: 84)
+                        .mask(
                             RoundedRectangle(cornerRadius: 15)
-                        
+                            
+                        )
+                                
+                        } placeholder: {
+                            Image(uiImage : UIImage(named: "UniversalPlaceHolder")!)
+                            
                         }
-                }
+                        .frame(width: 67, height: 84)
                 
                 VStack{
                     HStack(alignment: .top){

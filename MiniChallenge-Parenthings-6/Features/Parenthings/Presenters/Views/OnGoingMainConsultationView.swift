@@ -9,11 +9,12 @@ import SwiftUI
 
 struct OnGoingMainConsultationPage: View {
     
+    @StateObject var expertViewModel : ExpertViewModel = ExpertViewModel();
     @EnvironmentObject var viewModel : parenthingsViewModel;
     
          //    untuk debug yaa
     var top3Experts : [Expert] {
-        return Array(viewModel.experts.savedExpert.sorted{$0.starCount > $1.starCount}[0...2])
+        return Array(expertViewModel.experts.sorted{$0.starCount > $1.starCount}[0...2])
     }
     
     var body: some View {
@@ -49,7 +50,7 @@ struct OnGoingMainConsultationPage: View {
                     Spacer()
                 }.padding(.bottom, 6)
                 Spacer()
-                if viewModel.experts.savedExpert.isEmpty {
+                if expertViewModel.experts.isEmpty {
                     Text("No Expert available")
                         .padding()
                 } else {
@@ -89,7 +90,7 @@ struct OnGoingMainConsultationPage: View {
             }.padding(.bottom, 6)
                 .padding(.top, 19)
             
-            if (viewModel.experts.savedExpert.isEmpty) {
+            if (expertViewModel.experts.isEmpty) {
                 Text("No Expert available")
                     .padding(.vertical, 20)
                 
@@ -98,7 +99,7 @@ struct OnGoingMainConsultationPage: View {
                     
                     HStack {
                         ForEach(
-                            viewModel.experts.savedExpert.prefix(3)
+                            expertViewModel.experts.prefix(3)
                             //                            x // Use this for testing
                             , id: \.self) { expert in
                                 ShortExpertCard(ExpertData: expert, buttonText: Prompt.Button.chat)

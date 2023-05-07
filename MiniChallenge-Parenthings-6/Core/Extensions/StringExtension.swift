@@ -37,7 +37,7 @@ extension StringProtocol {
 
 extension Text {
     init(html: String, alert: String? = nil) {
-        var text = "<style>body {font-size: 17px;font-family:\"SFProDisplay\"}</style> "
+        let text = "<style>body {font-size: 17px;font-family:\"SFProDisplay\"}</style> "
         do {
             try self.init((text + html).htmlToAttributedString())
         } catch {
