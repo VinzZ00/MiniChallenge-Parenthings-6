@@ -22,7 +22,7 @@ struct ProfileMainPageView: View {
         
         NavigationStack {
             VStack (spacing: 0){
-                CustomNavigationBar(title: Prompt.Title.profiles, enableBackButton: false, enableSearchBar: false, backButton: self.backButton)
+                CustomNavigationBar(title: Prompt.Title.profiles, enableBackButton: false, enableSearchBar: false, backButton:{})
                 
                 //Contents
                 VStack {
