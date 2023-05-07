@@ -42,6 +42,8 @@ class parenthingsViewModel : ObservableObject {
     
     @Published var isSignIn = false;
     
+    @Published var topUpAmount = 0;
+    
     
     var paymentDetail : (Image, String, Double) {
         switch self.selectedPayment {
