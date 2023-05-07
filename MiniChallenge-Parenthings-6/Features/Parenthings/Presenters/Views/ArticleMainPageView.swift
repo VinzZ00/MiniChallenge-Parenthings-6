@@ -40,14 +40,13 @@ struct ArticleMainPageView: View {
                 VStack {
                     if (viewModel.textFieldIsClicked) {
                         VStack {
-                            NavigationLink(destination:  ArticleSearchPage(searchedArticles: articleViewModel.articles.filter{
-                                $0.title.contains(viewModel.searchExpertBarValue)
+                            
+                            ArticleSearchPage(searchedArticles: articleViewModel.articles.filter{
+                                $0.title.range(of: searchBarValue, options: .caseInsensitive) != nil 
                             })
                                 .transition(.move(edge: .bottom))
-                                .padding(.vertical, 16)) {
-                              EmptyView()
-                            }
-
+                                .padding(.vertical, 16)
+                            
                         }
                     }else{
                         ScrollView(.vertical) {

@@ -22,7 +22,7 @@ struct ConsultationSearchPage: View {
             ScrollView(.vertical) {
                 VStack{
                     SearchPage(searchedExperts: expertViewModel.experts.filter{
-                        $0.name.contains(viewModel.searchExpertBarValue)
+                        $0.name.range(of: viewModel.searchExpertBarValue, options: .caseInsensitive) != nil
                     })
                     
                 }

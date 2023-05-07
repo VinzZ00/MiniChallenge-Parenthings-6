@@ -14,9 +14,9 @@ struct ArticleSearchPage: View {
     
     var body: some View {
         List{
-            ForEach(0..<4, id : \.self) { indx in
+            ForEach(searchedArticles, id : \.self) { articles in
               
-                LongArticleCard(articleData: ArticleModel().sampleData(), buttonText: Prompt.Button.chat)
+                LongArticleCard(articleData: articles, buttonText: Prompt.Button.chat)
                 
                     .frame(width: UIScreen.screenWidth)
                 
