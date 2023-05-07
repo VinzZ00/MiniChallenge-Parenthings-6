@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ArticleModel : Codable, Identifiable {
+struct ArticleModel : Codable, Identifiable, Hashable {
     var id : Int = 0
     var title : String = ""
     var author : String = ""

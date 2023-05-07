@@ -11,6 +11,7 @@ import Combine
 import Chat
 
 class parenthingsViewModel : ObservableObject {
+    
     @Published var expertDetailIsPresented : Bool = false;
     @Published var selectedExpert : Expert?
     @Published var textFieldIsClicked = false;
@@ -18,6 +19,9 @@ class parenthingsViewModel : ObservableObject {
     
     @Published var consultationDetailIsPresented : Bool = false;
     @Published var selectedConsultation : ConsultationTransaction?
+    
+//    @Published var articleSearchBarValue : String = ""
+    @Published var searchedArticles : [ArticleModel] = [];
     
     @Published var user : User?
     //bahan cmp nyoba"
