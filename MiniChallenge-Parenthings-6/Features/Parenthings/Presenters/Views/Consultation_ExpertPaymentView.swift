@@ -19,7 +19,7 @@ struct ExpertPaymentView: View {
     @State var chatViewModel : ChatViewModel?
     @State var userName : String = "No Name"
     @State var userBalance : Double = 0.0
-    
+    @State var isCouponRedeemed : Bool = false
     //    init(expert : Expert, _ user : User, vm : parenthingsViewModel, backButton : () -> Void) {
     //        self.expert = expert
     //        self._transactionDetail = State(initialValue : ConsultationTransaction(expert: expert, TransactionDate: Date(), payWith: .Parenthing))
@@ -103,39 +103,58 @@ struct ExpertPaymentView: View {
                     TransactionDetailViewComponent(transactionDetail: transactionDetail, useDivider : true
                     )
                     
-                    HStack{
-                        HStack{
-                            Image("promo-code")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 33.88, height: 29.26)
-                                .padding()
-                        }
-                        .frame(width: 50, height: 50)
-                        .background(Color.white)
-                        .clipShape(Circle())
-                        .padding(.leading, 12)
-                        .padding(.trailing, 11)
-                        .padding(.vertical, 10)
-                        
-                        Text("Apply Your Coupon")
-                            .font(.system(size: 15, weight: .semibold))
-                        
-                        Spacer()
-                        
-                        Text(.init(systemName: "chevron.right"))
-                            .padding(.trailing, 10)
-                    }
-                    .background(AppColor.systemGray)
-                    .clipShape(
-                        RoundedRectangle(cornerRadius: 15)
-                    )
-                    .padding(.horizontal, 18)
-                    .padding(.top, 15)
-                    .frame(height: 70)
                     
                     
                     // letakin kupons
+                    NavigationLink {
+                        Consultation_RedeemCouponView(isCouponRedeemed: $isCouponRedeemed)
+                            .navigationBarHidden(true)
+                            .toolbar(.hidden, for: .tabBar)
+                    } label: {
+                        HStack{
+                            HStack{
+                                Image(Prompt.Icon.promoCode)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 33.88, height: 29.26)
+                                    .padding()
+                            }
+                            .frame(width: 50, height: 50)
+                            .background(Color.white)
+                            .clipShape(Circle())
+                            .padding(.leading, 12)
+                            .padding(.trailing, 11)
+                            .padding(.vertical, 10)
+                            
+                            if isCouponRedeemed {
+                                Text("Coupon Applied")
+                                    .font(.system(size: 15, weight: .semibold))
+                                
+                            } else {
+                                Text("Apply Your Coupon")
+                                    .font(.system(size: 15, weight: .semibold))
+                            }
+                            
+                            Spacer()
+                            
+                            Text(.init(systemName: "chevron.right"))
+                                .padding(.trailing, 10)
+                        }
+                        .background(AppColor.systemGray)
+                        .foregroundColor(.black)
+                        .clipShape(
+                            RoundedRectangle(cornerRadius: 15)
+                        )
+                        .padding(.horizontal, 18)
+                        .padding(.top, 15)
+                        .frame(height: 70)
+                    }
+//                    .navigationDestination(isPresented: $isActive) {
+//                        PaymentSuccessPageView(amountInput: $amountInput, topUpFee: $topUpFee)
+//                            .navigationBarHidden(true)
+//                            .toolbar(.hidden, for: .tabBar)
+//                    }
+                    
                     
                     
                     
@@ -269,8 +288,9 @@ struct ExpertPaymentView: View {
                     
                 )
                 .blur(radius: (viewModel.choosePayment) ? 10 : 0)
-                
                 .navigationBarHidden(false)
+                
+                
                 if (viewModel.choosePayment) {
                     VStack(alignment: .leading) {
                         VStack(alignment: .leading){
@@ -340,6 +360,7 @@ struct ExpertPaymentView: View {
                     )
                     
                 }
+                
             }.onAppear{
                 let userApiModel = userViewModel.getLoginSession()
                 
