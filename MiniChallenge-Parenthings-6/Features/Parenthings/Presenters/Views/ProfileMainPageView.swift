@@ -9,19 +9,19 @@ import SwiftUI
 
 struct ProfileMainPageView: View {
     
-    @State private var showAlert: Bool = false
     @EnvironmentObject var userViewModel: UserViewModel
+    
+    @State private var showAlert: Bool = false
     @State private var navigate = false
-
     @State var profileName = "Username"
     @State var profilePhone = "+6200000000000"
     @State var profileBalance: Double = 0.0
     
     @Binding var selection: String
+    
     var profileNameDefault = "Username"
     var profilePhoneDefault = "+6200000000000"
     var profileBalanceDefault : Double = 50_000
-    
     var backButton : () -> Void;
 
     var body: some View {
@@ -67,8 +67,6 @@ struct ProfileMainPageView: View {
                                     Text(profileName)
                                         .font(.system(size: 22, weight: .bold))
                                     Spacer()
-                                    
-                                 
                                         Button {
                                             userViewModel.gotoEditPage = true
                                         } label: {
@@ -110,7 +108,7 @@ struct ProfileMainPageView: View {
                                 //Top up button
                                 NavigationLink {
                                     //Go to top up page
-                                    Profile_TopUpView()
+                                    Profile_TopUpView(profileBalance: $profileBalance)
                                         .navigationBarHidden(true)
                                         .toolbar(.hidden, for: .tabBar)
                                 } label: {
@@ -146,34 +144,21 @@ struct ProfileMainPageView: View {
                         
                         
                         //Profile Menus
-                        //                    VStack {
-                        //Payment Method
-                        //                        ProfileMenuComponent(imageName: Prompt.Icon.paymentMethod, imageText: Prompt.Button.paymentMethod)
+//                        VStack {
+//                            //Payment Method
+//                            ProfileMenuComponent(imageName: Prompt.Icon.paymentMethod, imageText: Prompt.Button.paymentMethod)
+//
+//                            //Help
+//                            ProfileMenuComponent(imageName: Prompt.Icon.help, imageText: Prompt.Button.help)
+//
+//                            //Reddem coupon
+//                            ProfileMenuComponent(imageName: Prompt.Icon.reedeemCoupon, imageText: Prompt.Button.redeemCoupon)
+//                        }
+//                        .padding(.top, 20)
                         
-                        //Help
-                        //                        ProfileMenuComponent(imageName: Prompt.Icon.help, imageText: Prompt.Button.help)
                         
-                        //Reddem coupon
-                        //                        ProfileMenuComponent(imageName: Prompt.Icon.reedeemCoupon, imageText: Prompt.Button.redeemCoupon)
-                        //                    }
-                        //                    .padding(.top, 20)
-                        
-                        
-                        //                    //Log out button
+                        //Log out button
                         LogOutButtonComponent(showAlert: $showAlert, selection: $selection)
-                        //                    Button {
-                        //
-                        //                    } label: {
-                        //                        ImageLabel(imageName: Prompt.Icon.logOut, imageText: Prompt.Button.logOut, isCustom: false)
-                        //                            .frame(maxWidth: .infinity)
-                        //                            .padding(.vertical, 10)
-                        //                            .overlay(
-                        //                                RoundedRectangle(cornerRadius: 10)
-                        //                                    .stroke(AppColor.grayLightColor, lineWidth: 1)
-                        //                            )
-                        //                    }
-                        //                    .padding(.top, 50)
-                        //                    .foregroundColor(AppColor.paymentBlueTextColor)
                         
                         Spacer()
                     }
