@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct ConsultationDetailView: View {
     
+    var maxRating = 5;
     @State var ratingScore : Int = 0;
+    @EnvironmentObject var viewModel : parenthingsViewModel;
+    
     var expert : Expert
     var transactionDetail : ConsultationTransaction
     var backButton : () -> Void;
@@ -36,9 +40,21 @@ struct ConsultationDetailView: View {
                         .font(.system(size : 20, weight: .bold))
                 }.padding(.top, 23)
                 
-                StarRatingButton(rating: $ratingScore)
-                    .animation(.linear(duration: 0.3), value: ratingScore)
-                    .padding(.bottom, 20)
+                HStack {
+                    ForEach(0..<maxRating, id : \.self) { index in
+                        Image(systemName: "star.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 51)
+                            .foregroundColor(index < ratingScore ? Color.yellow : Color.gray.opacity(0.2))
+                            .onTapGesture {
+                                ratingScore = index + 1
+                                viewModel.ratingScore = ratingScore;
+                            }
+                            
+                    }
+                }
+                
                 horizontalLine();
                 
                 HStack(spacing: 0){
@@ -86,7 +102,7 @@ struct ConsultationDetailView: View {
                         
                         StarRatingView(rating: expert.starCount)
                             .padding(.top, 4)
-                        
+                            
                         Spacer()
                     }.frame(height: 85)
                     Spacer(); //Spacer HStack
@@ -160,7 +176,20 @@ struct ConsultationDetailView: View {
                 
         }.background(AppBackground())
         
+        
+        
     }
+    private func getStarName(for index: Int) -> String {
+        let roundedRating = round(Double(ratingScore) * 2) / 2
+        if index <= Int(roundedRating) {
+            return "star.fill"
+        } else if roundedRating - Double(index) >= -0.5 {
+            return "star.lefthalf.fill"
+        } else {
+            return "star"
+        }
+    }
+    
 }
 
 private struct horizontalLine : View {
