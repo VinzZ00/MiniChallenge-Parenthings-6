@@ -132,10 +132,10 @@ struct BottomConfirmationComponent: View {
                     } label: {
                         Button {
                             //NO API
-                            viewModel.addUserBalance(amount: Double(amountInput) ?? 0)
-                            viewModel.topUpAmount = Double(amountInput) ?? 0
-                            viewModel.topUpFee = topUpFee
-                            viewModel.totalPayment = viewModel.getTotalAmountPaid(amount: Double(amountInput) ?? 0, fee: topUpFee)
+//                            viewModel.addUserBalance(amount: Double(amountInput) ?? 0)
+//                            viewModel.topUpAmount = Double(amountInput) ?? 0
+//                            viewModel.topUpFee = topUpFee
+//                            viewModel.totalPayment = viewModel.getTotalAmountPaid(amount: Double(amountInput) ?? 0, fee: topUpFee)
 
                             //USE API
                             userViewModel.doUpdate(id: userId, balance: userBalance)
@@ -153,25 +153,6 @@ struct BottomConfirmationComponent: View {
                             .navigationBarHidden(true)
                             .toolbar(.hidden, for: .tabBar)
                     }
-                    
-                    //                    NavigationLink (
-                    //                        destination: PaymentSuccessPageView(totalTopUp: $totalTopUp)
-                    //                            .navigationBarHidden(true),
-                    //                        isActive: $isActive,
-                    //                        label: {
-                    //                            Text(Prompt.Button.confirmAndTopUp)
-                    //                                .frame(maxWidth: .infinity)
-                    //                                .padding(.vertical, 15)
-                    //                        }
-                    //                    )
-                    //                    .onChange(of: isActive) { (newValue) in
-                    //                        if newValue {
-                    //                            viewModel.addUserBalance(amount: Double(amountInput) ?? 0)
-                    //                            totalTopUp = viewModel.getTotalAmountPaid(amount: Double(amountInput) ?? 0, fee: 2)
-                    //    //                        viewModel.userTest?.balanceParenting += Double(amountInput)!
-                    //                        }
-                    
-                    //                    }
                     .font(.title2)
                     .bold()
                     .foregroundColor(.white)

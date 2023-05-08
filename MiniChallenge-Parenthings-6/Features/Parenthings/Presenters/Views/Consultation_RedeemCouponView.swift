@@ -9,13 +9,18 @@ import SwiftUI
 
 struct Consultation_RedeemCouponView: View {
         
+    @Environment(\.presentationMode) var presentationMode
+
     @State var couponTextfieldText: String = ""
+    @Binding var isCouponRedeemed : Bool
     
     var body: some View {
         
 //        NavigationView {
             VStack (spacing: 0){
-                CustomNavigationBar(title: Prompt.Title.redeemCoupon, enableBackButton: false, enableSearchBar: false, backButton: {} )
+                CustomNavigationBar(title: Prompt.Title.redeemCoupon, enableBackButton: true, enableSearchBar: false, backButton: {
+                    presentationMode.wrappedValue.dismiss()
+                } )
                 
                 
                 //Contents
@@ -46,10 +51,16 @@ struct Consultation_RedeemCouponView: View {
                 
                 Spacer()
                 
-                //Button
+                //Button Continue
                 VStack {
                     Button {
+                        if couponTextfieldText != "" {
+                            isCouponRedeemed = true
+                        } else {
+                            isCouponRedeemed = false
+                        }
                         
+                        presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text(Prompt.Button.verifyCode)
                             .frame(maxWidth: .infinity)
@@ -69,6 +80,6 @@ struct Consultation_RedeemCouponView: View {
 
 struct Consultation_RedeemCouponView_Previews: PreviewProvider {
     static var previews: some View {
-        Consultation_RedeemCouponView()
+        Consultation_RedeemCouponView(isCouponRedeemed: .constant(false))
     }
 }

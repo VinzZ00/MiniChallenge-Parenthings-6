@@ -25,10 +25,10 @@ struct Profile_TopUpView: View {
 
     @EnvironmentObject var viewModel : parenthingsViewModel;
     @State private var showInsertTopUpAmountView = false
-    
     @State private var amountInput = ""
     
-    var profileBalanceDefault: Double = 50_000
+    @Binding var profileBalance : Double
+//    var profileBalanceDefault: Double = 50_000
 
     var body: some View {
         
@@ -62,7 +62,7 @@ struct Profile_TopUpView: View {
                                 HStack {
                                     Text(Prompt.paymentContent.balance)
                                         .foregroundColor(.gray)
-                                    Text("Rp \(viewModel.userTest?.balanceParenting.defaultTrailingZero() ?? profileBalanceDefault.defaultTrailingZero())")
+                                    Text("Rp \(profileBalance.defaultTrailingZero())")
                                         .bold()
                                 }
                             }
@@ -205,7 +205,7 @@ struct Profile_TopUpView: View {
 
 struct Profile_TopUpView_Previews: PreviewProvider {
     static var previews: some View {
-        Profile_TopUpView()
+        Profile_TopUpView(profileBalance: .constant(0.0))
             .environmentObject(parenthingsViewModel())
     }
 }

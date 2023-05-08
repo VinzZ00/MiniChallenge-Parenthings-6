@@ -28,7 +28,7 @@ class parenthingsViewModel : ObservableObject {
     
     @Published var user : User?
     //bahan cmp nyoba"
-    @Published var userTest: User? = User(name: "Elvin", balanceParenting: 35000); //in Production ini tidak diisi disini tp, dari sign in page.
+//    @Published var userTest: User? = User(name: "Elvin", balanceParenting: 35000); //in Production ini tidak diisi disini tp, dari sign in page.
 //    @Published var experts : ExpertRepository = ExpertRepository();
     
     @Published var navBarShown : Bool = true;
@@ -76,7 +76,7 @@ class parenthingsViewModel : ObservableObject {
     }
     
     func addUserBalance(amount: Double) {
-        userTest?.balanceParenting += amount
+        user?.balanceParenting += amount
     }
 
     func getTotalAmountPaid(amount: Double, fee: Double) -> Double{
