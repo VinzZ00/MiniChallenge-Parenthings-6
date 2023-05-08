@@ -20,7 +20,7 @@ final class ChatInteractor: ChatInteractorProtocol {
     }
     
     var senders: [Chat.User] {
-        var Users = [chatData.otherSender, chatData.currentUser]
+        let Users = [chatData.otherSender, chatData.currentUser]
         return Users
     }
     

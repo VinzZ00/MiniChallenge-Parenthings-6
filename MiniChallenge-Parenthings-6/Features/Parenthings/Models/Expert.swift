@@ -10,7 +10,7 @@ import SwiftUI
 
 typealias encodedBase64 = String;
 
-struct Expert : Identifiable, Hashable {
+struct Expert : Codable, Identifiable, Hashable {
     let id : UUID?
     var name : String = ""
     var role : String = ""

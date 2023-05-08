@@ -31,7 +31,7 @@ struct ShortExpertCard: View {
                 //
                 //                        }
                 //                }
-                VStack {
+                VStack(alignment: .leading) {
                     AsyncImage(url: URL(string: ExpertData.imageBase64 ?? "")) { image in
                         image
                             .resizable()
@@ -82,6 +82,7 @@ struct ShortExpertCard: View {
                     StarRatingView(rating: ExpertData.starCount)
                     
                 }
+                Spacer()
             }
             HStack{
                 Text("Rp. \(String(format :  "%.2f", ExpertData.price))")
@@ -91,6 +92,7 @@ struct ShortExpertCard: View {
                     withAnimation {
                         viewModel.expertDetailIsPresented = true
                         viewModel.selectedExpert = ExpertData
+                        viewModel.setSelectedExpert(userData: ExpertData)
                     }
                 } label: {
                     VStack {

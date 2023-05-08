@@ -47,7 +47,7 @@ class ArticleViewModel: ObservableObject {
             addArticle(articles: articles)
         }catch{
             errorMessage = error.localizedDescription
-            print(errorMessage)
+            print(errorMessage ?? "")
         }
         isLoading = false
         isError = errorMessage != nil

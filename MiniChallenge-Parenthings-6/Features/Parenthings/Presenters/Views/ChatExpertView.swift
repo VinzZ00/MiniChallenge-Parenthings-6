@@ -12,9 +12,11 @@ struct ChatExpert: View {
     
     
     //Testing doang
-    var selectedExpert : Expert = Expert(id : UUID(), name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false)
+//    var selectedExpert : Expert = Expert(id : UUID(), name: "Peter Parker", role: "Dokter Kandungan",education: "Dokter", educationDesc: "EducationDescription", longExp: 5, expDesc: "Experience Description", price: 20000, starCount: 4.5, imageBase64: (UIImage(named: "UniversalPlaceHolder")?.toBase64())!, isAvailable: false)
 //    var selectedConsultation : ConsultationTransaction
-    
+    @State var selectedExpert : Expert;
+    @StateObject var userViewModel = UserViewModel()
+    @State var userApiModel: UserApiModel = UserApiModel()
     @EnvironmentObject var viewModel : parenthingsViewModel;
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -36,15 +38,25 @@ struct ChatExpert: View {
                         .padding(.trailing, 14)
                 }
                 
-                Image(uiImage: (viewModel.selectedConsultation!.expert.imageBase64.toUIImage() ?? UIImage(systemName: "person.fill"))!) // Ganti selected Expert jadi transaction.expert
-                    .resizable()
-                    .scaledToFit()
-                    .clipShape(Circle())
-                    .frame(width: 90, height: 90)
-                    .padding(.trailing, 14)
+                AsyncImage(url: URL(string: selectedExpert.imageBase64 ?? "")) { image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                        .clipShape(Circle())
+                        .frame(width: 63, height: 63)
+                       
+                } placeholder: {
+                    Image(systemName: "person.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .clipShape(Circle())
+                        .frame(width: 63, height: 63)
+
+                    
+                }
                 
                 VStack(alignment: .leading, spacing: 4){
-                    Text("\(viewModel.selectedConsultation!.expert.name)") // Ganti selected Expert jadi transaction.expert
+                    Text("\(selectedExpert.name)") // Ganti selected Expert jadi transaction.expert
                         .font(.system(size : 22, weight: .bold))
                         .foregroundColor(.white)
                     
@@ -56,7 +68,6 @@ struct ChatExpert: View {
                     viewModel.remainingTime -= 1
                 }
             }
-            
             
             ChatView(messages: viewModel.messages) { draft in
                 viewModel.send(draft: draft)
@@ -70,7 +81,12 @@ struct ChatExpert: View {
             
             
             Spacer();
-        }.background(
+        }
+        .onAppear{
+            userApiModel = userViewModel.getLoginSession() ?? UserApiModel()
+            selectedExpert = viewModel.getSelectedExpert()!
+        }
+        .background(
             VStack{
                 Spacer()
             }.background(

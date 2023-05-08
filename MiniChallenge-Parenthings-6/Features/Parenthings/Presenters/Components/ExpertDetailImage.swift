@@ -13,10 +13,22 @@ struct ExpertDetailImage: View {
     
     var body: some View {
         ZStack{
-            Image(uiImage:  selectedExpert.imageBase64.toUIImage() ?? UIImage(systemName: "photo.fill")!)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 357, height: 257)
+//            Image(uiImage:  selectedExpert.imageBase64.toUIImage() ?? UIImage(systemName: "photo.fill")!)
+//                .resizable()
+//                .scaledToFit()
+//                .frame(width: 357, height: 257)
+            
+            AsyncImage(url: URL(string: selectedExpert.imageBase64 ?? "")) { image in
+                image
+                    .resizable()
+                    .frame(width: 357, height: 257)
+            } placeholder: {
+                Image(uiImage : UIImage(systemName: "photo.fill")!)
+                    .resizable()
+                    .frame(width: 357, height: 257)
+                   
+            }
+            
             VStack{
                 Spacer()
                 HStack{

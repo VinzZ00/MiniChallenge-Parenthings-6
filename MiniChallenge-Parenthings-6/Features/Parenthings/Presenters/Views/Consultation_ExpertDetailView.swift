@@ -10,11 +10,10 @@ import SwiftUI
 struct ExpertDetail: View {
     
     @EnvironmentObject var viewModel : parenthingsViewModel;
+    @StateObject var userViewModel = UserViewModel()
     @State var consultNow : Bool = false;
     @Environment(\.presentationMode) var presentationMode
-    
-    
-    
+        
     
     var body: some View {
         NavigationView {
@@ -117,13 +116,20 @@ struct ExpertDetail: View {
                 }
                     .frame(height: 640)
                
-                if viewModel.user != nil
+                if userViewModel.isLoggedIn
                 {
                     NavigationLink("", destination: ExpertPaymentView(expert: viewModel.selectedExpert!).navigationBarHidden(true), isActive: $viewModel.isSignIn)
                 } else {
-                    NavigationLink("", destination: SignInPopUP().navigationBarHidden(true), isActive: $viewModel.isSignIn)
+                    NavigationLink("", destination:    SignInPopUP()
+                        .transition(.move(edge: .bottom))
+                        .animation(.linear, value: true)
+                        .navigationBarHidden(true)
+                        .environmentObject(userViewModel), isActive: $viewModel.isSignIn)
                 }
                 
+            }
+            .onAppear{
+                userViewModel.getLoginSession()
             }
             .transition(.move(edge: .leading))
             .background(
