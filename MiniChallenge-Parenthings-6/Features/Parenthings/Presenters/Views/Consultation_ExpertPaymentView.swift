@@ -78,11 +78,13 @@ struct ExpertPaymentView: View {
                             image
                                 .resizable()
                                 .frame(width: 63, height: 63)
-                               
+                                .cornerRadius(8)
+
                         } placeholder: {
                             Image(systemName: "person.fill")
                                 .resizable()
                                 .frame(width: 63, height: 63)
+                                .cornerRadius(8)
 
                             
                         }
@@ -234,7 +236,7 @@ struct ExpertPaymentView: View {
                     )
                     .frame(width: 393, height: 83)
                     
-                    NavigationLink("", destination: ChatExpert(selectedExpert: expert).navigationBarHidden(true), isActive: $viewModel.startConsulting)
+                    NavigationLink("", destination: ChatExpert(selectedExpert: expert).navigationBarHidden(true).environmentObject(viewModel), isActive: $viewModel.startConsulting)
                     
                 }
                 .transition(.opacity)
