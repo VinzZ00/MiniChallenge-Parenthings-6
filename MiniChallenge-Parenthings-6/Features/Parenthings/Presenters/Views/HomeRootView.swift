@@ -28,6 +28,13 @@ struct HomeRootView: View {
             ExpertDetail()
                 .transition(.move(edge: .trailing))
                 .environmentObject(viewModel)
+        }else if viewModel.consultationDetailIsPresented {
+            
+            ConsultationDetailView(expert: viewModel.selectedExpert!, transactionDetail: viewModel.selectedConsultation!, backButton: {
+                presentationMode.wrappedValue.dismiss()
+            })
+                .transition(.move(edge: .trailing))
+                .environmentObject(viewModel)
         }else if userViewModel.gotoLoginPage {
             SignInPopUP()
                .transition(.move(edge: .bottom))

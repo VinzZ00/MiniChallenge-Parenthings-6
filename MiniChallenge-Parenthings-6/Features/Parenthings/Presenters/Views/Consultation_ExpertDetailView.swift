@@ -50,7 +50,7 @@ struct ExpertDetail: View {
                             HStack {
                                 Image(systemName: "cross.case.fill")
                                 Text("\(viewModel.selectedExpert!.longExp) Years")
-                                    .font(.system(size: 12))
+                                    .font(.system(size: 10))
                                 
                             }
                             .frame(width: 77, height: 22)

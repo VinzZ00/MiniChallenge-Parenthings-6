@@ -42,19 +42,22 @@ struct ConsultationDetailView: View {
                 horizontalLine();
                 
                 HStack(spacing: 0){
-                    if expert.imageBase64.toUIImage() != nil  {
-                        Image(uiImage: expert.imageBase64.toUIImage()!)
+                    AsyncImage(url: URL(string: expert.imageBase64 ?? "")) { image in
+                        image
                             .resizable()
-                            .scaledToFit()
-                            .frame(width: 67, height: 84)
+                            .frame(width: 63, height: 63)
                             .padding(EdgeInsets(top: 14, leading: 28, bottom: 10, trailing: 24))
-                    } else {
+
+                    } placeholder: {
                         Image(systemName: "person.fill")
                             .resizable()
-                            .scaledToFit()
-                            .frame(width: 67, height: 84)
+                            .frame(width: 63, height: 63)
                             .padding(EdgeInsets(top: 14, leading: 28, bottom: 10, trailing: 24))
+
+                        
                     }
+                   
+                    
                     VStack(alignment: .leading, spacing: 0){
                         Spacer();
                         Text("\(expert.name)")
@@ -72,7 +75,7 @@ struct ConsultationDetailView: View {
                         HStack {
                             Image(systemName: "cross.case.fill")
                             Text("\(expert.longExp) Years")
-                                .font(.system(size: 12))
+                                .font(.system(size: 10))
                             
                         }
                         .frame(width: 77, height: 22)
