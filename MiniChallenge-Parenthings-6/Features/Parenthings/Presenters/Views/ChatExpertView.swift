@@ -18,7 +18,8 @@ struct ChatExpert: View {
     @StateObject var userViewModel = UserViewModel()
     @State var userApiModel: UserApiModel = UserApiModel()
     @EnvironmentObject var viewModel : parenthingsViewModel;
-    
+    @State var chatViewModel : ChatViewModel?
+
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     
@@ -61,6 +62,7 @@ struct ChatExpert: View {
                         .foregroundColor(.white)
                     
                     Text("\(.init(systemName: "clock.fill")) \(Int(viewModel.remainingTime/60)) Minutes remaining")
+                        .foregroundColor(.white)
                 }
              Spacer()
             }.onReceive(timer) { time in
@@ -69,14 +71,17 @@ struct ChatExpert: View {
                 }
             }
             
-            ChatView(messages: viewModel.messages) { draft in
-                viewModel.send(draft: draft)
+            ChatView(messages: chatViewModel?.messages ?? []) { draft in
+                chatViewModel?.send(draft: draft)
             }
+            .enableLoadMore(offset: 3) { message in
+                       viewModel.loadMoreMessage(before: message)
+                   }
             .onAppear{
-                viewModel.onStart()
+                chatViewModel?.onStart()
             }
             .onDisappear{
-                viewModel.onStop()
+                chatViewModel?.onStop()
             }
             
             
@@ -85,6 +90,10 @@ struct ChatExpert: View {
         .onAppear{
             userApiModel = userViewModel.getLoginSession() ?? UserApiModel()
             selectedExpert = viewModel.getSelectedExpert()!
+            let userChat = User(id: UUID(uuidString: userApiModel.id ), name: userApiModel.name , balanceParenting: userApiModel.balance )
+            self.chatViewModel = ChatViewModel(currentUser: userChat, expert: selectedExpert);
+            
+            
         }
         .background(
             VStack{
