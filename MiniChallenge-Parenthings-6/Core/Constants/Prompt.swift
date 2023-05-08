@@ -45,7 +45,7 @@ extension Prompt {
         static let amount6 = "IconTopUpAmount6"
         
         //custom icon
-        static let promoCode = "IconPromoCode"
+        static let promoCode = "promo-code"
         
         private init() {}
     }
