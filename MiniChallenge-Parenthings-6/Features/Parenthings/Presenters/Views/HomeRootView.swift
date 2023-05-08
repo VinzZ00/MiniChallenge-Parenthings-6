@@ -19,9 +19,11 @@ struct HomeRootView: View {
 //        NavigationView{
 //            VStack{
         if viewModel.startConsulting {
-            ChatExpert()
-                .transition(.move(edge: .leading))
-                .environmentObject(viewModel)
+            if viewModel.getSelectedExpert() != nil {
+                ChatExpert(selectedExpert: viewModel.getSelectedExpert()!)
+                    .transition(.move(edge: .leading))
+                    .environmentObject(viewModel)
+            }
         } else if viewModel.expertDetailIsPresented {
             ExpertDetail()
                 .transition(.move(edge: .trailing))

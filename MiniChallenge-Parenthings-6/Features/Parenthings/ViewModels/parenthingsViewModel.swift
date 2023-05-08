@@ -162,6 +162,44 @@ class parenthingsViewModel : ObservableObject {
             .sink { _ in }
             .store(in: &subscriptions)
     }
+    
+    
+    func setSelectedExpert(userData: Expert){
+        do {
+            let encodedData = try JSONEncoder().encode(userData)
+            let newValue: String =  String(data: encodedData,
+                                   encoding: .utf8) ?? ""
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(newValue.doEncryptAES(), forKey: Prompt.UserDefault.expertData)
+        
+        }catch {
+            print("error: \(error.localizedDescription)")
+        }
+    }
+
+    func getSelectedExpert() -> Expert? {
+        let userDefaults = UserDefaults.standard
+        let stringData = (userDefaults.string(forKey: Prompt.UserDefault.expertData) ?? "").doDecryptAES()
+        do{
+            let dataFromJsonString = stringData.data(using: .utf8)
+            let userApiData = try JSONDecoder().decode(Expert.self,
+                                                       from: dataFromJsonString!)
+            return userApiData
+
+        }catch {
+            print("error: \(error.localizedDescription)")
+        }
+        
+        return nil
+    }
+    
+    
+    func removeSelectedExpert(){
+        let userDefaults = UserDefaults.standard
+        userDefaults.removeObject(forKey:  Prompt.UserDefault.expertData)
+    }
+    
+    
 }
 
 struct CreateMessage {

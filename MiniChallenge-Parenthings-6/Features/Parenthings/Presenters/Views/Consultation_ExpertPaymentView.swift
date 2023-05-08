@@ -10,11 +10,15 @@ import SwiftUI
 struct ExpertPaymentView: View {
     
     @EnvironmentObject var viewModel : parenthingsViewModel;
+    @StateObject var userViewModel = UserViewModel()
+
     var expert : Expert;
     @State var transactionDetail : ConsultationTransaction;
     
     @Environment(\.presentationMode) var presentationMode
     @State var chatViewModel : ChatViewModel?
+    @State var userName : String = "No Name"
+    @State var userBalance : Double = 0.0
     
     //    init(expert : Expert, _ user : User, vm : parenthingsViewModel, backButton : () -> Void) {
     //        self.expert = expert
@@ -41,7 +45,7 @@ struct ExpertPaymentView: View {
                         }
                         .padding(.leading, 16)
                         HStack{
-                            Text(viewModel.user?.name ?? "No Name")
+                            Text(userName)
                                 .font(.system(size: 17, weight: .bold))
                             Spacer();
                         }
@@ -58,17 +62,29 @@ struct ExpertPaymentView: View {
                     
                     HStack {
                         
-                        if expert.imageBase64.toUIImage() != nil  {
-                            Image(uiImage: expert.imageBase64.toUIImage()!)
+//                        if expert.imageBase64.toUIImage() != nil  {
+//                            Image(uiImage: expert.imageBase64.toUIImage()!)
+//                                .resizable()
+//                                .scaledToFit()
+//                                .frame(width: 63, height: 79)
+//
+//                        } else {
+//                            Image(systemName: "person.fill")
+//                                .resizable()
+//                                .scaledToFit()
+//                                .frame(width: 63, height: 79)
+//                        }
+                        AsyncImage(url: URL(string: expert.imageBase64 ?? "")) { image in
+                            image
                                 .resizable()
-                                .scaledToFit()
-                                .frame(width: 63, height: 79)
-                            
-                        } else {
+                                .frame(width: 63, height: 63)
+                               
+                        } placeholder: {
                             Image(systemName: "person.fill")
                                 .resizable()
-                                .scaledToFit()
-                                .frame(width: 63, height: 79)
+                                .frame(width: 63, height: 63)
+
+                            
                         }
                         
                         VStack (alignment: .leading){
@@ -80,7 +96,7 @@ struct ExpertPaymentView: View {
                         }
                         
                         Spacer()
-                    }
+                    }.padding(.leading, 16)
                     
                     
                     
@@ -199,7 +215,7 @@ struct ExpertPaymentView: View {
                     )
                     .frame(width: 393, height: 83)
                     
-                    NavigationLink("", destination: ChatExpert().navigationBarHidden(true), isActive: $viewModel.startConsulting)
+                    NavigationLink("", destination: ChatExpert(selectedExpert: expert).navigationBarHidden(true), isActive: $viewModel.startConsulting)
                     
                 }
                 .transition(.opacity)
@@ -324,6 +340,12 @@ struct ExpertPaymentView: View {
                     )
                     
                 }
+            }.onAppear{
+                let userApiModel = userViewModel.getLoginSession()
+                
+                userName  = userApiModel?.name ?? "No Name"
+                userBalance  = userApiModel?.balance ?? 0.0
+                viewModel.user = User(id: UUID(uuidString: userApiModel?.id ?? ""), name: userName, balanceParenting: userBalance)
             }
         }
     }

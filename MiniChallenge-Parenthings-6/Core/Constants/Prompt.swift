@@ -228,6 +228,7 @@ extension Prompt {
 extension Prompt {
     struct UserDefault {
         static let loginData = "login_data"
+        static let expertData = "expert_data"
         
     
         private init() {}

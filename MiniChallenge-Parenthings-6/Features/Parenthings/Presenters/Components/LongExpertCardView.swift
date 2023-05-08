@@ -113,6 +113,7 @@ struct LongExpertCard : View {
                                 withAnimation {
                                     viewModel.expertDetailIsPresented = true
                                     viewModel.selectedExpert = ExpertData
+                                    viewModel.setSelectedExpert(userData: ExpertData!)
                                 }
                             }
                         } else if (self.buttonText == Prompt.Button.viewDetail) {
