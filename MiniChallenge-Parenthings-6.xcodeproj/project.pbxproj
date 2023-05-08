@@ -16,7 +16,8 @@
 		856849BA2A056AA600517DDF /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856849B92A056AA600517DDF /* PersistenceController.swift */; };
 		856849C02A05764C00517DDF /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 856849BE2A05764C00517DDF /* CoreDataModel.xcdatamodeld */; };
 		856849CE2A07FDA200517DDF /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856849CD2A07FDA200517DDF /* EditProfileView.swift */; };
-		856849D02A08C7FF00517DDF /* HistoryExpertCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856849CF2A08C7FF00517DDF /* HistoryExpertCardView.swift */; };
+		856849D22A08CA1000517DDF /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856849D12A08CA1000517DDF /* OrderViewModel.swift */; };
+		856849D42A08CCE500517DDF /* OrderApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856849D32A08CCE500517DDF /* OrderApiModel.swift */; };
 		858627FE2A02413B0077F60D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858627FD2A02413B0077F60D /* SignInView.swift */; };
 		858628002A02472F0077F60D /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858627FF2A02472F0077F60D /* ClearButton.swift */; };
 		858628022A02505D0077F60D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858628012A02505D0077F60D /* SignUpView.swift */; };
@@ -130,7 +131,8 @@
 		856849B92A056AA600517DDF /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		856849BF2A05764C00517DDF /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		856849CD2A07FDA200517DDF /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
-		856849CF2A08C7FF00517DDF /* HistoryExpertCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryExpertCardView.swift; sourceTree = "<group>"; };
+		856849D12A08CA1000517DDF /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		856849D32A08CCE500517DDF /* OrderApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderApiModel.swift; sourceTree = "<group>"; };
 		858627FD2A02413B0077F60D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		858627FF2A02472F0077F60D /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		858628012A02505D0077F60D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				851DC3172A03A8EB0025DD5C /* UserApiModel.swift */,
 				ACEA1BE42A062B7100D7C411 /* Expert */,
 				ACEF81AB2A08034100153690 /* ChatAPIModel.swift */,
+				856849D32A08CCE500517DDF /* OrderApiModel.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				ACEA1BE82A0631AD00D7C411 /* ExpertEducationViewModel.swift */,
 				ACEA1BEA2A06921500D7C411 /* ExpertExperienceViewModel.swift */,
 				ACEF81A82A08005B00153690 /* ChatViewModel.swift */,
+				856849D12A08CA1000517DDF /* OrderViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -566,7 +570,6 @@
 				8F0362392A04E13C0085D7F5 /* TopUpAmountComponent.swift */,
 				AC5F371729F6F04900372208 /* RoundedShape.swift */,
 				ACFB985829F2E7730046BA06 /* CountStartViewComponent.swift */,
-				856849CF2A08C7FF00517DDF /* HistoryExpertCardView.swift */,
 				ACFB984A29F2D6E20046BA06 /* LongExpertCardView.swift */,
 				ACFB985629F2DAF80046BA06 /* ShortExpertCardView.swift */,
 				AC5F370F29F56BD300372208 /* ConsultationPagePicker.swift */,
@@ -704,12 +707,14 @@
 				ACEF81AC2A08034100153690 /* ChatAPIModel.swift in Sources */,
 				8586280C2A034B1D0077F60D /* LongArticleCardView.swift in Sources */,
 				856849CE2A07FDA200517DDF /* EditProfileView.swift in Sources */,
+				856849D42A08CCE500517DDF /* OrderApiModel.swift in Sources */,
 				8F3CF2952A012133006E03AC /* ProfileMenuComponent.swift in Sources */,
 				ACEA1BE32A062B6A00D7C411 /* ExpertEducationAPIModel.swift in Sources */,
 				ACF7F5DF29FC449C0059F323 /* UserModel.swift in Sources */,
 				AC0338B32A02B0E30010349E /* ChatInteractorProtocol.swift in Sources */,
 				AC5AEB3929FC0CE800BF64F9 /* CustomPicker.swift in Sources */,
 				AC5F371A29F822D400372208 /* Consultation_ExpertDetailView.swift in Sources */,
+				856849D22A08CA1000517DDF /* OrderViewModel.swift in Sources */,
 				ACFB984929F272BB0046BA06 /* BlurBackground.swift in Sources */,
 				858628022A02505D0077F60D /* SignUpView.swift in Sources */,
 				856849BA2A056AA600517DDF /* PersistenceController.swift in Sources */,
@@ -728,7 +733,6 @@
 				AC5F370E29F50E4800372208 /* Prompt.swift in Sources */,
 				ACC826CD29F42529004423C8 /* EncodedBase64Extension.swift in Sources */,
 				AC9FF96129FD9007008766E8 /* OnGoingMainConsultationView.swift in Sources */,
-				856849D02A08C7FF00517DDF /* HistoryExpertCardView.swift in Sources */,
 				858628082A03493C0077F60D /* ArticleMainPageView.swift in Sources */,
 				AC0338B72A02B55E0010349E /* ChatDataClass.swift in Sources */,
 				858628042A0258700077F60D /* StringExtension.swift in Sources */,

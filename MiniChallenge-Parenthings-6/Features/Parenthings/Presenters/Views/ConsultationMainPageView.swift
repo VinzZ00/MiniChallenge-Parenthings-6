@@ -13,6 +13,7 @@ struct ConsultationMainPageView: View {
     @State var SegmentedPickerValue : String = "Ongoing"
     
     @StateObject var expertViewModel : ExpertViewModel = ExpertViewModel();
+    @StateObject var orderViewModel : ExpertViewModel = ExpertViewModel();
     @EnvironmentObject var viewModel : parenthingsViewModel
     
     var backButton : () -> Void;
@@ -74,6 +75,9 @@ struct ConsultationMainPageView: View {
                         }
                         Spacer()
                     }
+                }
+                .onAppear{
+//                    orderViewModel.getAllOrder()
                 }
                 .transition(.move(edge: .top))
                 .background(AppBackground())
